@@ -3,6 +3,12 @@
 
 #include "ZPDependency.h"
 
+#		ifdef ZP_UNICODE
+#			define String  StringW
+#		else
+#			define String  StringA
+#		endif 
+
 	namespace ZPUTIL
 	{
 		 const int INIT_STRING_LENGTH = 16;	 
@@ -726,6 +732,8 @@
 
 		typedef StringT<char> StringA;	///>		¶Ì×Ö·û°æ×Ö·û´®
 		typedef StringT<wchar_t> StringW;	///> ¿í×Ö·û°æ×Ö·û´®
+
+
 
 	}//namespace ZPUTIL
 

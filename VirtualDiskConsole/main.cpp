@@ -3,10 +3,11 @@
 #include "String.h"
 #include "LinkList.h"
 #include "Stack.h"
-#include "Queue.h"
+#include "Queue.h" 
+#include "Lexer.h"
 
 bool String_Compare_Test(void)
-{
+{ 
 	bool pass = true;
 
 	ZPUTIL::StringA str1 = "hello world";
@@ -137,31 +138,39 @@ int main(void)
 { 
 	using namespace ZPUTIL;
 	using namespace std;
+	using namespace Lexer_Sys;
 
-	LinkListT<int> ints;
-	for( int i = 1 ; i <= 100 ; i++ )
-	{
-		//ints.PushBack( i );
-		ints.PushFront( i );
-	}
+	Lexer lex;
+	lex.SetString(L"cd /ad  /s /s C:\\abs\\ C:\\a/bs\\final.txt D:\\cdbsadf bcsdf\\*.*\\*.txt");
+	lex.Analysis();
+	lex.Clear();
 
-	LinkListT<int>::Iterator it = ints.Begin();
-	while( it.HasNext() )
-	{
-		cout<<it.Next()<<endl;
-	}
 
-	ints.Clear();
 
-	ints.PushBack( 1 );
-	ints.PushBack( 2 );
-	ints.PushBack( 3 );
+	//LinkListT<int> ints;
+	//for( int i = 1 ; i <= 100 ; i++ )
+	//{
+	//	//ints.PushBack( i );
+	//	ints.PushFront( i );
+	//}
 
-	it = ints.Begin();
-	while( it != ints.End() )
-	{
-		it = ints.Erase( it );
-	}
+	//LinkListT<int>::Iterator it = ints.Begin();
+	//while( it.HasNext() )
+	//{
+	//	cout<<it.Next()<<endl;
+	//}
+
+	//ints.Clear();
+
+	//ints.PushBack( 1 );
+	//ints.PushBack( 2 );
+	//ints.PushBack( 3 );
+
+	//it = ints.Begin();
+	//while( it != ints.End() )
+	//{
+	//	it = ints.Erase( it );
+	//}
 
 
 	

@@ -74,25 +74,20 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="CmdLexer.cpp" />
-    <ClCompile Include="LexerFactory.cpp" />
-    <ClCompile Include="LexerImpl.cpp" />
+    <ClCompile Include="Lexer.cpp" />
     <ClCompile Include="main.cpp" />
-    <ClCompile Include="PathLexer.cpp" />
     <ClCompile Include="Token.cpp" />
+    <ClCompile Include="TokenList.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="CmdLexer.h" />
-    <ClInclude Include="ILexer.h" />
-    <ClInclude Include="LexerFactory.h" />
-    <ClInclude Include="LexerImpl.h" />
+    <ClInclude Include="Lexer.h" />
     <ClInclude Include="LinkList.h" />
-    <ClInclude Include="PathLexer.h" />
     <ClInclude Include="Queue.h" />
     <ClInclude Include="Singleton.h" />
     <ClInclude Include="Stack.h" />
     <ClInclude Include="String.h" />
     <ClInclude Include="Token.h" />
+    <ClInclude Include="TokenList.h" />
     <ClInclude Include="ZPDependency.h" />
     <ClInclude Include="ZPPredefine.h" />
     <ClInclude Include="ZPStdDependency.h" />

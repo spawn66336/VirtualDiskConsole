@@ -21,16 +21,10 @@
     <ClCompile Include="Token.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
-    <ClCompile Include="LexerFactory.cpp">
+    <ClCompile Include="TokenList.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
-    <ClCompile Include="LexerImpl.cpp">
-      <Filter>源文件</Filter>
-    </ClCompile>
-    <ClCompile Include="CmdLexer.cpp">
-      <Filter>源文件</Filter>
-    </ClCompile>
-    <ClCompile Include="PathLexer.cpp">
+    <ClCompile Include="Lexer.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
   </ItemGroup>
@@ -56,25 +50,16 @@
     <ClInclude Include="Queue.h">
       <Filter>头文件</Filter>
     </ClInclude>
-    <ClInclude Include="CmdLexer.h">
-      <Filter>头文件</Filter>
-    </ClInclude>
-    <ClInclude Include="ILexer.h">
-      <Filter>头文件</Filter>
-    </ClInclude>
-    <ClInclude Include="LexerFactory.h">
-      <Filter>头文件</Filter>
-    </ClInclude>
-    <ClInclude Include="LexerImpl.h">
-      <Filter>头文件</Filter>
-    </ClInclude>
-    <ClInclude Include="PathLexer.h">
-      <Filter>头文件</Filter>
-    </ClInclude>
     <ClInclude Include="Token.h">
       <Filter>头文件</Filter>
     </ClInclude>
     <ClInclude Include="Singleton.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Lexer.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="TokenList.h">
       <Filter>头文件</Filter>
     </ClInclude>
   </ItemGroup>

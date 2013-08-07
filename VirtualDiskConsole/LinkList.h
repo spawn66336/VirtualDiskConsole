@@ -314,6 +314,56 @@ namespace ZPUTIL
 
 			return lp_next_node;
 		}
+
+		/**
+			@brief 在位置i处插入数据 data
+			@param i 要插入的位置
+			@param data 要插入的数据
+		*/
+		inline void Insert( const int i , const T& data  )
+		{
+			ZP_ASSERT( i < 0 || i > Count() );   
+			if( i == 0 )
+			{
+				PushFront( data );
+				return;
+			} else if ( i == Count() ) {
+				PushBack( data );
+				return;
+			}
+
+			int c = 0;
+			LinkNode* lp_curr_node = m_lp_head;
+			while( c != i )
+			{
+				lp_curr_node = lp_curr_node->Next();
+				c++;
+			}
+
+			LinkNode* lp_new_node = new LinkNode( this , data );
+			lp_curr_node->InsertFront( lp_new_node );  
+			m_count++;
+		}
+
+
+		/**
+			@brief 删除索引所指定的节点
+			@param i 索引
+		*/
+		inline void DeleteAt( const int i )
+		{
+			ZP_ASSERT( i < 0 || i >= Count() ); 
+
+			int c = 0;
+			LinkNode* lp_del_node = m_lp_head;
+			while( c != i )
+			{
+				lp_del_node = lp_del_node->Next();
+				c++;
+			}  
+
+			Erase( lp_del_node );
+		}
 		
 		/**
 			@brief 返回链表是否为空
@@ -357,10 +407,10 @@ namespace ZPUTIL
 				return;
 			}
 
-			LinkNode* p = list.Head();
-			LinkNode* end = list.Head();
+			const LinkNode* p = list.Head();
+			const LinkNode* end = list.Head();
 			do{
-				LinkNode* tmp = p->Next();
+				const LinkNode* tmp = p->Next();
 				this->PushBack( p->Data() );
 				p = tmp;
 			}while( p != end );
@@ -429,6 +479,11 @@ namespace ZPUTIL
 			~Iterator(){ m_list_ref = NULL; m_lp_curr_node = NULL; }
 
 			/**
+				@brief 将迭代器重置为链表首
+			*/
+			void MoveFirst( void ){ m_lp_curr_node = m_list_ref->Head(); }
+
+			/**
 				@brief 是否还有下一个元素
 				@retval true 还有下一个元素
 				@retval false 没有下一个元素
@@ -455,6 +510,13 @@ namespace ZPUTIL
 			}
 
 			T& operator*()
+			{
+				ZP_ASSERT( m_list_ref );
+				ZP_ASSERT( m_lp_curr_node );
+				return m_lp_curr_node->Data();
+			}
+
+			const T& operator*() const
 			{
 				ZP_ASSERT( m_list_ref );
 				ZP_ASSERT( m_lp_curr_node );

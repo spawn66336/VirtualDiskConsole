@@ -11,22 +11,26 @@
 namespace Lexer_Sys
 { 
 	class Token {
-	public: 
-
+	public:  
 		enum TokenType
 		{
-			STRING_TYPE = 1,
-			INT_TYPE
+			NULL_TOKEN,
+			CMD_TOKEN,
+			OPTION_TOKEN,
+			PATH_NODE_TOKEN,
+			WILDCARD_TOKEN
 		};
 
 		/**
 		* @brief 默认构造函数
 		*/
-		 Token():m_type(STRING_TYPE),m_legal(true){}
+		 Token():m_type(NULL_TOKEN),m_legal(true){}
+
 		 /**
 		 * @brief 拷贝构造函数
 		 */
-		 Token( const Token& token ):m_type( token.m_type ),m_legal( token.m_legal ),m_name( token.m_name ){}
+		 Token( const Token& token ):m_type( token.m_type ),m_name( token.m_name ),m_legal( token.m_legal ){}
+
 		 /**
 		 * @brief 析构函数
 		 */
@@ -63,10 +67,35 @@ namespace Lexer_Sys
 		bool IsLegal( void ) const { return m_legal; }
 
 		/**
+		* @brief 返回当前符号是否为空
+		* @return 当前符号是否为空
+		* @retval true 为空
+		* @retval false 不为空
+		*/
+		bool IsEmpty( void ) const { return m_name.IsEmpty(); }
+
+		/**
 		* @brief 设置符号对象是否合法
 		* @param 合法与否
 		*/
 		void SetLegal( const bool legal ){ m_legal = legal; }
+
+		/**
+		* @brief 在标记结尾处附加一个字符
+		* @param c 要附加的字符
+		*/
+		void Append( const ZPUTIL::String::XCHAR c  );
+
+		/**
+		* @brief 在标记结尾处添加一个字符串
+		* @param str 要附加的字符串
+		*/
+		void Append( const ZPUTIL::String& str );
+
+		/**
+		* @brief 将该符号清空
+		*/
+		void Clear(void);
 
 		/**
 		* @brief 赋值运算符重载
@@ -80,6 +109,11 @@ namespace Lexer_Sys
 		ZPUTIL::String m_name;		///>符号内容字符串
 
 	}; //class Token
+
+/**
+* @brief 查看当前标记是否为通配符
+*/
+extern	bool IsWildCardToken( const Token& tok );
 
 }//namespace Lexer_Sys
 #endif //ZP_TOKEN

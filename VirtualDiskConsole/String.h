@@ -57,10 +57,33 @@
 			 return false;
 		 }
 
+		 /**
+			@brief 所指定字符是否为英文字符
+			@param c 所要检测的字符
+			@return 返回是否为英文字符
+			@retval true 是英文字符
+			@retval false 不是英文字符
+		 */
+		 template<typename T>
+		 inline bool IsAlpha( const T c )
+		 {
+			 if(  
+				  ( c >= 'A' && c <= 'Z' ) ||
+				  ( c >= 'a' && c <= 'z' )
+				 )
+			 {
+				 return true;
+			 }
+			 return false;
+		 }
+
 		template<typename T>
 		class StringT
 		{
 		public:
+
+			typedef T XCHAR;
+
 			/**
 				@brief 默认构造函数
 			*/
@@ -457,11 +480,12 @@
 			*/
 			inline const T* Ptr(void) const { return m_str_buf; }
 			 
+
 			/**
 				@brief 清空字符串
 				@return void 
 			*/
-			inline void Clear(void) 
+			inline void Empty(void) 
 			{ 
 				m_len = 0;
 				if( NULL != m_str_buf )
@@ -469,6 +493,28 @@
 					m_str_buf[0] = 0;
 				}
 			}
+
+			/**
+			* @brief 将字符串从大写转换为小写
+			* @return void
+			*/
+			inline void ConvertToLowercast( void )
+			{
+				//若为空则直接返回
+				if( IsEmpty() )
+				{
+					return;
+				}
+
+				for( int i = 0 ; i < m_len ; i++ )
+				{
+					if( ( m_str_buf[i] >= 'A' && m_str_buf[i] <= 'Z' ) )
+					{
+						m_str_buf[i] += 0x20;
+					}
+				}  
+			}
+
 
 			/**
 				@brief 在字符串尾部附加字符串
@@ -522,6 +568,11 @@
 			*/
 			inline StringT& TrimLeft(void)
 			{
+				if( IsEmpty() )
+				{
+					return *this;
+				}
+
 				int start_pos = 0;
 				int len = 0;
 				while( 
@@ -544,6 +595,11 @@
 			*/
 			inline StringT& TrimRight(void)
 			{
+				if( IsEmpty() )
+				{
+					return *this;
+				}
+
 				int start_pos = Length()-1;
 				int len = 0;
 
@@ -568,6 +624,11 @@
 			*/
 			inline StringT& ClearAllWhiteChars(void)
 			{
+				if( IsEmpty() )
+				{
+					return *this;
+				}
+
 				int final_pos = 0;  
 				for( int pos = 0 ; pos < Length() ; pos++ )
 				{

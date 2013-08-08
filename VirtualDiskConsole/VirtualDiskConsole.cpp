@@ -70,6 +70,7 @@ void VirtualDiskConsole::Destroy( void )
 void VirtualDiskConsole::PrintResult( void )
 {
 	std::cout<<m_result_output<<std::endl;
+	m_result_output.Empty();
 }
 
 void VirtualDiskConsole::PrintPrompt( void )

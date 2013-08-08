@@ -60,6 +60,6 @@ void PathSearchVisitor::Visit( Node* node )
 
 	}//if( NULL != node ) 
 	m_lp_final_search_node = NULL;
-}
+} 
  
 }//namespace FileSys

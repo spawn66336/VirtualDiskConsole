@@ -25,13 +25,16 @@ namespace FileSys
 
 		virtual Node* GetSearchNode(void);
 
+		virtual Util::String GetResultOutputString(void) const;
+
 		virtual void Visit( Node* node ){ }; 
 
 	protected:
 		typedef Util::LinkListT<LexerSys::Token> PathToks;
 		PathToks::Iterator m_curr_tok;		///>路径当前符号
 		PathToks m_path_toks;					///>路径符号列表
-		Node* m_lp_final_search_node;						///>当前节点
+		Node* m_lp_final_search_node;		///>当前节点
+		Util::String m_result_output_str;	///>获得访问结果字符串
 	};
 
 }//namespace FileSys

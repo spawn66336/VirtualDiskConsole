@@ -48,6 +48,20 @@ namespace LexerSys
 		return false;
 	}
 
+
+	bool IsDriveToken( const Token& tok )
+	{
+		if( tok.Name().Length() == 2 &&
+			Util::IsAlpha( tok.Name().At(0) ) &&
+			tok.Name().At(1) == ':'
+			)
+		{
+			return true;
+		}
+		return false;
+	}
+
+
 	std::ostream& operator<<( std::ostream& o , const Token& tok )
 	{
 		Util::String type_name;

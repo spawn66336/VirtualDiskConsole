@@ -142,8 +142,15 @@ namespace FileSys
 		virtual bool  Compare( const Node* other_node , Util::String& output) const { return false; }
 
 		virtual bool  Compare( const void* data , const int size , Util::String& output  ) const{ return false;}
+	
+		/**
+		* @brief 获取文件列表打印字符串
+		* @param output 为最终存放文件列表的字符串
+		* @param recursive 指示是否是递归显示子目录与子文件
+		*/
+		virtual void GetFileListOutputString(  Util::String& output , const bool recursive = false , const bool folder_only = false  ) const;
 		  
-	private:
+	protected:
 		Util::String m_name;								///>节点名称 
 		Node* m_lp_parent;										///>父节点指针
 		Util::LinkListT<Node*> m_child_nodes;	///>子节点列表

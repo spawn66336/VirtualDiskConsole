@@ -192,6 +192,8 @@ void LexerSys::AnalysisPath( const Util::String& str , Util::LinkListT<Token>& t
 				if( IsWildCardToken( curr_token ) )
 				{
 					curr_token.Type( Token::WILDCARD_TOKEN );
+				}else if( IsDriveToken( curr_token ) ){
+					curr_token.Type( Token::DRIVE_TOKEN );
 				}
 				tokens.PushBack( curr_token );
 			}
@@ -207,6 +209,8 @@ void LexerSys::AnalysisPath( const Util::String& str , Util::LinkListT<Token>& t
 		if( IsWildCardToken( curr_token ) )
 		{
 			curr_token.Type( Token::WILDCARD_TOKEN );
+		}else if( IsDriveToken( curr_token ) ){
+			curr_token.Type( Token::DRIVE_TOKEN );
 		}
 		tokens.PushBack( curr_token );
 		curr_token.Clear();
@@ -219,7 +223,7 @@ bool IsAbsolutePath( const Util::LinkListT<Token>& toks )
 	if( toks.Count() )
 	{
 		
-		if( toks.At(0).Name() == "c:" )
+		if( toks.At(0).Type() == Token::DRIVE_TOKEN  )
 		{
 			return true;
 		}

@@ -13,6 +13,8 @@ public:
 	virtual ~FolderNode(void);
 
 	bool IsFolder( void ) const { return true; }
+
+	virtual void GetFileListOutputString( Util::String& output , const bool recursive = false , const bool folder_only = false ) const;
 };
 
 }//FileSys

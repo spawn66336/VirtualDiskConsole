@@ -25,7 +25,7 @@
     <ConfigurationType>Application</ConfigurationType>
     <UseDebugLibraries>false</UseDebugLibraries>
     <WholeProgramOptimization>true</WholeProgramOptimization>
-    <CharacterSet>Unicode</CharacterSet>
+    <CharacterSet>NotSet</CharacterSet>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
   <ImportGroup Label="ExtensionSettings">
@@ -79,6 +79,7 @@
     <ClCompile Include="ConsoleCommand.cpp" />
     <ClCompile Include="ConsoleCommandFactory.cpp" />
     <ClCompile Include="CopyCmd.cpp" />
+    <ClCompile Include="CreateDirVisitor.cpp" />
     <ClCompile Include="DelCmd.cpp" />
     <ClCompile Include="DirCmd.cpp" />
     <ClCompile Include="FileNode.cpp" />
@@ -102,6 +103,7 @@
     <ClInclude Include="ConsoleCommand.h" />
     <ClInclude Include="ConsoleCommandFactory.h" />
     <ClInclude Include="CopyCmd.h" />
+    <ClInclude Include="CreateDirVisitor.h" />
     <ClInclude Include="DelCmd.h" />
     <ClInclude Include="DirCmd.h" />
     <ClInclude Include="FileNode.h" />

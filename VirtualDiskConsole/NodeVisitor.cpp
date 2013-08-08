@@ -40,4 +40,9 @@ Node* NodeVisitor::GetSearchNode( void )
 	return m_lp_final_search_node;
 }
 
+Util::String NodeVisitor::GetResultOutputString( void ) const
+{
+	return m_result_output_str;
+}
+
 }//namespace FileSys

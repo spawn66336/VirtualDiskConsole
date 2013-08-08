@@ -15,6 +15,12 @@ namespace FileSys
 		virtual ~FileSystem(void);
 
 		/**
+		* @brief 获取文件系统根节点
+		* @return 根节点
+		*/
+		Node* Root(void) const { return m_lp_root; }
+
+		/**
 		* @brief 接受节点访问者访问
 		*/
 		void Accept( NodeVisitor* visitor );

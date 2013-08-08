@@ -118,5 +118,10 @@ namespace FileSys
 		visitor->Visit( this );
 	} 
 
+	void Node::GetFileListOutputString(  Util::String& output , const bool recursive  , const bool folder_only  ) const
+	{
+
+	}
+
 
 }

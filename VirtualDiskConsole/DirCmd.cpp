@@ -31,7 +31,7 @@ void DirCmd::Execute( void )
 			{
 				folder_only = true;
 			}else if( 0 == param_tok.Name().ICmp("s") ){
-				recursive = false;
+				recursive = true;
 			}else{//非法选项
 				m_result_output = Util::StringFormat("参数格式不正确-\"%s\"" , param_tok.Name().Ptr() );
 				return;
@@ -42,12 +42,19 @@ void DirCmd::Execute( void )
 	//分析路径名
 	if( m_paths.Count() )
 	{
-		for( int i = 0 ; i < m_params.Count() ; i++ )
+		for( int i = 0 ; i < m_paths.Count() ; i++ )
 		{
-			
-		}
+			FileSys::Node*  lp_search_path_node = SearchNodeByPathTokens( m_paths.At( i ) );
+			if( NULL != lp_search_path_node )
+			{ 
+				lp_search_path_node->GetFileListOutputString( m_result_output , recursive , folder_only );
+			}else{//若有一个非法路径
+				m_result_output = "系统找不到指定的路径";
+				return;
+			}
+		}// for( int i = 0 ; i < m_paths.Count() ; i++ )
 	}else{
-
+		lp_curr_path_node->GetFileListOutputString( m_result_output , recursive , folder_only );
 	}
 
 }

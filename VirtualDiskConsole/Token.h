@@ -19,7 +19,8 @@ namespace LexerSys
 			CMD_TOKEN,
 			OPTION_TOKEN,
 			PATH_NODE_TOKEN,
-			WILDCARD_TOKEN
+			WILDCARD_TOKEN,
+			DRIVE_TOKEN
 		};
 
 		/**
@@ -126,6 +127,11 @@ namespace LexerSys
 * @brief 查看当前标记是否为通配符
 */
 extern	bool IsWildCardToken( const Token& tok );
+
+/**
+* @brief 查看当前标记是否为驱动盘符
+*/
+extern bool IsDriveToken( const Token& tok );
 
 }//namespace Lexer_Sys
 #endif //ZP_TOKEN

@@ -59,6 +59,14 @@ namespace Lexer_Sys
 			 */
 			virtual void Clear( void );
 
+
+#	if defined( ZP_DEBUG )
+			/**
+			* @brief 显示Debug信息
+			*/
+			void ShowDebugMessage( void );
+#endif
+
 		 protected:
 			 
 			 /**
@@ -86,6 +94,7 @@ namespace Lexer_Sys
 			 */
 			 void AnalysisPath( const ZPUTIL::String& str , ZPUTIL::LinkListT<Token>& tokens );
 
+			  
 		 private: 
 
 			 LexerState m_state;												///>解析器状态

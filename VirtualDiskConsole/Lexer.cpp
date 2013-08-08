@@ -172,7 +172,7 @@ void Lexer_Sys::Lexer::AnalysisPath( const ZPUTIL::String& str , ZPUTIL::LinkLis
 	 
 	int i = 0;
 	Token curr_token;
-
+	curr_token.Type( Token::PATH_NODE_TOKEN );
 	while( i < str_copy.Length() )
 	{
 		ZPUTIL::String::XCHAR c = str_copy.At( i );
@@ -208,5 +208,38 @@ void Lexer_Sys::Lexer::AnalysisPath( const ZPUTIL::String& str , ZPUTIL::LinkLis
 		curr_token.Clear();
 	} 
 }
+
+
+#	if defined( ZP_DEBUG ) 
+void Lexer_Sys::Lexer::ShowDebugMessage( void )
+{
+	std::cout<<"Ô­Ê¼×Ö·û´®: "<<m_str_buf<<std::endl;
+	std::cout<<"cmd name: "<<m_cmd_head<<std::endl;
+
+	ZPUTIL::LinkListT<Token>::Iterator it = m_options.Begin();
+	std::cout<<"options: ";
+	while( it != m_options.End() )
+	{
+		std::cout<<*it;
+		it.Next();
+	}//while( it != m_options.End() )
+	std::cout<<std::endl;
+
+	int path_count = 1;
+	ZPUTIL::LinkListT<ZPUTIL::LinkListT<Token>>::Iterator path_it = m_paths.Begin();
+	while( path_it != m_paths.End() )
+	{
+		std::cout<<"path"<<path_count<<": ";
+		ZPUTIL::LinkListT<Token>::Iterator tok_it = (*path_it).Begin();
+		while( tok_it != (*path_it).End() )
+		{
+			std::cout<<*tok_it;
+			tok_it.Next();
+		}// while( tok_it != (*path_it).End() )
+		std::cout<<std::endl;
+		path_it.Next();
+	} // while( path_it != m_paths.End() )
+} 
+#endif //if defined( ZP_DEBUG )
 
  

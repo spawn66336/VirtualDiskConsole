@@ -19,7 +19,7 @@
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
     <ConfigurationType>Application</ConfigurationType>
     <UseDebugLibraries>true</UseDebugLibraries>
-    <CharacterSet>Unicode</CharacterSet>
+    <CharacterSet>NotSet</CharacterSet>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
     <ConfigurationType>Application</ConfigurationType>
@@ -74,14 +74,22 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="FileNode.cpp" />
+    <ClCompile Include="FolderNode.cpp" />
     <ClCompile Include="Lexer.cpp" />
     <ClCompile Include="main.cpp" />
+    <ClCompile Include="Node.cpp" />
+    <ClCompile Include="NodeVisitor.cpp" />
     <ClCompile Include="Token.cpp" />
     <ClCompile Include="TokenList.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="FileNode.h" />
+    <ClInclude Include="FolderNode.h" />
     <ClInclude Include="Lexer.h" />
     <ClInclude Include="LinkList.h" />
+    <ClInclude Include="Node.h" />
+    <ClInclude Include="NodeVisitor.h" />
     <ClInclude Include="Queue.h" />
     <ClInclude Include="Singleton.h" />
     <ClInclude Include="Stack.h" />

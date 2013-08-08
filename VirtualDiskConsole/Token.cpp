@@ -46,4 +46,34 @@ namespace Lexer_Sys
 		return false;
 	}
 
+	std::ostream& operator<<( std::ostream& o , const Token& tok )
+	{
+		ZPUTIL::String type_name;
+		switch( tok.Type() )
+		{
+		case Token::NULL_TOKEN:
+			type_name = "NULL";
+			break;
+		case Token::CMD_TOKEN:
+			type_name = "CMD";
+			break;
+		case Token::OPTION_TOKEN:
+			type_name = "OPT";
+			break;
+		case Token::PATH_NODE_TOKEN:
+			type_name = "PATH";
+			break;
+		case Token::WILDCARD_TOKEN:
+			type_name = "WILDCARD";
+			break;
+		default:
+			type_name = "DEF";
+			break;
+		}
+
+		o<<" ( "<<tok.Name()<<" "<<type_name<<" ) ";
+
+		return o;
+	}
+
 }//namespace Lexer_Sys

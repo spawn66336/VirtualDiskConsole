@@ -27,6 +27,18 @@
     <ClCompile Include="Lexer.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
+    <ClCompile Include="Node.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="FileNode.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="FolderNode.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="NodeVisitor.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="String.h">
@@ -60,6 +72,18 @@
       <Filter>头文件</Filter>
     </ClInclude>
     <ClInclude Include="TokenList.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Node.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="FileNode.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="FolderNode.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="NodeVisitor.h">
       <Filter>头文件</Filter>
     </ClInclude>
   </ItemGroup>

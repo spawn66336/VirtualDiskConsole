@@ -62,10 +62,10 @@ bool String_Find_Test(void)
 	find_strs.push_back("");
 	start_points.push_back(32);
 	 
-	for( int i = 0 ; i < find_strs.size() ; i++ )
-	{
-		std::cout<<"查找"<<find_strs.at(i)<<"在"<<start_points.at(i)<<"处"<<": "<<final_str.Find( find_strs.at(i) , start_points.at(i) )<<std::endl; 
-	}
+	//for( int i = 0 ; i < find_strs.size() ; i++ )
+	//{
+	//	ZP_OSTREAM<<"查找"<<find_strs.at(i)<<"在"<<start_points.at(i)<<"处"<<": "<<final_str.Find( find_strs.at(i) , start_points.at(i) )<<std::endl; 
+	//}
 
 	return true;
 }
@@ -141,10 +141,12 @@ int main(void)
 	using namespace Lexer_Sys;
 
 	Lexer lex;
-	lex.SetString(L"cd /ad  /s /s C:\\abs\\ C:\\a/bs\\final.txt D:\\cdbsadf bcsdf\\*.*\\*.txt");
+	lex.SetString("cd /ad  /s /s C:\\abs\\ C:\\a/bs\\AiNal.txt D:\\cdbsadf bcsdf\\*.*\\*.txt");
 	lex.Analysis();
-	lex.Clear();
 
+	lex.ShowDebugMessage();
+	lex.Clear();
+	 
 
 
 	//LinkListT<int> ints;

@@ -12,6 +12,7 @@ namespace Lexer_Sys
 { 
 	class Token {
 	public:  
+
 		enum TokenType
 		{
 			NULL_TOKEN,
@@ -53,7 +54,12 @@ namespace Lexer_Sys
 		/**
 		 *@brief  返回符号类型
 		 */
-		TokenType Type(){ return m_type; }
+		TokenType Type( void ){ return m_type; }
+
+		/**
+		* @brief 返回符号类型
+		*/
+		const TokenType Type( void ) const { return m_type; }
 
 		/**
 		* @brief 设置标记类型
@@ -102,6 +108,10 @@ namespace Lexer_Sys
 		*/
 		Token& operator=( const Token& rhs );
 
+
+		friend std::ostream& operator<<( std::ostream& o , const Token& tok );
+		
+
 	private:
 
 		TokenType      m_type;			///>符号类型
@@ -109,6 +119,8 @@ namespace Lexer_Sys
 		ZPUTIL::String m_name;		///>符号内容字符串
 
 	}; //class Token
+
+	std::ostream& operator<<( std::ostream& o , const Token& tok );
 
 /**
 * @brief 查看当前标记是否为通配符

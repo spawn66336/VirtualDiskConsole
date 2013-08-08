@@ -5,8 +5,10 @@
 
 #		ifdef ZP_UNICODE
 #			define String  StringW
+#			define ZP_OSTREAM std::wostream
 #		else
 #			define String  StringA
+#			define ZP_OSTREAM std::ostream
 #		endif 
 
 	namespace ZPUTIL

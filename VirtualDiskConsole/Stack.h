@@ -3,7 +3,7 @@
 
 #include "LinkList.h"
 
-namespace ZPUTIL
+namespace Util
 { 
 	template<typename T>
 	class StackT

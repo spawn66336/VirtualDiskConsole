@@ -22,12 +22,12 @@ namespace FileSys
 
 		virtual int Size(void) const { return m_size; }
 
-		virtual bool  Compare( const Node* other_node , ZPUTIL::String& output)  const;
+		virtual bool Compare( FILE* filestream , Util::String& output ) const;
 
-		virtual bool  Compare( const void* data , const int size , ZPUTIL::String& output  ) const;
+		virtual bool  Compare( const Node* other_node , Util::String& output)  const;
 
-
-
+		virtual bool  Compare( const void* data , const int size , Util::String& output  ) const;
+		  
 		virtual void DeleteThis(void){ delete this; }
 
 	protected:
@@ -39,7 +39,18 @@ namespace FileSys
 		* @return 返回是否为二进制数据
 		* @warning data数据字段禁止传入空指针，否则会触发断言
 		*/
-		bool IsBinaryFileData( const void* data , const int size ) const;
+		bool IdentifyBinaryFileData( const void* data , const int size ) const;
+
+		/**
+		* @brief 生成两个文件的比较结果
+		* @param diffbuf1 第一个文件的差别字节
+		* @param diffbuf2 第二个文件的差别字节
+		* @param output	输出的比较结果字符串
+		*/
+		void MakeDiffOutput( 
+			const Util::VectorT<unsigned char>& diffbuf1 ,  
+			const Util::VectorT<unsigned char>& diffbuf2 , 
+			Util::String& output );
 
 	private:
 		bool m_binary_file;				///>是否为二进制文件

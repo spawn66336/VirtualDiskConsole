@@ -6,5 +6,7 @@
 #include "LinkList.h"
 #include "Queue.h"
 #include "Stack.h" 
+#include "Vector.h"
+#include "Singleton.h"
 
 #endif

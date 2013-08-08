@@ -24,13 +24,20 @@ namespace FileSys
 		* @brief 返回节点名称
 		* @return 返回名称
 		*/
-		ZPUTIL::String Name() const { return m_name; }
+		Util::String Name() const { return m_name; }
 
 		/**
 		* @brief 设置节点名称
 		* @param name 节点名称
 		*/
-		void Name( const ZPUTIL::String& name ){ m_name = name; } 
+		void Name( const Util::String& name ){ m_name = name; } 
+
+		/**
+		* @brief 获得当前节点的路径全名
+		*/
+		Util::String PathName(void) const;
+
+
 
 		/**
 		* @brief 返回父节点
@@ -73,7 +80,7 @@ namespace FileSys
 		* @param name 要查找名称
 		* @return 查找的节点
 		*/
-		Node* FindNode( const ZPUTIL::String& name );
+		Node* FindNode( const Util::String& name );
 
 		/**
 		* @brief 创建节点
@@ -81,7 +88,7 @@ namespace FileSys
 		* @param type 节点类型
 		* @return 返回创建的节点
 		*/
-		Node* CreateNode( const ZPUTIL::String& name , const NodeType type );
+		Node* CreateNode( const Util::String& name , const NodeType type );
 
 		/**
 		* @brief 删除这名称指定的节点
@@ -90,7 +97,7 @@ namespace FileSys
 		* @retval  true 找到节点并删除成功
 		* @retval  false	 未找到节点
 		*/
-		bool DeleteNode( const ZPUTIL::String& name  );
+		bool DeleteNode( const Util::String& name  );
 
 		/**
 		* @brief 销毁结点自身信息
@@ -132,14 +139,14 @@ namespace FileSys
 		* @param node 要与比较的节点
 		* @return 返回需要显示给用户的比较信息
 		*/
-		virtual bool  Compare( const Node* other_node , ZPUTIL::String& output) const { return false; }
+		virtual bool  Compare( const Node* other_node , Util::String& output) const { return false; }
 
-		virtual bool  Compare( const void* data , const int size , ZPUTIL::String& output  ) const{ return false;}
+		virtual bool  Compare( const void* data , const int size , Util::String& output  ) const{ return false;}
 		  
 	private:
-		ZPUTIL::String m_name;								///>节点名称 
+		Util::String m_name;								///>节点名称 
 		Node* m_lp_parent;										///>父节点指针
-		ZPUTIL::LinkListT<Node*> m_child_nodes;	///>子节点列表
+		Util::LinkListT<Node*> m_child_nodes;	///>子节点列表
 	};
 
 }//namespace FileSys

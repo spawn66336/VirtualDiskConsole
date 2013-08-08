@@ -13,37 +13,97 @@
       <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
       <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
     </Filter>
+    <Filter Include="头文件\CommandSys">
+      <UniqueIdentifier>{132250cf-cdd0-4787-be9b-1e65c410f650}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="头文件\FileSys">
+      <UniqueIdentifier>{968bb982-a1e4-4926-8bcb-b7aae889817d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="头文件\Lexer">
+      <UniqueIdentifier>{f0845083-1d51-49c2-86ab-8837bfad8883}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="头文件\Util">
+      <UniqueIdentifier>{5941f0c5-786a-46a6-9088-d81b641678ba}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="源文件\CommandSys">
+      <UniqueIdentifier>{4f06f8fc-bae4-40eb-8baa-80abbce44765}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="源文件\FileSys">
+      <UniqueIdentifier>{36d196eb-f639-4c03-a270-4f6ad9433188}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="源文件\Lexer">
+      <UniqueIdentifier>{1b541585-7166-4dff-9dea-3487fdf244aa}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="源文件\Util">
+      <UniqueIdentifier>{bd474853-6cb6-4c9d-b671-a824202aadc7}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
-    <ClCompile Include="Token.cpp">
-      <Filter>源文件</Filter>
+    <ClCompile Include="CdCmd.cpp">
+      <Filter>源文件\CommandSys</Filter>
     </ClCompile>
-    <ClCompile Include="TokenList.cpp">
-      <Filter>源文件</Filter>
+    <ClCompile Include="CompareCmd.cpp">
+      <Filter>源文件\CommandSys</Filter>
     </ClCompile>
-    <ClCompile Include="Lexer.cpp">
-      <Filter>源文件</Filter>
+    <ClCompile Include="ConsoleCommand.cpp">
+      <Filter>源文件\CommandSys</Filter>
     </ClCompile>
-    <ClCompile Include="Node.cpp">
-      <Filter>源文件</Filter>
+    <ClCompile Include="CopyCmd.cpp">
+      <Filter>源文件\CommandSys</Filter>
+    </ClCompile>
+    <ClCompile Include="DelCmd.cpp">
+      <Filter>源文件\CommandSys</Filter>
+    </ClCompile>
+    <ClCompile Include="DirCmd.cpp">
+      <Filter>源文件\CommandSys</Filter>
     </ClCompile>
     <ClCompile Include="FileNode.cpp">
-      <Filter>源文件</Filter>
+      <Filter>源文件\FileSys</Filter>
+    </ClCompile>
+    <ClCompile Include="FileSystem.cpp">
+      <Filter>源文件\FileSys</Filter>
     </ClCompile>
     <ClCompile Include="FolderNode.cpp">
-      <Filter>源文件</Filter>
+      <Filter>源文件\FileSys</Filter>
+    </ClCompile>
+    <ClCompile Include="MkdirCmd.cpp">
+      <Filter>源文件\CommandSys</Filter>
+    </ClCompile>
+    <ClCompile Include="RmdirCmd.cpp">
+      <Filter>源文件\CommandSys</Filter>
+    </ClCompile>
+    <ClCompile Include="Lexer.cpp">
+      <Filter>源文件\Lexer</Filter>
+    </ClCompile>
+    <ClCompile Include="Token.cpp">
+      <Filter>源文件\Lexer</Filter>
+    </ClCompile>
+    <ClCompile Include="TokenList.cpp">
+      <Filter>源文件\Lexer</Filter>
     </ClCompile>
     <ClCompile Include="NodeVisitor.cpp">
+      <Filter>源文件\FileSys</Filter>
+    </ClCompile>
+    <ClCompile Include="Node.cpp">
+      <Filter>源文件\FileSys</Filter>
+    </ClCompile>
+    <ClCompile Include="PathSearchVisitor.cpp">
+      <Filter>源文件\FileSys</Filter>
+    </ClCompile>
+    <ClCompile Include="String.cpp">
+      <Filter>源文件\Util</Filter>
+    </ClCompile>
+    <ClCompile Include="VirtualDiskConsole.cpp">
       <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="ConsoleCommandFactory.cpp">
+      <Filter>源文件\CommandSys</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="String.h">
-      <Filter>头文件</Filter>
-    </ClInclude>
     <ClInclude Include="ZPStdDependency.h">
       <Filter>头文件</Filter>
     </ClInclude>
@@ -53,38 +113,80 @@
     <ClInclude Include="ZPDependency.h">
       <Filter>头文件</Filter>
     </ClInclude>
-    <ClInclude Include="LinkList.h">
-      <Filter>头文件</Filter>
+    <ClInclude Include="CdCmd.h">
+      <Filter>头文件\CommandSys</Filter>
     </ClInclude>
-    <ClInclude Include="Stack.h">
-      <Filter>头文件</Filter>
+    <ClInclude Include="CompareCmd.h">
+      <Filter>头文件\CommandSys</Filter>
     </ClInclude>
-    <ClInclude Include="Queue.h">
-      <Filter>头文件</Filter>
+    <ClInclude Include="ConsoleCommand.h">
+      <Filter>头文件\CommandSys</Filter>
     </ClInclude>
-    <ClInclude Include="Token.h">
-      <Filter>头文件</Filter>
+    <ClInclude Include="CopyCmd.h">
+      <Filter>头文件\CommandSys</Filter>
     </ClInclude>
-    <ClInclude Include="Singleton.h">
-      <Filter>头文件</Filter>
+    <ClInclude Include="DelCmd.h">
+      <Filter>头文件\CommandSys</Filter>
     </ClInclude>
-    <ClInclude Include="Lexer.h">
-      <Filter>头文件</Filter>
+    <ClInclude Include="DirCmd.h">
+      <Filter>头文件\CommandSys</Filter>
     </ClInclude>
-    <ClInclude Include="TokenList.h">
-      <Filter>头文件</Filter>
+    <ClInclude Include="RmdirCmd.h">
+      <Filter>头文件\CommandSys</Filter>
     </ClInclude>
-    <ClInclude Include="Node.h">
-      <Filter>头文件</Filter>
+    <ClInclude Include="MkdirCmd.h">
+      <Filter>头文件\CommandSys</Filter>
     </ClInclude>
     <ClInclude Include="FileNode.h">
-      <Filter>头文件</Filter>
+      <Filter>头文件\FileSys</Filter>
+    </ClInclude>
+    <ClInclude Include="FileSystem.h">
+      <Filter>头文件\FileSys</Filter>
     </ClInclude>
     <ClInclude Include="FolderNode.h">
-      <Filter>头文件</Filter>
+      <Filter>头文件\FileSys</Filter>
+    </ClInclude>
+    <ClInclude Include="PathSearchVisitor.h">
+      <Filter>头文件\FileSys</Filter>
     </ClInclude>
     <ClInclude Include="NodeVisitor.h">
+      <Filter>头文件\FileSys</Filter>
+    </ClInclude>
+    <ClInclude Include="Node.h">
+      <Filter>头文件\FileSys</Filter>
+    </ClInclude>
+    <ClInclude Include="Lexer.h">
+      <Filter>头文件\Lexer</Filter>
+    </ClInclude>
+    <ClInclude Include="Token.h">
+      <Filter>头文件\Lexer</Filter>
+    </ClInclude>
+    <ClInclude Include="TokenList.h">
+      <Filter>头文件\Lexer</Filter>
+    </ClInclude>
+    <ClInclude Include="Queue.h">
+      <Filter>头文件\Util</Filter>
+    </ClInclude>
+    <ClInclude Include="LinkList.h">
+      <Filter>头文件\Util</Filter>
+    </ClInclude>
+    <ClInclude Include="Singleton.h">
+      <Filter>头文件\Util</Filter>
+    </ClInclude>
+    <ClInclude Include="Stack.h">
+      <Filter>头文件\Util</Filter>
+    </ClInclude>
+    <ClInclude Include="String.h">
+      <Filter>头文件\Util</Filter>
+    </ClInclude>
+    <ClInclude Include="Vector.h">
+      <Filter>头文件\Util</Filter>
+    </ClInclude>
+    <ClInclude Include="VirtualDiskConsole.h">
       <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="ConsoleCommandFactory.h">
+      <Filter>头文件\CommandSys</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

@@ -1,9 +1,9 @@
 #include "Token.h"
 
-namespace Lexer_Sys
+namespace LexerSys
 {  
 
-	Token& Lexer_Sys::Token::operator=( const Token& rhs )
+	Token& LexerSys::Token::operator=( const Token& rhs )
 	{
 		m_type = rhs.m_type;
 		m_name = rhs.m_name;
@@ -18,20 +18,22 @@ namespace Lexer_Sys
 		m_name.Empty();
 	}
 
-	void Token::Append( const ZPUTIL::String::XCHAR c )
+	void Token::Append( const Util::String::XCHAR c )
 	{
 		m_name.Append( c );
+		m_name.ConvertToLowercast();
 	}
 
-	void Token::Append( const ZPUTIL::String& str )
+	void Token::Append( const Util::String& str )
 	{
 		m_name.Append( str );
+		m_name.ConvertToLowercast();
 	}
 
 	bool IsWildCardToken( const Token& tok )
 	{
 
-		ZPUTIL::String tokname =  tok.Name(); 
+		Util::String tokname =  tok.Name(); 
 
 		if( tokname.IsEmpty() )
 		{
@@ -48,7 +50,7 @@ namespace Lexer_Sys
 
 	std::ostream& operator<<( std::ostream& o , const Token& tok )
 	{
-		ZPUTIL::String type_name;
+		Util::String type_name;
 		switch( tok.Type() )
 		{
 		case Token::NULL_TOKEN:

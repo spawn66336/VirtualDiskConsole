@@ -6,15 +6,17 @@
 #		ifdef ZP_UNICODE
 #			define String  StringW
 #			define ZP_OSTREAM std::wostream
+#			define StringFormat FormatW
 #		else
 #			define String  StringA
 #			define ZP_OSTREAM std::ostream
+#			define StringFormat FormatA
 #		endif 
 
-	namespace ZPUTIL
+	namespace Util
 	{
 		 const int INIT_STRING_LENGTH = 16;	 
-		 const int STRING_LEN_INC = 1;
+		 const int STRING_LEN_INC = 16;
 
 		 /**
 			@brief ¼ÆËã×Ö·û´®str×Ö·û³¤¶È
@@ -556,6 +558,21 @@
 			} 
 
 			/**
+				@brief ´Ó×Ö·û´®½áÎ²´¦É¾µôÒ»¸ö×Ö·û
+			*/
+			inline T PopBack( void )
+			{
+				T old_c = 0;
+				if( m_len > 0 )
+				{
+					old_c = m_str_buf[m_len-1];
+					m_str_buf[m_len-1] = '\0';
+					m_len--;
+				}
+				return old_c;
+			}
+
+			/**
 				@brief Çå³ý×ó²àÓëÓÒ²àµÄËùÓÐ¿Õ°××Ö·û 
 				@return String&	Çå³ýºóµÄµ±Ç°×Ö·û´®
 			*/
@@ -796,8 +813,10 @@
 		typedef StringT<char> StringA;	///>		¶Ì×Ö·û°æ×Ö·û´®
 		typedef StringT<wchar_t> StringW;	///> ¿í×Ö·û°æ×Ö·û´®
 
-
-
+		 
+		extern StringA FormatA( const char* format , ... );
+		extern StringW FormatW( const wchar_t* format , ... );
+		 
 	}//namespace ZPUTIL
 
 #endif //ZP_STRING_UTIL

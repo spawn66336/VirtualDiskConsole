@@ -5,175 +5,92 @@
 #include "Stack.h"
 #include "Queue.h" 
 #include "Lexer.h"
+#include <atlstr.h>
+#include "VirtualDiskConsole.h"
+#include <conio.h>
+ 
+#pragma warning(disable:4786)
 
-bool String_Compare_Test(void)
-{ 
-	bool pass = true;
-
-	ZPUTIL::StringA str1 = "hello world";
-	ZPUTIL::StringA str2 = "hello world";
-	ZPUTIL::StringA str3 = "Hello World";
-
-	if( !( str1 == str2 ) )
-	{
-		pass = false;
-	}
-
-	if( str1 == str3 )
-	{
-		pass =false;
-	}
-
-	if( str1.Compare( str3 ) == 0 )
-	{
-		pass = false;
-	}
-
-	if( str1.Compare( str3 , true ) != 0 )
-	{
-		pass =false;
-	}
-
-	return pass; 
-}
-
-bool String_Find_Test(void)
+void PrintWelcomeHead(void)
 {
-	ZPUTIL::StringA str = "hello world"; 
-	ZPUTIL::StringA str1 = "#nihao#";
-	ZPUTIL::StringA str2 = "#dajiahao#";
-	ZPUTIL::StringA final_str = str + str1 + str2;
-
-	std::vector<ZPUTIL::StringA> find_strs;
-	std::vector<int> start_points;
-
-	find_strs.push_back("dajia");
-	start_points.push_back(3);
-
-	find_strs.push_back("da_jia");
-	start_points.push_back(3);
-
-	find_strs.push_back("dajia");
-	start_points.push_back(31);
-
-	find_strs.push_back("dajia");
-	start_points.push_back(32);
-
-	find_strs.push_back("");
-	start_points.push_back(32);
-	 
-	//for( int i = 0 ; i < find_strs.size() ; i++ )
-	//{
-	//	ZP_OSTREAM<<"查找"<<find_strs.at(i)<<"在"<<start_points.at(i)<<"处"<<": "<<final_str.Find( find_strs.at(i) , start_points.at(i) )<<std::endl; 
-	//}
-
-	return true;
-}
-
-void StringTest(void)
-{
-	ZPUTIL::StringA str = "hello world";
-	std::cout<<str<<std::endl;
-	str += "_hello world";
-	std::cout<<str<<std::endl;
-	ZPUTIL::StringA str1 = "#nihao#";
-	ZPUTIL::StringA str2 = "#dajiahao#";
-	ZPUTIL::StringA final_str = str + str1 + str2;
-	std::cout<<final_str<<std::endl; 
-
-	if( String_Compare_Test() )
+	for( int i = 0 ; i < 70 ; i++ )
 	{
-		std::cout<<"字符串比较测试通过!"<<std::endl;
-	}else{
-		std::cout<<"字符串比较测试失败!"<<std::endl;
+		std::cout<<"*";
+	} 
+	std::cout<<std::endl; 
+	std::cout<<"*"<<std::endl; 
+	std::cout<<"*"<<"          "<<"虚拟磁盘系统"<<std::endl; 
+	std::cout<<"*"<<std::endl;  
+	for( int i = 0 ; i < 70 ; i++ )
+	{
+		std::cout<<"*";
 	}
-
-	String_Find_Test();
-
-	final_str.Insert( "#insert#" , 0 );
-	std::cout<<final_str<<std::endl;
-	final_str.Insert( "#insert#" , final_str.Length() );
-	std::cout<<final_str<<std::endl;
-	final_str.Insert( "#insert#" , 10 );
-	std::cout<<final_str<<std::endl;
-	final_str.Insert( "#insert#" , -1 );
-	std::cout<<final_str<<std::endl;
-	final_str.Insert( "#insert#" , final_str.Length()+1 );
-	std::cout<<final_str<<std::endl;
-	final_str.Insert( "" , 3 );
-	std::cout<<final_str<<std::endl;
-	final_str.Insert( "" , 0 );
-	std::cout<<final_str<<std::endl;
-	final_str.Insert( "" ,  final_str.Length()+1 );
-	std::cout<<final_str<<std::endl;
-
-	final_str.Delete( 0 , strlen("#insert#") );
-	std::cout<<final_str<<std::endl;
-
-	final_str.Replace("#insert#" , "#replace#" , 0 );
-	std::cout<<final_str<<std::endl;
-	final_str.Replace("#" ,"@@" , 0 );
-	std::cout<<final_str<<std::endl;
-	final_str.Replace("@@" ,"" , 0 );
-	std::cout<<final_str<<std::endl;
-	final_str.Replace("" ,"%%" , 0 );
-	std::cout<<final_str<<std::endl;
-
-	ZPUTIL::StringA str_include_spaces = "		hello world   ";
-	str_include_spaces.Trim();
-	std::cout<<str_include_spaces<<std::endl;
-	ZPUTIL::StringA str_total_spaces = "					       \n ";
-	str_total_spaces.Trim();
-	std::cout<<str_total_spaces;
-	ZPUTIL::StringA str_include_spaces2 = "		h e ll o w o r l d     ";
-	str_include_spaces2.ClearAllWhiteChars();
-	std::cout<<str_include_spaces2<<std::endl;
-	str_total_spaces = "					       \n ";
-	str_total_spaces.ClearAllWhiteChars();
-	std::cout<<str_total_spaces<<std::endl;
-
+	std::cout<<std::endl;
 }
 
+void PrintBackspace(void)
+{
+	std::cout<<'\b';
+	std::cout<<' ';
+	std::cout<<'\b';
+}
 int main(void)
 { 
-	using namespace ZPUTIL;
+	using namespace Util;
 	using namespace std;
-	using namespace Lexer_Sys;
+	using namespace LexerSys;
 
-	Lexer lex;
-	lex.SetString("cd /ad  /s /s C:\\abs\\ C:\\a/bs\\AiNal.txt D:\\cdbsadf bcsdf\\*.*\\*.txt");
-	lex.Analysis();
+	PrintWelcomeHead();
 
-	lex.ShowDebugMessage();
-	lex.Clear();
+	VirtualDiskConsole::CreateInstance();
+	VirtualDiskConsole::GetInstance()->Init();
+
+	while( 1 )
+	{
+		Util::String cmd_str;
+		int input_c = 0;
+
+		VirtualDiskConsole::GetInstance()->PrintPrompt(); 
+		//只要用户没有按回车键
+		while( ( input_c=  _getch() ) != 13 )
+		{ 
+			//若为退格键
+			if( input_c == 8 )
+			{
+				if( cmd_str.Length() )
+				{
+					cmd_str.PopBack();
+					PrintBackspace();
+				}
+			}else{
+				_putch( input_c );
+				cmd_str.Append( static_cast<char>( input_c ) );
+			} 
+		}
+		std::cout<<std::endl;
+
+		if( cmd_str.Length() == 0 )
+		{
+			continue;;
+		}
+
+
+		Util::String exit_test_str = cmd_str;
+
+		exit_test_str.ClearAllWhiteChars();
+		exit_test_str.ConvertToLowercast();
+		if( exit_test_str == "exit" )
+		{
+			std::cout<<"退出系统!"<<std::endl;
+			break;
+		}
+
+		VirtualDiskConsole::GetInstance()->ExecuteCommand( cmd_str );
+		VirtualDiskConsole::GetInstance()->PrintResult();
+	}
+
+	VirtualDiskConsole::GetInstance()->Destroy();
+	VirtualDiskConsole::DestroyInstance();
+
 	 
-
-
-	//LinkListT<int> ints;
-	//for( int i = 1 ; i <= 100 ; i++ )
-	//{
-	//	//ints.PushBack( i );
-	//	ints.PushFront( i );
-	//}
-
-	//LinkListT<int>::Iterator it = ints.Begin();
-	//while( it.HasNext() )
-	//{
-	//	cout<<it.Next()<<endl;
-	//}
-
-	//ints.Clear();
-
-	//ints.PushBack( 1 );
-	//ints.PushBack( 2 );
-	//ints.PushBack( 3 );
-
-	//it = ints.Begin();
-	//while( it != ints.End() )
-	//{
-	//	it = ints.Erase( it );
-	//}
-
-
-	
 }

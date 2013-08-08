@@ -5,6 +5,7 @@
 #include <assert.h>
 #include <stdlib.h>
 #include <time.h>
+#include <stdarg.h>
 
 // C++ Stream stuff
 #include <fstream>

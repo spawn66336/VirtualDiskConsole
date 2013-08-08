@@ -74,28 +74,54 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="CdCmd.cpp" />
+    <ClCompile Include="CompareCmd.cpp" />
+    <ClCompile Include="ConsoleCommand.cpp" />
+    <ClCompile Include="ConsoleCommandFactory.cpp" />
+    <ClCompile Include="CopyCmd.cpp" />
+    <ClCompile Include="DelCmd.cpp" />
+    <ClCompile Include="DirCmd.cpp" />
     <ClCompile Include="FileNode.cpp" />
+    <ClCompile Include="FileSystem.cpp" />
     <ClCompile Include="FolderNode.cpp" />
     <ClCompile Include="Lexer.cpp" />
     <ClCompile Include="main.cpp" />
+    <ClCompile Include="MkdirCmd.cpp" />
     <ClCompile Include="Node.cpp" />
     <ClCompile Include="NodeVisitor.cpp" />
+    <ClCompile Include="PathSearchVisitor.cpp" />
+    <ClCompile Include="RmdirCmd.cpp" />
+    <ClCompile Include="String.cpp" />
     <ClCompile Include="Token.cpp" />
     <ClCompile Include="TokenList.cpp" />
+    <ClCompile Include="VirtualDiskConsole.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="CdCmd.h" />
+    <ClInclude Include="CompareCmd.h" />
+    <ClInclude Include="ConsoleCommand.h" />
+    <ClInclude Include="ConsoleCommandFactory.h" />
+    <ClInclude Include="CopyCmd.h" />
+    <ClInclude Include="DelCmd.h" />
+    <ClInclude Include="DirCmd.h" />
     <ClInclude Include="FileNode.h" />
+    <ClInclude Include="FileSystem.h" />
     <ClInclude Include="FolderNode.h" />
     <ClInclude Include="Lexer.h" />
     <ClInclude Include="LinkList.h" />
+    <ClInclude Include="MkdirCmd.h" />
     <ClInclude Include="Node.h" />
     <ClInclude Include="NodeVisitor.h" />
+    <ClInclude Include="PathSearchVisitor.h" />
     <ClInclude Include="Queue.h" />
+    <ClInclude Include="RmdirCmd.h" />
     <ClInclude Include="Singleton.h" />
     <ClInclude Include="Stack.h" />
     <ClInclude Include="String.h" />
     <ClInclude Include="Token.h" />
     <ClInclude Include="TokenList.h" />
+    <ClInclude Include="Vector.h" />
+    <ClInclude Include="VirtualDiskConsole.h" />
     <ClInclude Include="ZPDependency.h" />
     <ClInclude Include="ZPPredefine.h" />
     <ClInclude Include="ZPStdDependency.h" />

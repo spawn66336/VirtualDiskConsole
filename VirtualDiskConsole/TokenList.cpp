@@ -1,6 +1,6 @@
 #include "TokenList.h"
 
-namespace Lexer_Sys
+namespace LexerSys
 {  
 	TokenList::TokenList(void)
 	{
@@ -30,27 +30,27 @@ namespace Lexer_Sys
 		m_curr_token = m_token_list.Begin();
 	}
 
-	bool Lexer_Sys::TokenList::HasNext( void ) const
+	bool LexerSys::TokenList::HasNext( void ) const
 	{
 		return m_curr_token.HasNext();
 	}
 
-	void Lexer_Sys::TokenList::MoveFirst( void )
+	void LexerSys::TokenList::MoveFirst( void )
 	{
 		m_curr_token.MoveFirst();
 	}
 
-	void Lexer_Sys::TokenList::MoveNext( void )
+	void LexerSys::TokenList::MoveNext( void )
 	{
 		m_curr_token.Next();
 	}
 
-	Token& Lexer_Sys::TokenList::CurrToken( void )
+	Token& LexerSys::TokenList::CurrToken( void )
 	{
 		return *m_curr_token;
 	}
 
-	const Token& Lexer_Sys::TokenList::CurrToken( void ) const
+	const Token& LexerSys::TokenList::CurrToken( void ) const
 	{
 		return *m_curr_token;
 	}

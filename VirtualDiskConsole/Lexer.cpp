@@ -1,37 +1,41 @@
 #include "Lexer.h"
 
+namespace LexerSys
+{
 
-Lexer_Sys::Lexer::Lexer():
+
+
+LexerSys::Lexer::Lexer():
 m_state( UNLOADED_STATE )
 {
 
 }
 
-Lexer_Sys::Lexer::~Lexer()
+LexerSys::Lexer::~Lexer()
 { 
 
 }
 
-void Lexer_Sys::Lexer::SetString( const ZPUTIL::String& str )
+void LexerSys::Lexer::SetString( const Util::String& str )
 {
 	m_state = LOADED_STATE;
 	m_str_buf = str;
 }
 
-void Lexer_Sys::Lexer::Analysis( void )
+void LexerSys::Lexer::Analysis( void )
 {
 	m_cmd_head.Clear();
 	m_options.Clear();
 	m_paths.Clear(); 
 
-	ZPUTIL::String cmd_str = AnalysisCmdHead( m_str_buf );
+	Util::String cmd_str = AnalysisCmdHead( m_str_buf );
 	cmd_str = AnalysisCmdOptions( cmd_str );
 	cmd_str = AnalysisCmdPaths( cmd_str );
 	
 	m_state = ANALYSISED_STATE;
 }
 
-void Lexer_Sys::Lexer::Clear( void )
+void LexerSys::Lexer::Clear( void )
 { 
 	m_cmd_head.Clear();
 	m_paths.Clear();
@@ -39,18 +43,18 @@ void Lexer_Sys::Lexer::Clear( void )
 	m_state = UNLOADED_STATE;
 }
 
-ZPUTIL::String Lexer_Sys::Lexer::AnalysisCmdHead( const ZPUTIL::String& str )
+Util::String LexerSys::Lexer::AnalysisCmdHead( const Util::String& str )
 {
 	int i = 0;
-	ZPUTIL::String final_str = str;
+	Util::String final_str = str;
 	final_str.TrimLeft(); 
 
 	m_cmd_head.Type( Token::CMD_TOKEN );
 
 	while( i < str.Length() )
 	{
-		ZPUTIL::String::XCHAR c = str.At( i );
-		if( ZPUTIL::IsAlpha( c ) )
+		Util::String::XCHAR c = str.At( i );
+		if( Util::IsAlpha( c ) )
 		{
 			m_cmd_head.Append( c );
 		}else{ 
@@ -63,16 +67,16 @@ ZPUTIL::String Lexer_Sys::Lexer::AnalysisCmdHead( const ZPUTIL::String& str )
 	return final_str;
 }
 
-ZPUTIL::String Lexer_Sys::Lexer::AnalysisCmdOptions( const ZPUTIL::String& str )
+Util::String LexerSys::Lexer::AnalysisCmdOptions( const Util::String& str )
 {
 	int i = 0;
-	ZPUTIL::String final_str = str;
+	Util::String final_str = str;
 	final_str.TrimLeft(); 
 	Token curr_option;
 
 	while( i < final_str.Length() )
 	{ 
-		ZPUTIL::String::XCHAR c = final_str.At( i ); 
+		Util::String::XCHAR c = final_str.At( i ); 
 
 		//发现选项起始符
 		if( c == '/' )
@@ -83,9 +87,9 @@ ZPUTIL::String Lexer_Sys::Lexer::AnalysisCmdOptions( const ZPUTIL::String& str )
 				int j = i+1;
 				while( j < final_str.Length()  )
 				{
-						ZPUTIL::String::XCHAR c2 = final_str.At( j );
+						Util::String::XCHAR c2 = final_str.At( j );
 						//若当前字符不为字母则跳出
-						if( !ZPUTIL::IsAlpha( c2 ) )
+						if( !Util::IsAlpha( c2 ) )
 						{
 							break;
 						}
@@ -113,21 +117,21 @@ ZPUTIL::String Lexer_Sys::Lexer::AnalysisCmdOptions( const ZPUTIL::String& str )
 	return final_str;
 }
 
-ZPUTIL::String Lexer_Sys::Lexer::AnalysisCmdPaths( const ZPUTIL::String& str )
+Util::String LexerSys::Lexer::AnalysisCmdPaths( const Util::String& str )
 {
 	int i = 0;
-	ZPUTIL::String final_str = str;
+	Util::String final_str = str;
 	final_str.TrimLeft(); 
 
-	ZPUTIL::LinkListT<ZPUTIL::String> paths;
+	Util::LinkListT<Util::String> paths;
 
-	ZPUTIL::String curr_path;
+	Util::String curr_path;
 
 	while(  i < final_str.Length() )
 	{
-		ZPUTIL::String::XCHAR c =  final_str.At( i );
+		Util::String::XCHAR c =  final_str.At( i );
 		//若不为空白符
-		if( !ZPUTIL::IsWhiteChar( c ) )
+		if( !Util::IsWhiteChar( c ) )
 		{
 			curr_path.Append( c );
 		}else{
@@ -149,10 +153,10 @@ ZPUTIL::String Lexer_Sys::Lexer::AnalysisCmdPaths( const ZPUTIL::String& str )
 	}
 
 	//将每个路径拆解为符号列表
-	ZPUTIL::LinkListT<ZPUTIL::String>::Iterator it = paths.Begin();
+	Util::LinkListT<Util::String>::Iterator it = paths.Begin();
 	while( it != paths.End() )
 	{
-		ZPUTIL::LinkListT<Token> tokens;
+		Util::LinkListT<Token> tokens;
 		AnalysisPath( *it , tokens );
 		if( tokens.Count() )
 		{
@@ -164,20 +168,20 @@ ZPUTIL::String Lexer_Sys::Lexer::AnalysisCmdPaths( const ZPUTIL::String& str )
 	return final_str;
 }
 
-void Lexer_Sys::Lexer::AnalysisPath( const ZPUTIL::String& str , ZPUTIL::LinkListT<Token>& tokens )
+void LexerSys::AnalysisPath( const Util::String& str , Util::LinkListT<Token>& tokens )
 {
-	ZPUTIL::String str_copy = str;
+	Util::String str_copy = str;
 	str_copy.ClearAllWhiteChars();
 	str_copy.ConvertToLowercast();
-	 
+
 	int i = 0;
 	Token curr_token;
 	curr_token.Type( Token::PATH_NODE_TOKEN );
 	while( i < str_copy.Length() )
 	{
-		ZPUTIL::String::XCHAR c = str_copy.At( i );
+		Util::String::XCHAR c = str_copy.At( i );
 		//若不是目录分隔符
-		if( c != '\\' )
+		if( c != '\\' && c != '"' && c != '“' )
 		{ 
 			curr_token.Append( c );
 		}else{ 
@@ -210,13 +214,28 @@ void Lexer_Sys::Lexer::AnalysisPath( const ZPUTIL::String& str , ZPUTIL::LinkLis
 }
 
 
+bool IsAbsolutePath( const Util::LinkListT<Token>& toks )
+{
+	if( toks.Count() )
+	{
+		
+		if( toks.At(0).Name() == "c:" )
+		{
+			return true;
+		}
+	}
+	return false;
+}
+
+
+
 #	if defined( ZP_DEBUG ) 
-void Lexer_Sys::Lexer::ShowDebugMessage( void )
+void LexerSys::Lexer::ShowDebugMessage( void )
 {
 	std::cout<<"原始字符串: "<<m_str_buf<<std::endl;
 	std::cout<<"cmd name: "<<m_cmd_head<<std::endl;
 
-	ZPUTIL::LinkListT<Token>::Iterator it = m_options.Begin();
+	Util::LinkListT<Token>::Iterator it = m_options.Begin();
 	std::cout<<"options: ";
 	while( it != m_options.End() )
 	{
@@ -226,11 +245,11 @@ void Lexer_Sys::Lexer::ShowDebugMessage( void )
 	std::cout<<std::endl;
 
 	int path_count = 1;
-	ZPUTIL::LinkListT<ZPUTIL::LinkListT<Token>>::Iterator path_it = m_paths.Begin();
+	Util::LinkListT<Util::LinkListT<Token>>::Iterator path_it = m_paths.Begin();
 	while( path_it != m_paths.End() )
 	{
 		std::cout<<"path"<<path_count<<": ";
-		ZPUTIL::LinkListT<Token>::Iterator tok_it = (*path_it).Begin();
+		Util::LinkListT<Token>::Iterator tok_it = (*path_it).Begin();
 		while( tok_it != (*path_it).End() )
 		{
 			std::cout<<*tok_it;
@@ -242,4 +261,7 @@ void Lexer_Sys::Lexer::ShowDebugMessage( void )
 } 
 #endif //if defined( ZP_DEBUG )
 
- 
+}//namespace Lexer_Sys
+
+
+

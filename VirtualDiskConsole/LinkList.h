@@ -1,7 +1,7 @@
 #ifndef ZP_LINKLIST
 #define ZP_LINKLIST
 
-namespace ZPUTIL
+namespace Util
 {
 	 
 	template<typename T>
@@ -316,13 +316,47 @@ namespace ZPUTIL
 		}
 
 		/**
+		* @brief 获取在i处的元素
+		*/
+		inline T& At( const int i )
+		{
+			ZP_ASSERT( i >= 0 || i < Count() );   
+
+			int count = 0;
+			LinkNode* p = m_lp_head;
+			while( count != i )
+			{
+				p = p->Next();
+				count++;
+			}
+
+			return p->Data();
+		}
+
+		inline const T& At( const int i ) const
+		{ 
+			ZP_ASSERT( i >= 0 || i < Count() );   
+
+			int count = 0;
+			LinkNode* p = m_lp_head;
+			while( count != i )
+			{
+				p = p->Next();
+				count++;
+			}
+
+			return p->Data();
+		}
+
+		/**
 			@brief 在位置i处插入数据 data
 			@param i 要插入的位置
 			@param data 要插入的数据
 		*/
 		inline void Insert( const int i , const T& data  )
 		{
-			ZP_ASSERT( i < 0 || i > Count() );   
+			ZP_ASSERT( i >= 0 || i <= Count() );   
+
 			if( i == 0 )
 			{
 				PushFront( data );
@@ -352,7 +386,7 @@ namespace ZPUTIL
 		*/
 		inline void DeleteAt( const int i )
 		{
-			ZP_ASSERT( i < 0 || i >= Count() ); 
+			ZP_ASSERT( i >= 0 || i < Count() ); 
 
 			int c = 0;
 			LinkNode* lp_del_node = m_lp_head;
@@ -409,13 +443,33 @@ namespace ZPUTIL
 
 			const LinkNode* p = list.Head();
 			const LinkNode* end = list.Head();
-			do{
-				const LinkNode* tmp = p->Next();
+			do{ 
 				this->PushBack( p->Data() );
-				p = tmp;
+				p = p->Next();
 			}while( p != end );
 
 			m_count = list.Count();
+		}
+
+		/**
+		* @brief 在当前链表处附加一个链表
+		* @param list 要附加的链表
+		*/
+		inline LinkListT& Append( const LinkListT& list )
+		{
+			if( list.IsEmpty() )
+			{
+				return *this;
+			}
+
+			const LinkNode* p = list.Head();
+			const LinkNode* end = list.Head();
+			do{ 
+				this->PushBack( p->Data() );
+				p = p->Next();
+			}while( p != end );
+
+			return *this;
 		}
 
 		/**
@@ -565,17 +619,17 @@ namespace ZPUTIL
 		/**
 			@brief 返回指向链表起始迭代器
 			@return 指向链表起始的迭代器
-		*/
-		inline Iterator Begin(void)
-		{
-			return Iterator( this );
-		}
+			*/
+			inline Iterator Begin(void) 
+			{
+				return Iterator( this );
+			}
 
 		/**
 			@brief 返回指向链表结尾的迭代器
 			@return 指向链表结尾的迭代器
 		*/
-		inline Iterator End(void)
+		inline Iterator End(void) 
 		{
 			Iterator it(this);
 			it.CurrNode( NULL );

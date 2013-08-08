@@ -1,7 +1,7 @@
 #ifndef ZP_SINGLETON
 #define ZP_SINGLETON
 
-namespace ZPUTIL
+namespace Util
 {
 	/**
 	* @class SingletonT
@@ -54,7 +54,7 @@ namespace ZPUTIL
 	};
 
 	 template<typename T>
-	T* ZPUTIL::SingletonT<T>::g_lp_inst = NULL;
+	T* Util::SingletonT<T>::g_lp_inst = NULL;
 
 }// namespace ZPUTIL
 

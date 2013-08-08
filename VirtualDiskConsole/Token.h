@@ -8,7 +8,7 @@
  * @version 1.0
  * @created 06-八月-2013 9:17:33
  */
-namespace Lexer_Sys
+namespace LexerSys
 { 
 	class Token {
 	public:  
@@ -41,14 +41,14 @@ namespace Lexer_Sys
 		 * @brief	 获取符号内容
 		 * @return 返回内容字符串
 		 */
-		ZPUTIL::String Name( void ) const { return m_name; }
+		Util::String Name( void ) const { return m_name; }
 
 		/**
 		 * @brief	 设置符号内容
 		 * @param 要设置的符号内容
 		 * @return void
 		 */
-		void Name( const ZPUTIL::String& name ){ m_name = name; }
+		void Name( const Util::String& name ){ m_name = name; }
 		 
 
 		/**
@@ -90,13 +90,13 @@ namespace Lexer_Sys
 		* @brief 在标记结尾处附加一个字符
 		* @param c 要附加的字符
 		*/
-		void Append( const ZPUTIL::String::XCHAR c  );
+		void Append( const Util::String::XCHAR c  );
 
 		/**
 		* @brief 在标记结尾处添加一个字符串
 		* @param str 要附加的字符串
 		*/
-		void Append( const ZPUTIL::String& str );
+		void Append( const Util::String& str );
 
 		/**
 		* @brief 将该符号清空
@@ -116,7 +116,7 @@ namespace Lexer_Sys
 
 		TokenType      m_type;			///>符号类型
 		bool				   m_legal;			///>该符号是否合法
-		ZPUTIL::String m_name;		///>符号内容字符串
+		Util::String m_name;		///>符号内容字符串
 
 	}; //class Token
 

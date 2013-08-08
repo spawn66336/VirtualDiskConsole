@@ -14,19 +14,29 @@ namespace FileSys
 	FileSys::Node::~Node()
 	{ 
 		this->Destroy();
+	} 
+
+	Util::String Node::PathName( void ) const
+	{
+		if( NULL == Parent() )
+		{
+			return m_name;
+		}
+
+		return Parent()->PathName() + "\\" +  m_name;
 	}
 
-	Node* FileSys::Node::FindNode( const ZPUTIL::String& name )
+	Node* FileSys::Node::FindNode( const Util::String& name )
 	{
 		if( this->IsFile() )
 		{
 			return NULL;
 		}
 
-		ZPUTIL::LinkListT<Node*>::Iterator it = m_child_nodes.Begin();
+		Util::LinkListT<Node*>::Iterator it = m_child_nodes.Begin();
 		while( it != m_child_nodes.End() )
 		{
-			if( (*it)->Name() == name )
+			if( 0 == (*it)->Name().ICmp(name) )
 			{
 				return (*it);
 			}
@@ -35,7 +45,7 @@ namespace FileSys
 		return NULL;
 	}
 
-	Node* FileSys::Node::CreateNode( const ZPUTIL::String& name , const NodeType type  )
+	Node* FileSys::Node::CreateNode( const Util::String& name , const NodeType type  )
 	{
 		if( this->IsFile() )
 		{
@@ -66,14 +76,14 @@ namespace FileSys
 		return lp_node;
 	}
 
-	bool Node::DeleteNode( const ZPUTIL::String& name  )
+	bool Node::DeleteNode( const Util::String& name  )
 	{
 		if( this->IsFile() )
 		{
 			return false;
 		}
 
-		ZPUTIL::LinkListT<Node*>::Iterator it = m_child_nodes.Begin();
+		Util::LinkListT<Node*>::Iterator it = m_child_nodes.Begin();
 		while( it != m_child_nodes.End() )
 		{
 			if( (*it)->Name() == name )
@@ -92,7 +102,7 @@ namespace FileSys
 		m_lp_parent = NULL;
 		if( m_child_nodes.Count() )
 		{ 
-			ZPUTIL::LinkListT<Node*>::Iterator it = m_child_nodes.Begin();
+			Util::LinkListT<Node*>::Iterator it = m_child_nodes.Begin();
 			while( it != m_child_nodes.End() )
 			{
 				(*it)->DeleteThis();
@@ -107,4 +117,6 @@ namespace FileSys
 		ZP_ASSERT( NULL != visitor );
 		visitor->Visit( this );
 	} 
+
+
 }

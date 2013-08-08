@@ -4,7 +4,7 @@
 #include "ZPDependency.h"
 #include "Token.h"
 
-namespace Lexer_Sys
+namespace LexerSys
 { 
 	class TokenList
 	{
@@ -49,8 +49,8 @@ namespace Lexer_Sys
 		const Token& CurrToken( void ) const;
 		 
 	private:
-		ZPUTIL::LinkListT<Token>::Iterator m_curr_token;	 //当前符号
-		ZPUTIL::LinkListT<Token> m_token_list;				 //符号列表
+		Util::LinkListT<Token>::Iterator m_curr_token;	 //当前符号
+		Util::LinkListT<Token> m_token_list;				 //符号列表
 	};
 
 }//namespace Lexer_Sys

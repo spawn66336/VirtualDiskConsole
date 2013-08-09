@@ -45,10 +45,17 @@ int main(void)
 	VirtualDiskConsole::CreateInstance();
 	VirtualDiskConsole::GetInstance()->Init();
 
+	{//预加载命令
+		VirtualDiskConsole::GetInstance()->AddCommand("copy C:\\drivers\\win\\camera\\* drivers");
+		VirtualDiskConsole::GetInstance()->AddCommand("cd drivers");
+	}
+
 	while( 1 )
 	{
 		Util::String cmd_str;
 		int input_c = 0;
+
+		VirtualDiskConsole::GetInstance()->ExecuteCommandQueue();
 
 		VirtualDiskConsole::GetInstance()->PrintPrompt(); 
 		//只要用户没有按回车键

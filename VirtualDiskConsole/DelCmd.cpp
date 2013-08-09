@@ -31,7 +31,8 @@ void DelCmd::Execute( void )
 	{
 		for( int i = 0 ; i < m_paths.Count() ; i++ )
 		{ 
-			FileSys::Node*  lp_search_path_node = SearchNodeByPathTokens( m_paths.At( i ) );
+			Util::String path = m_paths.At(i).Path();
+			FileSys::Node*  lp_search_path_node = SearchNodeByPath( path );
 			if( NULL != lp_search_path_node )
 			{  
 				if( lp_search_path_node->IsFile() ){ 
@@ -40,9 +41,29 @@ void DelCmd::Execute( void )
 					lp_search_path_node->DeleteNodeByType( FileSys::Node::FILE_NODE );					 
 					return;
 				} 
-			}else{//若有一个非法路径则直接退出
-				m_result_output = "系统找不到指定的路径";
-				return;
+			}else{//若找不到所指定文件 
+
+				int last_back_slash_i = path.FindLastOf('\\');
+				Util::String parent_path = path.SubString( 0 , 
+					path.Length() - ( path.Length() - last_back_slash_i ) );
+				
+				Util::String filename = path.SubString( last_back_slash_i+1 , path.Length() - last_back_slash_i-1);
+
+				 lp_search_path_node = SearchNodeByPath( parent_path );
+
+				 if( NULL != lp_search_path_node )
+				 {
+						FileSys::Node* lp_del_node = NULL;
+						while( NULL != 
+							( lp_del_node = lp_search_path_node->FindFileNodeBySpec( filename ) ) )
+						{
+							lp_search_path_node->DeleteNode( lp_del_node->Name() );
+						}
+
+				 }else{
+					 m_result_output = "系统找不到指定的路径";
+					 return; 
+				 }
 			} 
 		}// for( int i = 0 ; i < m_paths.Count() ; i++ )
 	}//if( m_paths.Count() )

@@ -445,7 +445,7 @@
 				int last_find_pos = -1; 
 				int curr_find_pos = -1;
 				int start_pos = 0;
-				while( -1 != ( curr_find_pos == Find( c , start_pos ) ) )
+				while( -1 != ( curr_find_pos = Find( c , start_pos ) ) )
 				{
 					last_find_pos = curr_find_pos;
 					start_pos = curr_find_pos + 1;

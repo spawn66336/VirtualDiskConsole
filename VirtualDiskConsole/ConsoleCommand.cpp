@@ -47,7 +47,7 @@ Util::String ConsoleCommand::GetCurrPath( void )
 	return m_curr_path.Path();
 }
 
-FileSys::Node* ConsoleCommand::SearchNodeByPathTokens(  const LexerSys::SearchPath& path   )
+FileSys::Node* ConsoleCommand::SearchNodeByPath(  const LexerSys::SearchPath& path   )
 { 
 
 	LexerSys::SearchPath final_path;
@@ -68,7 +68,7 @@ FileSys::Node* ConsoleCommand::SearchNodeByPathTokens(  const LexerSys::SearchPa
 
 FileSys::Node* ConsoleCommand::SearchCurrPathNode( void )
 {
-	return SearchNodeByPathTokens( m_curr_path );
+	return SearchNodeByPath( m_curr_path );
 }
 
  

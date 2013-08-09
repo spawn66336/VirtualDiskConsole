@@ -198,14 +198,14 @@ namespace Util
 	template<typename T>
 	T& Util::VectorT<T>::At( const int i )
 	{
-		ZP_ASSERT( i < 0 || i >= m_count );
+		ZP_ASSERT( i >= 0 && i < m_count );
 		return m_buf[i];
 	}
 
 	template<typename T>
 	const T& Util::VectorT<T>::At( const int i ) const
 	{
-		ZP_ASSERT( i < 0 || i >= m_count );
+		ZP_ASSERT( i >= 0 && i < m_count );
 		return m_buf[i];
 	}
 

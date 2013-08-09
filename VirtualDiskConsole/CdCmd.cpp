@@ -36,7 +36,7 @@ void CdCmd::Execute( void )
 		return;
 	}else{//有一个路径
 			FileSys::Node* lp_search_node = 
-				SearchNodeByPathTokens( m_paths.At(0) );
+				SearchNodeByPath( m_paths.At(0) );
 			if( lp_search_node )
 			{
 				if( lp_search_node->IsFolder() )

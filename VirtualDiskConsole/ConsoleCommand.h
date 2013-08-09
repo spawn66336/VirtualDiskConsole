@@ -34,7 +34,7 @@ protected:
 
 	FileSys::Node* SearchCurrPathNode(void);
 
-	FileSys::Node* SearchNodeByPathTokens(  const LexerSys::SearchPath& path );
+	FileSys::Node* SearchNodeByPath(  const LexerSys::SearchPath& path );
 
 protected:  
 	LexerSys::SearchPath m_curr_path;										///>µ±Ç°Â·¾¶

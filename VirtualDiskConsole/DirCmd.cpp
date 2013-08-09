@@ -43,7 +43,7 @@ void DirCmd::Execute( void )
 	{
 		for( int i = 0 ; i < m_paths.Count() ; i++ )
 		{
-			FileSys::Node*  lp_search_path_node = SearchNodeByPathTokens( m_paths.At( i ) );
+			FileSys::Node*  lp_search_path_node = SearchNodeByPath( m_paths.At( i ) );
 			if( NULL != lp_search_path_node )
 			{ 
 				lp_search_path_node->GetFileListOutputString( m_result_output , recursive , folder_only );

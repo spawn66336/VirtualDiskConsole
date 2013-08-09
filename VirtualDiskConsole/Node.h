@@ -86,7 +86,9 @@ namespace FileSys
 		* @param name 要查找名称
 		* @return 查找的节点
 		*/
-		Node* FindNode( const Util::String& name );
+		Node* FindNode( const Util::String& name  );
+
+		Node* FindFileNodeBySpec( const Util::String& spec );
 
 		/**
 		* @brief 创建节点
@@ -127,7 +129,7 @@ namespace FileSys
 		*/
 		virtual void Accept( NodeVisitor* visitor );
 
-		virtual int Write( const void* data  , const int size  ){ return 0; }
+		virtual int Copy( const void* data  , const int size  ){ return 0; }
 
 		virtual int Read( const int offset ,  const int size , void* data ){ return 0; } 
 
@@ -145,14 +147,8 @@ namespace FileSys
 		*/
 		virtual int Size(void) const { return 0; }
 
-		/**
-		* @brief 逐字节比较两个节点所含数据的异同
-		* @param node 要与比较的节点
-		* @return 返回需要显示给用户的比较信息
-		*/
-		virtual bool  Compare( const Node* other_node , Util::String& output) const { return false; }
 
-		virtual bool  Compare( const void* data , const int size , Util::String& output  ) const{ return false;}
+		virtual bool  Compare( const void* data , const int size , Util::VectorT<char>& diff1 , Util::VectorT<char>&diff2  ) const{ return false;}
 	
 		/**
 		* @brief 获取文件列表打印字符串

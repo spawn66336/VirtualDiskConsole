@@ -20,10 +20,15 @@ namespace FileSys
 	{
 		if( IsRoot() || Parent()->IsRoot() )
 		{
-			return m_name;
+			return m_name + "\\" ;
 		}
 		 
-		return Parent()->PathName() + "\\" +  m_name;
+		if( IsFile() )
+		{
+			return Parent()->PathName() +  m_name;
+		}else{
+			return Parent()->PathName() + m_name + "\\";
+		}
 	}
 
 	Node* FileSys::Node::FindNode( const Util::String& name )
@@ -44,6 +49,29 @@ namespace FileSys
 		}
 		return NULL;
 	}
+
+	Node* Node::FindFileNodeBySpec( const Util::String& spec )
+	{
+		if( this->IsFile() )
+		{
+			return NULL;
+		}
+
+		Util::LinkListT<Node*>::Iterator it = m_child_nodes.Begin();
+		while( it != m_child_nodes.End() )
+		{
+			if( TRUE ==PathMatchSpec( (*it)->Name().Ptr() , spec.Ptr() ) )
+			{
+				if( (*it)->IsFile() )
+				{ 
+					return (*it);
+				}
+			}
+			it.Next();
+		}
+		return NULL;
+	}
+
 
 
 	bool Node::IsAncestor( Node* node )
@@ -74,25 +102,33 @@ namespace FileSys
 
 		Node* lp_node = FindNode( name );
 
-		if( NULL == lp_node )
+		if( NULL != lp_node )
 		{
-			switch( type )
-			{
-			case FILE_NODE:
-				ZP_SAFE_NEW( lp_node , FileNode );
-				break;
-			case FOLDER_NODE:
-				ZP_SAFE_NEW( lp_node , FolderNode );
-				break;
-			default:
-				break;
-			}
+			 if( ( type == FILE_NODE && lp_node->IsFile() )
+				 || ( type == FOLDER_NODE && lp_node->IsFolder() ) )
+			 {
+				 return lp_node;
+			 }
+			 lp_node = NULL;
+		}
 
-			ZP_ASSERT( NULL != lp_node ); 
-			lp_node->Parent( this );
-			lp_node->Name( name ); 
-			m_child_nodes.PushBack( lp_node );
-		} 
+		switch( type )
+		{
+		case FILE_NODE:
+			ZP_SAFE_NEW( lp_node , FileNode );
+			break;
+		case FOLDER_NODE:
+			ZP_SAFE_NEW( lp_node , FolderNode );
+			break;
+		default:
+			break;
+		}
+
+		ZP_ASSERT( NULL != lp_node ); 
+		lp_node->Parent( this );
+		lp_node->Name( name ); 
+		m_child_nodes.PushBack( lp_node ); 
+
 		return lp_node;
 	}
 
@@ -179,7 +215,9 @@ namespace FileSys
 	{
 
 	}
-	 
+
+
+
 
 
 

@@ -45,11 +45,15 @@ void VirtualDiskConsole::ExecuteCommandQueue( void )
 	while( m_cmd_queue.Size() )
 	{
 		cmd_count++;
+		std::cout<<m_cmd_queue.Front()<<std::endl;
 		ExecuteCommand( m_cmd_queue.Front() );
 		m_cmd_queue.Dequeue();
 	}
 
-	std::cout<<"总共执行了"<<cmd_count<<"个命令!"<<std::endl;
+	if( cmd_count )
+	{
+		std::cout<<"总共执行了"<<cmd_count<<"个命令!"<<std::endl;
+	}
 }
 
 void VirtualDiskConsole::Init( void )

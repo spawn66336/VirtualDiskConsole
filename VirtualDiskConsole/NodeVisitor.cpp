@@ -11,28 +11,29 @@ m_lp_final_search_node(NULL)
 
 NodeVisitor::~NodeVisitor(void)
 {
-	m_path_toks.Clear();
+	m_path.Clear();
 }
 
-void NodeVisitor::SetPathToks( const Util::LinkListT<LexerSys::Token>& toks )
+void NodeVisitor::SetPath( const LexerSys::SearchPath& path )
 {
-	m_path_toks = toks;
-	m_curr_tok = m_path_toks.Begin();
+	m_path = path; 
 } 
 
 LexerSys::Token NodeVisitor::GetCurrPathToken( void ) const
 {
-	return *m_curr_tok;
+	LexerSys::Token tok;
+    m_path.CurrToken(tok);
+	return tok;
 }
 
 bool NodeVisitor::HasNextToken( void ) const
 {
-	return m_curr_tok.HasNext();
+	return m_path.HasNext();
 }
 
 void NodeVisitor::MoveToNextToken( void )
 {
-	m_curr_tok.Next();
+	m_path.MoveToNextToken();
 }
 
 Node* NodeVisitor::GetSearchNode( void )

@@ -14,8 +14,7 @@ DirCmd::~DirCmd(void)
 
 void DirCmd::Execute( void )
 {
-	FileSys::Node* lp_curr_path_node =	SearchCurrPathNode();
-	m_curr_path = lp_curr_path_node->PathName();
+	FileSys::Node* lp_curr_path_node =	SearchCurrPathNode(); 
 
 	bool folder_only = false;
 	bool recursive = false;
@@ -48,6 +47,7 @@ void DirCmd::Execute( void )
 			if( NULL != lp_search_path_node )
 			{ 
 				lp_search_path_node->GetFileListOutputString( m_result_output , recursive , folder_only );
+				
 			}else{//若有一个非法路径
 				m_result_output = "系统找不到指定的路径";
 				return;

@@ -29,10 +29,10 @@ void PathSearchVisitor::Visit( Node* node )
 			{ 
 				node->Accept( this );
 				return; 
-			}else if( curr_tok.Name() == ".." ){
-
-				//若当前节点不为根节点
-				if( !node->IsRoot() )
+			}else if( curr_tok.Name() == ".." ){ 
+				 
+				if( !node->IsRoot() 
+					&& !( node->Parent()->IsRoot() ) )
 				{
 					node->Parent()->Accept( this );
 					return;
@@ -56,8 +56,7 @@ void PathSearchVisitor::Visit( Node* node )
 		}else{//找到要找节点
 			m_lp_final_search_node = node;
 			return;
-		}
-
+		} 
 	}//if( NULL != node ) 
 	m_lp_final_search_node = NULL;
 } 

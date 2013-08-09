@@ -18,9 +18,7 @@ ConsoleCommand::~ConsoleCommand(void)
 
 void ConsoleCommand::SetCurrPath( const Util::String& curr_path )
 {
-	m_curr_path = curr_path;
-	m_curr_path_toks.Clear();
-	LexerSys::AnalysisPath( curr_path , m_curr_path_toks );
+	m_curr_path.Path( curr_path );
 } 
 
  
@@ -29,12 +27,12 @@ void ConsoleCommand::SetParamToks( const Util::LinkListT<LexerSys::Token>& param
 	m_params = params;
 }
 
-void ConsoleCommand::AddPath( const Util::LinkListT<LexerSys::Token>& path )
+void ConsoleCommand::AddPath( const LexerSys::SearchPath& path )
 {
 	m_paths.PushBack( path );
 }
 
-void ConsoleCommand::SetPaths( const Util::LinkListT<Util::LinkListT<LexerSys::Token>>& paths )
+void ConsoleCommand::SetPaths( const Util::LinkListT<LexerSys::SearchPath>& paths )
 {
 	m_paths = paths;
 } 
@@ -46,36 +44,31 @@ Util::String ConsoleCommand::GetResultOutput( void )
 
 Util::String ConsoleCommand::GetCurrPath( void )
 {
-	return m_curr_path;
+	return m_curr_path.Path();
 }
 
-FileSys::Node* ConsoleCommand::SearchNodeByPathTokens( 
-	const Util::LinkListT<LexerSys::Token>& path_toks   )
-{
-	const Util::LinkListT<LexerSys::Token>& curr_path_toks = m_curr_path_toks;
-	Util::LinkListT<LexerSys::Token> curr_path_toks_copy = curr_path_toks;
-	curr_path_toks_copy.PopFront();
+FileSys::Node* ConsoleCommand::SearchNodeByPathTokens(  const LexerSys::SearchPath& path   )
+{ 
 
-	Util::LinkListT<LexerSys::Token> final_path_toks;
+	LexerSys::SearchPath final_path;
 	//如果要找寻的路径不为绝对路径
-	if( !LexerSys::IsAbsolutePath( path_toks ) )
+	if( !path.IsAbsolutePath() )
 	{
-		final_path_toks = curr_path_toks_copy;
-		final_path_toks.Append( path_toks );
-	}else{
-		final_path_toks = path_toks;
-		final_path_toks.PopFront();
+		final_path = m_curr_path;
+		final_path.Append( path );
+	}else{//若为绝对路径
+		final_path = path; 
 	}
 
 	FileSys::PathSearchVisitor visitor;
-	visitor.SetPathToks( final_path_toks ); 
+	visitor.SetPath( final_path ); 
 	FileSys::FileSystem::GetInstance()->Accept( &visitor );
 	return visitor.GetSearchNode();
 }
 
 FileSys::Node* ConsoleCommand::SearchCurrPathNode( void )
 {
-	return SearchNodeByPathTokens( m_curr_path_toks );
+	return SearchNodeByPathTokens( m_curr_path );
 }
 
  

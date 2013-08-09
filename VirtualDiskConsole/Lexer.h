@@ -3,6 +3,7 @@
 
 #include "ZPDependency.h"
 #include "Token.h"
+#include "SearchPath.h"
 
 /**
  * @author zhangpeng
@@ -47,7 +48,7 @@ namespace LexerSys
 			* @brief 获得命令路径列表
 			* @return 获得命令路径列表
 			*/
-			virtual Util::LinkListT<Util::LinkListT<Token>>& GetCommandPaths( void )  { return m_paths; }
+			virtual Util::LinkListT<SearchPath>& GetCommandPaths( void )  { return m_paths; }
 
 			/**
 			 * @brief 分析所设置的字符串，从中分析出各种token
@@ -58,15 +59,7 @@ namespace LexerSys
 			 * @brief 清空解析器内容供下次再次分析
 			 */
 			virtual void Clear( void );
-
-
-#	if defined( ZP_DEBUG )
-			/**
-			* @brief 显示Debug信息
-			*/
-			void ShowDebugMessage( void );
-#endif
-
+			 
 		 protected:
 			 
 			 /**
@@ -93,23 +86,10 @@ namespace LexerSys
 			 Util::String m_str_buf;											///>待解析字符串
 			 Token m_cmd_head;											///>命令头
 			 Util::LinkListT<Token> m_options;						///>命令选项
-			 Util::LinkListT< Util::LinkListT<Token> > m_paths;  ///>路径名列表
+			 Util::LinkListT< SearchPath > m_paths;				///>路径名列表
 
 		};//class Lexer 
-
-		/**
-		* @brief 从路径名中分析出符号并存入传入的符号链表中
-		* @param str 待分析路径名
-		* @param tokens 分析出的符号
-		*/
-		 extern void AnalysisPath( const Util::String& str , Util::LinkListT<Token>& tokens );
-
-		 /**
-		* @brief 分析当前路径是否为绝对路径
-		* @param toks 待分析路径符号列表
-		* @return 返回是否为绝对路径
-		*/
-		 extern bool IsAbsolutePath( const Util::LinkListT<Token>& toks );
+ 
 
 }//namespace Lexer_Sys
  

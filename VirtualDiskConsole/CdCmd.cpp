@@ -18,8 +18,7 @@ CdCmd::~CdCmd(void)
 
 void CdCmd::Execute( void )
 { 
-	FileSys::Node* lp_curr_path_node =	SearchCurrPathNode();
-	m_curr_path = lp_curr_path_node->PathName();
+	FileSys::Node* lp_curr_path_node =	SearchCurrPathNode(); 
 
 	if( m_params.Count() > 0 )
 	{
@@ -33,34 +32,24 @@ void CdCmd::Execute( void )
 		m_result_output = "文件名、目录名或卷标语法不正确。";
 		return;
 	}else if( m_paths.Count() == 0 ){ 
-		m_result_output = m_curr_path; 
+		m_result_output = m_curr_path.Path(); 
 		return;
 	}else{//有一个路径
-		if( m_paths.At(0).At(0).Name() == ".." )
-		{
-			//若当前路径节点不为根
-			if( !lp_curr_path_node->IsRoot() )
-			{
-				lp_curr_path_node = lp_curr_path_node->Parent();
-				m_curr_path = lp_curr_path_node->PathName();
-				m_result_output = m_curr_path;
-			}
-		}else if( m_paths.At(0).At(0).Name() == "." ){
-			m_result_output = m_curr_path; 
-		}else{//搜索具体路径名 
 			FileSys::Node* lp_search_node = 
 				SearchNodeByPathTokens( m_paths.At(0) );
-
 			if( lp_search_node )
 			{
-				m_curr_path = lp_search_node->PathName();
-				m_result_output.Empty();
+				if( lp_search_node->IsFolder() )
+				{
+					m_curr_path = lp_search_node->PathName();
+					m_result_output.Empty();
+				}else{
+					m_result_output = "目录名无效";
+				}
 			}else{
 				m_result_output = "系统找不到指定路径";
 			} 
-		}
-	}
-
+	} 
 
 }
 

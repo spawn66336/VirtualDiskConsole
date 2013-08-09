@@ -13,7 +13,8 @@ namespace LexerSys
 
 	void Token::Clear( void )
 	{
-		m_type = NULL_TOKEN; 
+		m_type = UNKNOWN_TOKEN; 
+		m_subtype = NULL_TOKEN;
 		m_legal = true; 
 		m_name.Empty();
 	}
@@ -30,66 +31,52 @@ namespace LexerSys
 		m_name.ConvertToLowercast();
 	}
 
-	bool IsWildCardToken( const Token& tok )
-	{
-
-		Util::String tokname =  tok.Name(); 
-
-		if( tokname.IsEmpty() )
+	void Token::Analysis( void )
+	{ 
+		if( m_name.IsEmpty() )
 		{
-			return false;
-		}
-
-		if( tokname.At(0) == '*' )
-		{
-			return true;
-		}
-
-		return false;
+			m_subtype = NULL_TOKEN;
+		}else if( m_name.Length() == 2 ){ 
+			if( Util::IsAlpha( m_name.At(0) )  && m_name.At(1) == ':' )
+			{
+				m_subtype = DRIVE_TOKEN;
+			}
+		}else if( -1 != m_name.Find("*" , 0 ) ){
+			m_subtype = WILDCARD_TOKEN; 
+		}else if( -1 != m_name.Find("." , 0 ) ){
+			m_subtype = FILE_NODE_TOKEN;
+		}else{
+			m_subtype = FOLDER_NODE_TOKEN;
+		} 
 	}
 
-
-	bool IsDriveToken( const Token& tok )
+	Util::String Token::ExtractFileName( void ) const
 	{
-		if( tok.Name().Length() == 2 &&
-			Util::IsAlpha( tok.Name().At(0) ) &&
-			tok.Name().At(1) == ':'
-			)
+		int i = m_name.Find('.' , 0 );
+		if( i != -1 )
 		{
-			return true;
+			return m_name.SubString( 0 , i );
 		}
-		return false;
+		return m_name;
 	}
 
-
-	std::ostream& operator<<( std::ostream& o , const Token& tok )
+	Util::String Token::ExtractFileExtName( void ) const
 	{
-		Util::String type_name;
-		switch( tok.Type() )
+		if( SubType() != WILDCARD_TOKEN ||
+			SubType() != FILE_NODE_TOKEN )
 		{
-		case Token::NULL_TOKEN:
-			type_name = "NULL";
-			break;
-		case Token::CMD_TOKEN:
-			type_name = "CMD";
-			break;
-		case Token::OPTION_TOKEN:
-			type_name = "OPT";
-			break;
-		case Token::PATH_NODE_TOKEN:
-			type_name = "PATH";
-			break;
-		case Token::WILDCARD_TOKEN:
-			type_name = "WILDCARD";
-			break;
-		default:
-			type_name = "DEF";
-			break;
+			return Util::String();
 		}
 
-		o<<" ( "<<tok.Name()<<" "<<type_name<<" ) ";
-
-		return o;
+		int i = m_name.Find('.' , 0 );
+		if( i != -1 )
+		{
+			return m_name.SubString( i+1 , m_name.Length()-i-1); 
+		}
+		return Util::String();
 	}
 
+  
+
+ 
 }//namespace Lexer_Sys

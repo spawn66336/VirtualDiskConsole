@@ -5,17 +5,17 @@
 
 namespace CommandSys
 {
-	 
-class RmdirCmd : public ConsoleCommand
-{
-public:
-	RmdirCmd(void);
-	virtual ~RmdirCmd(void);
 
-	virtual void Execute( void );
+	class RmdirCmd : public ConsoleCommand
+	{
+	public:
+		RmdirCmd(void);
+		virtual ~RmdirCmd(void);
 
-	virtual void DeleteThis(void){ delete this; }
-};
+		virtual void Execute( void );
+
+		virtual void DeleteThis(void){ delete this; }
+	};
 
 }//namespace CommandSys
 

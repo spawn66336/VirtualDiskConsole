@@ -3,6 +3,7 @@
 
 #include "ZPDependency.h"
 #include "Token.h"
+#include "SearchPath.h"
 
 namespace FileSys
 {
@@ -15,7 +16,7 @@ namespace FileSys
 		NodeVisitor( void );
 		virtual ~NodeVisitor( void ); 
 
-		virtual void SetPathToks( const Util::LinkListT<LexerSys::Token>& toks );
+		virtual void SetPath( const LexerSys::SearchPath& path );
 
 		virtual LexerSys::Token GetCurrPathToken( void ) const;
 
@@ -31,8 +32,7 @@ namespace FileSys
 
 	protected:
 		typedef Util::LinkListT<LexerSys::Token> PathToks;
-		PathToks::Iterator m_curr_tok;		///>路径当前符号
-		PathToks m_path_toks;					///>路径符号列表
+		LexerSys::SearchPath m_path;		///>搜索路径
 		Node* m_lp_final_search_node;		///>当前节点
 		Util::String m_result_output_str;	///>获得访问结果字符串
 	};

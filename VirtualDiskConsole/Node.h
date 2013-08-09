@@ -36,9 +36,7 @@ namespace FileSys
 		* @brief 获得当前节点的路径全名
 		*/
 		Util::String PathName(void) const;
-
-
-
+		 
 		/**
 		* @brief 返回父节点
 		* @return 父节点指针
@@ -76,6 +74,14 @@ namespace FileSys
 		virtual bool IsFolder( void ) const { return false; }
 
 		/**
+		* @brief 传入的节点是否为当前节点祖先
+		* @return 返回是否为祖先
+		* @retval true 是祖先节点
+		* @retval false 不是祖先节点
+		*/
+		virtual bool IsAncestor( Node* node );
+
+		/**
 		* @brief 查找节点
 		* @param name 要查找名称
 		* @return 查找的节点
@@ -98,6 +104,11 @@ namespace FileSys
 		* @retval  false	 未找到节点
 		*/
 		bool DeleteNode( const Util::String& name  );
+
+		/**
+		* @brief 删除该节点下属所指定类型的节点
+		*/
+		void DeleteNodeByType( const NodeType type );
 
 		/**
 		* @brief 销毁结点自身信息

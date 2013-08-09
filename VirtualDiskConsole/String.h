@@ -346,7 +346,7 @@
 				@retval -1 未找到所指定字符串
 				@retval 0 ~ Length()-1 本字符串中含有c并返回第一个字符的位置
 			*/
-			inline int Find( const T c , const int start_pos )
+			inline int Find( const T c , const int start_pos ) const
 			{ 
 				//start_pos 位置越界，则直接返回查找失败
 				if( start_pos < 0 || start_pos >= Length() )
@@ -376,7 +376,7 @@
 				@retval -1 未找到所指定字符串
 				@retval 0 ~ Length()-1 本字符串中含有str并返回第一个字符的位置
 			*/
-			inline int Find( const StringT& str , const int start_pos )
+			inline int Find( const StringT& str , const int start_pos ) const
 			{
 				//若字符串为空则直接返回
 				if( str.IsEmpty() )
@@ -426,12 +426,57 @@
 				@param start_pos 开始查找的位置（以0开始的索引值）
 				@return int
 				@retval -1 未找到所指定字符串
-				@retval 0 ~ Length()-1 本字符串中含有str并返回第一个字符的位置
+				@retval 0 ~ Length()-1 找到了指定的字符串并返回待查字符串第一个字符在当前字符串的位置
 			*/
-			inline int Find( const T* str , const int start_pos  )
+			inline int Find( const T* str , const int start_pos  ) const
 			{
 				return this->Find( StringT( str ) , start_pos );
 			} 
+
+			/**
+				@brief 找到本字符串中最后一次字符c出现的位置
+				@param c 要查找的字符
+				@return 返回的找到的位置
+				@retval -1 未找到所指定字符串
+				@retval 0 ~ Length()-1 找到了指定的字符串并返回待查字符串第一个字符在当前字符串的位置
+			*/
+			inline int FindLastOf( const T c ) const
+			{ 
+				int last_find_pos = -1; 
+				int curr_find_pos = -1;
+				int start_pos = 0;
+				while( -1 != ( curr_find_pos == Find( c , start_pos ) ) )
+				{
+					last_find_pos = curr_find_pos;
+					start_pos = curr_find_pos + 1;
+				}
+				return last_find_pos;
+			}
+
+			/**
+				@brief 找到本字符串中最后一次str出现的位置
+				@param str 要查找的字符串
+				@return 返回的找到的位置
+				@retval -1 未找到所指定字符串
+				@retval 0 ~ Length()-1 找到了指定的字符串并返回待查字符串第一个字符在当前字符串的位置
+			*/
+			inline int FindLastOf( const StringT& str ) const 
+			{
+				if( str.IsEmpty() )
+				{
+					return -1;
+				}
+
+				int last_find_pos = -1; 
+				int curr_find_pos = -1;
+				int start_pos = 0;
+				while( -1 != ( curr_find_pos == Find( str , start_pos ) ) )
+				{
+					last_find_pos = curr_find_pos;
+					start_pos = curr_find_pos + str.Length();
+				}
+				return last_find_pos;
+			}
 
 			/**
 				@brief 返回本字符串 从第i个字符开始的长达len的子字符串

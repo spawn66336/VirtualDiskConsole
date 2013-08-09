@@ -511,7 +511,7 @@ namespace Util
 			{ 
 			}
 
-			Iterator( LinkListT* list ):
+			Iterator(  LinkListT* list ):
 			  m_list_ref( list ),
 			  m_lp_curr_node(NULL)
 			{
@@ -538,6 +538,11 @@ namespace Util
 			void MoveFirst( void ){ m_lp_curr_node = m_list_ref->Head(); }
 
 			/**
+			* @brief 将迭代器移动到最后一个元素
+			*/
+			void MoveLast( void ){ m_lp_curr_node = m_list_ref->Tail(); }
+
+			/**
 				@brief 是否还有下一个元素
 				@retval true 还有下一个元素
 				@retval false 没有下一个元素
@@ -562,6 +567,10 @@ namespace Util
 				}
 				return lp_ret_node->Data();
 			}
+
+			T& Data(void) { return m_lp_curr_node->Data(); }
+
+			const T& Data(void) const { return m_lp_curr_node->Data(); }
 
 			T& operator*()
 			{
@@ -620,7 +629,7 @@ namespace Util
 			@brief 返回指向链表起始迭代器
 			@return 指向链表起始的迭代器
 			*/
-			inline Iterator Begin(void) 
+			inline Iterator Begin(void)
 			{
 				return Iterator( this );
 			}
@@ -629,7 +638,7 @@ namespace Util
 			@brief 返回指向链表结尾的迭代器
 			@return 指向链表结尾的迭代器
 		*/
-		inline Iterator End(void) 
+		inline Iterator End(void)
 		{
 			Iterator it(this);
 			it.CurrNode( NULL );

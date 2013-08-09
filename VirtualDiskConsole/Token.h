@@ -15,10 +15,17 @@ namespace LexerSys
 
 		enum TokenType
 		{
-			NULL_TOKEN,
+			UNKNOWN_TOKEN = 0,
 			CMD_TOKEN,
 			OPTION_TOKEN,
-			PATH_NODE_TOKEN,
+			PATH_NODE_TOKEN
+		};
+
+		enum TokenSubType
+		{ 
+			NULL_TOKEN,
+			FOLDER_NODE_TOKEN,
+			FILE_NODE_TOKEN,
 			WILDCARD_TOKEN,
 			DRIVE_TOKEN
 		};
@@ -26,12 +33,13 @@ namespace LexerSys
 		/**
 		* @brief 默认构造函数
 		*/
-		 Token():m_type(NULL_TOKEN),m_legal(true){}
+		 Token():m_type(UNKNOWN_TOKEN),m_subtype(NULL_TOKEN),m_legal(true){}
 
 		 /**
 		 * @brief 拷贝构造函数
 		 */
-		 Token( const Token& token ):m_type( token.m_type ),m_name( token.m_name ),m_legal( token.m_legal ){}
+		 Token( const Token& token ):
+		 m_type( token.m_type ),m_subtype( token.m_subtype ),m_name( token.m_name ),m_legal( token.m_legal ){}
 
 		 /**
 		 * @brief 析构函数
@@ -50,22 +58,27 @@ namespace LexerSys
 		 * @return void
 		 */
 		void Name( const Util::String& name ){ m_name = name; }
-		 
-
+		  
 		/**
 		 *@brief  返回符号类型
 		 */
-		TokenType Type( void ){ return m_type; }
-
-		/**
-		* @brief 返回符号类型
-		*/
-		const TokenType Type( void ) const { return m_type; }
+		TokenType Type( void ) const { return m_type; }
+		 
 
 		/**
 		* @brief 设置标记类型
 		*/
 		void Type( const TokenType type ){ m_type = type; } 
+
+		/**
+		* @brief 获取标记子类型
+		*/
+		TokenSubType SubType( void ) const { return m_subtype; }
+
+		/**
+		* @brief 设置标记类型
+		*/
+		void SubType( const TokenSubType subtype ){ m_subtype = subtype; }
 
 		/**
 		* @brief 返回当前符号是否为合法
@@ -105,33 +118,37 @@ namespace LexerSys
 		void Clear(void);
 
 		/**
+		* @brief 从当前符号中提取文件名
+		* @remark 此函数只对于“通配符”于"文件名"类型符号有意义
+		*/
+		Util::String ExtractFileName( void ) const;
+
+		/**
+		* @brief 从当前符号中提取扩展名
+		* @remark 此函数只对于“通配符”于"文件名"类型符号有意义
+		*/ 
+		Util::String ExtractFileExtName( void ) const;
+		
+		/**
+		* @breif 分析当前符号是何种类型
+		*/
+		void Analysis(void);
+
+		/**
 		* @brief 赋值运算符重载
 		*/
 		Token& operator=( const Token& rhs );
-
-
-		friend std::ostream& operator<<( std::ostream& o , const Token& tok );
-		
-
+  
 	private:
 
 		TokenType      m_type;			///>符号类型
+		TokenSubType m_subtype;   ///>符号子类型
 		bool				   m_legal;			///>该符号是否合法
 		Util::String m_name;		///>符号内容字符串
 
 	}; //class Token
 
-	std::ostream& operator<<( std::ostream& o , const Token& tok );
-
-/**
-* @brief 查看当前标记是否为通配符
-*/
-extern	bool IsWildCardToken( const Token& tok );
-
-/**
-* @brief 查看当前标记是否为驱动盘符
-*/
-extern bool IsDriveToken( const Token& tok );
-
+	 
+	 
 }//namespace Lexer_Sys
 #endif //ZP_TOKEN

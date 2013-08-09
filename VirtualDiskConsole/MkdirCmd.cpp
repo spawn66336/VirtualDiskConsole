@@ -25,23 +25,27 @@ void CommandSys::MkdirCmd::Execute( void )
 		return;
 	}
 
+	if( 0 == m_paths.Count() )
+	{
+		m_result_output = "命令语法不正确";
+		return;
+	}
+
 	for( int i = 0 ; i < m_paths.Count() ; i++ )
 	{ 
-			Util::LinkListT<LexerSys::Token> path_toks = m_paths.At(i);
-			Util::LinkListT<LexerSys::Token> final_path_toks;
+			LexerSys::SearchPath path = m_paths.At(i);
+			LexerSys::SearchPath final_path;
 
 			//如果要找寻的路径不为绝对路径
-			if( !LexerSys::IsAbsolutePath( path_toks ) )
+			if( !path.IsAbsolutePath() )
 			{
-				final_path_toks = m_curr_path_toks;
-				final_path_toks.Append( path_toks );
-				final_path_toks.PopFront();
+				final_path = m_curr_path;
+				final_path.Append( path ); 
 			}else{
 
-				if( 0 == path_toks.At(0).Name().ICmp( "c:" ) )
+				if( 0 == path.At(0).Name().ICmp( "c:" ) )
 				{
-					final_path_toks = path_toks;
-					final_path_toks.PopFront();
+					final_path = path; 
 				}else{
 					m_result_output = "系统找不到指定的路径";
 					return;
@@ -49,7 +53,7 @@ void CommandSys::MkdirCmd::Execute( void )
 			}
 
 			FileSys::CreateDirVisitor visitor;
-			visitor.SetPathToks( final_path_toks );
+			visitor.SetPath( final_path );
 			FileSys::FileSystem::GetInstance()->Accept( &visitor ); 
 			
 	}//for( int i = 0 ; i < m_paths.Count() ; i++ )

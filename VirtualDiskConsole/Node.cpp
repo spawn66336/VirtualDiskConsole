@@ -18,11 +18,11 @@ namespace FileSys
 
 	Util::String Node::PathName( void ) const
 	{
-		if( NULL == Parent() )
+		if( IsRoot() || Parent()->IsRoot() )
 		{
 			return m_name;
 		}
-
+		 
 		return Parent()->PathName() + "\\" +  m_name;
 	}
 
@@ -44,6 +44,26 @@ namespace FileSys
 		}
 		return NULL;
 	}
+
+
+	bool Node::IsAncestor( Node* node )
+	{
+		Node* lp_parent_node = Parent();
+		while(
+				NULL != lp_parent_node &&
+			   lp_parent_node != node 
+			   )
+		{
+			lp_parent_node = lp_parent_node->Parent();
+		}
+
+		if( lp_parent_node )
+		{
+			return true;
+		}
+		return false;
+	}
+
 
 	Node* FileSys::Node::CreateNode( const Util::String& name , const NodeType type  )
 	{
@@ -97,6 +117,43 @@ namespace FileSys
 		return false;
 	}
 
+
+	void Node::DeleteNodeByType( const NodeType type )
+	{
+		if( this->IsFile() )
+		{
+			return;
+		}
+
+		Util::LinkListT<Node*>::Iterator it = m_child_nodes.Begin();
+		while( it != m_child_nodes.End() )
+		{
+			switch( type )
+			{
+			case FILE_NODE:
+				if( (*it)->IsFile() )
+				{
+					(*it)->DeleteThis(); 
+					it = m_child_nodes.Erase( it ); 
+					continue;
+				}
+				break;
+			case FOLDER_NODE:
+				if( (*it)->IsFolder() )
+				{
+					(*it)->DeleteThis();
+					it = m_child_nodes.Erase( it ); 
+					continue;
+				}
+				break;
+			default:
+				break;
+			} 
+
+			it.Next();
+		}//while( it != m_child_nodes.End() )
+	}
+
 	void Node::Destroy( void )
 	{ 
 		m_lp_parent = NULL;
@@ -122,6 +179,8 @@ namespace FileSys
 	{
 
 	}
+	 
+
 
 
 }

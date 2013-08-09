@@ -51,9 +51,9 @@ Util::String LexerSys::Lexer::AnalysisCmdHead( const Util::String& str )
 
 	m_cmd_head.Type( Token::CMD_TOKEN );
 
-	while( i < str.Length() )
+	while( i < final_str.Length() )
 	{
-		Util::String::XCHAR c = str.At( i );
+		Util::String::XCHAR c = final_str.At( i );
 		if( Util::IsAlpha( c ) )
 		{
 			m_cmd_head.Append( c );
@@ -123,25 +123,52 @@ Util::String LexerSys::Lexer::AnalysisCmdPaths( const Util::String& str )
 	Util::String final_str = str;
 	final_str.TrimLeft(); 
 
+	//从命令字符串中提取出的字符
 	Util::LinkListT<Util::String> paths;
 
 	Util::String curr_path;
-
+	bool is_double_quotes = false;
+	
 	while(  i < final_str.Length() )
 	{
-		Util::String::XCHAR c =  final_str.At( i );
-		//若不为空白符
-		if( !Util::IsWhiteChar( c ) )
-		{
-			curr_path.Append( c );
-		}else{
-			//若字符串不为空
-			if( !curr_path.IsEmpty() )
-			{
-				paths.PushBack( curr_path );
-				curr_path.Empty();
-			} 
-		}
+				Util::String::XCHAR c =  final_str.At( i );
+		  
+				if( is_double_quotes )
+				{ 
+							//若碰到分隔符
+							if( c != '"' )
+							{ 
+								curr_path.Append( c );
+							}else{
+								//若字符串不为空
+								if( !curr_path.IsEmpty() )
+								{
+									paths.PushBack( curr_path );
+									curr_path.Empty();
+									is_double_quotes = false;
+								} 
+							}
+				}else{
+						if( c == '"' )
+						{
+							is_double_quotes = true;
+							i++;
+							continue;
+						}
+
+						if( !Util::IsWhiteChar(c) )
+						{
+							curr_path.Append( c );
+						}else{
+							//若字符串不为空
+							if( !curr_path.IsEmpty() )
+							{
+								paths.PushBack( curr_path );
+								curr_path.Empty(); 
+							} 
+						}
+				}
+
 		i++;
 	}//while( i < final_str.Length() )
 
@@ -150,120 +177,26 @@ Util::String LexerSys::Lexer::AnalysisCmdPaths( const Util::String& str )
 	{
 		paths.PushBack( curr_path );
 		curr_path.Empty();
+		is_double_quotes = false;
 	}
 
 	//将每个路径拆解为符号列表
 	Util::LinkListT<Util::String>::Iterator it = paths.Begin();
 	while( it != paths.End() )
 	{
-		Util::LinkListT<Token> tokens;
-		AnalysisPath( *it , tokens );
-		if( tokens.Count() )
+		SearchPath path;
+		path.Path(*it); 
+		if( !path.IsEmpty() )
 		{
-			m_paths.PushBack( tokens );
+			m_paths.PushBack( path );
 		}
 		it.Next();
 	}
 	final_str.Empty();
 	return final_str;
 }
+  
 
-void LexerSys::AnalysisPath( const Util::String& str , Util::LinkListT<Token>& tokens )
-{
-	Util::String str_copy = str;
-	str_copy.ClearAllWhiteChars();
-	str_copy.ConvertToLowercast();
-
-	int i = 0;
-	Token curr_token;
-	curr_token.Type( Token::PATH_NODE_TOKEN );
-	while( i < str_copy.Length() )
-	{
-		Util::String::XCHAR c = str_copy.At( i );
-		//若不是目录分隔符
-		if( c != '\\' && c != '"' && c != '“' )
-		{ 
-			curr_token.Append( c );
-		}else{ 
-
-			//若当前符号不为空则加入列表
-			if( !curr_token.IsEmpty() )
-			{
-				if( IsWildCardToken( curr_token ) )
-				{
-					curr_token.Type( Token::WILDCARD_TOKEN );
-				}else if( IsDriveToken( curr_token ) ){
-					curr_token.Type( Token::DRIVE_TOKEN );
-				}
-				tokens.PushBack( curr_token );
-			}
-			curr_token.Clear();
-			curr_token.Type( Token::PATH_NODE_TOKEN );
-		} 
-		i++;
-	}//while( i < str_copy.Length() )
-
-	//若当前符号不为空则放入列表
-	if( !curr_token.IsEmpty() )
-	{
-		if( IsWildCardToken( curr_token ) )
-		{
-			curr_token.Type( Token::WILDCARD_TOKEN );
-		}else if( IsDriveToken( curr_token ) ){
-			curr_token.Type( Token::DRIVE_TOKEN );
-		}
-		tokens.PushBack( curr_token );
-		curr_token.Clear();
-	} 
-}
-
-
-bool IsAbsolutePath( const Util::LinkListT<Token>& toks )
-{
-	if( toks.Count() )
-	{
-		
-		if( toks.At(0).Type() == Token::DRIVE_TOKEN  )
-		{
-			return true;
-		}
-	}
-	return false;
-}
-
-
-
-#	if defined( ZP_DEBUG ) 
-void LexerSys::Lexer::ShowDebugMessage( void )
-{
-	std::cout<<"原始字符串: "<<m_str_buf<<std::endl;
-	std::cout<<"cmd name: "<<m_cmd_head<<std::endl;
-
-	Util::LinkListT<Token>::Iterator it = m_options.Begin();
-	std::cout<<"options: ";
-	while( it != m_options.End() )
-	{
-		std::cout<<*it;
-		it.Next();
-	}//while( it != m_options.End() )
-	std::cout<<std::endl;
-
-	int path_count = 1;
-	Util::LinkListT<Util::LinkListT<Token>>::Iterator path_it = m_paths.Begin();
-	while( path_it != m_paths.End() )
-	{
-		std::cout<<"path"<<path_count<<": ";
-		Util::LinkListT<Token>::Iterator tok_it = (*path_it).Begin();
-		while( tok_it != (*path_it).End() )
-		{
-			std::cout<<*tok_it;
-			tok_it.Next();
-		}// while( tok_it != (*path_it).End() )
-		std::cout<<std::endl;
-		path_it.Next();
-	} // while( path_it != m_paths.End() )
-} 
-#endif //if defined( ZP_DEBUG )
 
 }//namespace Lexer_Sys
 

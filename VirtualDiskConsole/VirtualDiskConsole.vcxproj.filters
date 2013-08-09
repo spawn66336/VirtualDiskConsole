@@ -81,9 +81,6 @@
     <ClCompile Include="Token.cpp">
       <Filter>源文件\Lexer</Filter>
     </ClCompile>
-    <ClCompile Include="TokenList.cpp">
-      <Filter>源文件\Lexer</Filter>
-    </ClCompile>
     <ClCompile Include="NodeVisitor.cpp">
       <Filter>源文件\FileSys</Filter>
     </ClCompile>
@@ -104,6 +101,9 @@
     </ClCompile>
     <ClCompile Include="CreateDirVisitor.cpp">
       <Filter>源文件\FileSys</Filter>
+    </ClCompile>
+    <ClCompile Include="SearchPath.cpp">
+      <Filter>源文件</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -164,9 +164,6 @@
     <ClInclude Include="Token.h">
       <Filter>头文件\Lexer</Filter>
     </ClInclude>
-    <ClInclude Include="TokenList.h">
-      <Filter>头文件\Lexer</Filter>
-    </ClInclude>
     <ClInclude Include="Queue.h">
       <Filter>头文件\Util</Filter>
     </ClInclude>
@@ -193,6 +190,12 @@
     </ClInclude>
     <ClInclude Include="CreateDirVisitor.h">
       <Filter>头文件\FileSys</Filter>
+    </ClInclude>
+    <ClInclude Include="SearchPath.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="ZPPlatform.h">
+      <Filter>头文件</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

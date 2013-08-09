@@ -54,6 +54,7 @@
     <Link>
       <SubSystem>Console</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
+      <AdditionalDependencies>Shlwapi.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
@@ -71,6 +72,7 @@
       <GenerateDebugInformation>true</GenerateDebugInformation>
       <EnableCOMDATFolding>true</EnableCOMDATFolding>
       <OptimizeReferences>true</OptimizeReferences>
+      <AdditionalDependencies>Shlwapi.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
@@ -92,9 +94,9 @@
     <ClCompile Include="NodeVisitor.cpp" />
     <ClCompile Include="PathSearchVisitor.cpp" />
     <ClCompile Include="RmdirCmd.cpp" />
+    <ClCompile Include="SearchPath.cpp" />
     <ClCompile Include="String.cpp" />
     <ClCompile Include="Token.cpp" />
-    <ClCompile Include="TokenList.cpp" />
     <ClCompile Include="VirtualDiskConsole.cpp" />
   </ItemGroup>
   <ItemGroup>
@@ -117,14 +119,15 @@
     <ClInclude Include="PathSearchVisitor.h" />
     <ClInclude Include="Queue.h" />
     <ClInclude Include="RmdirCmd.h" />
+    <ClInclude Include="SearchPath.h" />
     <ClInclude Include="Singleton.h" />
     <ClInclude Include="Stack.h" />
     <ClInclude Include="String.h" />
     <ClInclude Include="Token.h" />
-    <ClInclude Include="TokenList.h" />
     <ClInclude Include="Vector.h" />
     <ClInclude Include="VirtualDiskConsole.h" />
     <ClInclude Include="ZPDependency.h" />
+    <ClInclude Include="ZPPlatform.h" />
     <ClInclude Include="ZPPredefine.h" />
     <ClInclude Include="ZPStdDependency.h" />
   </ItemGroup>

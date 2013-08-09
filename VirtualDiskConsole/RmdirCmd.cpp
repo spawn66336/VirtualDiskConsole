@@ -40,14 +40,24 @@ void CommandSys::RmdirCmd::Execute( void )
 			FileSys::Node*  lp_search_path_node = SearchNodeByPathTokens( m_paths.At( i ) );
 			if( NULL != lp_search_path_node )
 			{ 
-				if( lp_search_path_node->IsFile() || lp_search_path_node->IsRoot())
+				if( lp_search_path_node->IsFile() || lp_search_path_node->Parent()->IsRoot() )
 				{
 					m_result_output = "目录名无效";
 					return;
 				}
 
 				if( lp_search_path_node->IsLeaf() || recursive ){
-					lp_search_path_node->Parent()->DeleteNode( lp_search_path_node->Name() );
+
+					FileSys::Node* lp_curr_path_node =	SearchCurrPathNode(); 
+					//待删除的节点不可为当前路径节点祖先
+					if( lp_search_path_node != lp_curr_path_node 
+						&& !lp_curr_path_node->IsAncestor( lp_search_path_node )  )
+					{
+						lp_search_path_node->Parent()->DeleteNode( lp_search_path_node->Name() );
+					}else{
+						m_result_output = "有子文件夹正在被使用,无法删除该目录!";
+						return;
+					} 
 				}else{
 					m_result_output = "目录不是空的";
 					return;

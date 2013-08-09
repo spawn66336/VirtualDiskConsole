@@ -24,10 +24,7 @@ namespace FileSys
 				LexerSys::Token curr_tok = GetCurrPathToken();
 				MoveToNextToken();
 
-				if( 
-					curr_tok.Type() == LexerSys::Token::DRIVE_TOKEN ||
-					curr_tok.Type() == LexerSys::Token::WILDCARD_TOKEN 
-					)
+				if( curr_tok.SubType() == LexerSys::Token::WILDCARD_TOKEN )
 				{
 					m_result_output_str = "文件名、目录名或卷标语法不正确";
 					return;
@@ -37,10 +34,12 @@ namespace FileSys
 				{ 
 					node->Accept( this );
 					return; 
-				}else if( curr_tok.Name() == ".." ){
-
-					//若当前节点不为根节点
-					if( !node->IsRoot() )
+				}else if( curr_tok.Name() == ".." ){ 
+					
+					if( 
+						!node->IsRoot() 
+						&& !( node->Parent()->IsRoot() )
+						)
 					{
 						node->Parent()->Accept( this );
 						return;
@@ -64,10 +63,10 @@ namespace FileSys
 						{
 							node->Accept( this );
 							return;
-						}
-					}
+						}//if( NULL != node )
+					} 
 
-				} //if( node->IsFolder() )
+				} //if( node->IsFolder() ) 
 			}//if( HasNextToken() )
 		}//if( NULL != node ) 
 

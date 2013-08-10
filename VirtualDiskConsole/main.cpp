@@ -42,6 +42,8 @@ int main(void)
 	using namespace std;
 	using namespace LexerSys;
 
+	setlocale(LC_ALL,"");
+
 	PrintWelcomeHead();
 
 	VirtualDiskConsole::CreateInstance();
@@ -51,17 +53,22 @@ int main(void)
 		VirtualDiskConsole::GetInstance()->AddCommand("copy C:\\drivers\\win\\camera\\* drivers");
 		VirtualDiskConsole::GetInstance()->AddCommand("cd drivers");
 	}
+	 
+	char *pmb = (char *)malloc( MB_CUR_MAX );
 
 	while( 1 )
 	{
 		Util::String cmd_str;
-		int input_c = 0;
+		wint_t input_c = 0;
 
 		VirtualDiskConsole::GetInstance()->ExecuteCommandQueue();
 		VirtualDiskConsole::GetInstance()->PrintPrompt(); 
+		 
+
 		//只要用户没有按回车键
-		while( ( input_c=  _getch() ) != 13 )
+		while( ( input_c=  _getwch() ) != 13 )
 		{ 
+
 			//若为退格键
 			if( input_c == 8 )
 			{
@@ -70,9 +77,15 @@ int main(void)
 					cmd_str.PopBack();
 					PrintBackspace();
 				}
-			}else{
-				_putch( input_c );
-				cmd_str.Append( static_cast<char>( input_c ) );
+			}else{    
+				_putwch( input_c ); 
+
+				int size_convert = 0;
+				wctomb_s( &size_convert , pmb , MB_CUR_MAX , input_c );
+				for( int i = 0 ; i < size_convert ; i++ )
+				{
+					cmd_str.Append( pmb[i] );  
+				}
 			} 
 		}
 		std::cout<<std::endl;
@@ -96,6 +109,9 @@ int main(void)
 		VirtualDiskConsole::GetInstance()->ExecuteCommand( cmd_str );
 		VirtualDiskConsole::GetInstance()->PrintResult();
 	}
+	
+	free( pmb );
+	pmb = NULL;
 
 	VirtualDiskConsole::GetInstance()->Destroy();
 	VirtualDiskConsole::DestroyInstance();

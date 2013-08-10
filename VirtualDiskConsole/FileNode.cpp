@@ -20,11 +20,7 @@ FileNode::~FileNode(void)
 
 bool FileNode::IsBinaryFile( void ) const
 {
-	if( TRUE == PathMatchSpec( m_name.Ptr() , "*.txt") )
-	{
-		return true;
-	}
-	return false;
+	return !IsTextFilePath( m_name );
 }
 
 bool FileNode::Compare( const void* data , const int size , Util::VectorT<char>& diff1 , Util::VectorT<char>&diff2 ) const
@@ -96,6 +92,22 @@ int FileSys::FileNode::Read( const int offset , const int size , void* data )
 	memcpy( data , &m_data[offset] , sizeof( read_size ) );
 	return read_size;
 } 
+
+bool IsTextFilePath( const Util::String& path )
+{
+	if( 
+		TRUE == PathMatchSpec( path.Ptr() , "*.txt") 
+		|| TRUE == PathMatchSpec( path.Ptr() , "*.ini")
+		|| TRUE == PathMatchSpec( path.Ptr() , "*.xml")
+		|| TRUE == PathMatchSpec( path.Ptr() , "*.log")
+		|| TRUE == PathMatchSpec( path.Ptr() , "*.bat")
+		|| TRUE == PathMatchSpec( path.Ptr() , "*.html")
+		)
+	{
+		return true;
+	}
+	return false;
+}
 
 
  

@@ -14,6 +14,13 @@ RmdirCmd::~RmdirCmd(void)
 
 void CommandSys::RmdirCmd::Execute( void )
 {
+
+	if( IsPathLengthOutOfLimit() )
+	{
+		m_result_output = "路径名不能超过256个字符";
+		return;
+	}
+
 	bool recursive = false;
 
 	//分析参数

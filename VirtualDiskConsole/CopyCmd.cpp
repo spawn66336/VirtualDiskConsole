@@ -16,6 +16,12 @@ CopyCmd::~CopyCmd( void )
 
 void CommandSys::CopyCmd::Execute( void )
 {
+	if( IsPathLengthOutOfLimit() )
+	{
+		m_result_output = "路径名不能超过256个字符";
+		return;
+	}
+
 	if( m_params.Count() > 0 )
 	{
 		m_result_output = "命令不支持参数";

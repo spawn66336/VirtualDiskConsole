@@ -97,6 +97,11 @@ SearchPath& SearchPath::operator=( const Util::String& rhs )
 	return *this;
 }
 
+bool SearchPath::IsLengthOutOfLimit( void ) const
+{
+	return m_path.Length() >= 256 ;
+}
+
 
 void SearchPath::AnalysisPath( void )
 {
@@ -104,7 +109,7 @@ void SearchPath::AnalysisPath( void )
 
 	Util::String str_copy = m_path;
 	//str_copy.ClearAllWhiteChars();
-	str_copy.ConvertToLowercast();
+	//str_copy.ConvertToLowercast();
 
 	int i = 0;
 	Token curr_token;
@@ -200,6 +205,7 @@ bool SearchPath::GetWildCardToken( Token& tok )
 	}
 	return false;
 }
+
 
 
 }//namespace LexerSys

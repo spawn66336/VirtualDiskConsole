@@ -11,6 +11,8 @@
  
 #pragma warning(disable:4786)
 
+
+
 void PrintWelcomeHead(void)
 {
 	for( int i = 0 ; i < 70 ; i++ )
@@ -56,7 +58,6 @@ int main(void)
 		int input_c = 0;
 
 		VirtualDiskConsole::GetInstance()->ExecuteCommandQueue();
-
 		VirtualDiskConsole::GetInstance()->PrintPrompt(); 
 		//只要用户没有按回车键
 		while( ( input_c=  _getch() ) != 13 )

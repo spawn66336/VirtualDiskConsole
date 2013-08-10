@@ -14,6 +14,12 @@ DirCmd::~DirCmd(void)
 
 void DirCmd::Execute( void )
 {
+	if( IsPathLengthOutOfLimit() )
+	{
+		m_result_output = "路径名不能超过256个字符";
+		return;
+	}
+
 	FileSys::Node* lp_curr_path_node =	SearchCurrPathNode(); 
 
 	bool folder_only = false;

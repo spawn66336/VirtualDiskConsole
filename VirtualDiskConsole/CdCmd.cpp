@@ -20,6 +20,12 @@ void CdCmd::Execute( void )
 { 
 	FileSys::Node* lp_curr_path_node =	SearchCurrPathNode(); 
 
+	if( IsPathLengthOutOfLimit() )
+	{
+		m_result_output = "路径名不能超过256个字符";
+		return;
+	}
+
 	if( m_params.Count() > 0 )
 	{
 		m_result_output = "系统找不到指定路径";

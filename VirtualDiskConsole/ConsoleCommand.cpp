@@ -71,7 +71,18 @@ FileSys::Node* ConsoleCommand::SearchCurrPathNode( void )
 	return SearchNodeByPath( m_curr_path );
 }
 
- 
+bool ConsoleCommand::IsPathLengthOutOfLimit( void ) const
+{
+	for( int i = 0 ; i < m_paths.Count() ; i++ )
+	{
+		if( m_paths.At( i ).IsLengthOutOfLimit() )
+		{
+			return true;
+		}
+	}
+	return false;
+}
 
+  
 
 }// CommandSys

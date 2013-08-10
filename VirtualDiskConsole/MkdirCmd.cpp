@@ -19,6 +19,12 @@ MkdirCmd::~MkdirCmd(void)
 void CommandSys::MkdirCmd::Execute( void )
 {
 	
+	if( IsPathLengthOutOfLimit() )
+	{
+		m_result_output = "路径名不能超过256个字符";
+		return;
+	}
+
 	if( m_params.Count() )
 	{
 		m_result_output = "此命令不支持参数";

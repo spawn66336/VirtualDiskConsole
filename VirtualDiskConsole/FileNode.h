@@ -37,6 +37,11 @@ namespace FileSys
 		int	 m_size;							///>数据的大小（按字节计）
 	};
 
+	/**
+	* @brief 判断当前路径的文件是否为文本文件
+	*/
+	extern bool IsTextFilePath( const Util::String& path );
+
 }//namespace FileSys
 
 #endif // ZP_FILENODE

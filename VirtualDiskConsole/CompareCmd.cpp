@@ -1,4 +1,5 @@
 #include "CompareCmd.h"
+#include "FileNode.h"
 
 namespace CommandSys
 {
@@ -15,6 +16,12 @@ CompareCmd::~CompareCmd(void)
 
 void CompareCmd::Execute( void )
 {
+	if( IsPathLengthOutOfLimit() )
+	{
+		m_result_output = "路径名不能超过256个字符";
+		return;
+	}
+
 	if( m_params.Count() > 0 )
 	{
 		m_result_output = "命令不支持参数";
@@ -39,7 +46,7 @@ void CompareCmd::Execute( void )
 
 		//当两个文件都为文本文件时才会以字符串形式显示不同
 		bool show_text_diff = ( ( !lp_compare_node->IsBinaryFile() ) 
-			&& ( TRUE == PathMatchSpec( local_disk_filepath.Ptr() , "*.txt" ) ) );
+			&& FileSys::IsTextFilePath( local_disk_filepath.Ptr() )  );
 
 		if( lp_compare_node->IsFolder() )
 		{

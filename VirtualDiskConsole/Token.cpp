@@ -22,13 +22,15 @@ namespace LexerSys
 	void Token::Append( const Util::String::XCHAR c )
 	{
 		m_name.Append( c );
-		m_name.ConvertToLowercast();
+		m_name.TrimLeft();
+		//m_name.ConvertToLowercast();
 	}
 
 	void Token::Append( const Util::String& str )
 	{
 		m_name.Append( str );
-		m_name.ConvertToLowercast();
+		m_name.TrimLeft();
+		//m_name.ConvertToLowercast();
 	}
 
 	void Token::Analysis( void )

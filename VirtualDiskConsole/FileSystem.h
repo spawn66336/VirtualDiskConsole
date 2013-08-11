@@ -3,6 +3,8 @@
 
 #include "ZPDependency.h"
 
+#define FILESYSTEM_CAPACITY  (1<<30)
+
 namespace FileSys
 {
 	class Node;
@@ -21,6 +23,21 @@ namespace FileSys
 		Node* Root(void) const { return m_lp_root; }
 
 		/**
+		* @brief 返回文件系统的总共使用了多少内存(按字节计)
+		*/
+		int TotalSize(void);
+
+		/**
+		* @brief 返回文件系统的最大容量
+		*/
+		int Capacity( void ) const;
+
+		/**
+		* @brief 查看磁盘空间是否足够容纳size个字节
+		*/
+		bool HasEnoughSpace( const int size );
+
+		/**
 		* @brief 接受节点访问者访问
 		*/
 		void Accept( NodeVisitor* visitor );
@@ -32,6 +49,7 @@ namespace FileSys
 
 	private:
 		Node* m_lp_root;		///>文件系统根节点	
+		int m_capacity;			///>文件系统最大容量
 	};
 
 }//namespace FileSys

@@ -133,6 +133,8 @@ namespace FileSys
 
 		virtual int Read( const int offset ,  const int size , void* data ){ return 0; } 
 
+		virtual void ClearData( void ){ }
+
 		/**
 		* @brief 返回文件是否为二进制文件
 		* @return 返回文件是否是二进制文件
@@ -146,6 +148,9 @@ namespace FileSys
 		* @return 节点所含的数据大小按字节计
 		*/
 		virtual int Size(void) const { return 0; }
+
+
+		virtual int CalcTotalSize(void){ return 0; }
 
 
 		virtual bool  Compare( const void* data , const int size , Util::VectorT<char>& diff1 , Util::VectorT<char>&diff2  ) const{ return false;}

@@ -25,7 +25,11 @@ namespace FileSys
 
 		virtual int Read( const int offset , const int size , void* data  );
 
+		virtual void ClearData( void );
+
 		virtual int Size(void) const { return m_size; }
+
+		virtual int CalcTotalSize(void){ return Size(); }
 
 		virtual bool  Compare( const void* data , const int size  , Util::VectorT<char>& diff1 , Util::VectorT<char>&diff2    ) const;
 		  

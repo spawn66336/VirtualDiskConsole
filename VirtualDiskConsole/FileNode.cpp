@@ -13,8 +13,7 @@ m_data(NULL)
 
 FileNode::~FileNode(void)
 {
-	ZP_SAFE_DELETE_BUFFER( m_data );
-	m_size = 0;
+	this->ClearData();
 }
 
 
@@ -73,13 +72,16 @@ bool FileNode::Compare( const void* data , const int size , Util::VectorT<char>&
 
 int FileSys::FileNode::Copy( const void* data  , const int size  )
 {   
+
+	ZP_SAFE_DELETE_BUFFER( m_data ); 
+	m_size = 0;
+
 	if( NULL == data || 0 == size )
 	{
 		return 0;
 	}
 
-	ZP_SAFE_NEW_BUFFER( m_data , unsigned char , size );
-	memcpy( m_data , data , size );
+	m_data = reinterpret_cast<unsigned char*>( const_cast<void*>(data) );
 	m_size = size; 
 	return size;
 }
@@ -92,6 +94,14 @@ int FileSys::FileNode::Read( const int offset , const int size , void* data )
 	memcpy( data , &m_data[offset] , sizeof( read_size ) );
 	return read_size;
 } 
+
+
+void FileNode::ClearData( void )
+{
+	ZP_SAFE_DELETE_BUFFER( m_data ); 
+	m_size = 0;
+}
+
 
 bool IsTextFilePath( const Util::String& path )
 {

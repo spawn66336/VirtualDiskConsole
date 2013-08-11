@@ -8,6 +8,7 @@
 #include <atlstr.h>
 #include "VirtualDiskConsole.h"
 #include <conio.h>
+#include "FileSystem.h"
  
 #pragma warning(disable:4786)
 
@@ -93,17 +94,26 @@ int main(void)
 		if( cmd_str.Length() == 0 )
 		{
 			continue;;
-		}
+		} 
 
+		Util::String special_cmd = cmd_str;
 
-		Util::String exit_test_str = cmd_str;
+		special_cmd.ClearAllWhiteChars();
+		special_cmd.ConvertToLowercast();
 
-		exit_test_str.ClearAllWhiteChars();
-		exit_test_str.ConvertToLowercast();
-		if( exit_test_str == "exit" )
+		if( special_cmd == "exit" )
 		{
 			std::cout<<"退出系统!"<<std::endl;
 			break;
+		}else if( special_cmd == "show_volume"){
+
+			double used_size_bytes = static_cast<double>( FileSys::FileSystem::GetInstance()->TotalSize() ) / ( 1024.0f*1024.0f );
+			double virtualdisk_capacity =  static_cast<double>( FileSys::FileSystem::GetInstance()->Capacity() ) / ( 1024.0f*1024.0f );
+
+			std::cout<<"已使用空间："<<used_size_bytes<<"MB"<<endl;
+			std::cout<<"总空间："<<virtualdisk_capacity<<"MB"<<endl;
+			std::cout<<"已使用了："<<( used_size_bytes/virtualdisk_capacity)*100.0f<<"%"<<endl;
+			continue;
 		}
 
 		VirtualDiskConsole::GetInstance()->ExecuteCommand( cmd_str );

@@ -1,4 +1,5 @@
 #include "CopyCmd.h"
+#include "FileSystem.h"
 
 
 namespace CommandSys
@@ -109,6 +110,7 @@ void CommandSys::CopyCmd::Execute( void )
 			while( it != copy_src_filenames.End() )
 			{
 				FileSys::Node* lp_new_node = lp_search_node->CreateNode( *it , FileSys::Node::FILE_NODE );
+				lp_new_node->ClearData();
 				dst_file_nodes.PushBack( lp_new_node );
 				it.Next();
 			}
@@ -144,6 +146,10 @@ void CommandSys::CopyCmd::Execute( void )
 	//逐一拷贝文件
 	Util::LinkListT<Util::String>::Iterator path_it = copy_src_paths.Begin();
 	Util::LinkListT<FileSys::Node*>::Iterator dst_it = dst_file_nodes.Begin();
+	Util::StackT<FileSys::Node*> uncopy_files;
+
+	//实际拷贝文件的数量
+	int copy_count = 0;
 	while( 
 		dst_it != dst_file_nodes.End() &&
 		path_it != copy_src_paths.End() 
@@ -155,42 +161,95 @@ void CommandSys::CopyCmd::Execute( void )
 		//若文件打开失败
 		if( INVALID_HANDLE_VALUE == file )
 		{
+			uncopy_files.Push( *dst_it );
 			m_result_output.Append( Util::StringFormat("文件\"%s\"打开失败! \n", (*path_it).Ptr() ) );
 			dst_it.Next();
 			path_it.Next();
 			continue;
 		}
-		 
-		DWORD src_file_size = 0;
-		src_file_size = GetFileSize( file , NULL );
 
-		if( INVALID_FILE_SIZE != src_file_size )
+		m_result_output.Append( *path_it );
+		m_result_output.Append('\n');  
+		 
+		LARGE_INTEGER src_file_size;  
+		 
+		if( TRUE == GetFileSizeEx( file , &src_file_size ) )
 		{
+
+			if( 0 != src_file_size.HighPart )
+			{ 
+				m_result_output.Append( "文件过大本文件系统不支持!\n" );
+
+				uncopy_files.Push( *dst_it );
+				CloseHandle( file );
+				file = NULL; 
+				dst_it.Next();
+				path_it.Next();
+				continue;
+			} 
+
+			//查看当前文件系统是否有足够空间容纳该文件
+			if( ! FileSys::FileSystem::GetInstance()->HasEnoughSpace( src_file_size.LowPart ) )
+			{
+				m_result_output.Append("没有足够的空间容纳该文件：");
+				m_result_output.Append(*path_it);
+				m_result_output.Append('\n');
+
+				uncopy_files.Push( *dst_it );
+				CloseHandle( file );
+				file = NULL; 
+				dst_it.Next();
+				path_it.Next();
+				continue;
+			}
+
 			DWORD bytes_read = 0;
 			char* lp_read_buf = NULL;
 
-			ZP_SAFE_NEW_BUFFER( lp_read_buf , char , src_file_size );
+			//分配完的缓冲区交由FileNode释放
+			ZP_SAFE_NEW_BUFFER( lp_read_buf , char , src_file_size.LowPart );
 
-			ReadFile( file , lp_read_buf , src_file_size ,  &bytes_read , NULL );
+			ReadFile( file , lp_read_buf , src_file_size.LowPart ,  &bytes_read , NULL );
 
 			(*dst_it)->Copy( lp_read_buf , bytes_read );
+			 
+			lp_read_buf = NULL;
+		}else{
+			m_result_output.Append( "获取源拷贝文件大小失败!\n" );
 
-			ZP_SAFE_DELETE_BUFFER( lp_read_buf );
+			uncopy_files.Push( *dst_it );
+			CloseHandle( file );
+			file = NULL;
+			dst_it.Next();
+			path_it.Next();
+			continue;
 		}
 
 		CloseHandle( file );
 		file = NULL;
 
-		m_result_output.Append( *path_it );
-		m_result_output.Append('\n');  
-
+		copy_count++;
+		 
 		dst_it.Next();
 		path_it.Next();
 	}
 
 	m_result_output.Append( Util::StringFormat( "总共拷贝了%d个文件\n", 
-		copy_src_paths.Count() ) ); 
+		copy_count ) ); 
 	copy_src_paths.Clear(); 
+
+
+	//清除拷贝失败的文件
+	while( uncopy_files.Size() )
+	{
+		FileSys::Node* lp_uncopy_node = uncopy_files.Front();
+		if( lp_uncopy_node->Parent() )
+		{
+			lp_uncopy_node->Parent()->DeleteNode( lp_uncopy_node->Name() );
+			lp_uncopy_node = NULL;
+		}
+		uncopy_files.Pop();
+	}
 }
 
 

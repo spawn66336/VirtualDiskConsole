@@ -4,7 +4,8 @@
 namespace FileSys
 {  
 	FileSystem::FileSystem( void ):
-	m_lp_root(NULL)
+	m_lp_root(NULL),
+	m_capacity( FILESYSTEM_CAPACITY )
 	{
 		m_lp_root = new FolderNode;
 		m_lp_root->CreateNode("C:" , Node::FOLDER_NODE ); 
@@ -41,6 +42,21 @@ namespace FileSys
 		lp_drivers_node->CreateNode("3" , Node::FILE_NODE );
 	}
 
-	 
+	int FileSystem::TotalSize( void )
+	{
+		return m_lp_root->CalcTotalSize();
+	}
+
+	bool FileSystem::HasEnoughSpace( const int size )
+	{ 
+		return ( TotalSize() + size ) <= Capacity();
+	}
+
+	int FileSystem::Capacity( void ) const
+	{
+		return m_capacity;
+	}
+
+
 
 }//namespace FileSys

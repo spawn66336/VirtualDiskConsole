@@ -14,6 +14,20 @@ FolderNode::~FolderNode(void)
 {
 }
 
+
+int FolderNode::CalcTotalSize( void )
+{
+	int size = 0;
+	Util::LinkListT<Node*>::Iterator it = m_child_nodes.Begin();
+	while( it != m_child_nodes.End() )
+	{
+		size += (*it)->CalcTotalSize();
+		it.Next();
+	}
+	return size;
+}
+
+
 void FolderNode::GetFileListOutputString(  Util::String& output , const bool recursive  , const bool folder_only  ) const
 { 
 	int file_count = 0;
@@ -52,7 +66,7 @@ void FolderNode::GetFileListOutputString(  Util::String& output , const bool rec
 			FileSys::Node* lp_child_node = m_child_nodes.At( i ); 
 			if( lp_child_node->IsFolder() )
 			{
-				lp_child_node->GetFileListOutputString( output , recursive );
+				lp_child_node->GetFileListOutputString( output , recursive , folder_only );
 			}
 		}
 	}//if( recursive )

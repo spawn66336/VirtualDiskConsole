@@ -1,0 +1,278 @@
+\hypertarget{class_lexer_sys_1_1_token}{\section{Lexer\-Sys\-:\-:Token类 参考}
+\label{class_lexer_sys_1_1_token}\index{Lexer\-Sys\-::\-Token@{Lexer\-Sys\-::\-Token}}
+}
+\subsection*{Public 类型}
+\begin{DoxyCompactItemize}
+\item 
+enum {\bfseries Token\-Type} \{ {\bfseries U\-N\-K\-N\-O\-W\-N\-\_\-\-T\-O\-K\-E\-N} = 0, 
+{\bfseries C\-M\-D\-\_\-\-T\-O\-K\-E\-N}, 
+{\bfseries O\-P\-T\-I\-O\-N\-\_\-\-T\-O\-K\-E\-N}, 
+{\bfseries P\-A\-T\-H\-\_\-\-N\-O\-D\-E\-\_\-\-T\-O\-K\-E\-N}
+ \}
+\item 
+enum {\bfseries Token\-Sub\-Type} \{ \\*
+{\bfseries N\-U\-L\-L\-\_\-\-T\-O\-K\-E\-N}, 
+{\bfseries F\-O\-L\-D\-E\-R\-\_\-\-N\-O\-D\-E\-\_\-\-T\-O\-K\-E\-N}, 
+{\bfseries F\-I\-L\-E\-\_\-\-N\-O\-D\-E\-\_\-\-T\-O\-K\-E\-N}, 
+{\bfseries W\-I\-L\-D\-C\-A\-R\-D\-\_\-\-T\-O\-K\-E\-N}, 
+\\*
+{\bfseries D\-R\-I\-V\-E\-\_\-\-T\-O\-K\-E\-N}
+ \}
+\end{DoxyCompactItemize}
+\subsection*{Public 成员函数}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{class_lexer_sys_1_1_token_a819890dc4f25c556fe181407ae63d8db}{\hyperlink{class_lexer_sys_1_1_token_a819890dc4f25c556fe181407ae63d8db}{Token} ()}\label{class_lexer_sys_1_1_token_a819890dc4f25c556fe181407ae63d8db}
+
+\begin{DoxyCompactList}\small\item\em 默认构造函数 \end{DoxyCompactList}\item 
+\hypertarget{class_lexer_sys_1_1_token_a4d838ceee443d20a38654c4295b29810}{\hyperlink{class_lexer_sys_1_1_token_a4d838ceee443d20a38654c4295b29810}{Token} (const \hyperlink{class_lexer_sys_1_1_token}{Token} \&token)}\label{class_lexer_sys_1_1_token_a4d838ceee443d20a38654c4295b29810}
+
+\begin{DoxyCompactList}\small\item\em 拷贝构造函数 \end{DoxyCompactList}\item 
+\hypertarget{class_lexer_sys_1_1_token_a55d6dd054883e68770f770437d5d06fd}{virtual \hyperlink{class_lexer_sys_1_1_token_a55d6dd054883e68770f770437d5d06fd}{$\sim$\-Token} ()}\label{class_lexer_sys_1_1_token_a55d6dd054883e68770f770437d5d06fd}
+
+\begin{DoxyCompactList}\small\item\em 析构函数 \end{DoxyCompactList}\item 
+Util\-::\-String \hyperlink{class_lexer_sys_1_1_token_a05424f46049d2701d04936f456bd0896}{Name} (void) const 
+\begin{DoxyCompactList}\small\item\em 获取符号内容 \end{DoxyCompactList}\item 
+void \hyperlink{class_lexer_sys_1_1_token_ab540eab21dae6ab3f000976d301bb4e9}{Name} (const Util\-::\-String \&name)
+\begin{DoxyCompactList}\small\item\em 设置符号内容 \end{DoxyCompactList}\item 
+\hypertarget{class_lexer_sys_1_1_token_a8eeeb79c00169b894718ccb6c4691c24}{Token\-Type \hyperlink{class_lexer_sys_1_1_token_a8eeeb79c00169b894718ccb6c4691c24}{Type} (void) const }\label{class_lexer_sys_1_1_token_a8eeeb79c00169b894718ccb6c4691c24}
+
+\begin{DoxyCompactList}\small\item\em 返回符号类型 \end{DoxyCompactList}\item 
+\hypertarget{class_lexer_sys_1_1_token_a9248a2dacaa37bc8f40e36074c89a1f9}{void \hyperlink{class_lexer_sys_1_1_token_a9248a2dacaa37bc8f40e36074c89a1f9}{Type} (const Token\-Type type)}\label{class_lexer_sys_1_1_token_a9248a2dacaa37bc8f40e36074c89a1f9}
+
+\begin{DoxyCompactList}\small\item\em 设置标记类型 \end{DoxyCompactList}\item 
+\hypertarget{class_lexer_sys_1_1_token_a164d618718b0c60462fab5bb1a5c7aec}{Token\-Sub\-Type \hyperlink{class_lexer_sys_1_1_token_a164d618718b0c60462fab5bb1a5c7aec}{Sub\-Type} (void) const }\label{class_lexer_sys_1_1_token_a164d618718b0c60462fab5bb1a5c7aec}
+
+\begin{DoxyCompactList}\small\item\em 获取标记子类型 \end{DoxyCompactList}\item 
+\hypertarget{class_lexer_sys_1_1_token_a195ebf5be49fa07821f4a377fee400d8}{void \hyperlink{class_lexer_sys_1_1_token_a195ebf5be49fa07821f4a377fee400d8}{Sub\-Type} (const Token\-Sub\-Type subtype)}\label{class_lexer_sys_1_1_token_a195ebf5be49fa07821f4a377fee400d8}
+
+\begin{DoxyCompactList}\small\item\em 设置标记类型 \end{DoxyCompactList}\item 
+bool \hyperlink{class_lexer_sys_1_1_token_a994ef672b9f5fc0ca1bf78db1d16a0b3}{Is\-Legal} (void) const 
+\begin{DoxyCompactList}\small\item\em 返回当前符号是否为合法 \end{DoxyCompactList}\item 
+bool \hyperlink{class_lexer_sys_1_1_token_a5e58cc18e4b8ee49fecd2464d4664c03}{Is\-Empty} (void) const 
+\begin{DoxyCompactList}\small\item\em 返回当前符号是否为空 \end{DoxyCompactList}\item 
+void \hyperlink{class_lexer_sys_1_1_token_a6cede8c1a9179b7de9c98c1bf5e0a42d}{Set\-Legal} (const bool legal)
+\begin{DoxyCompactList}\small\item\em 设置符号对象是否合法 \end{DoxyCompactList}\item 
+void \hyperlink{class_lexer_sys_1_1_token_ab3755426459c46136881da2ba317f281}{Append} (const Util\-::\-String\-::\-X\-C\-H\-A\-R c)
+\begin{DoxyCompactList}\small\item\em 在标记结尾处附加一个字符 \end{DoxyCompactList}\item 
+void \hyperlink{class_lexer_sys_1_1_token_a6f43c50ec623e5c9af0e7ba482d1c688}{Append} (const Util\-::\-String \&str)
+\begin{DoxyCompactList}\small\item\em 在标记结尾处添加一个字符串 \end{DoxyCompactList}\item 
+\hypertarget{class_lexer_sys_1_1_token_a0e4316e6fe6a9367212b78e8c970281c}{void \hyperlink{class_lexer_sys_1_1_token_a0e4316e6fe6a9367212b78e8c970281c}{Clear} (void)}\label{class_lexer_sys_1_1_token_a0e4316e6fe6a9367212b78e8c970281c}
+
+\begin{DoxyCompactList}\small\item\em 将该符号清空 \end{DoxyCompactList}\item 
+Util\-::\-String \hyperlink{class_lexer_sys_1_1_token_aae845e7c82830849bc099d4f95bddf97}{Extract\-File\-Name} (void) const 
+\begin{DoxyCompactList}\small\item\em 从当前符号中提取文件名 \end{DoxyCompactList}\item 
+Util\-::\-String \hyperlink{class_lexer_sys_1_1_token_adadfd9980660ecac2eed6799200d94cc}{Extract\-File\-Ext\-Name} (void) const 
+\begin{DoxyCompactList}\small\item\em 从当前符号中提取扩展名 \end{DoxyCompactList}\item 
+void \hyperlink{class_lexer_sys_1_1_token_a2e07100b2852e1d4575eeb5f04452865}{Analysis} (void)
+\item 
+\hypertarget{class_lexer_sys_1_1_token_a0b71b8d04943cb99b4be70a3747c42fb}{\hyperlink{class_lexer_sys_1_1_token}{Token} \& \hyperlink{class_lexer_sys_1_1_token_a0b71b8d04943cb99b4be70a3747c42fb}{operator=} (const \hyperlink{class_lexer_sys_1_1_token}{Token} \&rhs)}\label{class_lexer_sys_1_1_token_a0b71b8d04943cb99b4be70a3747c42fb}
+
+\begin{DoxyCompactList}\small\item\em 赋值运算符重载 \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{详细描述}
+
+
+在文件 Token.\-h 第 13 行定义.
+
+
+
+\subsection{成员函数说明}
+\hypertarget{class_lexer_sys_1_1_token_a2e07100b2852e1d4575eeb5f04452865}{\index{Lexer\-Sys\-::\-Token@{Lexer\-Sys\-::\-Token}!Analysis@{Analysis}}
+\index{Analysis@{Analysis}!LexerSys::Token@{Lexer\-Sys\-::\-Token}}
+\subsubsection[{Analysis}]{\setlength{\rightskip}{0pt plus 5cm}void Lexer\-Sys\-::\-Token\-::\-Analysis (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}}\label{class_lexer_sys_1_1_token_a2e07100b2852e1d4575eeb5f04452865}
+分析当前符号是何种类型 
+
+在文件 Token.\-cpp 第 36 行定义.
+
+\hypertarget{class_lexer_sys_1_1_token_ab3755426459c46136881da2ba317f281}{\index{Lexer\-Sys\-::\-Token@{Lexer\-Sys\-::\-Token}!Append@{Append}}
+\index{Append@{Append}!LexerSys::Token@{Lexer\-Sys\-::\-Token}}
+\subsubsection[{Append}]{\setlength{\rightskip}{0pt plus 5cm}void Lexer\-Sys\-::\-Token\-::\-Append (
+\begin{DoxyParamCaption}
+\item[{const Util\-::\-String\-::\-X\-C\-H\-A\-R}]{c}
+\end{DoxyParamCaption}
+)}}\label{class_lexer_sys_1_1_token_ab3755426459c46136881da2ba317f281}
+
+
+在标记结尾处附加一个字符 
+
+
+\begin{DoxyParams}{参数}
+{\em c} & 要附加的字符 \\
+\hline
+\end{DoxyParams}
+
+
+在文件 Token.\-cpp 第 22 行定义.
+
+\hypertarget{class_lexer_sys_1_1_token_a6f43c50ec623e5c9af0e7ba482d1c688}{\index{Lexer\-Sys\-::\-Token@{Lexer\-Sys\-::\-Token}!Append@{Append}}
+\index{Append@{Append}!LexerSys::Token@{Lexer\-Sys\-::\-Token}}
+\subsubsection[{Append}]{\setlength{\rightskip}{0pt plus 5cm}void Lexer\-Sys\-::\-Token\-::\-Append (
+\begin{DoxyParamCaption}
+\item[{const Util\-::\-String \&}]{str}
+\end{DoxyParamCaption}
+)}}\label{class_lexer_sys_1_1_token_a6f43c50ec623e5c9af0e7ba482d1c688}
+
+
+在标记结尾处添加一个字符串 
+
+
+\begin{DoxyParams}{参数}
+{\em str} & 要附加的字符串 \\
+\hline
+\end{DoxyParams}
+
+
+在文件 Token.\-cpp 第 29 行定义.
+
+\hypertarget{class_lexer_sys_1_1_token_adadfd9980660ecac2eed6799200d94cc}{\index{Lexer\-Sys\-::\-Token@{Lexer\-Sys\-::\-Token}!Extract\-File\-Ext\-Name@{Extract\-File\-Ext\-Name}}
+\index{Extract\-File\-Ext\-Name@{Extract\-File\-Ext\-Name}!LexerSys::Token@{Lexer\-Sys\-::\-Token}}
+\subsubsection[{Extract\-File\-Ext\-Name}]{\setlength{\rightskip}{0pt plus 5cm}Util\-::\-String Lexer\-Sys\-::\-Token\-::\-Extract\-File\-Ext\-Name (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+) const}}\label{class_lexer_sys_1_1_token_adadfd9980660ecac2eed6799200d94cc}
+
+
+从当前符号中提取扩展名 
+
+\begin{DoxyRemark}{备注}
+此函数只对于“通配符”于\char`\"{}文件名\char`\"{}类型符号有意义 
+\end{DoxyRemark}
+
+
+在文件 Token.\-cpp 第 65 行定义.
+
+\hypertarget{class_lexer_sys_1_1_token_aae845e7c82830849bc099d4f95bddf97}{\index{Lexer\-Sys\-::\-Token@{Lexer\-Sys\-::\-Token}!Extract\-File\-Name@{Extract\-File\-Name}}
+\index{Extract\-File\-Name@{Extract\-File\-Name}!LexerSys::Token@{Lexer\-Sys\-::\-Token}}
+\subsubsection[{Extract\-File\-Name}]{\setlength{\rightskip}{0pt plus 5cm}Util\-::\-String Lexer\-Sys\-::\-Token\-::\-Extract\-File\-Name (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+) const}}\label{class_lexer_sys_1_1_token_aae845e7c82830849bc099d4f95bddf97}
+
+
+从当前符号中提取文件名 
+
+\begin{DoxyRemark}{备注}
+此函数只对于“通配符”于\char`\"{}文件名\char`\"{}类型符号有意义 
+\end{DoxyRemark}
+
+
+在文件 Token.\-cpp 第 55 行定义.
+
+\hypertarget{class_lexer_sys_1_1_token_a5e58cc18e4b8ee49fecd2464d4664c03}{\index{Lexer\-Sys\-::\-Token@{Lexer\-Sys\-::\-Token}!Is\-Empty@{Is\-Empty}}
+\index{Is\-Empty@{Is\-Empty}!LexerSys::Token@{Lexer\-Sys\-::\-Token}}
+\subsubsection[{Is\-Empty}]{\setlength{\rightskip}{0pt plus 5cm}bool Lexer\-Sys\-::\-Token\-::\-Is\-Empty (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}}\label{class_lexer_sys_1_1_token_a5e58cc18e4b8ee49fecd2464d4664c03}
+
+
+返回当前符号是否为空 
+
+\begin{DoxyReturn}{返回}
+当前符号是否为空 
+\end{DoxyReturn}
+
+\begin{DoxyRetVals}{返回值}
+{\em true} & 为空 \\
+\hline
+{\em false} & 不为空 \\
+\hline
+\end{DoxyRetVals}
+
+
+在文件 Token.\-h 第 95 行定义.
+
+\hypertarget{class_lexer_sys_1_1_token_a994ef672b9f5fc0ca1bf78db1d16a0b3}{\index{Lexer\-Sys\-::\-Token@{Lexer\-Sys\-::\-Token}!Is\-Legal@{Is\-Legal}}
+\index{Is\-Legal@{Is\-Legal}!LexerSys::Token@{Lexer\-Sys\-::\-Token}}
+\subsubsection[{Is\-Legal}]{\setlength{\rightskip}{0pt plus 5cm}bool Lexer\-Sys\-::\-Token\-::\-Is\-Legal (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}}\label{class_lexer_sys_1_1_token_a994ef672b9f5fc0ca1bf78db1d16a0b3}
+
+
+返回当前符号是否为合法 
+
+\begin{DoxyReturn}{返回}
+返回是否合法 
+\end{DoxyReturn}
+
+
+在文件 Token.\-h 第 87 行定义.
+
+\hypertarget{class_lexer_sys_1_1_token_a05424f46049d2701d04936f456bd0896}{\index{Lexer\-Sys\-::\-Token@{Lexer\-Sys\-::\-Token}!Name@{Name}}
+\index{Name@{Name}!LexerSys::Token@{Lexer\-Sys\-::\-Token}}
+\subsubsection[{Name}]{\setlength{\rightskip}{0pt plus 5cm}Util\-::\-String Lexer\-Sys\-::\-Token\-::\-Name (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}}\label{class_lexer_sys_1_1_token_a05424f46049d2701d04936f456bd0896}
+
+
+获取符号内容 
+
+\begin{DoxyReturn}{返回}
+返回内容字符串 
+\end{DoxyReturn}
+
+
+在文件 Token.\-h 第 53 行定义.
+
+\hypertarget{class_lexer_sys_1_1_token_ab540eab21dae6ab3f000976d301bb4e9}{\index{Lexer\-Sys\-::\-Token@{Lexer\-Sys\-::\-Token}!Name@{Name}}
+\index{Name@{Name}!LexerSys::Token@{Lexer\-Sys\-::\-Token}}
+\subsubsection[{Name}]{\setlength{\rightskip}{0pt plus 5cm}void Lexer\-Sys\-::\-Token\-::\-Name (
+\begin{DoxyParamCaption}
+\item[{const Util\-::\-String \&}]{name}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{class_lexer_sys_1_1_token_ab540eab21dae6ab3f000976d301bb4e9}
+
+
+设置符号内容 
+
+
+\begin{DoxyParams}{参数}
+{\em 要设置的符号内容} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{返回}
+void 
+\end{DoxyReturn}
+
+
+在文件 Token.\-h 第 60 行定义.
+
+\hypertarget{class_lexer_sys_1_1_token_a6cede8c1a9179b7de9c98c1bf5e0a42d}{\index{Lexer\-Sys\-::\-Token@{Lexer\-Sys\-::\-Token}!Set\-Legal@{Set\-Legal}}
+\index{Set\-Legal@{Set\-Legal}!LexerSys::Token@{Lexer\-Sys\-::\-Token}}
+\subsubsection[{Set\-Legal}]{\setlength{\rightskip}{0pt plus 5cm}void Lexer\-Sys\-::\-Token\-::\-Set\-Legal (
+\begin{DoxyParamCaption}
+\item[{const bool}]{legal}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{class_lexer_sys_1_1_token_a6cede8c1a9179b7de9c98c1bf5e0a42d}
+
+
+设置符号对象是否合法 
+
+
+\begin{DoxyParams}{参数}
+{\em 合法与否} & \\
+\hline
+\end{DoxyParams}
+
+
+在文件 Token.\-h 第 101 行定义.
+
+
+
+该类的文档由以下文件生成\-:\begin{DoxyCompactItemize}
+\item 
+Virtual\-Disk\-Console/Token.\-h\item 
+Virtual\-Disk\-Console/Token.\-cpp\end{DoxyCompactItemize}

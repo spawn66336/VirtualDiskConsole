@@ -1,0 +1,127 @@
+\hypertarget{class_file_sys_1_1_node_visitor}{\section{File\-Sys\-:\-:Node\-Visitor类 参考}
+\label{class_file_sys_1_1_node_visitor}\index{File\-Sys\-::\-Node\-Visitor@{File\-Sys\-::\-Node\-Visitor}}
+}
+类 File\-Sys\-:\-:Node\-Visitor 继承关系图\-:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_file_sys_1_1_node_visitor}
+\end{center}
+\end{figure}
+\subsection*{Public 成员函数}
+\begin{DoxyCompactItemize}
+\item 
+virtual void \hyperlink{class_file_sys_1_1_node_visitor_ac493ab442e116be15f0af8559d63e0e0}{Set\-Path} (const \hyperlink{class_lexer_sys_1_1_search_path}{Lexer\-Sys\-::\-Search\-Path} \&path)
+\begin{DoxyCompactList}\small\item\em 设置搜索路径 \end{DoxyCompactList}\item 
+virtual \hyperlink{class_lexer_sys_1_1_token}{Lexer\-Sys\-::\-Token} \hyperlink{class_file_sys_1_1_node_visitor_a2cfda47a2803438cb97b0e8b83dbdb79}{Get\-Curr\-Path\-Token} (void) const 
+\begin{DoxyCompactList}\small\item\em 获得搜索路径的当前符号 \end{DoxyCompactList}\item 
+\hypertarget{class_file_sys_1_1_node_visitor_add992fdbc0bad4e4bdc25025ce8e8a58}{virtual bool \hyperlink{class_file_sys_1_1_node_visitor_add992fdbc0bad4e4bdc25025ce8e8a58}{Has\-Next\-Token} (void) const }\label{class_file_sys_1_1_node_visitor_add992fdbc0bad4e4bdc25025ce8e8a58}
+
+\begin{DoxyCompactList}\small\item\em 是否还有下一个符号 \end{DoxyCompactList}\item 
+\hypertarget{class_file_sys_1_1_node_visitor_a2438bc4ed66436f340f02357461c2836}{virtual void \hyperlink{class_file_sys_1_1_node_visitor_a2438bc4ed66436f340f02357461c2836}{Move\-To\-Next\-Token} (void)}\label{class_file_sys_1_1_node_visitor_a2438bc4ed66436f340f02357461c2836}
+
+\begin{DoxyCompactList}\small\item\em 移动到搜索路径的下一个符号 \end{DoxyCompactList}\item 
+\hypertarget{class_file_sys_1_1_node_visitor_acb8de479df2e49b6b68ebe2aa1727d71}{virtual \hyperlink{class_file_sys_1_1_node}{Node} $\ast$ \hyperlink{class_file_sys_1_1_node_visitor_acb8de479df2e49b6b68ebe2aa1727d71}{Get\-Search\-Node} (void)}\label{class_file_sys_1_1_node_visitor_acb8de479df2e49b6b68ebe2aa1727d71}
+
+\begin{DoxyCompactList}\small\item\em 获得搜索到的节点 \end{DoxyCompactList}\item 
+\hypertarget{class_file_sys_1_1_node_visitor_a75c0566ce6177629732cc0fc8d500c59}{virtual Util\-::\-String \hyperlink{class_file_sys_1_1_node_visitor_a75c0566ce6177629732cc0fc8d500c59}{Get\-Result\-Output\-String} (void) const }\label{class_file_sys_1_1_node_visitor_a75c0566ce6177629732cc0fc8d500c59}
+
+\begin{DoxyCompactList}\small\item\em 获得搜索结果的输出字符串 \end{DoxyCompactList}\item 
+virtual void \hyperlink{class_file_sys_1_1_node_visitor_a3398560bc10e71a0b8fcaac57e5b58e2}{Visit} (\hyperlink{class_file_sys_1_1_node}{Node} $\ast$node)
+\begin{DoxyCompactList}\small\item\em 访问节点 \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Protected 类型}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{class_file_sys_1_1_node_visitor_aa0480a8d4c26e612bb11e8f1c7da929e}{typedef \hyperlink{class_util_1_1_link_list_t}{Util\-::\-Link\-List\-T}\\*
+$<$ \hyperlink{class_lexer_sys_1_1_token}{Lexer\-Sys\-::\-Token} $>$ {\bfseries Path\-Toks}}\label{class_file_sys_1_1_node_visitor_aa0480a8d4c26e612bb11e8f1c7da929e}
+
+\end{DoxyCompactItemize}
+\subsection*{Protected 属性}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{class_file_sys_1_1_node_visitor_a9985967f38e74d6e291330e7d609d21d}{\hyperlink{class_lexer_sys_1_1_search_path}{Lexer\-Sys\-::\-Search\-Path} {\bfseries m\-\_\-path}}\label{class_file_sys_1_1_node_visitor_a9985967f38e74d6e291330e7d609d21d}
+
+\item 
+\hypertarget{class_file_sys_1_1_node_visitor_adec163e2daf9387ddef7166162820881}{\hyperlink{class_file_sys_1_1_node}{Node} $\ast$ \hyperlink{class_file_sys_1_1_node_visitor_adec163e2daf9387ddef7166162820881}{m\-\_\-lp\-\_\-final\-\_\-search\-\_\-node}}\label{class_file_sys_1_1_node_visitor_adec163e2daf9387ddef7166162820881}
+
+\begin{DoxyCompactList}\small\item\em $>$搜索路径 \end{DoxyCompactList}\item 
+\hypertarget{class_file_sys_1_1_node_visitor_ad2f5269bc83504009525d7fde95e99bf}{Util\-::\-String \hyperlink{class_file_sys_1_1_node_visitor_ad2f5269bc83504009525d7fde95e99bf}{m\-\_\-result\-\_\-output\-\_\-str}}\label{class_file_sys_1_1_node_visitor_ad2f5269bc83504009525d7fde95e99bf}
+
+\begin{DoxyCompactList}\small\item\em $>$当前节点 \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{详细描述}
+
+
+在文件 Node\-Visitor.\-h 第 12 行定义.
+
+
+
+\subsection{成员函数说明}
+\hypertarget{class_file_sys_1_1_node_visitor_a2cfda47a2803438cb97b0e8b83dbdb79}{\index{File\-Sys\-::\-Node\-Visitor@{File\-Sys\-::\-Node\-Visitor}!Get\-Curr\-Path\-Token@{Get\-Curr\-Path\-Token}}
+\index{Get\-Curr\-Path\-Token@{Get\-Curr\-Path\-Token}!FileSys::NodeVisitor@{File\-Sys\-::\-Node\-Visitor}}
+\subsubsection[{Get\-Curr\-Path\-Token}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Lexer\-Sys\-::\-Token} File\-Sys\-::\-Node\-Visitor\-::\-Get\-Curr\-Path\-Token (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [virtual]}}}\label{class_file_sys_1_1_node_visitor_a2cfda47a2803438cb97b0e8b83dbdb79}
+
+
+获得搜索路径的当前符号 
+
+\begin{DoxyReturn}{返回}
+搜索路径的当前符号 
+\end{DoxyReturn}
+
+
+在文件 Node\-Visitor.\-cpp 第 22 行定义.
+
+\hypertarget{class_file_sys_1_1_node_visitor_ac493ab442e116be15f0af8559d63e0e0}{\index{File\-Sys\-::\-Node\-Visitor@{File\-Sys\-::\-Node\-Visitor}!Set\-Path@{Set\-Path}}
+\index{Set\-Path@{Set\-Path}!FileSys::NodeVisitor@{File\-Sys\-::\-Node\-Visitor}}
+\subsubsection[{Set\-Path}]{\setlength{\rightskip}{0pt plus 5cm}void File\-Sys\-::\-Node\-Visitor\-::\-Set\-Path (
+\begin{DoxyParamCaption}
+\item[{const {\bf Lexer\-Sys\-::\-Search\-Path} \&}]{path}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}}\label{class_file_sys_1_1_node_visitor_ac493ab442e116be15f0af8559d63e0e0}
+
+
+设置搜索路径 
+
+
+\begin{DoxyParams}{参数}
+{\em path} & 搜索路径 \\
+\hline
+\end{DoxyParams}
+
+
+在文件 Node\-Visitor.\-cpp 第 17 行定义.
+
+\hypertarget{class_file_sys_1_1_node_visitor_a3398560bc10e71a0b8fcaac57e5b58e2}{\index{File\-Sys\-::\-Node\-Visitor@{File\-Sys\-::\-Node\-Visitor}!Visit@{Visit}}
+\index{Visit@{Visit}!FileSys::NodeVisitor@{File\-Sys\-::\-Node\-Visitor}}
+\subsubsection[{Visit}]{\setlength{\rightskip}{0pt plus 5cm}virtual void File\-Sys\-::\-Node\-Visitor\-::\-Visit (
+\begin{DoxyParamCaption}
+\item[{{\bf Node} $\ast$}]{node}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}}\label{class_file_sys_1_1_node_visitor_a3398560bc10e71a0b8fcaac57e5b58e2}
+
+
+访问节点 
+
+
+\begin{DoxyParams}{参数}
+{\em node} & 待访问节点 \\
+\hline
+\end{DoxyParams}
+
+
+被 \hyperlink{class_file_sys_1_1_path_search_visitor_ac9e8ab4c8389b118ba6a57b053ac8005}{File\-Sys\-::\-Path\-Search\-Visitor} , 以及 \hyperlink{class_file_sys_1_1_create_dir_visitor_a02c79d46c769edbbcff38a59a97811ab}{File\-Sys\-::\-Create\-Dir\-Visitor} 重载.
+
+
+
+在文件 Node\-Visitor.\-h 第 55 行定义.
+
+
+
+该类的文档由以下文件生成\-:\begin{DoxyCompactItemize}
+\item 
+Virtual\-Disk\-Console/Node\-Visitor.\-h\item 
+Virtual\-Disk\-Console/Node\-Visitor.\-cpp\end{DoxyCompactItemize}

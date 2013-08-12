@@ -1,0 +1,353 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.4"/>
+<title>VirtualDiskConsole: CommandSys::ConsoleCommand类 参考</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td style="padding-left: 0.5em;">
+   <div id="projectname">VirtualDiskConsole
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 制作者 Doxygen 1.8.4 -->
+  <div id="navrow1" class="tabs">
+    <ul class="tablist">
+      <li><a href="index.html"><span>首页</span></a></li>
+      <li><a href="namespaces.html"><span>命名空间</span></a></li>
+      <li class="current"><a href="annotated.html"><span>类</span></a></li>
+      <li><a href="files.html"><span>文件</span></a></li>
+    </ul>
+  </div>
+  <div id="navrow2" class="tabs2">
+    <ul class="tablist">
+      <li><a href="annotated.html"><span>类列表</span></a></li>
+      <li><a href="classes.html"><span>类索引</span></a></li>
+      <li><a href="hierarchy.html"><span>类继承关系</span></a></li>
+      <li><a href="functions.html"><span>类成员</span></a></li>
+    </ul>
+  </div>
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><b>CommandSys</b></li><li class="navelem"><a class="el" href="class_command_sys_1_1_console_command.html">ConsoleCommand</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div class="header">
+  <div class="summary">
+<a href="#pub-methods">Public 成员函数</a> &#124;
+<a href="#pro-methods">Protected 成员函数</a> &#124;
+<a href="#pro-attribs">Protected 属性</a> &#124;
+<a href="class_command_sys_1_1_console_command-members.html">所有成员列表</a>  </div>
+  <div class="headertitle">
+<div class="title">CommandSys::ConsoleCommand类 参考</div>  </div>
+</div><!--header-->
+<div class="contents">
+<div class="dynheader">
+类 CommandSys::ConsoleCommand 继承关系图:</div>
+<div class="dyncontent">
+ <div class="center">
+  <img src="class_command_sys_1_1_console_command.png" usemap="#CommandSys::ConsoleCommand_map" alt=""/>
+  <map id="CommandSys::ConsoleCommand_map" name="CommandSys::ConsoleCommand_map">
+<area href="class_command_sys_1_1_cd_cmd.html" alt="CommandSys::CdCmd" shape="rect" coords="0,56,195,80"/>
+<area href="class_command_sys_1_1_compare_cmd.html" alt="CommandSys::CompareCmd" shape="rect" coords="205,56,400,80"/>
+<area href="class_command_sys_1_1_copy_cmd.html" alt="CommandSys::CopyCmd" shape="rect" coords="410,56,605,80"/>
+<area href="class_command_sys_1_1_del_cmd.html" alt="CommandSys::DelCmd" shape="rect" coords="615,56,810,80"/>
+<area href="class_command_sys_1_1_dir_cmd.html" alt="CommandSys::DirCmd" shape="rect" coords="820,56,1015,80"/>
+<area href="class_command_sys_1_1_mkdir_cmd.html" alt="CommandSys::MkdirCmd" shape="rect" coords="1025,56,1220,80"/>
+<area href="class_command_sys_1_1_rmdir_cmd.html" alt="CommandSys::RmdirCmd" shape="rect" coords="1230,56,1425,80"/>
+</map>
+ </div></div>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
+Public 成员函数</h2></td></tr>
+<tr class="memitem:a630c500ae469cc33afa8f502b73adcb3"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_command_sys_1_1_console_command.html#a630c500ae469cc33afa8f502b73adcb3">SetCurrPath</a> (const Util::String &amp;curr_path)</td></tr>
+<tr class="memdesc:a630c500ae469cc33afa8f502b73adcb3"><td class="mdescLeft">&#160;</td><td class="mdescRight">设置当前路径  <a href="#a630c500ae469cc33afa8f502b73adcb3">更多...</a><br/></td></tr>
+<tr class="separator:a630c500ae469cc33afa8f502b73adcb3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad467ade07437eef25535a0fc8dc42a02"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_command_sys_1_1_console_command.html#ad467ade07437eef25535a0fc8dc42a02">SetParamToks</a> (const <a class="el" href="class_util_1_1_link_list_t.html">Util::LinkListT</a>&lt; <a class="el" href="class_lexer_sys_1_1_token.html">LexerSys::Token</a> &gt; &amp;params)</td></tr>
+<tr class="memdesc:ad467ade07437eef25535a0fc8dc42a02"><td class="mdescLeft">&#160;</td><td class="mdescRight">设置当前命令用户所输入的参数列表  <a href="#ad467ade07437eef25535a0fc8dc42a02">更多...</a><br/></td></tr>
+<tr class="separator:ad467ade07437eef25535a0fc8dc42a02"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a28c05ba316393a029f5d6c708f4684b3"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_command_sys_1_1_console_command.html#a28c05ba316393a029f5d6c708f4684b3">AddPath</a> (const <a class="el" href="class_lexer_sys_1_1_search_path.html">LexerSys::SearchPath</a> &amp;path)</td></tr>
+<tr class="memdesc:a28c05ba316393a029f5d6c708f4684b3"><td class="mdescLeft">&#160;</td><td class="mdescRight">将路径加入命令的路径列表  <a href="#a28c05ba316393a029f5d6c708f4684b3">更多...</a><br/></td></tr>
+<tr class="separator:a28c05ba316393a029f5d6c708f4684b3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a469dcbd51921716a279346b313082fec"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_command_sys_1_1_console_command.html#a469dcbd51921716a279346b313082fec">SetPaths</a> (const <a class="el" href="class_util_1_1_link_list_t.html">Util::LinkListT</a>&lt; <a class="el" href="class_lexer_sys_1_1_search_path.html">LexerSys::SearchPath</a> &gt; &amp;paths)</td></tr>
+<tr class="memdesc:a469dcbd51921716a279346b313082fec"><td class="mdescLeft">&#160;</td><td class="mdescRight">设置当前命令的路径列表  <a href="#a469dcbd51921716a279346b313082fec">更多...</a><br/></td></tr>
+<tr class="separator:a469dcbd51921716a279346b313082fec"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a775e8cf7b73354f05f44232b9310070e"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a775e8cf7b73354f05f44232b9310070e"></a>
+bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_command_sys_1_1_console_command.html#a775e8cf7b73354f05f44232b9310070e">IsPathLengthOutOfLimit</a> (void) const </td></tr>
+<tr class="memdesc:a775e8cf7b73354f05f44232b9310070e"><td class="mdescLeft">&#160;</td><td class="mdescRight">判断用户输入的路径中是否有超过限定长度的路径 <br/></td></tr>
+<tr class="separator:a775e8cf7b73354f05f44232b9310070e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1d63e6780d3cfe83cc3452b0d797324c"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_command_sys_1_1_console_command.html#a1d63e6780d3cfe83cc3452b0d797324c">Execute</a> (void)</td></tr>
+<tr class="memdesc:a1d63e6780d3cfe83cc3452b0d797324c"><td class="mdescLeft">&#160;</td><td class="mdescRight">执行命令  <a href="#a1d63e6780d3cfe83cc3452b0d797324c">更多...</a><br/></td></tr>
+<tr class="separator:a1d63e6780d3cfe83cc3452b0d797324c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a380826ec9a19599d809966ae6ba3e70d"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a380826ec9a19599d809966ae6ba3e70d"></a>
+Util::String&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_command_sys_1_1_console_command.html#a380826ec9a19599d809966ae6ba3e70d">GetResultOutput</a> (void)</td></tr>
+<tr class="memdesc:a380826ec9a19599d809966ae6ba3e70d"><td class="mdescLeft">&#160;</td><td class="mdescRight">获得结果输出 <br/></td></tr>
+<tr class="separator:a380826ec9a19599d809966ae6ba3e70d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a74acff251b68f7f1d7385a88ed4ad0b2"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a74acff251b68f7f1d7385a88ed4ad0b2"></a>
+Util::String&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_command_sys_1_1_console_command.html#a74acff251b68f7f1d7385a88ed4ad0b2">GetCurrPath</a> (void)</td></tr>
+<tr class="memdesc:a74acff251b68f7f1d7385a88ed4ad0b2"><td class="mdescLeft">&#160;</td><td class="mdescRight">获得当前路径字符串 <br/></td></tr>
+<tr class="separator:a74acff251b68f7f1d7385a88ed4ad0b2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a64da8f9370c53e11065885cae8c4140a"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a64da8f9370c53e11065885cae8c4140a"></a>
+virtual void&#160;</td><td class="memItemRight" valign="bottom"><b>DeleteThis</b> (void)</td></tr>
+<tr class="separator:a64da8f9370c53e11065885cae8c4140a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pro-methods"></a>
+Protected 成员函数</h2></td></tr>
+<tr class="memitem:ad82b62c3e6220ad46c31d611f9e42e6b"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_file_sys_1_1_node.html">FileSys::Node</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_command_sys_1_1_console_command.html#ad82b62c3e6220ad46c31d611f9e42e6b">SearchCurrPathNode</a> (void)</td></tr>
+<tr class="memdesc:ad82b62c3e6220ad46c31d611f9e42e6b"><td class="mdescLeft">&#160;</td><td class="mdescRight">根据当前路径查找文件系统中对应的文件夹节点  <a href="#ad82b62c3e6220ad46c31d611f9e42e6b">更多...</a><br/></td></tr>
+<tr class="separator:ad82b62c3e6220ad46c31d611f9e42e6b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2aab8c2ebe6250fb8fc7a41b1ad358c0"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_file_sys_1_1_node.html">FileSys::Node</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_command_sys_1_1_console_command.html#a2aab8c2ebe6250fb8fc7a41b1ad358c0">SearchNodeByPath</a> (const <a class="el" href="class_lexer_sys_1_1_search_path.html">LexerSys::SearchPath</a> &amp;path)</td></tr>
+<tr class="memdesc:a2aab8c2ebe6250fb8fc7a41b1ad358c0"><td class="mdescLeft">&#160;</td><td class="mdescRight">获得指定路径的文件系统节点  <a href="#a2aab8c2ebe6250fb8fc7a41b1ad358c0">更多...</a><br/></td></tr>
+<tr class="separator:a2aab8c2ebe6250fb8fc7a41b1ad358c0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pro-attribs"></a>
+Protected 属性</h2></td></tr>
+<tr class="memitem:a662c78fdb599ea9c15365fa716fe9106"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a662c78fdb599ea9c15365fa716fe9106"></a>
+<a class="el" href="class_lexer_sys_1_1_search_path.html">LexerSys::SearchPath</a>&#160;</td><td class="memItemRight" valign="bottom"><b>m_curr_path</b></td></tr>
+<tr class="separator:a662c78fdb599ea9c15365fa716fe9106"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a04f042e84f0979df89dfa4467dab9139"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a04f042e84f0979df89dfa4467dab9139"></a>
+<a class="el" href="class_util_1_1_link_list_t.html">Util::LinkListT</a>&lt; <a class="el" href="class_lexer_sys_1_1_token.html">LexerSys::Token</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_command_sys_1_1_console_command.html#a04f042e84f0979df89dfa4467dab9139">m_params</a></td></tr>
+<tr class="memdesc:a04f042e84f0979df89dfa4467dab9139"><td class="mdescLeft">&#160;</td><td class="mdescRight">&gt;当前路径 <br/></td></tr>
+<tr class="separator:a04f042e84f0979df89dfa4467dab9139"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a947a59518b6441cb88f679deb13a5207"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a947a59518b6441cb88f679deb13a5207"></a>
+<a class="el" href="class_util_1_1_link_list_t.html">Util::LinkListT</a><br class="typebreak"/>
+&lt; <a class="el" href="class_lexer_sys_1_1_search_path.html">LexerSys::SearchPath</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_command_sys_1_1_console_command.html#a947a59518b6441cb88f679deb13a5207">m_paths</a></td></tr>
+<tr class="memdesc:a947a59518b6441cb88f679deb13a5207"><td class="mdescLeft">&#160;</td><td class="mdescRight">&gt;参数列表 <br/></td></tr>
+<tr class="separator:a947a59518b6441cb88f679deb13a5207"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af386498b8ae657e258f7c8a9c0569c98"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="af386498b8ae657e258f7c8a9c0569c98"></a>
+Util::String&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_command_sys_1_1_console_command.html#af386498b8ae657e258f7c8a9c0569c98">m_result_output</a></td></tr>
+<tr class="memdesc:af386498b8ae657e258f7c8a9c0569c98"><td class="mdescLeft">&#160;</td><td class="mdescRight">&gt;路径列表 <br/></td></tr>
+<tr class="separator:af386498b8ae657e258f7c8a9c0569c98"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<a name="details" id="details"></a><h2 class="groupheader">详细描述</h2>
+<div class="textblock">
+<p>在文件 <a class="el" href="_console_command_8h_source.html">ConsoleCommand.h</a> 第 <a class="el" href="_console_command_8h_source.html#l00011">11</a> 行定义.</p>
+</div><h2 class="groupheader">成员函数说明</h2>
+<a class="anchor" id="a28c05ba316393a029f5d6c708f4684b3"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void CommandSys::ConsoleCommand::AddPath </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="class_lexer_sys_1_1_search_path.html">LexerSys::SearchPath</a> &amp;&#160;</td>
+          <td class="paramname"><em>path</em>)</td><td></td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>将路径加入命令的路径列表 </p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">path</td><td>要加入的路径 </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p>在文件 <a class="el" href="_console_command_8cpp_source.html">ConsoleCommand.cpp</a> 第 <a class="el" href="_console_command_8cpp_source.html#l00030">30</a> 行定义.</p>
+
+</div>
+</div>
+<a class="anchor" id="a1d63e6780d3cfe83cc3452b0d797324c"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual void CommandSys::ConsoleCommand::Execute </td>
+          <td>(</td>
+          <td class="paramtype">void&#160;</td>
+          <td class="paramname">)</td><td></td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>执行命令 </p>
+<dl class="section remark"><dt>备注</dt><dd>子类需重写该函数 </dd></dl>
+
+<p>被 <a class="el" href="class_command_sys_1_1_cd_cmd.html#af355386817b6cad86d370d65267d5d88">CommandSys::CdCmd</a>, <a class="el" href="class_command_sys_1_1_compare_cmd.html#a20c521a7bd9d1b92f6ef16416cf2784f">CommandSys::CompareCmd</a>, <a class="el" href="class_command_sys_1_1_copy_cmd.html#a4b094e7c2d79541444b0ee561b2b7464">CommandSys::CopyCmd</a>, <a class="el" href="class_command_sys_1_1_del_cmd.html#a8b843ea865167bd3de7eef3f1902a463">CommandSys::DelCmd</a>, <a class="el" href="class_command_sys_1_1_dir_cmd.html#ac19a660aea728dae9ab2161c63c945e9">CommandSys::DirCmd</a>, <a class="el" href="class_command_sys_1_1_mkdir_cmd.html#a6a4c23d4e458c2ab12ca9da07625c1e1">CommandSys::MkdirCmd</a> , 以及 <a class="el" href="class_command_sys_1_1_rmdir_cmd.html#a66d3b433eecba42b9f00f7fc3f09f623">CommandSys::RmdirCmd</a> 重载.</p>
+
+<p>在文件 <a class="el" href="_console_command_8h_source.html">ConsoleCommand.h</a> 第 <a class="el" href="_console_command_8h_source.html#l00050">50</a> 行定义.</p>
+
+</div>
+</div>
+<a class="anchor" id="ad82b62c3e6220ad46c31d611f9e42e6b"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="class_file_sys_1_1_node.html">FileSys::Node</a> * CommandSys::ConsoleCommand::SearchCurrPathNode </td>
+          <td>(</td>
+          <td class="paramtype">void&#160;</td>
+          <td class="paramname">)</td><td></td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>根据当前路径查找文件系统中对应的文件夹节点 </p>
+<dl class="section return"><dt>返回</dt><dd>指向找到的当前路径节点指针 </dd></dl>
+
+<p>在文件 <a class="el" href="_console_command_8cpp_source.html">ConsoleCommand.cpp</a> 第 <a class="el" href="_console_command_8cpp_source.html#l00069">69</a> 行定义.</p>
+
+</div>
+</div>
+<a class="anchor" id="a2aab8c2ebe6250fb8fc7a41b1ad358c0"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="class_file_sys_1_1_node.html">FileSys::Node</a> * CommandSys::ConsoleCommand::SearchNodeByPath </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="class_lexer_sys_1_1_search_path.html">LexerSys::SearchPath</a> &amp;&#160;</td>
+          <td class="paramname"><em>path</em>)</td><td></td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>获得指定路径的文件系统节点 </p>
+<dl class="section return"><dt>返回</dt><dd>指向找到路径节点的指针 </dd></dl>
+<dl class="retval"><dt>返回值</dt><dd>
+  <table class="retval">
+    <tr><td class="paramname">NULL</td><td>查找失败，文件系统中没有该路径所表示的节点 </td></tr>
+    <tr><td class="paramname">not</td><td>NULL 查找成功 </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p>在文件 <a class="el" href="_console_command_8cpp_source.html">ConsoleCommand.cpp</a> 第 <a class="el" href="_console_command_8cpp_source.html#l00050">50</a> 行定义.</p>
+
+</div>
+</div>
+<a class="anchor" id="a630c500ae469cc33afa8f502b73adcb3"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void CommandSys::ConsoleCommand::SetCurrPath </td>
+          <td>(</td>
+          <td class="paramtype">const Util::String &amp;&#160;</td>
+          <td class="paramname"><em>curr_path</em>)</td><td></td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>设置当前路径 </p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">curr_path</td><td>当前路径字符串 </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p>在文件 <a class="el" href="_console_command_8cpp_source.html">ConsoleCommand.cpp</a> 第 <a class="el" href="_console_command_8cpp_source.html#l00019">19</a> 行定义.</p>
+
+</div>
+</div>
+<a class="anchor" id="ad467ade07437eef25535a0fc8dc42a02"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void CommandSys::ConsoleCommand::SetParamToks </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="class_util_1_1_link_list_t.html">Util::LinkListT</a>&lt; <a class="el" href="class_lexer_sys_1_1_token.html">LexerSys::Token</a> &gt; &amp;&#160;</td>
+          <td class="paramname"><em>params</em>)</td><td></td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>设置当前命令用户所输入的参数列表 </p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">params</td><td>用户输入的参数列表 </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p>在文件 <a class="el" href="_console_command_8cpp_source.html">ConsoleCommand.cpp</a> 第 <a class="el" href="_console_command_8cpp_source.html#l00025">25</a> 行定义.</p>
+
+</div>
+</div>
+<a class="anchor" id="a469dcbd51921716a279346b313082fec"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void CommandSys::ConsoleCommand::SetPaths </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="class_util_1_1_link_list_t.html">Util::LinkListT</a>&lt; <a class="el" href="class_lexer_sys_1_1_search_path.html">LexerSys::SearchPath</a> &gt; &amp;&#160;</td>
+          <td class="paramname"><em>paths</em>)</td><td></td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>设置当前命令的路径列表 </p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">paths</td><td>要设置的路径列表 </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p>在文件 <a class="el" href="_console_command_8cpp_source.html">ConsoleCommand.cpp</a> 第 <a class="el" href="_console_command_8cpp_source.html#l00035">35</a> 行定义.</p>
+
+</div>
+</div>
+<hr/>该类的文档由以下文件生成:<ul>
+<li>VirtualDiskConsole/<a class="el" href="_console_command_8h_source.html">ConsoleCommand.h</a></li>
+<li>VirtualDiskConsole/<a class="el" href="_console_command_8cpp_source.html">ConsoleCommand.cpp</a></li>
+</ul>
+</div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+生成于 2013年 八月 12日 星期一 15:24:03 , 为 VirtualDiskConsole使用  &#160;<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="doxygen.png" alt="doxygen"/>
+</a> 1.8.4
+</small></address>
+</body>
+</html>

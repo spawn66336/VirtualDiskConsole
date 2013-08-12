@@ -1,0 +1,107 @@
+\hypertarget{class_file_sys_1_1_folder_node}{\section{File\-Sys\-:\-:Folder\-Node类 参考}
+\label{class_file_sys_1_1_folder_node}\index{File\-Sys\-::\-Folder\-Node@{File\-Sys\-::\-Folder\-Node}}
+}
+类 File\-Sys\-:\-:Folder\-Node 继承关系图\-:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_file_sys_1_1_folder_node}
+\end{center}
+\end{figure}
+\subsection*{Public 成员函数}
+\begin{DoxyCompactItemize}
+\item 
+bool \hyperlink{class_file_sys_1_1_folder_node_a050961bdc9d98b7645bc518e215dd929}{Is\-Folder} (void) const 
+\begin{DoxyCompactList}\small\item\em 是否为文件夹 \end{DoxyCompactList}\item 
+virtual D\-W\-O\-R\-D \hyperlink{class_file_sys_1_1_folder_node_a6110e52309d675646c67b37e60b37ee5}{Calc\-Total\-Size} (void)
+\begin{DoxyCompactList}\small\item\em 递归计算该节点子树附带数据的总大小 \end{DoxyCompactList}\item 
+virtual void \hyperlink{class_file_sys_1_1_folder_node_a49bedb5a2504bdc13a86bcd38aa31ef6}{Get\-File\-List\-Output\-String} (Util\-::\-String \&output, const bool recursive=false, const bool folder\-\_\-only=false) const 
+\begin{DoxyCompactList}\small\item\em 获取文件列表打印字符串 \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{额外继承的成员函数}
+
+
+\subsection{详细描述}
+
+
+在文件 Folder\-Node.\-h 第 9 行定义.
+
+
+
+\subsection{成员函数说明}
+\hypertarget{class_file_sys_1_1_folder_node_a6110e52309d675646c67b37e60b37ee5}{\index{File\-Sys\-::\-Folder\-Node@{File\-Sys\-::\-Folder\-Node}!Calc\-Total\-Size@{Calc\-Total\-Size}}
+\index{Calc\-Total\-Size@{Calc\-Total\-Size}!FileSys::FolderNode@{File\-Sys\-::\-Folder\-Node}}
+\subsubsection[{Calc\-Total\-Size}]{\setlength{\rightskip}{0pt plus 5cm}D\-W\-O\-R\-D File\-Sys\-::\-Folder\-Node\-::\-Calc\-Total\-Size (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}}\label{class_file_sys_1_1_folder_node_a6110e52309d675646c67b37e60b37ee5}
+
+
+递归计算该节点子树附带数据的总大小 
+
+\begin{DoxyReturn}{返回}
+返回递归计算的子树附带数据大小 
+\end{DoxyReturn}
+
+
+重载 \hyperlink{class_file_sys_1_1_node_a6f73b0fcebfed60297a7472a954be9eb}{File\-Sys\-::\-Node} .
+
+
+
+在文件 Folder\-Node.\-cpp 第 18 行定义.
+
+\hypertarget{class_file_sys_1_1_folder_node_a49bedb5a2504bdc13a86bcd38aa31ef6}{\index{File\-Sys\-::\-Folder\-Node@{File\-Sys\-::\-Folder\-Node}!Get\-File\-List\-Output\-String@{Get\-File\-List\-Output\-String}}
+\index{Get\-File\-List\-Output\-String@{Get\-File\-List\-Output\-String}!FileSys::FolderNode@{File\-Sys\-::\-Folder\-Node}}
+\subsubsection[{Get\-File\-List\-Output\-String}]{\setlength{\rightskip}{0pt plus 5cm}void File\-Sys\-::\-Folder\-Node\-::\-Get\-File\-List\-Output\-String (
+\begin{DoxyParamCaption}
+\item[{Util\-::\-String \&}]{output, }
+\item[{const bool}]{recursive = {\ttfamily false}, }
+\item[{const bool}]{folder\-\_\-only = {\ttfamily false}}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [virtual]}}}\label{class_file_sys_1_1_folder_node_a49bedb5a2504bdc13a86bcd38aa31ef6}
+
+
+获取文件列表打印字符串 
+
+
+\begin{DoxyParams}{参数}
+{\em output} & 为最终存放文件列表的字符串 \\
+\hline
+{\em recursive} & 指示是否是递归显示子目录与子文件 \\
+\hline
+\end{DoxyParams}
+
+
+重载 \hyperlink{class_file_sys_1_1_node_aea400658729cd06ba5c404ed67dd5abb}{File\-Sys\-::\-Node} .
+
+
+
+在文件 Folder\-Node.\-cpp 第 31 行定义.
+
+\hypertarget{class_file_sys_1_1_folder_node_a050961bdc9d98b7645bc518e215dd929}{\index{File\-Sys\-::\-Folder\-Node@{File\-Sys\-::\-Folder\-Node}!Is\-Folder@{Is\-Folder}}
+\index{Is\-Folder@{Is\-Folder}!FileSys::FolderNode@{File\-Sys\-::\-Folder\-Node}}
+\subsubsection[{Is\-Folder}]{\setlength{\rightskip}{0pt plus 5cm}bool File\-Sys\-::\-Folder\-Node\-::\-Is\-Folder (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}}\label{class_file_sys_1_1_folder_node_a050961bdc9d98b7645bc518e215dd929}
+
+
+是否为文件夹 
+
+\begin{DoxyReturn}{返回}
+返回是否为文件夹 
+\end{DoxyReturn}
+
+
+重载 \hyperlink{class_file_sys_1_1_node_ad93cc76a230827623b8fd1dbc255a9b2}{File\-Sys\-::\-Node} .
+
+
+
+在文件 Folder\-Node.\-h 第 15 行定义.
+
+
+
+该类的文档由以下文件生成\-:\begin{DoxyCompactItemize}
+\item 
+Virtual\-Disk\-Console/Folder\-Node.\-h\item 
+Virtual\-Disk\-Console/Folder\-Node.\-cpp\end{DoxyCompactItemize}

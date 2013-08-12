@@ -1,0 +1,122 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.4"/>
+<title>VirtualDiskConsole: VirtualDiskConsole/CdCmd.cpp 源文件</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td style="padding-left: 0.5em;">
+   <div id="projectname">VirtualDiskConsole
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 制作者 Doxygen 1.8.4 -->
+  <div id="navrow1" class="tabs">
+    <ul class="tablist">
+      <li><a href="index.html"><span>首页</span></a></li>
+      <li><a href="namespaces.html"><span>命名空间</span></a></li>
+      <li><a href="annotated.html"><span>类</span></a></li>
+      <li class="current"><a href="files.html"><span>文件</span></a></li>
+    </ul>
+  </div>
+  <div id="navrow2" class="tabs2">
+    <ul class="tablist">
+      <li><a href="files.html"><span>文件列表</span></a></li>
+    </ul>
+  </div>
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="dir_4c9c2bc18b733b8b55e8fff397d929d3.html">VirtualDiskConsole</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div class="header">
+  <div class="headertitle">
+<div class="title">CdCmd.cpp</div>  </div>
+</div><!--header-->
+<div class="contents">
+<div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="preprocessor">#include &quot;CdCmd.h&quot;</span></div>
+<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="preprocessor">#include &quot;PathSearchVisitor.h&quot;</span></div>
+<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="preprocessor">#include &quot;FileSystem.h&quot;</span></div>
+<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="preprocessor">#include &quot;Node.h&quot;</span></div>
+<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="preprocessor">#include &quot;Lexer.h&quot;</span></div>
+<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;</div>
+<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="keyword">namespace </span>CommandSys</div>
+<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;{ </div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;</div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;CdCmd::CdCmd(<span class="keywordtype">void</span>)</div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;{</div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;</div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;}</div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160; </div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;CdCmd::~CdCmd(<span class="keywordtype">void</span>)</div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;{</div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;}</div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;</div>
+<div class="line"><a name="l00019"></a><span class="lineno"><a class="code" href="class_command_sys_1_1_cd_cmd.html#af355386817b6cad86d370d65267d5d88">   19</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="class_command_sys_1_1_cd_cmd.html#af355386817b6cad86d370d65267d5d88" title="执行命令 ">CdCmd::Execute</a>( <span class="keywordtype">void</span> )</div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;{ </div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;    <a class="code" href="class_file_sys_1_1_node.html">FileSys::Node</a>* lp_curr_path_node =  <a class="code" href="class_command_sys_1_1_console_command.html#ad82b62c3e6220ad46c31d611f9e42e6b" title="根据当前路径查找文件系统中对应的文件夹节点 ">SearchCurrPathNode</a>(); </div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;</div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;    <span class="keywordflow">if</span>( <a class="code" href="class_command_sys_1_1_console_command.html#a775e8cf7b73354f05f44232b9310070e" title="判断用户输入的路径中是否有超过限定长度的路径 ">IsPathLengthOutOfLimit</a>() )</div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;    {</div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;        <a class="code" href="class_command_sys_1_1_console_command.html#af386498b8ae657e258f7c8a9c0569c98" title="&gt;路径列表 ">m_result_output</a> = <span class="stringliteral">&quot;路径名不能超过256个字符&quot;</span>;</div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;        <span class="keywordflow">return</span>;</div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;    }</div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;</div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;    <span class="keywordflow">if</span>( <a class="code" href="class_command_sys_1_1_console_command.html#a04f042e84f0979df89dfa4467dab9139" title="&gt;当前路径 ">m_params</a>.<a class="code" href="class_util_1_1_link_list_t.html#a67b0960b3562bf628e3dac416591193e" title="返回链表中结点数 ">Count</a>() &gt; 0 )</div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;    {</div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;        <a class="code" href="class_command_sys_1_1_console_command.html#af386498b8ae657e258f7c8a9c0569c98" title="&gt;路径列表 ">m_result_output</a> = <span class="stringliteral">&quot;系统找不到指定路径&quot;</span>;</div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;        <span class="keywordflow">return</span>;</div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;    }</div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;</div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;    <span class="comment">//若有多个路径</span></div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;    <span class="keywordflow">if</span>( <a class="code" href="class_command_sys_1_1_console_command.html#a947a59518b6441cb88f679deb13a5207" title="&gt;参数列表 ">m_paths</a>.<a class="code" href="class_util_1_1_link_list_t.html#a67b0960b3562bf628e3dac416591193e" title="返回链表中结点数 ">Count</a>() &gt; 1  )</div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;    {</div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;        <a class="code" href="class_command_sys_1_1_console_command.html#af386498b8ae657e258f7c8a9c0569c98" title="&gt;路径列表 ">m_result_output</a> = <span class="stringliteral">&quot;文件名、目录名或卷标语法不正确。&quot;</span>;</div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;        <span class="keywordflow">return</span>;</div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;    }<span class="keywordflow">else</span> <span class="keywordflow">if</span>( <a class="code" href="class_command_sys_1_1_console_command.html#a947a59518b6441cb88f679deb13a5207" title="&gt;参数列表 ">m_paths</a>.<a class="code" href="class_util_1_1_link_list_t.html#a67b0960b3562bf628e3dac416591193e" title="返回链表中结点数 ">Count</a>() == 0 ){ </div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;        <a class="code" href="class_command_sys_1_1_console_command.html#af386498b8ae657e258f7c8a9c0569c98" title="&gt;路径列表 ">m_result_output</a> = m_curr_path.<a class="code" href="class_lexer_sys_1_1_search_path.html#a28ea29a96f8ef4c94f98d39c756b82f9" title="设置路径 ">Path</a>(); </div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;        <span class="keywordflow">return</span>;</div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;    }<span class="keywordflow">else</span>{<span class="comment">//有一个路径</span></div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;            <a class="code" href="class_file_sys_1_1_node.html">FileSys::Node</a>* lp_search_node = </div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;                <a class="code" href="class_command_sys_1_1_console_command.html#a2aab8c2ebe6250fb8fc7a41b1ad358c0" title="获得指定路径的文件系统节点 ">SearchNodeByPath</a>( <a class="code" href="class_command_sys_1_1_console_command.html#a947a59518b6441cb88f679deb13a5207" title="&gt;参数列表 ">m_paths</a>.<a class="code" href="class_util_1_1_link_list_t.html#ad9defc05d4cc572f91d3dcc901670987" title="获取在i处的元素 ">At</a>(0) );</div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;            <span class="keywordflow">if</span>( lp_search_node )</div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;            {</div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;                <span class="keywordflow">if</span>( lp_search_node-&gt;<a class="code" href="class_file_sys_1_1_node.html#ad93cc76a230827623b8fd1dbc255a9b2" title="是否为文件夹 ">IsFolder</a>() )</div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;                {</div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;                    m_curr_path = lp_search_node-&gt;<a class="code" href="class_file_sys_1_1_node.html#af1c666766a41b8acfeb7ddb447d22183" title="获得当前节点的路径全名 ">PathName</a>();</div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;                    <a class="code" href="class_command_sys_1_1_console_command.html#af386498b8ae657e258f7c8a9c0569c98" title="&gt;路径列表 ">m_result_output</a>.Empty();</div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;                }<span class="keywordflow">else</span>{</div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;                    <a class="code" href="class_command_sys_1_1_console_command.html#af386498b8ae657e258f7c8a9c0569c98" title="&gt;路径列表 ">m_result_output</a> = <span class="stringliteral">&quot;目录名无效&quot;</span>;</div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;                }</div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;            }<span class="keywordflow">else</span>{</div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;                <a class="code" href="class_command_sys_1_1_console_command.html#af386498b8ae657e258f7c8a9c0569c98" title="&gt;路径列表 ">m_result_output</a> = <span class="stringliteral">&quot;系统找不到指定路径&quot;</span>;</div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;            } </div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;    } </div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;</div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;}</div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;</div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;}<span class="comment">//namespace CommandSys</span></div>
+</div><!-- fragment --></div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+生成于 2013年 八月 12日 星期一 15:24:02 , 为 VirtualDiskConsole使用  &#160;<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="doxygen.png" alt="doxygen"/>
+</a> 1.8.4
+</small></address>
+</body>
+</html>

@@ -1,0 +1,144 @@
+\hypertarget{class_util_1_1_stack_t}{\section{Util\-:\-:Stack\-T$<$ T $>$ 模板类 参考}
+\label{class_util_1_1_stack_t}\index{Util\-::\-Stack\-T$<$ T $>$@{Util\-::\-Stack\-T$<$ T $>$}}
+}
+\subsection*{Public 成员函数}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{class_util_1_1_stack_t_adbbf65f8d1cf6764a5578de90e3ad551}{\hyperlink{class_util_1_1_stack_t_adbbf65f8d1cf6764a5578de90e3ad551}{Stack\-T} (void)}\label{class_util_1_1_stack_t_adbbf65f8d1cf6764a5578de90e3ad551}
+
+\begin{DoxyCompactList}\small\item\em 默认构造函数 \end{DoxyCompactList}\item 
+\hypertarget{class_util_1_1_stack_t_a5731dcd6ca4aa9b0b6ef57c61633cf7e}{\hyperlink{class_util_1_1_stack_t_a5731dcd6ca4aa9b0b6ef57c61633cf7e}{Stack\-T} (const \hyperlink{class_util_1_1_stack_t}{Stack\-T} \&stack)}\label{class_util_1_1_stack_t_a5731dcd6ca4aa9b0b6ef57c61633cf7e}
+
+\begin{DoxyCompactList}\small\item\em 拷贝构造函数 \end{DoxyCompactList}\item 
+\hypertarget{class_util_1_1_stack_t_a1e3f88666426b8ddfbc6e76615f00dd4}{\hyperlink{class_util_1_1_stack_t_a1e3f88666426b8ddfbc6e76615f00dd4}{$\sim$\-Stack\-T} ()}\label{class_util_1_1_stack_t_a1e3f88666426b8ddfbc6e76615f00dd4}
+
+\begin{DoxyCompactList}\small\item\em 析构函数 \end{DoxyCompactList}\item 
+void \hyperlink{class_util_1_1_stack_t_af12278ddc72374d7d134828c6590ea7f}{Push} (const T \&data)
+\begin{DoxyCompactList}\small\item\em 将元素data入栈 \end{DoxyCompactList}\item 
+\hypertarget{class_util_1_1_stack_t_af3ee55adee3de52f9e88f8d0edd8dd71}{void \hyperlink{class_util_1_1_stack_t_af3ee55adee3de52f9e88f8d0edd8dd71}{Pop} (void)}\label{class_util_1_1_stack_t_af3ee55adee3de52f9e88f8d0edd8dd71}
+
+\begin{DoxyCompactList}\small\item\em 将栈顶元素出栈 \end{DoxyCompactList}\item 
+int \hyperlink{class_util_1_1_stack_t_a6f4a2b4e2664e9a771e989a31dbfa27d}{Size} (void) const 
+\begin{DoxyCompactList}\small\item\em 返回栈元素数 \end{DoxyCompactList}\item 
+bool \hyperlink{class_util_1_1_stack_t_a1a6fa3d62c05f1bf24b21924a6f692f0}{Is\-Empty} (void) const 
+\begin{DoxyCompactList}\small\item\em 栈是否为空 \end{DoxyCompactList}\item 
+T \& \hyperlink{class_util_1_1_stack_t_aab6508f39b4c9e364c492955b26273be}{Front} (void)
+\begin{DoxyCompactList}\small\item\em 返回栈顶元素 \end{DoxyCompactList}\item 
+const T \& \hyperlink{class_util_1_1_stack_t_ac298ea33edc7cd88fc9f640e39c8d9c7}{Front} (void) const 
+\begin{DoxyCompactList}\small\item\em 返回栈顶元素 \end{DoxyCompactList}\item 
+\hypertarget{class_util_1_1_stack_t_af093ce3aaa86e1807ed34e118c785cf9}{\hyperlink{class_util_1_1_stack_t}{Stack\-T} \& \hyperlink{class_util_1_1_stack_t_af093ce3aaa86e1807ed34e118c785cf9}{operator=} (const \hyperlink{class_util_1_1_stack_t}{Stack\-T} \&stack)}\label{class_util_1_1_stack_t_af093ce3aaa86e1807ed34e118c785cf9}
+
+\begin{DoxyCompactList}\small\item\em 赋值运算符重载 \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{详细描述}
+\subsubsection*{template$<$typename T$>$class Util\-::\-Stack\-T$<$ T $>$}
+
+
+
+在文件 Stack.\-h 第 9 行定义.
+
+
+
+\subsection{成员函数说明}
+\hypertarget{class_util_1_1_stack_t_aab6508f39b4c9e364c492955b26273be}{\index{Util\-::\-Stack\-T@{Util\-::\-Stack\-T}!Front@{Front}}
+\index{Front@{Front}!Util::StackT@{Util\-::\-Stack\-T}}
+\subsubsection[{Front}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T$>$ T\& {\bf Util\-::\-Stack\-T}$<$ T $>$\-::Front (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{class_util_1_1_stack_t_aab6508f39b4c9e364c492955b26273be}
+
+
+返回栈顶元素 
+
+\begin{DoxyReturn}{返回}
+栈顶元素 
+\end{DoxyReturn}
+
+
+在文件 Stack.\-h 第 49 行定义.
+
+\hypertarget{class_util_1_1_stack_t_ac298ea33edc7cd88fc9f640e39c8d9c7}{\index{Util\-::\-Stack\-T@{Util\-::\-Stack\-T}!Front@{Front}}
+\index{Front@{Front}!Util::StackT@{Util\-::\-Stack\-T}}
+\subsubsection[{Front}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T$>$ const T\& {\bf Util\-::\-Stack\-T}$<$ T $>$\-::Front (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}}\label{class_util_1_1_stack_t_ac298ea33edc7cd88fc9f640e39c8d9c7}
+
+
+返回栈顶元素 
+
+\begin{DoxyReturn}{返回}
+栈顶元素 
+\end{DoxyReturn}
+
+
+在文件 Stack.\-h 第 55 行定义.
+
+\hypertarget{class_util_1_1_stack_t_a1a6fa3d62c05f1bf24b21924a6f692f0}{\index{Util\-::\-Stack\-T@{Util\-::\-Stack\-T}!Is\-Empty@{Is\-Empty}}
+\index{Is\-Empty@{Is\-Empty}!Util::StackT@{Util\-::\-Stack\-T}}
+\subsubsection[{Is\-Empty}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T$>$ bool {\bf Util\-::\-Stack\-T}$<$ T $>$\-::Is\-Empty (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}}\label{class_util_1_1_stack_t_a1a6fa3d62c05f1bf24b21924a6f692f0}
+
+
+栈是否为空 
+
+
+\begin{DoxyRetVals}{返回值}
+{\em true} & 栈为空栈 \\
+\hline
+{\em false} & 栈为非空 \\
+\hline
+\end{DoxyRetVals}
+
+
+在文件 Stack.\-h 第 44 行定义.
+
+\hypertarget{class_util_1_1_stack_t_af12278ddc72374d7d134828c6590ea7f}{\index{Util\-::\-Stack\-T@{Util\-::\-Stack\-T}!Push@{Push}}
+\index{Push@{Push}!Util::StackT@{Util\-::\-Stack\-T}}
+\subsubsection[{Push}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T$>$ void {\bf Util\-::\-Stack\-T}$<$ T $>$\-::Push (
+\begin{DoxyParamCaption}
+\item[{const T \&}]{data}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{class_util_1_1_stack_t_af12278ddc72374d7d134828c6590ea7f}
+
+
+将元素data入栈 
+
+
+\begin{DoxyParams}{参数}
+{\em data} & 要入栈元素 \\
+\hline
+\end{DoxyParams}
+
+
+在文件 Stack.\-h 第 29 行定义.
+
+\hypertarget{class_util_1_1_stack_t_a6f4a2b4e2664e9a771e989a31dbfa27d}{\index{Util\-::\-Stack\-T@{Util\-::\-Stack\-T}!Size@{Size}}
+\index{Size@{Size}!Util::StackT@{Util\-::\-Stack\-T}}
+\subsubsection[{Size}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T$>$ int {\bf Util\-::\-Stack\-T}$<$ T $>$\-::Size (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}}\label{class_util_1_1_stack_t_a6f4a2b4e2664e9a771e989a31dbfa27d}
+
+
+返回栈元素数 
+
+\begin{DoxyReturn}{返回}
+栈元素数 
+\end{DoxyReturn}
+
+
+在文件 Stack.\-h 第 38 行定义.
+
+
+
+该类的文档由以下文件生成\-:\begin{DoxyCompactItemize}
+\item 
+Virtual\-Disk\-Console/Stack.\-h\end{DoxyCompactItemize}

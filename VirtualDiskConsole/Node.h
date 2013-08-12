@@ -88,6 +88,11 @@ namespace FileSys
 		*/
 		Node* FindNode( const Util::String& name  );
 
+		/**
+		* @brief 查找该节点子节点是否有spec指定的文件后缀的节点
+		* @return 查找到的文件节点
+		* @retval NULL 查找失败
+		*/
 		Node* FindFileNodeBySpec( const Util::String& spec );
 
 		/**
@@ -129,10 +134,26 @@ namespace FileSys
 		*/
 		virtual void Accept( NodeVisitor* visitor );
 
-		virtual int Copy( const void* data  , const int size  ){ return 0; }
+		/**
+		* @brief 将传入的数据拷贝给该文件
+		* @param data 欲拷贝的数据缓冲区指针，此缓冲区由该文件节点负责释放内存
+		* @param size 数据缓冲区中数据大小
+		* @return 返回实际拷贝的数据大小
+		*/
+		virtual int Copy( const void* data  , const DWORD size  ){ return 0; }
 
-		virtual int Read( const int offset ,  const int size , void* data ){ return 0; } 
+		/**
+		* @brief 读取虚拟磁盘中文件数据
+		* @param offset 读取偏移值（按字节计）
+		* @param size 要读取数据的大小
+		* @param data 读取数据存入的数据缓冲区指针
+		* @return 实际读取的数据大小
+		*/
+		virtual int Read( const DWORD offset ,  const DWORD size , void* data ){ return 0; } 
 
+		/**
+		* @brief 清空节点中附带的数据
+		*/
 		virtual void ClearData( void ){ }
 
 		/**
@@ -147,14 +168,39 @@ namespace FileSys
 		* @brief 返回节点所含数据大小
 		* @return 节点所含的数据大小按字节计
 		*/
-		virtual int Size(void) const { return 0; }
+		virtual DWORD Size(void) const { return 0; }
 
+		/**
+		* @brief 递归计算该节点子树附带数据的总大小
+		* @return 返回递归计算的子树附带数据大小
+		*/
+		virtual DWORD CalcTotalSize(void){ return 0; }
 
-		virtual int CalcTotalSize(void){ return 0; }
-
-
-		virtual bool  Compare( const void* data , const int size , Util::VectorT<char>& diff1 , Util::VectorT<char>&diff2  ) const{ return false;}
+		/**
+		* @brief 比较指定缓冲区与当前文件的异同
+		* @param data 待比较的缓冲区
+		* @param size 缓冲区中数据的大小
+		* @param diff1 返回的本文件从第一个不同字节起始处往后的16个字节数组
+		* @param diff2 返回的磁盘文件从第一个不同字节起始处往后的16个字节数组
+		* @return 返回比较是否相同
+		* @retval true 比较结果相同
+		* @retval false 比较结果不同
+		* @remark 若data为NULL或size为0的情况下也会返回false
+		*/
+		virtual bool  Compare( const void* data , const DWORD size , Util::VectorT<char>& diff1 , Util::VectorT<char>&diff2  ) const{ return false;}
 	
+		/**
+		* @brief 比较指定缓冲区与当前文件的异同
+		* @param file 待比较的磁盘文件句柄
+		* @param diff1 返回的本文件从第一个不同字节起始处往后的16个字节数组
+		* @param diff2 返回的磁盘文件从第一个不同字节起始处往后的16个字节数组
+		* @return 返回比较是否相同
+		* @retval true 比较结果相同
+		* @retval false 比较结果不同
+		* @remark 若data为NULL或size为0的情况下也会返回false
+		*/
+		virtual bool  Compare( const HANDLE file , Util::VectorT<char>& diff1 , Util::VectorT<char>&diff2  ) const{ return false;}
+
 		/**
 		* @brief 获取文件列表打印字符串
 		* @param output 为最终存放文件列表的字符串
@@ -164,7 +210,7 @@ namespace FileSys
 		  
 	protected:
 		Util::String m_name;								///>节点名称 
-		Node* m_lp_parent;										///>父节点指针
+		Node* m_lp_parent;								///>父节点指针
 		Util::LinkListT<Node*> m_child_nodes;	///>子节点列表
 	};
 

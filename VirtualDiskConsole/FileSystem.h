@@ -25,17 +25,17 @@ namespace FileSys
 		/**
 		* @brief 返回文件系统的总共使用了多少内存(按字节计)
 		*/
-		int TotalSize(void);
+		DWORD TotalSize(void);
 
 		/**
 		* @brief 返回文件系统的最大容量
 		*/
-		int Capacity( void ) const;
+		DWORD Capacity( void ) const;
 
 		/**
 		* @brief 查看磁盘空间是否足够容纳size个字节
 		*/
-		bool HasEnoughSpace( const int size );
+		bool HasEnoughSpace( const DWORD size );
 
 		/**
 		* @brief 接受节点访问者访问

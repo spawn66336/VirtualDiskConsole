@@ -62,21 +62,25 @@ void CompareCmd::Execute( void )
 				return;
 			}
 
-			DWORD src_file_size = 0;
-			src_file_size = GetFileSize( file , NULL );
-
-			if( INVALID_FILE_SIZE != src_file_size )
+			LARGE_INTEGER src_file_size;  
+			if( TRUE == GetFileSizeEx( file , &src_file_size ) )
 			{
-				DWORD bytes_read = 0;
-				char* lp_read_buf = NULL;
+				if( 0 != src_file_size.HighPart )
+				{
+					m_result_output = "文件过大无法比较!";
+					CloseHandle( file );
+					file = NULL;
+					return;
+				}
 
-				ZP_SAFE_NEW_BUFFER( lp_read_buf , char , src_file_size );
-
-				ReadFile( file , lp_read_buf , src_file_size ,  &bytes_read , NULL );
+				//DWORD bytes_read = 0;
+				//char* lp_read_buf = NULL; 
+				//ZP_SAFE_NEW_BUFFER( lp_read_buf , char , src_file_size.LowPart ); 
+				//ReadFile( file , lp_read_buf , src_file_size.LowPart  ,  &bytes_read , NULL );
 
 				Util::VectorT<char> diff1;
 				Util::VectorT<char> diff2;
-				if( lp_compare_node->Compare( lp_read_buf , src_file_size , diff1 , diff2 ) )
+				if( lp_compare_node->Compare( file , diff1 , diff2 ) )
 				{
 					m_result_output = "内容比较一致";
 				}else{//打印不同
@@ -117,7 +121,7 @@ void CompareCmd::Execute( void )
 					}
 				}
 
-				ZP_SAFE_DELETE_BUFFER( lp_read_buf );
+				/*ZP_SAFE_DELETE_BUFFER( lp_read_buf );*/
 			}
 
 			CloseHandle( file );

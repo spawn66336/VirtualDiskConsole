@@ -1,0 +1,274 @@
+\hypertarget{class_file_sys_1_1_file_node}{\section{File\-Sys\-:\-:File\-Node类 参考}
+\label{class_file_sys_1_1_file_node}\index{File\-Sys\-::\-File\-Node@{File\-Sys\-::\-File\-Node}}
+}
+类 File\-Sys\-:\-:File\-Node 继承关系图\-:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_file_sys_1_1_file_node}
+\end{center}
+\end{figure}
+\subsection*{Public 成员函数}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{class_file_sys_1_1_file_node_a8a9c01da1c043554743877aff68ddad9}{virtual bool \hyperlink{class_file_sys_1_1_file_node_a8a9c01da1c043554743877aff68ddad9}{Is\-File} (void) const }\label{class_file_sys_1_1_file_node_a8a9c01da1c043554743877aff68ddad9}
+
+\begin{DoxyCompactList}\small\item\em 判断该节点是否为文件 \end{DoxyCompactList}\item 
+virtual bool \hyperlink{class_file_sys_1_1_file_node_a0bf53af4d6c34922bc1c667415b65d5c}{Is\-Binary\-File} (void) const 
+\begin{DoxyCompactList}\small\item\em 根据文件名来判断当前文件是否为二进制文件 \end{DoxyCompactList}\item 
+virtual int \hyperlink{class_file_sys_1_1_file_node_a4284926acb04ef0ab0db8b73d2f1fba1}{Copy} (const void $\ast$data, const D\-W\-O\-R\-D size)
+\begin{DoxyCompactList}\small\item\em 将传入的数据拷贝给该文件 \end{DoxyCompactList}\item 
+virtual int \hyperlink{class_file_sys_1_1_file_node_a63de509985ada5a7cedfc46c1e4e1277}{Read} (const D\-W\-O\-R\-D offset, const D\-W\-O\-R\-D size, void $\ast$data)
+\begin{DoxyCompactList}\small\item\em 读取虚拟磁盘中文件数据 \end{DoxyCompactList}\item 
+\hypertarget{class_file_sys_1_1_file_node_ab19cd336df69c6d8cdededa53486d63a}{virtual void \hyperlink{class_file_sys_1_1_file_node_ab19cd336df69c6d8cdededa53486d63a}{Clear\-Data} (void)}\label{class_file_sys_1_1_file_node_ab19cd336df69c6d8cdededa53486d63a}
+
+\begin{DoxyCompactList}\small\item\em 清空节点中附带的数据 \end{DoxyCompactList}\item 
+virtual D\-W\-O\-R\-D \hyperlink{class_file_sys_1_1_file_node_ac66c3549ac94e6ca8e5adde3970f6421}{Size} (void) const 
+\begin{DoxyCompactList}\small\item\em 此文件节点数据的大小 \end{DoxyCompactList}\item 
+virtual D\-W\-O\-R\-D \hyperlink{class_file_sys_1_1_file_node_acafc6eec61aafcf3e1899c9716ee3629}{Calc\-Total\-Size} (void)
+\begin{DoxyCompactList}\small\item\em 递归计算该节点子树附带数据的总大小 \end{DoxyCompactList}\item 
+virtual bool \hyperlink{class_file_sys_1_1_file_node_afd998a6e6747f426c856ccdedd21eeb6}{Compare} (const void $\ast$data, const D\-W\-O\-R\-D size, \hyperlink{class_util_1_1_vector_t}{Util\-::\-Vector\-T}$<$ char $>$ \&diff1, \hyperlink{class_util_1_1_vector_t}{Util\-::\-Vector\-T}$<$ char $>$ \&diff2) const 
+\begin{DoxyCompactList}\small\item\em 比较指定缓冲区与当前文件的异同 \end{DoxyCompactList}\item 
+virtual bool \hyperlink{class_file_sys_1_1_file_node_aa14e75686fe236425f4580763bd75222}{Compare} (const H\-A\-N\-D\-L\-E file, \hyperlink{class_util_1_1_vector_t}{Util\-::\-Vector\-T}$<$ char $>$ \&diff1, \hyperlink{class_util_1_1_vector_t}{Util\-::\-Vector\-T}$<$ char $>$ \&diff2) const 
+\begin{DoxyCompactList}\small\item\em 比较指定缓冲区与当前文件的异同 \end{DoxyCompactList}\item 
+\hypertarget{class_file_sys_1_1_file_node_aec88555b8c435e277a88d65814fb16eb}{virtual void \hyperlink{class_file_sys_1_1_file_node_aec88555b8c435e277a88d65814fb16eb}{Delete\-This} (void)}\label{class_file_sys_1_1_file_node_aec88555b8c435e277a88d65814fb16eb}
+
+\begin{DoxyCompactList}\small\item\em 删除自身 \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{额外继承的成员函数}
+
+
+\subsection{详细描述}
+
+
+在文件 File\-Node.\-h 第 9 行定义.
+
+
+
+\subsection{成员函数说明}
+\hypertarget{class_file_sys_1_1_file_node_acafc6eec61aafcf3e1899c9716ee3629}{\index{File\-Sys\-::\-File\-Node@{File\-Sys\-::\-File\-Node}!Calc\-Total\-Size@{Calc\-Total\-Size}}
+\index{Calc\-Total\-Size@{Calc\-Total\-Size}!FileSys::FileNode@{File\-Sys\-::\-File\-Node}}
+\subsubsection[{Calc\-Total\-Size}]{\setlength{\rightskip}{0pt plus 5cm}virtual D\-W\-O\-R\-D File\-Sys\-::\-File\-Node\-::\-Calc\-Total\-Size (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}}\label{class_file_sys_1_1_file_node_acafc6eec61aafcf3e1899c9716ee3629}
+
+
+递归计算该节点子树附带数据的总大小 
+
+\begin{DoxyReturn}{返回}
+返回递归计算的子树附带数据大小 
+\end{DoxyReturn}
+
+
+重载 \hyperlink{class_file_sys_1_1_node_a6f73b0fcebfed60297a7472a954be9eb}{File\-Sys\-::\-Node} .
+
+
+
+在文件 File\-Node.\-h 第 56 行定义.
+
+\hypertarget{class_file_sys_1_1_file_node_afd998a6e6747f426c856ccdedd21eeb6}{\index{File\-Sys\-::\-File\-Node@{File\-Sys\-::\-File\-Node}!Compare@{Compare}}
+\index{Compare@{Compare}!FileSys::FileNode@{File\-Sys\-::\-File\-Node}}
+\subsubsection[{Compare}]{\setlength{\rightskip}{0pt plus 5cm}bool File\-Sys\-::\-File\-Node\-::\-Compare (
+\begin{DoxyParamCaption}
+\item[{const void $\ast$}]{data, }
+\item[{const D\-W\-O\-R\-D}]{size, }
+\item[{{\bf Util\-::\-Vector\-T}$<$ char $>$ \&}]{diff1, }
+\item[{{\bf Util\-::\-Vector\-T}$<$ char $>$ \&}]{diff2}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [virtual]}}}\label{class_file_sys_1_1_file_node_afd998a6e6747f426c856ccdedd21eeb6}
+
+
+比较指定缓冲区与当前文件的异同 
+
+
+\begin{DoxyParams}{参数}
+{\em data} & 待比较的缓冲区 \\
+\hline
+{\em size} & 缓冲区中数据的大小 \\
+\hline
+{\em diff1} & 返回的本文件从第一个不同字节起始处往后的16个字节数组 \\
+\hline
+{\em diff2} & 返回的磁盘文件从第一个不同字节起始处往后的16个字节数组 \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{返回}
+返回比较是否相同 
+\end{DoxyReturn}
+
+\begin{DoxyRetVals}{返回值}
+{\em true} & 比较结果相同 \\
+\hline
+{\em false} & 比较结果不同 \\
+\hline
+\end{DoxyRetVals}
+\begin{DoxyRemark}{备注}
+若data为\-N\-U\-L\-L或size为0的情况下也会返回false 
+\end{DoxyRemark}
+
+
+重载 \hyperlink{class_file_sys_1_1_node_ada9acb89cd979b2e37d169d67e9ba816}{File\-Sys\-::\-Node} .
+
+
+
+在文件 File\-Node.\-cpp 第 25 行定义.
+
+\hypertarget{class_file_sys_1_1_file_node_aa14e75686fe236425f4580763bd75222}{\index{File\-Sys\-::\-File\-Node@{File\-Sys\-::\-File\-Node}!Compare@{Compare}}
+\index{Compare@{Compare}!FileSys::FileNode@{File\-Sys\-::\-File\-Node}}
+\subsubsection[{Compare}]{\setlength{\rightskip}{0pt plus 5cm}bool File\-Sys\-::\-File\-Node\-::\-Compare (
+\begin{DoxyParamCaption}
+\item[{const H\-A\-N\-D\-L\-E}]{file, }
+\item[{{\bf Util\-::\-Vector\-T}$<$ char $>$ \&}]{diff1, }
+\item[{{\bf Util\-::\-Vector\-T}$<$ char $>$ \&}]{diff2}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [virtual]}}}\label{class_file_sys_1_1_file_node_aa14e75686fe236425f4580763bd75222}
+
+
+比较指定缓冲区与当前文件的异同 
+
+
+\begin{DoxyParams}{参数}
+{\em file} & 待比较的磁盘文件句柄 \\
+\hline
+{\em diff1} & 返回的本文件从第一个不同字节起始处往后的16个字节数组 \\
+\hline
+{\em diff2} & 返回的磁盘文件从第一个不同字节起始处往后的16个字节数组 \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{返回}
+返回比较是否相同 
+\end{DoxyReturn}
+
+\begin{DoxyRetVals}{返回值}
+{\em true} & 比较结果相同 \\
+\hline
+{\em false} & 比较结果不同 \\
+\hline
+\end{DoxyRetVals}
+\begin{DoxyRemark}{备注}
+若data为\-N\-U\-L\-L或size为0的情况下也会返回false 
+\end{DoxyRemark}
+
+
+重载 \hyperlink{class_file_sys_1_1_node_a61fe784ffa56a134715baa35a5a7e239}{File\-Sys\-::\-Node} .
+
+
+
+在文件 File\-Node.\-cpp 第 72 行定义.
+
+\hypertarget{class_file_sys_1_1_file_node_a4284926acb04ef0ab0db8b73d2f1fba1}{\index{File\-Sys\-::\-File\-Node@{File\-Sys\-::\-File\-Node}!Copy@{Copy}}
+\index{Copy@{Copy}!FileSys::FileNode@{File\-Sys\-::\-File\-Node}}
+\subsubsection[{Copy}]{\setlength{\rightskip}{0pt plus 5cm}int File\-Sys\-::\-File\-Node\-::\-Copy (
+\begin{DoxyParamCaption}
+\item[{const void $\ast$}]{data, }
+\item[{const D\-W\-O\-R\-D}]{size}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}}\label{class_file_sys_1_1_file_node_a4284926acb04ef0ab0db8b73d2f1fba1}
+
+
+将传入的数据拷贝给该文件 
+
+
+\begin{DoxyParams}{参数}
+{\em data} & 欲拷贝的数据缓冲区指针，此缓冲区由该文件节点负责释放内存 \\
+\hline
+{\em size} & 数据缓冲区中数据大小 \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{返回}
+返回实际拷贝的数据大小 
+\end{DoxyReturn}
+
+
+重载 \hyperlink{class_file_sys_1_1_node_a3997a5d698f49b90ff3ecfdf53c55d21}{File\-Sys\-::\-Node} .
+
+
+
+在文件 File\-Node.\-cpp 第 162 行定义.
+
+\hypertarget{class_file_sys_1_1_file_node_a0bf53af4d6c34922bc1c667415b65d5c}{\index{File\-Sys\-::\-File\-Node@{File\-Sys\-::\-File\-Node}!Is\-Binary\-File@{Is\-Binary\-File}}
+\index{Is\-Binary\-File@{Is\-Binary\-File}!FileSys::FileNode@{File\-Sys\-::\-File\-Node}}
+\subsubsection[{Is\-Binary\-File}]{\setlength{\rightskip}{0pt plus 5cm}bool File\-Sys\-::\-File\-Node\-::\-Is\-Binary\-File (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [virtual]}}}\label{class_file_sys_1_1_file_node_a0bf53af4d6c34922bc1c667415b65d5c}
+
+
+根据文件名来判断当前文件是否为二进制文件 
+
+
+\begin{DoxyRetVals}{返回值}
+{\em true} & 当前文件为二进制文件 \\
+\hline
+{\em false} & 当前文件为文本文件 \\
+\hline
+\end{DoxyRetVals}
+
+
+重载 \hyperlink{class_file_sys_1_1_node_acad64b2ca2b78a0b634a49e6214c1aba}{File\-Sys\-::\-Node} .
+
+
+
+在文件 File\-Node.\-cpp 第 20 行定义.
+
+\hypertarget{class_file_sys_1_1_file_node_a63de509985ada5a7cedfc46c1e4e1277}{\index{File\-Sys\-::\-File\-Node@{File\-Sys\-::\-File\-Node}!Read@{Read}}
+\index{Read@{Read}!FileSys::FileNode@{File\-Sys\-::\-File\-Node}}
+\subsubsection[{Read}]{\setlength{\rightskip}{0pt plus 5cm}int File\-Sys\-::\-File\-Node\-::\-Read (
+\begin{DoxyParamCaption}
+\item[{const D\-W\-O\-R\-D}]{offset, }
+\item[{const D\-W\-O\-R\-D}]{size, }
+\item[{void $\ast$}]{data}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}}\label{class_file_sys_1_1_file_node_a63de509985ada5a7cedfc46c1e4e1277}
+
+
+读取虚拟磁盘中文件数据 
+
+
+\begin{DoxyParams}{参数}
+{\em offset} & 读取偏移值（按字节计） \\
+\hline
+{\em size} & 要读取数据的大小 \\
+\hline
+{\em data} & 读取数据存入的数据缓冲区指针 \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{返回}
+实际读取的数据大小 
+\end{DoxyReturn}
+
+
+重载 \hyperlink{class_file_sys_1_1_node_a230d3b6653f4365cce62746c2dd8aec8}{File\-Sys\-::\-Node} .
+
+
+
+在文件 File\-Node.\-cpp 第 178 行定义.
+
+\hypertarget{class_file_sys_1_1_file_node_ac66c3549ac94e6ca8e5adde3970f6421}{\index{File\-Sys\-::\-File\-Node@{File\-Sys\-::\-File\-Node}!Size@{Size}}
+\index{Size@{Size}!FileSys::FileNode@{File\-Sys\-::\-File\-Node}}
+\subsubsection[{Size}]{\setlength{\rightskip}{0pt plus 5cm}virtual D\-W\-O\-R\-D File\-Sys\-::\-File\-Node\-::\-Size (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}}\label{class_file_sys_1_1_file_node_ac66c3549ac94e6ca8e5adde3970f6421}
+
+
+此文件节点数据的大小 
+
+\begin{DoxyReturn}{返回}
+返回文件节点中文件数据的大小 
+\end{DoxyReturn}
+
+
+重载 \hyperlink{class_file_sys_1_1_node_a4d981a125be5d9e4810bf95f86dbd6bd}{File\-Sys\-::\-Node} .
+
+
+
+在文件 File\-Node.\-h 第 53 行定义.
+
+
+
+该类的文档由以下文件生成\-:\begin{DoxyCompactItemize}
+\item 
+Virtual\-Disk\-Console/File\-Node.\-h\item 
+Virtual\-Disk\-Console/File\-Node.\-cpp\end{DoxyCompactItemize}

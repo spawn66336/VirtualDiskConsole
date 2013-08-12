@@ -1,0 +1,182 @@
+\hypertarget{class_lexer_sys_1_1_lexer}{\section{Lexer\-Sys\-:\-:Lexer类 参考}
+\label{class_lexer_sys_1_1_lexer}\index{Lexer\-Sys\-::\-Lexer@{Lexer\-Sys\-::\-Lexer}}
+}
+\subsection*{Public 类型}
+\begin{DoxyCompactItemize}
+\item 
+enum {\bfseries Lexer\-State} \{ {\bfseries L\-O\-A\-D\-E\-D\-\_\-\-S\-T\-A\-T\-E} = 1, 
+{\bfseries U\-N\-L\-O\-A\-D\-E\-D\-\_\-\-S\-T\-A\-T\-E}, 
+{\bfseries A\-N\-A\-L\-Y\-S\-I\-S\-E\-D\-\_\-\-S\-T\-A\-T\-E}
+ \}
+\end{DoxyCompactItemize}
+\subsection*{Public 成员函数}
+\begin{DoxyCompactItemize}
+\item 
+virtual void \hyperlink{class_lexer_sys_1_1_lexer_ac3a3c82b210ed2be7f1996180c124176}{Set\-String} (const Util\-::\-String \&str)
+\begin{DoxyCompactList}\small\item\em 设置需要分析的字符串 \end{DoxyCompactList}\item 
+virtual \hyperlink{class_lexer_sys_1_1_token}{Token} \& \hyperlink{class_lexer_sys_1_1_lexer_aa55e3ab31601792897465e2772eb255d}{Get\-Command\-Token} (void)
+\begin{DoxyCompactList}\small\item\em 获得命令头 \end{DoxyCompactList}\item 
+virtual \hyperlink{class_util_1_1_link_list_t}{Util\-::\-Link\-List\-T}$<$ \hyperlink{class_lexer_sys_1_1_token}{Token} $>$ \& \hyperlink{class_lexer_sys_1_1_lexer_a97215f1bea5d215e1260efb7a001c738}{Get\-Command\-Options} (void)
+\begin{DoxyCompactList}\small\item\em 获得命令选项 \end{DoxyCompactList}\item 
+virtual \hyperlink{class_util_1_1_link_list_t}{Util\-::\-Link\-List\-T}\\*
+$<$ \hyperlink{class_lexer_sys_1_1_search_path}{Search\-Path} $>$ \& \hyperlink{class_lexer_sys_1_1_lexer_aead2ffdb9f57cc2cf582611b97557223}{Get\-Command\-Paths} (void)
+\begin{DoxyCompactList}\small\item\em 获得命令路径列表 \end{DoxyCompactList}\item 
+\hypertarget{class_lexer_sys_1_1_lexer_aea64d5beaaaa4339b2c2b152a0c420bf}{virtual void \hyperlink{class_lexer_sys_1_1_lexer_aea64d5beaaaa4339b2c2b152a0c420bf}{Analysis} (void)}\label{class_lexer_sys_1_1_lexer_aea64d5beaaaa4339b2c2b152a0c420bf}
+
+\begin{DoxyCompactList}\small\item\em 分析所设置的字符串，从中分析出各种token \end{DoxyCompactList}\item 
+\hypertarget{class_lexer_sys_1_1_lexer_a8921b421de22b3f7ef44cfadfe1e4dc7}{virtual void \hyperlink{class_lexer_sys_1_1_lexer_a8921b421de22b3f7ef44cfadfe1e4dc7}{Clear} (void)}\label{class_lexer_sys_1_1_lexer_a8921b421de22b3f7ef44cfadfe1e4dc7}
+
+\begin{DoxyCompactList}\small\item\em 清空解析器内容供下次再次分析 \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Protected 成员函数}
+\begin{DoxyCompactItemize}
+\item 
+Util\-::\-String \hyperlink{class_lexer_sys_1_1_lexer_a5a838652fece37b063d6e71efb87c1c6}{Analysis\-Cmd\-Head} (const Util\-::\-String \&str)
+\begin{DoxyCompactList}\small\item\em 从要分析的字符串中提取命令头 \end{DoxyCompactList}\item 
+Util\-::\-String \hyperlink{class_lexer_sys_1_1_lexer_ae143c5f4c628b05b7bcc41d1f79cd6e6}{Analysis\-Cmd\-Options} (const Util\-::\-String \&str)
+\begin{DoxyCompactList}\small\item\em 从要分析的字符串中提取命令选项 \end{DoxyCompactList}\item 
+Util\-::\-String \hyperlink{class_lexer_sys_1_1_lexer_a3d7bd63169463c2bb476656bb46fb144}{Analysis\-Cmd\-Paths} (const Util\-::\-String \&str)
+\begin{DoxyCompactList}\small\item\em 从要分析的字符串中提取命令路径 \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{详细描述}
+
+
+在文件 Lexer.\-h 第 16 行定义.
+
+
+
+\subsection{成员函数说明}
+\hypertarget{class_lexer_sys_1_1_lexer_a5a838652fece37b063d6e71efb87c1c6}{\index{Lexer\-Sys\-::\-Lexer@{Lexer\-Sys\-::\-Lexer}!Analysis\-Cmd\-Head@{Analysis\-Cmd\-Head}}
+\index{Analysis\-Cmd\-Head@{Analysis\-Cmd\-Head}!LexerSys::Lexer@{Lexer\-Sys\-::\-Lexer}}
+\subsubsection[{Analysis\-Cmd\-Head}]{\setlength{\rightskip}{0pt plus 5cm}Util\-::\-String Lexer\-Sys\-::\-Lexer\-::\-Analysis\-Cmd\-Head (
+\begin{DoxyParamCaption}
+\item[{const Util\-::\-String \&}]{str}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}}}\label{class_lexer_sys_1_1_lexer_a5a838652fece37b063d6e71efb87c1c6}
+
+
+从要分析的字符串中提取命令头 
+
+\begin{DoxyRemark}{备注}
+仅供内部调用函数 
+\end{DoxyRemark}
+
+
+在文件 Lexer.\-cpp 第 46 行定义.
+
+\hypertarget{class_lexer_sys_1_1_lexer_ae143c5f4c628b05b7bcc41d1f79cd6e6}{\index{Lexer\-Sys\-::\-Lexer@{Lexer\-Sys\-::\-Lexer}!Analysis\-Cmd\-Options@{Analysis\-Cmd\-Options}}
+\index{Analysis\-Cmd\-Options@{Analysis\-Cmd\-Options}!LexerSys::Lexer@{Lexer\-Sys\-::\-Lexer}}
+\subsubsection[{Analysis\-Cmd\-Options}]{\setlength{\rightskip}{0pt plus 5cm}Util\-::\-String Lexer\-Sys\-::\-Lexer\-::\-Analysis\-Cmd\-Options (
+\begin{DoxyParamCaption}
+\item[{const Util\-::\-String \&}]{str}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}}}\label{class_lexer_sys_1_1_lexer_ae143c5f4c628b05b7bcc41d1f79cd6e6}
+
+
+从要分析的字符串中提取命令选项 
+
+\begin{DoxyRemark}{备注}
+仅供内部调用函数 
+\end{DoxyRemark}
+
+
+在文件 Lexer.\-cpp 第 70 行定义.
+
+\hypertarget{class_lexer_sys_1_1_lexer_a3d7bd63169463c2bb476656bb46fb144}{\index{Lexer\-Sys\-::\-Lexer@{Lexer\-Sys\-::\-Lexer}!Analysis\-Cmd\-Paths@{Analysis\-Cmd\-Paths}}
+\index{Analysis\-Cmd\-Paths@{Analysis\-Cmd\-Paths}!LexerSys::Lexer@{Lexer\-Sys\-::\-Lexer}}
+\subsubsection[{Analysis\-Cmd\-Paths}]{\setlength{\rightskip}{0pt plus 5cm}Util\-::\-String Lexer\-Sys\-::\-Lexer\-::\-Analysis\-Cmd\-Paths (
+\begin{DoxyParamCaption}
+\item[{const Util\-::\-String \&}]{str}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}}}\label{class_lexer_sys_1_1_lexer_a3d7bd63169463c2bb476656bb46fb144}
+
+
+从要分析的字符串中提取命令路径 
+
+\begin{DoxyRemark}{备注}
+仅供内部调用函数 
+\end{DoxyRemark}
+
+
+在文件 Lexer.\-cpp 第 120 行定义.
+
+\hypertarget{class_lexer_sys_1_1_lexer_a97215f1bea5d215e1260efb7a001c738}{\index{Lexer\-Sys\-::\-Lexer@{Lexer\-Sys\-::\-Lexer}!Get\-Command\-Options@{Get\-Command\-Options}}
+\index{Get\-Command\-Options@{Get\-Command\-Options}!LexerSys::Lexer@{Lexer\-Sys\-::\-Lexer}}
+\subsubsection[{Get\-Command\-Options}]{\setlength{\rightskip}{0pt plus 5cm}virtual {\bf Util\-::\-Link\-List\-T}$<${\bf Token}$>$\& Lexer\-Sys\-::\-Lexer\-::\-Get\-Command\-Options (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}}\label{class_lexer_sys_1_1_lexer_a97215f1bea5d215e1260efb7a001c738}
+
+
+获得命令选项 
+
+\begin{DoxyReturn}{返回}
+命令选项列表 
+\end{DoxyReturn}
+
+
+在文件 Lexer.\-h 第 45 行定义.
+
+\hypertarget{class_lexer_sys_1_1_lexer_aead2ffdb9f57cc2cf582611b97557223}{\index{Lexer\-Sys\-::\-Lexer@{Lexer\-Sys\-::\-Lexer}!Get\-Command\-Paths@{Get\-Command\-Paths}}
+\index{Get\-Command\-Paths@{Get\-Command\-Paths}!LexerSys::Lexer@{Lexer\-Sys\-::\-Lexer}}
+\subsubsection[{Get\-Command\-Paths}]{\setlength{\rightskip}{0pt plus 5cm}virtual {\bf Util\-::\-Link\-List\-T}$<${\bf Search\-Path}$>$\& Lexer\-Sys\-::\-Lexer\-::\-Get\-Command\-Paths (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}}\label{class_lexer_sys_1_1_lexer_aead2ffdb9f57cc2cf582611b97557223}
+
+
+获得命令路径列表 
+
+\begin{DoxyReturn}{返回}
+获得命令路径列表 
+\end{DoxyReturn}
+
+
+在文件 Lexer.\-h 第 51 行定义.
+
+\hypertarget{class_lexer_sys_1_1_lexer_aa55e3ab31601792897465e2772eb255d}{\index{Lexer\-Sys\-::\-Lexer@{Lexer\-Sys\-::\-Lexer}!Get\-Command\-Token@{Get\-Command\-Token}}
+\index{Get\-Command\-Token@{Get\-Command\-Token}!LexerSys::Lexer@{Lexer\-Sys\-::\-Lexer}}
+\subsubsection[{Get\-Command\-Token}]{\setlength{\rightskip}{0pt plus 5cm}virtual {\bf Token}\& Lexer\-Sys\-::\-Lexer\-::\-Get\-Command\-Token (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}}\label{class_lexer_sys_1_1_lexer_aa55e3ab31601792897465e2772eb255d}
+
+
+获得命令头 
+
+\begin{DoxyReturn}{返回}
+命令头符号 
+\end{DoxyReturn}
+
+
+在文件 Lexer.\-h 第 39 行定义.
+
+\hypertarget{class_lexer_sys_1_1_lexer_ac3a3c82b210ed2be7f1996180c124176}{\index{Lexer\-Sys\-::\-Lexer@{Lexer\-Sys\-::\-Lexer}!Set\-String@{Set\-String}}
+\index{Set\-String@{Set\-String}!LexerSys::Lexer@{Lexer\-Sys\-::\-Lexer}}
+\subsubsection[{Set\-String}]{\setlength{\rightskip}{0pt plus 5cm}void Lexer\-Sys\-::\-Lexer\-::\-Set\-String (
+\begin{DoxyParamCaption}
+\item[{const Util\-::\-String \&}]{str}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}}\label{class_lexer_sys_1_1_lexer_ac3a3c82b210ed2be7f1996180c124176}
+
+
+设置需要分析的字符串 
+
+
+\begin{DoxyParams}{参数}
+{\em str} & 需要分析的字符串 \\
+\hline
+\end{DoxyParams}
+
+
+在文件 Lexer.\-cpp 第 19 行定义.
+
+
+
+该类的文档由以下文件生成\-:\begin{DoxyCompactItemize}
+\item 
+Virtual\-Disk\-Console/Lexer.\-h\item 
+Virtual\-Disk\-Console/Lexer.\-cpp\end{DoxyCompactItemize}

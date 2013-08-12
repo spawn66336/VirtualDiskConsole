@@ -1,0 +1,98 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.4"/>
+<title>VirtualDiskConsole: VirtualDiskConsole/FileSystem.h 源文件</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td style="padding-left: 0.5em;">
+   <div id="projectname">VirtualDiskConsole
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 制作者 Doxygen 1.8.4 -->
+  <div id="navrow1" class="tabs">
+    <ul class="tablist">
+      <li><a href="index.html"><span>首页</span></a></li>
+      <li><a href="namespaces.html"><span>命名空间</span></a></li>
+      <li><a href="annotated.html"><span>类</span></a></li>
+      <li class="current"><a href="files.html"><span>文件</span></a></li>
+    </ul>
+  </div>
+  <div id="navrow2" class="tabs2">
+    <ul class="tablist">
+      <li><a href="files.html"><span>文件列表</span></a></li>
+    </ul>
+  </div>
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="dir_4c9c2bc18b733b8b55e8fff397d929d3.html">VirtualDiskConsole</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div class="header">
+  <div class="headertitle">
+<div class="title">FileSystem.h</div>  </div>
+</div><!--header-->
+<div class="contents">
+<div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="preprocessor">#ifndef ZP_FILESYSTEM</span></div>
+<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="preprocessor"></span><span class="preprocessor">#define ZP_FILESYSTEM</span></div>
+<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="preprocessor"></span></div>
+<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="preprocessor">#include &quot;ZPDependency.h&quot;</span></div>
+<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;</div>
+<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="preprocessor">#define FILESYSTEM_CAPACITY  (1&lt;&lt;30)</span></div>
+<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="preprocessor"></span></div>
+<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="keyword">namespace </span>FileSys</div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;{</div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;    <span class="keyword">class </span>Node;</div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;    <span class="keyword">class </span>NodeVisitor;</div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;</div>
+<div class="line"><a name="l00013"></a><span class="lineno"><a class="code" href="class_file_sys_1_1_file_system.html">   13</a></span>&#160;    <span class="keyword">class </span><a class="code" href="class_file_sys_1_1_file_system.html">FileSystem</a> : <span class="keyword">public</span> <a class="code" href="class_util_1_1_singleton_t.html">Util::SingletonT</a>&lt;FileSystem&gt;</div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;    {</div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;    <span class="keyword">public</span>:</div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;        <a class="code" href="class_file_sys_1_1_file_system.html">FileSystem</a>(<span class="keywordtype">void</span>);</div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;        <span class="keyword">virtual</span> ~<a class="code" href="class_file_sys_1_1_file_system.html">FileSystem</a>(<span class="keywordtype">void</span>);</div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;</div>
+<div class="line"><a name="l00023"></a><span class="lineno"><a class="code" href="class_file_sys_1_1_file_system.html#aa5a55cf06f8ec0ba9d75c958a6cf8f12">   23</a></span>&#160;        <a class="code" href="class_file_sys_1_1_node.html">Node</a>* <a class="code" href="class_file_sys_1_1_file_system.html#aa5a55cf06f8ec0ba9d75c958a6cf8f12" title="获取文件系统根节点 ">Root</a>(<span class="keywordtype">void</span>)<span class="keyword"> const </span>{ <span class="keywordflow">return</span> m_lp_root; }</div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;</div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;        DWORD <a class="code" href="class_file_sys_1_1_file_system.html#a2b5ce6823a73ad89b242cae7d5bf4329" title="返回文件系统的总共使用了多少内存(按字节计) ">TotalSize</a>(<span class="keywordtype">void</span>);</div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;</div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;        DWORD <a class="code" href="class_file_sys_1_1_file_system.html#a8f0fe8f9969ac37e840a383f370d46fc" title="返回文件系统的最大容量 ">Capacity</a>( <span class="keywordtype">void</span> ) <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;</div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;        <span class="keywordtype">bool</span> <a class="code" href="class_file_sys_1_1_file_system.html#af4c767aeb58c230de141030126271457" title="查看磁盘空间是否足够容纳size个字节 ">HasEnoughSpace</a>( <span class="keyword">const</span> DWORD size );</div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;</div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;        <span class="keywordtype">void</span> <a class="code" href="class_file_sys_1_1_file_system.html#aca5e8be14a15b85123290426ae39eb3b" title="接受节点访问者访问 ">Accept</a>( <a class="code" href="class_file_sys_1_1_node_visitor.html">NodeVisitor</a>* visitor );</div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;        </div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;        <span class="keywordtype">void</span> <a class="code" href="class_file_sys_1_1_file_system.html#a1b9e4349d586ac1ce526f43727396190" title="创建实验用文件树 ">BuildTestFileTree</a>(<span class="keywordtype">void</span>);</div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;</div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;    <span class="keyword">private</span>:</div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;        <a class="code" href="class_file_sys_1_1_node.html">Node</a>* m_lp_root;        </div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;        <span class="keywordtype">int</span> m_capacity;         </div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;    };</div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;</div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;}<span class="comment">//namespace FileSys</span></div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;</div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;<span class="preprocessor">#endif //ZP_FILESYSTEM</span></div>
+</div><!-- fragment --></div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+生成于 2013年 八月 12日 星期一 15:24:02 , 为 VirtualDiskConsole使用  &#160;<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="doxygen.png" alt="doxygen"/>
+</a> 1.8.4
+</small></address>
+</body>
+</html>

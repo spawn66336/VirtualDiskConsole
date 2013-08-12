@@ -15,9 +15,9 @@ FolderNode::~FolderNode(void)
 }
 
 
-int FolderNode::CalcTotalSize( void )
+DWORD FolderNode::CalcTotalSize( void )
 {
-	int size = 0;
+	DWORD size = 0;
 	Util::LinkListT<Node*>::Iterator it = m_child_nodes.Begin();
 	while( it != m_child_nodes.End() )
 	{

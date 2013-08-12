@@ -62,7 +62,7 @@ void VirtualDiskConsole::Init( void )
 	CommandSys::ConsoleCommandFactory::CreateInstance();
 
 	//创建实验用目录树
-	FileSys::FileSystem::GetInstance()->BuildTestFileTree();
+	//FileSys::FileSystem::GetInstance()->BuildTestFileTree();
 }
 
 void VirtualDiskConsole::Destroy( void )

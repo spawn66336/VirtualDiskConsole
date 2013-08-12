@@ -1,0 +1,329 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.4"/>
+<title>VirtualDiskConsole: LexerSys::Lexer类 参考</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td style="padding-left: 0.5em;">
+   <div id="projectname">VirtualDiskConsole
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 制作者 Doxygen 1.8.4 -->
+  <div id="navrow1" class="tabs">
+    <ul class="tablist">
+      <li><a href="index.html"><span>首页</span></a></li>
+      <li><a href="namespaces.html"><span>命名空间</span></a></li>
+      <li class="current"><a href="annotated.html"><span>类</span></a></li>
+      <li><a href="files.html"><span>文件</span></a></li>
+    </ul>
+  </div>
+  <div id="navrow2" class="tabs2">
+    <ul class="tablist">
+      <li><a href="annotated.html"><span>类列表</span></a></li>
+      <li><a href="classes.html"><span>类索引</span></a></li>
+      <li><a href="hierarchy.html"><span>类继承关系</span></a></li>
+      <li><a href="functions.html"><span>类成员</span></a></li>
+    </ul>
+  </div>
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="namespace_lexer_sys.html">LexerSys</a></li><li class="navelem"><a class="el" href="class_lexer_sys_1_1_lexer.html">Lexer</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div class="header">
+  <div class="summary">
+<a href="#pub-types">Public 类型</a> &#124;
+<a href="#pub-methods">Public 成员函数</a> &#124;
+<a href="#pro-methods">Protected 成员函数</a> &#124;
+<a href="class_lexer_sys_1_1_lexer-members.html">所有成员列表</a>  </div>
+  <div class="headertitle">
+<div class="title">LexerSys::Lexer类 参考</div>  </div>
+</div><!--header-->
+<div class="contents">
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-types"></a>
+Public 类型</h2></td></tr>
+<tr class="memitem:a05ea254d5746101660768bb08b647c4e"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><b>LexerState</b> { <b>LOADED_STATE</b> = 1, 
+<b>UNLOADED_STATE</b>, 
+<b>ANALYSISED_STATE</b>
+ }</td></tr>
+<tr class="separator:a05ea254d5746101660768bb08b647c4e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
+Public 成员函数</h2></td></tr>
+<tr class="memitem:ac3a3c82b210ed2be7f1996180c124176"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_lexer_sys_1_1_lexer.html#ac3a3c82b210ed2be7f1996180c124176">SetString</a> (const Util::String &amp;str)</td></tr>
+<tr class="memdesc:ac3a3c82b210ed2be7f1996180c124176"><td class="mdescLeft">&#160;</td><td class="mdescRight">设置需要分析的字符串  <a href="#ac3a3c82b210ed2be7f1996180c124176">更多...</a><br/></td></tr>
+<tr class="separator:ac3a3c82b210ed2be7f1996180c124176"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa55e3ab31601792897465e2772eb255d"><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="class_lexer_sys_1_1_token.html">Token</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_lexer_sys_1_1_lexer.html#aa55e3ab31601792897465e2772eb255d">GetCommandToken</a> (void)</td></tr>
+<tr class="memdesc:aa55e3ab31601792897465e2772eb255d"><td class="mdescLeft">&#160;</td><td class="mdescRight">获得命令头  <a href="#aa55e3ab31601792897465e2772eb255d">更多...</a><br/></td></tr>
+<tr class="separator:aa55e3ab31601792897465e2772eb255d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a97215f1bea5d215e1260efb7a001c738"><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="class_util_1_1_link_list_t.html">Util::LinkListT</a>&lt; <a class="el" href="class_lexer_sys_1_1_token.html">Token</a> &gt; &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_lexer_sys_1_1_lexer.html#a97215f1bea5d215e1260efb7a001c738">GetCommandOptions</a> (void)</td></tr>
+<tr class="memdesc:a97215f1bea5d215e1260efb7a001c738"><td class="mdescLeft">&#160;</td><td class="mdescRight">获得命令选项  <a href="#a97215f1bea5d215e1260efb7a001c738">更多...</a><br/></td></tr>
+<tr class="separator:a97215f1bea5d215e1260efb7a001c738"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aead2ffdb9f57cc2cf582611b97557223"><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="class_util_1_1_link_list_t.html">Util::LinkListT</a><br class="typebreak"/>
+&lt; <a class="el" href="class_lexer_sys_1_1_search_path.html">SearchPath</a> &gt; &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_lexer_sys_1_1_lexer.html#aead2ffdb9f57cc2cf582611b97557223">GetCommandPaths</a> (void)</td></tr>
+<tr class="memdesc:aead2ffdb9f57cc2cf582611b97557223"><td class="mdescLeft">&#160;</td><td class="mdescRight">获得命令路径列表  <a href="#aead2ffdb9f57cc2cf582611b97557223">更多...</a><br/></td></tr>
+<tr class="separator:aead2ffdb9f57cc2cf582611b97557223"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aea64d5beaaaa4339b2c2b152a0c420bf"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="aea64d5beaaaa4339b2c2b152a0c420bf"></a>
+virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_lexer_sys_1_1_lexer.html#aea64d5beaaaa4339b2c2b152a0c420bf">Analysis</a> (void)</td></tr>
+<tr class="memdesc:aea64d5beaaaa4339b2c2b152a0c420bf"><td class="mdescLeft">&#160;</td><td class="mdescRight">分析所设置的字符串，从中分析出各种token <br/></td></tr>
+<tr class="separator:aea64d5beaaaa4339b2c2b152a0c420bf"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8921b421de22b3f7ef44cfadfe1e4dc7"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a8921b421de22b3f7ef44cfadfe1e4dc7"></a>
+virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_lexer_sys_1_1_lexer.html#a8921b421de22b3f7ef44cfadfe1e4dc7">Clear</a> (void)</td></tr>
+<tr class="memdesc:a8921b421de22b3f7ef44cfadfe1e4dc7"><td class="mdescLeft">&#160;</td><td class="mdescRight">清空解析器内容供下次再次分析 <br/></td></tr>
+<tr class="separator:a8921b421de22b3f7ef44cfadfe1e4dc7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pro-methods"></a>
+Protected 成员函数</h2></td></tr>
+<tr class="memitem:a5a838652fece37b063d6e71efb87c1c6"><td class="memItemLeft" align="right" valign="top">Util::String&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_lexer_sys_1_1_lexer.html#a5a838652fece37b063d6e71efb87c1c6">AnalysisCmdHead</a> (const Util::String &amp;str)</td></tr>
+<tr class="memdesc:a5a838652fece37b063d6e71efb87c1c6"><td class="mdescLeft">&#160;</td><td class="mdescRight">从要分析的字符串中提取命令头  <a href="#a5a838652fece37b063d6e71efb87c1c6">更多...</a><br/></td></tr>
+<tr class="separator:a5a838652fece37b063d6e71efb87c1c6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae143c5f4c628b05b7bcc41d1f79cd6e6"><td class="memItemLeft" align="right" valign="top">Util::String&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_lexer_sys_1_1_lexer.html#ae143c5f4c628b05b7bcc41d1f79cd6e6">AnalysisCmdOptions</a> (const Util::String &amp;str)</td></tr>
+<tr class="memdesc:ae143c5f4c628b05b7bcc41d1f79cd6e6"><td class="mdescLeft">&#160;</td><td class="mdescRight">从要分析的字符串中提取命令选项  <a href="#ae143c5f4c628b05b7bcc41d1f79cd6e6">更多...</a><br/></td></tr>
+<tr class="separator:ae143c5f4c628b05b7bcc41d1f79cd6e6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3d7bd63169463c2bb476656bb46fb144"><td class="memItemLeft" align="right" valign="top">Util::String&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_lexer_sys_1_1_lexer.html#a3d7bd63169463c2bb476656bb46fb144">AnalysisCmdPaths</a> (const Util::String &amp;str)</td></tr>
+<tr class="memdesc:a3d7bd63169463c2bb476656bb46fb144"><td class="mdescLeft">&#160;</td><td class="mdescRight">从要分析的字符串中提取命令路径  <a href="#a3d7bd63169463c2bb476656bb46fb144">更多...</a><br/></td></tr>
+<tr class="separator:a3d7bd63169463c2bb476656bb46fb144"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<a name="details" id="details"></a><h2 class="groupheader">详细描述</h2>
+<div class="textblock">
+<p>在文件 <a class="el" href="_lexer_8h_source.html">Lexer.h</a> 第 <a class="el" href="_lexer_8h_source.html#l00016">16</a> 行定义.</p>
+</div><h2 class="groupheader">成员函数说明</h2>
+<a class="anchor" id="a5a838652fece37b063d6e71efb87c1c6"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">Util::String LexerSys::Lexer::AnalysisCmdHead </td>
+          <td>(</td>
+          <td class="paramtype">const Util::String &amp;&#160;</td>
+          <td class="paramname"><em>str</em>)</td><td></td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>从要分析的字符串中提取命令头 </p>
+<dl class="section remark"><dt>备注</dt><dd>仅供内部调用函数 </dd></dl>
+
+<p>在文件 <a class="el" href="_lexer_8cpp_source.html">Lexer.cpp</a> 第 <a class="el" href="_lexer_8cpp_source.html#l00046">46</a> 行定义.</p>
+
+</div>
+</div>
+<a class="anchor" id="ae143c5f4c628b05b7bcc41d1f79cd6e6"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">Util::String LexerSys::Lexer::AnalysisCmdOptions </td>
+          <td>(</td>
+          <td class="paramtype">const Util::String &amp;&#160;</td>
+          <td class="paramname"><em>str</em>)</td><td></td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>从要分析的字符串中提取命令选项 </p>
+<dl class="section remark"><dt>备注</dt><dd>仅供内部调用函数 </dd></dl>
+
+<p>在文件 <a class="el" href="_lexer_8cpp_source.html">Lexer.cpp</a> 第 <a class="el" href="_lexer_8cpp_source.html#l00070">70</a> 行定义.</p>
+
+</div>
+</div>
+<a class="anchor" id="a3d7bd63169463c2bb476656bb46fb144"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">Util::String LexerSys::Lexer::AnalysisCmdPaths </td>
+          <td>(</td>
+          <td class="paramtype">const Util::String &amp;&#160;</td>
+          <td class="paramname"><em>str</em>)</td><td></td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>从要分析的字符串中提取命令路径 </p>
+<dl class="section remark"><dt>备注</dt><dd>仅供内部调用函数 </dd></dl>
+
+<p>在文件 <a class="el" href="_lexer_8cpp_source.html">Lexer.cpp</a> 第 <a class="el" href="_lexer_8cpp_source.html#l00120">120</a> 行定义.</p>
+
+</div>
+</div>
+<a class="anchor" id="a97215f1bea5d215e1260efb7a001c738"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual <a class="el" href="class_util_1_1_link_list_t.html">Util::LinkListT</a>&lt;<a class="el" href="class_lexer_sys_1_1_token.html">Token</a>&gt;&amp; LexerSys::Lexer::GetCommandOptions </td>
+          <td>(</td>
+          <td class="paramtype">void&#160;</td>
+          <td class="paramname">)</td><td></td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>获得命令选项 </p>
+<dl class="section return"><dt>返回</dt><dd>命令选项列表 </dd></dl>
+
+<p>在文件 <a class="el" href="_lexer_8h_source.html">Lexer.h</a> 第 <a class="el" href="_lexer_8h_source.html#l00045">45</a> 行定义.</p>
+
+</div>
+</div>
+<a class="anchor" id="aead2ffdb9f57cc2cf582611b97557223"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual <a class="el" href="class_util_1_1_link_list_t.html">Util::LinkListT</a>&lt;<a class="el" href="class_lexer_sys_1_1_search_path.html">SearchPath</a>&gt;&amp; LexerSys::Lexer::GetCommandPaths </td>
+          <td>(</td>
+          <td class="paramtype">void&#160;</td>
+          <td class="paramname">)</td><td></td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>获得命令路径列表 </p>
+<dl class="section return"><dt>返回</dt><dd>获得命令路径列表 </dd></dl>
+
+<p>在文件 <a class="el" href="_lexer_8h_source.html">Lexer.h</a> 第 <a class="el" href="_lexer_8h_source.html#l00051">51</a> 行定义.</p>
+
+</div>
+</div>
+<a class="anchor" id="aa55e3ab31601792897465e2772eb255d"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual <a class="el" href="class_lexer_sys_1_1_token.html">Token</a>&amp; LexerSys::Lexer::GetCommandToken </td>
+          <td>(</td>
+          <td class="paramtype">void&#160;</td>
+          <td class="paramname">)</td><td></td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>获得命令头 </p>
+<dl class="section return"><dt>返回</dt><dd>命令头符号 </dd></dl>
+
+<p>在文件 <a class="el" href="_lexer_8h_source.html">Lexer.h</a> 第 <a class="el" href="_lexer_8h_source.html#l00039">39</a> 行定义.</p>
+
+</div>
+</div>
+<a class="anchor" id="ac3a3c82b210ed2be7f1996180c124176"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void LexerSys::Lexer::SetString </td>
+          <td>(</td>
+          <td class="paramtype">const Util::String &amp;&#160;</td>
+          <td class="paramname"><em>str</em>)</td><td></td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>设置需要分析的字符串 </p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">str</td><td>需要分析的字符串 </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p>在文件 <a class="el" href="_lexer_8cpp_source.html">Lexer.cpp</a> 第 <a class="el" href="_lexer_8cpp_source.html#l00019">19</a> 行定义.</p>
+
+</div>
+</div>
+<hr/>该类的文档由以下文件生成:<ul>
+<li>VirtualDiskConsole/<a class="el" href="_lexer_8h_source.html">Lexer.h</a></li>
+<li>VirtualDiskConsole/<a class="el" href="_lexer_8cpp_source.html">Lexer.cpp</a></li>
+</ul>
+</div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+生成于 2013年 八月 12日 星期一 15:24:04 , 为 VirtualDiskConsole使用  &#160;<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="doxygen.png" alt="doxygen"/>
+</a> 1.8.4
+</small></address>
+</body>
+</html>

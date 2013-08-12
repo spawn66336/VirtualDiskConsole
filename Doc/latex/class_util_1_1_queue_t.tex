@@ -1,0 +1,137 @@
+\hypertarget{class_util_1_1_queue_t}{\section{Util\-:\-:Queue\-T$<$ T $>$ 模板类 参考}
+\label{class_util_1_1_queue_t}\index{Util\-::\-Queue\-T$<$ T $>$@{Util\-::\-Queue\-T$<$ T $>$}}
+}
+\subsection*{Public 成员函数}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{class_util_1_1_queue_t_a7f7dd7b295f6c8c32bcb14e7ab8370c3}{\hyperlink{class_util_1_1_queue_t_a7f7dd7b295f6c8c32bcb14e7ab8370c3}{Queue\-T} ()}\label{class_util_1_1_queue_t_a7f7dd7b295f6c8c32bcb14e7ab8370c3}
+
+\begin{DoxyCompactList}\small\item\em 默认构造函数 \end{DoxyCompactList}\item 
+\hypertarget{class_util_1_1_queue_t_a60ba7fd4b5b60e073e1c51a37dec811a}{\hyperlink{class_util_1_1_queue_t_a60ba7fd4b5b60e073e1c51a37dec811a}{Queue\-T} (const \hyperlink{class_util_1_1_queue_t}{Queue\-T} \&q)}\label{class_util_1_1_queue_t_a60ba7fd4b5b60e073e1c51a37dec811a}
+
+\begin{DoxyCompactList}\small\item\em 拷贝构造函数 \end{DoxyCompactList}\item 
+\hypertarget{class_util_1_1_queue_t_a87d170c71234c2076e219f49173b8f10}{\hyperlink{class_util_1_1_queue_t_a87d170c71234c2076e219f49173b8f10}{$\sim$\-Queue\-T} ()}\label{class_util_1_1_queue_t_a87d170c71234c2076e219f49173b8f10}
+
+\begin{DoxyCompactList}\small\item\em 析构函数 \end{DoxyCompactList}\item 
+void \hyperlink{class_util_1_1_queue_t_a77641ed829b14f0700d547ca1f4ee5ee}{Enqueue} (const T \&data)
+\begin{DoxyCompactList}\small\item\em 将元素 data 入队列 \end{DoxyCompactList}\item 
+\hypertarget{class_util_1_1_queue_t_a92cabe296935e24b22e9264a53d05892}{void \hyperlink{class_util_1_1_queue_t_a92cabe296935e24b22e9264a53d05892}{Dequeue} (void)}\label{class_util_1_1_queue_t_a92cabe296935e24b22e9264a53d05892}
+
+\begin{DoxyCompactList}\small\item\em 将元素出队列 \end{DoxyCompactList}\item 
+T \& \hyperlink{class_util_1_1_queue_t_a3feed3273640d0543f722e0a54d01bab}{Front} (void)
+\begin{DoxyCompactList}\small\item\em 返回队列头部的元素 \end{DoxyCompactList}\item 
+const T \& \hyperlink{class_util_1_1_queue_t_a8076426290e6d5750f2fe651620395b7}{Front} (void) const 
+\begin{DoxyCompactList}\small\item\em 返回队列头部的元素 \end{DoxyCompactList}\item 
+int \hyperlink{class_util_1_1_queue_t_a2f6575c0e530bb48b92537bbb37350d9}{Size} (void) const 
+\begin{DoxyCompactList}\small\item\em 返回队列大小 \end{DoxyCompactList}\item 
+\hyperlink{class_util_1_1_queue_t}{Queue\-T} \& \hyperlink{class_util_1_1_queue_t_a803f29fc2220ea056dcac90f3fce406f}{operator=} (const \hyperlink{class_util_1_1_queue_t}{Queue\-T} \&rhs)
+\begin{DoxyCompactList}\small\item\em 赋值运算符重载 \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{详细描述}
+\subsubsection*{template$<$typename T$>$class Util\-::\-Queue\-T$<$ T $>$}
+
+
+
+在文件 Queue.\-h 第 9 行定义.
+
+
+
+\subsection{成员函数说明}
+\hypertarget{class_util_1_1_queue_t_a77641ed829b14f0700d547ca1f4ee5ee}{\index{Util\-::\-Queue\-T@{Util\-::\-Queue\-T}!Enqueue@{Enqueue}}
+\index{Enqueue@{Enqueue}!Util::QueueT@{Util\-::\-Queue\-T}}
+\subsubsection[{Enqueue}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T$>$ void {\bf Util\-::\-Queue\-T}$<$ T $>$\-::Enqueue (
+\begin{DoxyParamCaption}
+\item[{const T \&}]{data}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{class_util_1_1_queue_t_a77641ed829b14f0700d547ca1f4ee5ee}
+
+
+将元素 data 入队列 
+
+
+\begin{DoxyParams}{参数}
+{\em data} & 要压入的元素 \\
+\hline
+\end{DoxyParams}
+
+
+在文件 Queue.\-h 第 29 行定义.
+
+\hypertarget{class_util_1_1_queue_t_a3feed3273640d0543f722e0a54d01bab}{\index{Util\-::\-Queue\-T@{Util\-::\-Queue\-T}!Front@{Front}}
+\index{Front@{Front}!Util::QueueT@{Util\-::\-Queue\-T}}
+\subsubsection[{Front}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T$>$ T\& {\bf Util\-::\-Queue\-T}$<$ T $>$\-::Front (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{class_util_1_1_queue_t_a3feed3273640d0543f722e0a54d01bab}
+
+
+返回队列头部的元素 
+
+\begin{DoxyReturn}{返回}
+返回的队列头部元素 
+\end{DoxyReturn}
+
+
+在文件 Queue.\-h 第 40 行定义.
+
+\hypertarget{class_util_1_1_queue_t_a8076426290e6d5750f2fe651620395b7}{\index{Util\-::\-Queue\-T@{Util\-::\-Queue\-T}!Front@{Front}}
+\index{Front@{Front}!Util::QueueT@{Util\-::\-Queue\-T}}
+\subsubsection[{Front}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T$>$ const T\& {\bf Util\-::\-Queue\-T}$<$ T $>$\-::Front (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}}\label{class_util_1_1_queue_t_a8076426290e6d5750f2fe651620395b7}
+
+
+返回队列头部的元素 
+
+\begin{DoxyReturn}{返回}
+返回的队列头部元素 
+\end{DoxyReturn}
+
+
+在文件 Queue.\-h 第 46 行定义.
+
+\hypertarget{class_util_1_1_queue_t_a803f29fc2220ea056dcac90f3fce406f}{\index{Util\-::\-Queue\-T@{Util\-::\-Queue\-T}!operator=@{operator=}}
+\index{operator=@{operator=}!Util::QueueT@{Util\-::\-Queue\-T}}
+\subsubsection[{operator=}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T$>$ {\bf Queue\-T}\& {\bf Util\-::\-Queue\-T}$<$ T $>$\-::operator= (
+\begin{DoxyParamCaption}
+\item[{const {\bf Queue\-T}$<$ T $>$ \&}]{rhs}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{class_util_1_1_queue_t_a803f29fc2220ea056dcac90f3fce406f}
+
+
+赋值运算符重载 
+
+\begin{DoxyReturn}{返回}
+当前队列引用 
+\end{DoxyReturn}
+
+
+在文件 Queue.\-h 第 58 行定义.
+
+\hypertarget{class_util_1_1_queue_t_a2f6575c0e530bb48b92537bbb37350d9}{\index{Util\-::\-Queue\-T@{Util\-::\-Queue\-T}!Size@{Size}}
+\index{Size@{Size}!Util::QueueT@{Util\-::\-Queue\-T}}
+\subsubsection[{Size}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T$>$ int {\bf Util\-::\-Queue\-T}$<$ T $>$\-::Size (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}}\label{class_util_1_1_queue_t_a2f6575c0e530bb48b92537bbb37350d9}
+
+
+返回队列大小 
+
+\begin{DoxyReturn}{返回}
+队列元素数 
+\end{DoxyReturn}
+
+
+在文件 Queue.\-h 第 52 行定义.
+
+
+
+该类的文档由以下文件生成\-:\begin{DoxyCompactItemize}
+\item 
+Virtual\-Disk\-Console/Queue.\-h\end{DoxyCompactItemize}

@@ -1,0 +1,128 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.4"/>
+<title>VirtualDiskConsole: VirtualDiskConsole/MkdirCmd.cpp 源文件</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td style="padding-left: 0.5em;">
+   <div id="projectname">VirtualDiskConsole
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 制作者 Doxygen 1.8.4 -->
+  <div id="navrow1" class="tabs">
+    <ul class="tablist">
+      <li><a href="index.html"><span>首页</span></a></li>
+      <li><a href="namespaces.html"><span>命名空间</span></a></li>
+      <li><a href="annotated.html"><span>类</span></a></li>
+      <li class="current"><a href="files.html"><span>文件</span></a></li>
+    </ul>
+  </div>
+  <div id="navrow2" class="tabs2">
+    <ul class="tablist">
+      <li><a href="files.html"><span>文件列表</span></a></li>
+    </ul>
+  </div>
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="dir_4c9c2bc18b733b8b55e8fff397d929d3.html">VirtualDiskConsole</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div class="header">
+  <div class="headertitle">
+<div class="title">MkdirCmd.cpp</div>  </div>
+</div><!--header-->
+<div class="contents">
+<div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="preprocessor">#include &quot;MkdirCmd.h&quot;</span></div>
+<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="preprocessor">#include &quot;Lexer.h&quot;</span></div>
+<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="preprocessor">#include &quot;CreateDirVisitor.h&quot;</span></div>
+<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="preprocessor">#include &quot;FileSystem.h&quot;</span></div>
+<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;</div>
+<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="keyword">namespace </span>CommandSys</div>
+<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;{</div>
+<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;</div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;</div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;MkdirCmd::MkdirCmd(<span class="keywordtype">void</span>)</div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;{</div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;}</div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;</div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;</div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;MkdirCmd::~MkdirCmd(<span class="keywordtype">void</span>)</div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;{</div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;}</div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;</div>
+<div class="line"><a name="l00019"></a><span class="lineno"><a class="code" href="class_command_sys_1_1_mkdir_cmd.html#a6a4c23d4e458c2ab12ca9da07625c1e1">   19</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="class_command_sys_1_1_mkdir_cmd.html#a6a4c23d4e458c2ab12ca9da07625c1e1" title="执行命令 ">CommandSys::MkdirCmd::Execute</a>( <span class="keywordtype">void</span> )</div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;{</div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;    </div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;    <span class="keywordflow">if</span>( IsPathLengthOutOfLimit() )</div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;    {</div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;        m_result_output = <span class="stringliteral">&quot;路径名不能超过256个字符&quot;</span>;</div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;        <span class="keywordflow">return</span>;</div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;    }</div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;</div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;    <span class="keywordflow">if</span>( m_params.Count() )</div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;    {</div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;        m_result_output = <span class="stringliteral">&quot;此命令不支持参数&quot;</span>;</div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;        <span class="keywordflow">return</span>;</div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;    }</div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;</div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;    <span class="keywordflow">if</span>( 0 == m_paths.Count() )</div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;    {</div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;        m_result_output = <span class="stringliteral">&quot;命令语法不正确&quot;</span>;</div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;        <span class="keywordflow">return</span>;</div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;    }</div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;</div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;    <span class="keywordflow">for</span>( <span class="keywordtype">int</span> i = 0 ; i &lt; m_paths.Count() ; i++ )</div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;    { </div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;            <a class="code" href="class_lexer_sys_1_1_search_path.html">LexerSys::SearchPath</a> path = m_paths.<a class="code" href="class_lexer_sys_1_1_search_path.html#a47aaaf5b54a56d66516c6d4ad48ee9ae" title="返回所在位置i处的符号 ">At</a>(i);</div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;            <a class="code" href="class_lexer_sys_1_1_search_path.html">LexerSys::SearchPath</a> final_path;</div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;</div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;            <span class="comment">//如果要找寻的路径不为绝对路径</span></div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;            <span class="keywordflow">if</span>( !path.<a class="code" href="class_lexer_sys_1_1_search_path.html#a68b4a32eade0158303e8570811c6af2d" title="分析当前路径是否为绝对路径 ">IsAbsolutePath</a>() )</div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;            {</div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;                final_path = m_curr_path;</div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;                final_path.<a class="code" href="class_lexer_sys_1_1_search_path.html#acfce5c8a697fbc69b09d3dcb29a00db1" title="附加路径到此路径末尾 ">Append</a>( path ); </div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;            }<span class="keywordflow">else</span>{</div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;</div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;                <span class="keywordflow">if</span>( 0 == path.<a class="code" href="class_lexer_sys_1_1_search_path.html#a47aaaf5b54a56d66516c6d4ad48ee9ae" title="返回所在位置i处的符号 ">At</a>(0).<a class="code" href="class_lexer_sys_1_1_token.html#a05424f46049d2701d04936f456bd0896" title="获取符号内容 ">Name</a>().ICmp( <span class="stringliteral">&quot;c:&quot;</span> ) )</div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;                {</div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;                    final_path = path; </div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;                }<span class="keywordflow">else</span>{</div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;                    m_result_output = <span class="stringliteral">&quot;系统找不到指定的路径&quot;</span>;</div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;                    <span class="keywordflow">return</span>;</div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;                } </div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;            }</div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;</div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;            <a class="code" href="class_file_sys_1_1_create_dir_visitor.html">FileSys::CreateDirVisitor</a> visitor;</div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;            visitor.<a class="code" href="class_file_sys_1_1_node_visitor.html#ac493ab442e116be15f0af8559d63e0e0" title="设置搜索路径 ">SetPath</a>( final_path );</div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;            <a class="code" href="class_util_1_1_singleton_t.html#a977b19d9052e8d16cd5ed79d7d49d597" title="获得实例指针 ">FileSys::FileSystem::GetInstance</a>()-&gt;Accept( &amp;visitor ); </div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;            </div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;    }<span class="comment">//for( int i = 0 ; i &lt; m_paths.Count() ; i++ )</span></div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;}</div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;</div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;}<span class="comment">//namespace CommandSys</span></div>
+</div><!-- fragment --></div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+生成于 2013年 八月 12日 星期一 15:24:03 , 为 VirtualDiskConsole使用  &#160;<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="doxygen.png" alt="doxygen"/>
+</a> 1.8.4
+</small></address>
+</body>
+</html>

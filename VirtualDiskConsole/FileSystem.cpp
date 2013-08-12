@@ -42,17 +42,17 @@ namespace FileSys
 		lp_drivers_node->CreateNode("3" , Node::FILE_NODE );
 	}
 
-	int FileSystem::TotalSize( void )
+	DWORD FileSystem::TotalSize( void )
 	{
 		return m_lp_root->CalcTotalSize();
 	}
 
-	bool FileSystem::HasEnoughSpace( const int size )
+	bool FileSystem::HasEnoughSpace( const DWORD size )
 	{ 
 		return ( TotalSize() + size ) <= Capacity();
 	}
 
-	int FileSystem::Capacity( void ) const
+	DWORD FileSystem::Capacity( void ) const
 	{
 		return m_capacity;
 	}

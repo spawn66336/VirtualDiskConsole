@@ -1,0 +1,229 @@
+\hypertarget{class_util_1_1_vector_t}{\section{Util\-:\-:Vector\-T$<$ T $>$ 模板类 参考}
+\label{class_util_1_1_vector_t}\index{Util\-::\-Vector\-T$<$ T $>$@{Util\-::\-Vector\-T$<$ T $>$}}
+}
+\subsection*{Public 成员函数}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{class_util_1_1_vector_t_a68272ba6470b7956515da804e7156702}{{\bfseries Vector\-T} (const \hyperlink{class_util_1_1_vector_t}{Vector\-T} \&v)}\label{class_util_1_1_vector_t_a68272ba6470b7956515da804e7156702}
+
+\item 
+void \hyperlink{class_util_1_1_vector_t_a534588bb247d3754c332c03c6954fcab}{Assign} (const int elem\-\_\-count)
+\begin{DoxyCompactList}\small\item\em 为需要存的元素调整分配空间 \end{DoxyCompactList}\item 
+void \hyperlink{class_util_1_1_vector_t_a90a2d20a6353a0c2ff555763df2c2bdf}{Push\-Back} (const T elem)
+\begin{DoxyCompactList}\small\item\em 在向量尾部附加元素 elem \end{DoxyCompactList}\item 
+void \hyperlink{class_util_1_1_vector_t_a4103b59080ffeae7b2389fdebf301a4f}{Push\-Front} (const T elem)
+\begin{DoxyCompactList}\small\item\em 在向量头部附加元素 elem \end{DoxyCompactList}\item 
+void \hyperlink{class_util_1_1_vector_t_a2e7e7d97535ea7164af5b6f4846f0c53}{Insert} (const int i, const T elem)
+\begin{DoxyCompactList}\small\item\em 在索引位置i处插入元素elem \end{DoxyCompactList}\item 
+void \hyperlink{class_util_1_1_vector_t_ad6e051af9482f6484453b3f71b746a20}{Delete\-At} (const int i)
+\begin{DoxyCompactList}\small\item\em 删除i处的元素 \end{DoxyCompactList}\item 
+T \& \hyperlink{class_util_1_1_vector_t_a53baf726f6ba21f7f846ed19a996235f}{At} (const int i)
+\begin{DoxyCompactList}\small\item\em 获取i处的元素 \end{DoxyCompactList}\item 
+const T \& \hyperlink{class_util_1_1_vector_t_a441c59007b9c8d8c468f8013f14e3a82}{At} (const int i) const 
+\begin{DoxyCompactList}\small\item\em 获取i处的元素 \end{DoxyCompactList}\item 
+\hypertarget{class_util_1_1_vector_t_a666071009184f0a219d94bfbd0781aab}{void \hyperlink{class_util_1_1_vector_t_a666071009184f0a219d94bfbd0781aab}{Clear} (void)}\label{class_util_1_1_vector_t_a666071009184f0a219d94bfbd0781aab}
+
+\begin{DoxyCompactList}\small\item\em 清空向量中的数据 \end{DoxyCompactList}\item 
+int \hyperlink{class_util_1_1_vector_t_a62ea0161e9cfdf5eef99760c122bfae8}{Count} (void) const 
+\begin{DoxyCompactList}\small\item\em 向量中存放的元素数 \end{DoxyCompactList}\item 
+int \hyperlink{class_util_1_1_vector_t_ad7d96e57a034ce2a05d812ba09fc5020}{Capacity} (void) const 
+\begin{DoxyCompactList}\small\item\em 返回向量能容纳的元素数 \end{DoxyCompactList}\item 
+\hypertarget{class_util_1_1_vector_t_a81e06fbefee05fa031ab0339873bb70d}{\hyperlink{class_util_1_1_vector_t}{Vector\-T} \& \hyperlink{class_util_1_1_vector_t_a81e06fbefee05fa031ab0339873bb70d}{operator=} (const \hyperlink{class_util_1_1_vector_t}{Vector\-T} \&rhs)}\label{class_util_1_1_vector_t_a81e06fbefee05fa031ab0339873bb70d}
+
+\begin{DoxyCompactList}\small\item\em 赋值运算符重载 \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{详细描述}
+\subsubsection*{template$<$typename T$>$class Util\-::\-Vector\-T$<$ T $>$}
+
+
+
+在文件 Vector.\-h 第 10 行定义.
+
+
+
+\subsection{成员函数说明}
+\hypertarget{class_util_1_1_vector_t_a534588bb247d3754c332c03c6954fcab}{\index{Util\-::\-Vector\-T@{Util\-::\-Vector\-T}!Assign@{Assign}}
+\index{Assign@{Assign}!Util::VectorT@{Util\-::\-Vector\-T}}
+\subsubsection[{Assign}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T $>$ void {\bf Util\-::\-Vector\-T}$<$ T $>$\-::Assign (
+\begin{DoxyParamCaption}
+\item[{const int}]{elem\-\_\-count}
+\end{DoxyParamCaption}
+)}}\label{class_util_1_1_vector_t_a534588bb247d3754c332c03c6954fcab}
+
+
+为需要存的元素调整分配空间 
+
+
+\begin{DoxyParams}{参数}
+{\em elem\-\_\-count} & 需要存入的元素 \\
+\hline
+\end{DoxyParams}
+
+
+在文件 Vector.\-h 第 118 行定义.
+
+\hypertarget{class_util_1_1_vector_t_a53baf726f6ba21f7f846ed19a996235f}{\index{Util\-::\-Vector\-T@{Util\-::\-Vector\-T}!At@{At}}
+\index{At@{At}!Util::VectorT@{Util\-::\-Vector\-T}}
+\subsubsection[{At}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T $>$ T \& {\bf Util\-::\-Vector\-T}$<$ T $>$\-::At (
+\begin{DoxyParamCaption}
+\item[{const int}]{i}
+\end{DoxyParamCaption}
+)}}\label{class_util_1_1_vector_t_a53baf726f6ba21f7f846ed19a996235f}
+
+
+获取i处的元素 
+
+
+\begin{DoxyParams}{参数}
+{\em i} & 索引 \\
+\hline
+\end{DoxyParams}
+
+
+在文件 Vector.\-h 第 199 行定义.
+
+\hypertarget{class_util_1_1_vector_t_a441c59007b9c8d8c468f8013f14e3a82}{\index{Util\-::\-Vector\-T@{Util\-::\-Vector\-T}!At@{At}}
+\index{At@{At}!Util::VectorT@{Util\-::\-Vector\-T}}
+\subsubsection[{At}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T $>$ const T \& {\bf Util\-::\-Vector\-T}$<$ T $>$\-::At (
+\begin{DoxyParamCaption}
+\item[{const int}]{i}
+\end{DoxyParamCaption}
+) const}}\label{class_util_1_1_vector_t_a441c59007b9c8d8c468f8013f14e3a82}
+
+
+获取i处的元素 
+
+
+\begin{DoxyParams}{参数}
+{\em i} & 索引 \\
+\hline
+\end{DoxyParams}
+
+
+在文件 Vector.\-h 第 206 行定义.
+
+\hypertarget{class_util_1_1_vector_t_ad7d96e57a034ce2a05d812ba09fc5020}{\index{Util\-::\-Vector\-T@{Util\-::\-Vector\-T}!Capacity@{Capacity}}
+\index{Capacity@{Capacity}!Util::VectorT@{Util\-::\-Vector\-T}}
+\subsubsection[{Capacity}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T $>$ int {\bf Util\-::\-Vector\-T}$<$ T $>$\-::Capacity (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+) const}}\label{class_util_1_1_vector_t_ad7d96e57a034ce2a05d812ba09fc5020}
+
+
+返回向量能容纳的元素数 
+
+\begin{DoxyReturn}{返回}
+返回向量能容纳的元素数 
+\end{DoxyReturn}
+
+
+在文件 Vector.\-h 第 220 行定义.
+
+\hypertarget{class_util_1_1_vector_t_a62ea0161e9cfdf5eef99760c122bfae8}{\index{Util\-::\-Vector\-T@{Util\-::\-Vector\-T}!Count@{Count}}
+\index{Count@{Count}!Util::VectorT@{Util\-::\-Vector\-T}}
+\subsubsection[{Count}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T $>$ int {\bf Util\-::\-Vector\-T}$<$ T $>$\-::Count (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+) const}}\label{class_util_1_1_vector_t_a62ea0161e9cfdf5eef99760c122bfae8}
+
+
+向量中存放的元素数 
+
+\begin{DoxyReturn}{返回}
+返回向量存放的元素数 
+\end{DoxyReturn}
+
+
+在文件 Vector.\-h 第 226 行定义.
+
+\hypertarget{class_util_1_1_vector_t_ad6e051af9482f6484453b3f71b746a20}{\index{Util\-::\-Vector\-T@{Util\-::\-Vector\-T}!Delete\-At@{Delete\-At}}
+\index{Delete\-At@{Delete\-At}!Util::VectorT@{Util\-::\-Vector\-T}}
+\subsubsection[{Delete\-At}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T $>$ void {\bf Util\-::\-Vector\-T}$<$ T $>$\-::Delete\-At (
+\begin{DoxyParamCaption}
+\item[{const int}]{i}
+\end{DoxyParamCaption}
+)}}\label{class_util_1_1_vector_t_ad6e051af9482f6484453b3f71b746a20}
+
+
+删除i处的元素 
+
+
+\begin{DoxyParams}{参数}
+{\em i} & 要删除元素的索引 \\
+\hline
+\end{DoxyParams}
+
+
+在文件 Vector.\-h 第 167 行定义.
+
+\hypertarget{class_util_1_1_vector_t_a2e7e7d97535ea7164af5b6f4846f0c53}{\index{Util\-::\-Vector\-T@{Util\-::\-Vector\-T}!Insert@{Insert}}
+\index{Insert@{Insert}!Util::VectorT@{Util\-::\-Vector\-T}}
+\subsubsection[{Insert}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T $>$ void {\bf Util\-::\-Vector\-T}$<$ T $>$\-::Insert (
+\begin{DoxyParamCaption}
+\item[{const int}]{i, }
+\item[{const T}]{elem}
+\end{DoxyParamCaption}
+)}}\label{class_util_1_1_vector_t_a2e7e7d97535ea7164af5b6f4846f0c53}
+
+
+在索引位置i处插入元素elem 
+
+
+\begin{DoxyParams}{参数}
+{\em i} & 要插入的索引 \\
+\hline
+{\em elem} & 要插入的元素 \\
+\hline
+\end{DoxyParams}
+
+
+在文件 Vector.\-h 第 182 行定义.
+
+\hypertarget{class_util_1_1_vector_t_a90a2d20a6353a0c2ff555763df2c2bdf}{\index{Util\-::\-Vector\-T@{Util\-::\-Vector\-T}!Push\-Back@{Push\-Back}}
+\index{Push\-Back@{Push\-Back}!Util::VectorT@{Util\-::\-Vector\-T}}
+\subsubsection[{Push\-Back}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T $>$ void {\bf Util\-::\-Vector\-T}$<$ T $>$\-::Push\-Back (
+\begin{DoxyParamCaption}
+\item[{const T}]{elem}
+\end{DoxyParamCaption}
+)}}\label{class_util_1_1_vector_t_a90a2d20a6353a0c2ff555763df2c2bdf}
+
+
+在向量尾部附加元素 elem 
+
+
+\begin{DoxyParams}{参数}
+{\em elem} & 要附加的元素 \\
+\hline
+\end{DoxyParams}
+
+
+在文件 Vector.\-h 第 160 行定义.
+
+\hypertarget{class_util_1_1_vector_t_a4103b59080ffeae7b2389fdebf301a4f}{\index{Util\-::\-Vector\-T@{Util\-::\-Vector\-T}!Push\-Front@{Push\-Front}}
+\index{Push\-Front@{Push\-Front}!Util::VectorT@{Util\-::\-Vector\-T}}
+\subsubsection[{Push\-Front}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T $>$ void {\bf Util\-::\-Vector\-T}$<$ T $>$\-::Push\-Front (
+\begin{DoxyParamCaption}
+\item[{const T}]{elem}
+\end{DoxyParamCaption}
+)}}\label{class_util_1_1_vector_t_a4103b59080ffeae7b2389fdebf301a4f}
+
+
+在向量头部附加元素 elem 
+
+
+\begin{DoxyParams}{参数}
+{\em elem} & 要附加的元素 \\
+\hline
+\end{DoxyParams}
+
+
+在文件 Vector.\-h 第 147 行定义.
+
+
+
+该类的文档由以下文件生成\-:\begin{DoxyCompactItemize}
+\item 
+Virtual\-Disk\-Console/Vector.\-h\end{DoxyCompactItemize}

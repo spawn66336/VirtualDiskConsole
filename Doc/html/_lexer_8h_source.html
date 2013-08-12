@@ -1,0 +1,116 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.4"/>
+<title>VirtualDiskConsole: VirtualDiskConsole/Lexer.h 源文件</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td style="padding-left: 0.5em;">
+   <div id="projectname">VirtualDiskConsole
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 制作者 Doxygen 1.8.4 -->
+  <div id="navrow1" class="tabs">
+    <ul class="tablist">
+      <li><a href="index.html"><span>首页</span></a></li>
+      <li><a href="namespaces.html"><span>命名空间</span></a></li>
+      <li><a href="annotated.html"><span>类</span></a></li>
+      <li class="current"><a href="files.html"><span>文件</span></a></li>
+    </ul>
+  </div>
+  <div id="navrow2" class="tabs2">
+    <ul class="tablist">
+      <li><a href="files.html"><span>文件列表</span></a></li>
+    </ul>
+  </div>
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="dir_4c9c2bc18b733b8b55e8fff397d929d3.html">VirtualDiskConsole</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div class="header">
+  <div class="headertitle">
+<div class="title">Lexer.h</div>  </div>
+</div><!--header-->
+<div class="contents">
+<div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="preprocessor">#ifndef ZP_LEXER</span></div>
+<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="preprocessor"></span><span class="preprocessor">#define ZP_LEXER</span></div>
+<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="preprocessor"></span></div>
+<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="preprocessor">#include &quot;ZPDependency.h&quot;</span></div>
+<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="preprocessor">#include &quot;Token.h&quot;</span></div>
+<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="preprocessor">#include &quot;SearchPath.h&quot;</span></div>
+<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;</div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;<span class="keyword">namespace </span>LexerSys</div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;{ </div>
+<div class="line"><a name="l00016"></a><span class="lineno"><a class="code" href="class_lexer_sys_1_1_lexer.html">   16</a></span>&#160;         <span class="keyword">class </span><a class="code" href="class_lexer_sys_1_1_lexer.html">Lexer</a> </div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;         { </div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;         <span class="keyword">public</span>:   </div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;</div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;             <span class="keyword">enum</span> LexerState{</div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;                 LOADED_STATE = 1,</div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;                 UNLOADED_STATE ,</div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;                 ANALYSISED_STATE</div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;             };</div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;</div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;             <a class="code" href="class_lexer_sys_1_1_lexer.html">Lexer</a>();</div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;             <span class="keyword">virtual</span> ~<a class="code" href="class_lexer_sys_1_1_lexer.html">Lexer</a>();</div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;</div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;            <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="class_lexer_sys_1_1_lexer.html#ac3a3c82b210ed2be7f1996180c124176" title="设置需要分析的字符串 ">SetString</a>(  <span class="keyword">const</span> Util::String&amp; str ); </div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;            </div>
+<div class="line"><a name="l00039"></a><span class="lineno"><a class="code" href="class_lexer_sys_1_1_lexer.html#aa55e3ab31601792897465e2772eb255d">   39</a></span>&#160;            <span class="keyword">virtual</span> <a class="code" href="class_lexer_sys_1_1_token.html">Token</a>&amp; <a class="code" href="class_lexer_sys_1_1_lexer.html#aa55e3ab31601792897465e2772eb255d" title="获得命令头 ">GetCommandToken</a>( <span class="keywordtype">void</span> )  { <span class="keywordflow">return</span> m_cmd_head; }</div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;</div>
+<div class="line"><a name="l00045"></a><span class="lineno"><a class="code" href="class_lexer_sys_1_1_lexer.html#a97215f1bea5d215e1260efb7a001c738">   45</a></span>&#160;            <span class="keyword">virtual</span> <a class="code" href="class_util_1_1_link_list_t.html">Util::LinkListT&lt;Token&gt;</a>&amp; <a class="code" href="class_lexer_sys_1_1_lexer.html#a97215f1bea5d215e1260efb7a001c738" title="获得命令选项 ">GetCommandOptions</a>( <span class="keywordtype">void</span> )  { <span class="keywordflow">return</span> m_options; }</div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;</div>
+<div class="line"><a name="l00051"></a><span class="lineno"><a class="code" href="class_lexer_sys_1_1_lexer.html#aead2ffdb9f57cc2cf582611b97557223">   51</a></span>&#160;            <span class="keyword">virtual</span> <a class="code" href="class_util_1_1_link_list_t.html">Util::LinkListT&lt;SearchPath&gt;</a>&amp; <a class="code" href="class_lexer_sys_1_1_lexer.html#aead2ffdb9f57cc2cf582611b97557223" title="获得命令路径列表 ">GetCommandPaths</a>( <span class="keywordtype">void</span> )  { <span class="keywordflow">return</span> m_paths; }</div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;</div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;            <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="class_lexer_sys_1_1_lexer.html#aea64d5beaaaa4339b2c2b152a0c420bf" title="分析所设置的字符串，从中分析出各种token ">Analysis</a>( <span class="keywordtype">void</span> );</div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;</div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;            <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="class_lexer_sys_1_1_lexer.html#a8921b421de22b3f7ef44cfadfe1e4dc7" title="清空解析器内容供下次再次分析 ">Clear</a>( <span class="keywordtype">void</span> );</div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;             </div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;         <span class="keyword">protected</span>:</div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;             </div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;             Util::String <a class="code" href="class_lexer_sys_1_1_lexer.html#a5a838652fece37b063d6e71efb87c1c6" title="从要分析的字符串中提取命令头 ">AnalysisCmdHead</a>( <span class="keyword">const</span> Util::String&amp; str );</div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;</div>
+<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;             Util::String  <a class="code" href="class_lexer_sys_1_1_lexer.html#ae143c5f4c628b05b7bcc41d1f79cd6e6" title="从要分析的字符串中提取命令选项 ">AnalysisCmdOptions</a>( <span class="keyword">const</span> Util::String&amp; str );</div>
+<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;</div>
+<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;             Util::String  <a class="code" href="class_lexer_sys_1_1_lexer.html#a3d7bd63169463c2bb476656bb46fb144" title="从要分析的字符串中提取命令路径 ">AnalysisCmdPaths</a>( <span class="keyword">const</span> Util::String&amp; str );</div>
+<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;              </div>
+<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;         <span class="keyword">private</span>: </div>
+<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;</div>
+<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;             LexerState m_state;                                                </div>
+<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;             Util::String m_str_buf;                                            </div>
+<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;             <a class="code" href="class_lexer_sys_1_1_token.html">Token</a> m_cmd_head;                                          </div>
+<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;             <a class="code" href="class_util_1_1_link_list_t.html">Util::LinkListT&lt;Token&gt;</a> m_options;                      </div>
+<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;             <a class="code" href="class_util_1_1_link_list_t.html">Util::LinkListT&lt; SearchPath &gt;</a> m_paths;             </div>
+<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;</div>
+<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;        };<span class="comment">//class Lexer </span></div>
+<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160; </div>
+<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;</div>
+<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;}<span class="comment">//namespace Lexer_Sys</span></div>
+<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160; </div>
+<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;<span class="preprocessor">#endif//ZP_LEXER</span></div>
+</div><!-- fragment --></div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+生成于 2013年 八月 12日 星期一 15:24:03 , 为 VirtualDiskConsole使用  &#160;<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="doxygen.png" alt="doxygen"/>
+</a> 1.8.4
+</small></address>
+</body>
+</html>

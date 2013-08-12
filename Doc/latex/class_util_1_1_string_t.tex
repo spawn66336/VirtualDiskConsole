@@ -1,0 +1,751 @@
+\hypertarget{class_util_1_1_string_t}{\section{Util\-:\-:String\-T$<$ T $>$ 模板类 参考}
+\label{class_util_1_1_string_t}\index{Util\-::\-String\-T$<$ T $>$@{Util\-::\-String\-T$<$ T $>$}}
+}
+\subsection*{Public 类型}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{class_util_1_1_string_t_a120efc2171f8e53732aa4b56d9ba37c6}{typedef T {\bfseries X\-C\-H\-A\-R}}\label{class_util_1_1_string_t_a120efc2171f8e53732aa4b56d9ba37c6}
+
+\end{DoxyCompactItemize}
+\subsection*{Public 成员函数}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{class_util_1_1_string_t_a883cbb1e8a0f3b732aca84b0d9cd266b}{\hyperlink{class_util_1_1_string_t_a883cbb1e8a0f3b732aca84b0d9cd266b}{String\-T} ()}\label{class_util_1_1_string_t_a883cbb1e8a0f3b732aca84b0d9cd266b}
+
+\begin{DoxyCompactList}\small\item\em 默认构造函数 \end{DoxyCompactList}\item 
+\hypertarget{class_util_1_1_string_t_aad980a5b36d5f16f6fea4c6630bb813d}{{\bfseries String\-T} (const T $\ast$str)}\label{class_util_1_1_string_t_aad980a5b36d5f16f6fea4c6630bb813d}
+
+\item 
+\hypertarget{class_util_1_1_string_t_a1257b8075074f19bb1c9814494b15068}{\hyperlink{class_util_1_1_string_t_a1257b8075074f19bb1c9814494b15068}{String\-T} (const \hyperlink{class_util_1_1_string_t}{String\-T} \&str)}\label{class_util_1_1_string_t_a1257b8075074f19bb1c9814494b15068}
+
+\begin{DoxyCompactList}\small\item\em 拷贝构造函数 \end{DoxyCompactList}\item 
+\hypertarget{class_util_1_1_string_t_abe51bcfdbfb0f1929d2c4cff929a8808}{\hyperlink{class_util_1_1_string_t_abe51bcfdbfb0f1929d2c4cff929a8808}{$\sim$\-String\-T} ()}\label{class_util_1_1_string_t_abe51bcfdbfb0f1929d2c4cff929a8808}
+
+\begin{DoxyCompactList}\small\item\em 析构函数 \end{DoxyCompactList}\item 
+void \hyperlink{class_util_1_1_string_t_a5775703e044ee57083e8dbed36837ec2}{Assign} (const int len)
+\begin{DoxyCompactList}\small\item\em 根据所需字符串长度调整缓冲区大小 \end{DoxyCompactList}\item 
+int \hyperlink{class_util_1_1_string_t_ab8dd0984514e44046b30f66e1f63b2c1}{Length} (void) const 
+\begin{DoxyCompactList}\small\item\em 返回字符串长度 \end{DoxyCompactList}\item 
+int \hyperlink{class_util_1_1_string_t_a72e976002115574ec303af27375ed65f}{Capacity} (void) const 
+\begin{DoxyCompactList}\small\item\em 返回字符串缓冲区所能容纳的字符数 \end{DoxyCompactList}\item 
+bool \hyperlink{class_util_1_1_string_t_a216aedf3b116d9f2b402edfd2d4f41c5}{Is\-Empty} (void) const 
+\begin{DoxyCompactList}\small\item\em 返回当前字符串是否为空 \end{DoxyCompactList}\item 
+T \& \hyperlink{class_util_1_1_string_t_a89a211d1470fce86db51e798137488b9}{At} (const int i)
+\begin{DoxyCompactList}\small\item\em 返回索引处的字符 \end{DoxyCompactList}\item 
+const T \& \hyperlink{class_util_1_1_string_t_a9dbec7dd16a3f3b30ec1c893fce410b2}{At} (const int i) const 
+\begin{DoxyCompactList}\small\item\em 返回索引处的字符 \end{DoxyCompactList}\item 
+int \hyperlink{class_util_1_1_string_t_ae3904115e9111e8254fea22fbd522fbb}{Delete} (const int i, const int len)
+\begin{DoxyCompactList}\small\item\em 删除字符串中指定范围内的子字符串 \end{DoxyCompactList}\item 
+\hyperlink{class_util_1_1_string_t}{String\-T} \& \hyperlink{class_util_1_1_string_t_a643a72c0f360c781ad27f0c1aaa9ce84}{Insert} (const \hyperlink{class_util_1_1_string_t}{String\-T} \&str, const int i)
+\begin{DoxyCompactList}\small\item\em 在 i 处之前插入 str 字符串 \end{DoxyCompactList}\item 
+int \hyperlink{class_util_1_1_string_t_ac5aba7f0da8bd71c812c3a609ccf4840}{Compare} (const \hyperlink{class_util_1_1_string_t}{String\-T} \&str, const bool lowercast=false) const 
+\begin{DoxyCompactList}\small\item\em 传入字符串与当前字符串比较 \end{DoxyCompactList}\item 
+int \hyperlink{class_util_1_1_string_t_a0f8cc8e5867626a77cb749f6d31ffd35}{I\-Cmp} (const \hyperlink{class_util_1_1_string_t}{String\-T} \&str) const 
+\begin{DoxyCompactList}\small\item\em 传入字符串与当前字符串比较（忽略大小写） \end{DoxyCompactList}\item 
+int \hyperlink{class_util_1_1_string_t_a5ddc1b3c72bdfead4faaef7f21e149d5}{Find} (const T c, const int start\-\_\-pos) const 
+\begin{DoxyCompactList}\small\item\em 找到本字符串中 start\-\_\-pos位置处开始第一次出现c字符的位置 \end{DoxyCompactList}\item 
+int \hyperlink{class_util_1_1_string_t_a4b4ab085c3036bfb30f787f39972cd00}{Find} (const \hyperlink{class_util_1_1_string_t}{String\-T} \&str, const int start\-\_\-pos) const 
+\begin{DoxyCompactList}\small\item\em 找到本字符串中 start\-\_\-pos位置处开始第一次出现str的位置 \end{DoxyCompactList}\item 
+int \hyperlink{class_util_1_1_string_t_a085171caf883c6be96a8f34133db3167}{Find} (const T $\ast$str, const int start\-\_\-pos) const 
+\begin{DoxyCompactList}\small\item\em 找到本字符串中 start\-\_\-pos位置处开始第一次出现str的位置 \end{DoxyCompactList}\item 
+int \hyperlink{class_util_1_1_string_t_acdb6336dc0e2538fdd2b4d35806aaffe}{Find\-Last\-Of} (const T c) const 
+\begin{DoxyCompactList}\small\item\em 找到本字符串中最后一次字符c出现的位置 \end{DoxyCompactList}\item 
+int \hyperlink{class_util_1_1_string_t_add578f65b0bd9cc1b31a3ac84ce266f2}{Find\-Last\-Of} (const \hyperlink{class_util_1_1_string_t}{String\-T} \&str) const 
+\begin{DoxyCompactList}\small\item\em 找到本字符串中最后一次str出现的位置 \end{DoxyCompactList}\item 
+\hyperlink{class_util_1_1_string_t}{String\-T} \hyperlink{class_util_1_1_string_t_a40cddcbb6456c342921277582c1bb4e7}{Sub\-String} (const int i, const int len) const 
+\begin{DoxyCompactList}\small\item\em 返回本字符串 从第i个字符开始的长达len的子字符串 \end{DoxyCompactList}\item 
+\hypertarget{class_util_1_1_string_t_aa7de511b08d96d68ce12457172c1fa2c}{T $\ast$ \hyperlink{class_util_1_1_string_t_aa7de511b08d96d68ce12457172c1fa2c}{Ptr} (void)}\label{class_util_1_1_string_t_aa7de511b08d96d68ce12457172c1fa2c}
+
+\begin{DoxyCompactList}\small\item\em 返回字符串缓冲区指针 \end{DoxyCompactList}\item 
+\hypertarget{class_util_1_1_string_t_ab7ec1fe1e59636798f17b185b1df1aa4}{const T $\ast$ \hyperlink{class_util_1_1_string_t_ab7ec1fe1e59636798f17b185b1df1aa4}{Ptr} (void) const }\label{class_util_1_1_string_t_ab7ec1fe1e59636798f17b185b1df1aa4}
+
+\begin{DoxyCompactList}\small\item\em 返回字符串缓冲区指针 \end{DoxyCompactList}\item 
+void \hyperlink{class_util_1_1_string_t_aac8b361806b6c5995cc251bf1365f786}{Empty} (void)
+\begin{DoxyCompactList}\small\item\em 清空字符串 \end{DoxyCompactList}\item 
+void \hyperlink{class_util_1_1_string_t_ae53d9ce6fd8b1935c01d8dd59ee7e31d}{Convert\-To\-Lowercast} (void)
+\begin{DoxyCompactList}\small\item\em 将字符串从大写转换为小写 \end{DoxyCompactList}\item 
+\hyperlink{class_util_1_1_string_t}{String\-T} \& \hyperlink{class_util_1_1_string_t_aca66fa07a2bc4707b622d3af0def910b}{Append} (const \hyperlink{class_util_1_1_string_t}{String\-T} \&str)
+\begin{DoxyCompactList}\small\item\em 在字符串尾部附加字符串 \end{DoxyCompactList}\item 
+\hyperlink{class_util_1_1_string_t}{String\-T} \& \hyperlink{class_util_1_1_string_t_ae08a46946ebab1db4478d55055ed3ca8}{Append} (const T c)
+\begin{DoxyCompactList}\small\item\em 在字符串尾部附加字符 \end{DoxyCompactList}\item 
+\hypertarget{class_util_1_1_string_t_a9a0cdb55768faaa23d107ab89a5e7d99}{T \hyperlink{class_util_1_1_string_t_a9a0cdb55768faaa23d107ab89a5e7d99}{Pop\-Back} (void)}\label{class_util_1_1_string_t_a9a0cdb55768faaa23d107ab89a5e7d99}
+
+\begin{DoxyCompactList}\small\item\em 从字符串结尾处删掉一个字符 \end{DoxyCompactList}\item 
+\hyperlink{class_util_1_1_string_t}{String\-T} \& \hyperlink{class_util_1_1_string_t_a5e61c607c9c1077e159bf37f070eacfe}{Trim} (void)
+\begin{DoxyCompactList}\small\item\em 清除左侧与右侧的所有空白字符 \end{DoxyCompactList}\item 
+\hyperlink{class_util_1_1_string_t}{String\-T} \& \hyperlink{class_util_1_1_string_t_a56417db03430eaf3c89469788e63dc00}{Trim\-Left} (void)
+\begin{DoxyCompactList}\small\item\em 清除左侧所有空格 \end{DoxyCompactList}\item 
+\hyperlink{class_util_1_1_string_t}{String\-T} \& \hyperlink{class_util_1_1_string_t_a72eade948c17f6d14589bb7b83f0733f}{Trim\-Right} (void)
+\begin{DoxyCompactList}\small\item\em 清除右侧所有空格 \end{DoxyCompactList}\item 
+\hyperlink{class_util_1_1_string_t}{String\-T} \& \hyperlink{class_util_1_1_string_t_a38e0dcc53f8ac3fac063df7ff9f6143d}{Clear\-All\-White\-Chars} (void)
+\begin{DoxyCompactList}\small\item\em 清除字符串中的所有空白字符 \end{DoxyCompactList}\item 
+\hyperlink{class_util_1_1_string_t}{String\-T} \& \hyperlink{class_util_1_1_string_t_a7f6eac1dcecad979da09b67da2c33d3c}{Replace} (const \hyperlink{class_util_1_1_string_t}{String\-T} \&str, const \hyperlink{class_util_1_1_string_t}{String\-T} \&replace\-\_\-str, const int start\-\_\-pos)
+\begin{DoxyCompactList}\small\item\em 替换字符串中的以start\-\_\-pos 起始处往后所有的str字符串，将其替换为replace\-\_\-str \end{DoxyCompactList}\item 
+\hypertarget{class_util_1_1_string_t_a128a238a99785dc286e51650712b51b6}{void \hyperlink{class_util_1_1_string_t_a128a238a99785dc286e51650712b51b6}{Destroy} (void)}\label{class_util_1_1_string_t_a128a238a99785dc286e51650712b51b6}
+
+\begin{DoxyCompactList}\small\item\em 销毁字符串 \end{DoxyCompactList}\item 
+\hypertarget{class_util_1_1_string_t_ae7f2518a479e1d2eab801c61161b6c16}{bool \hyperlink{class_util_1_1_string_t_ae7f2518a479e1d2eab801c61161b6c16}{operator==} (const \hyperlink{class_util_1_1_string_t}{String\-T} \&rhs) const }\label{class_util_1_1_string_t_ae7f2518a479e1d2eab801c61161b6c16}
+
+\begin{DoxyCompactList}\small\item\em 判断相等运算符重载 \end{DoxyCompactList}\item 
+\hypertarget{class_util_1_1_string_t_a47bccc96e9e30396c77aa9a7fce55075}{bool \hyperlink{class_util_1_1_string_t_a47bccc96e9e30396c77aa9a7fce55075}{operator!=} (const \hyperlink{class_util_1_1_string_t}{String\-T} \&rhs) const }\label{class_util_1_1_string_t_a47bccc96e9e30396c77aa9a7fce55075}
+
+\begin{DoxyCompactList}\small\item\em 判断不相等运算符重载 \end{DoxyCompactList}\item 
+\hypertarget{class_util_1_1_string_t_a462a60b09841d50708bdeeb7581fe820}{\hyperlink{class_util_1_1_string_t}{String\-T} \& \hyperlink{class_util_1_1_string_t_a462a60b09841d50708bdeeb7581fe820}{operator+=} (const \hyperlink{class_util_1_1_string_t}{String\-T} \&rhs)}\label{class_util_1_1_string_t_a462a60b09841d50708bdeeb7581fe820}
+
+\begin{DoxyCompactList}\small\item\em +=运算符重载，在当前字符串末尾附加字符串 \end{DoxyCompactList}\item 
+\hypertarget{class_util_1_1_string_t_af4676243dd3164991f3f03687bea8763}{\hyperlink{class_util_1_1_string_t}{String\-T} \& \hyperlink{class_util_1_1_string_t_af4676243dd3164991f3f03687bea8763}{operator+=} (const T $\ast$rhs)}\label{class_util_1_1_string_t_af4676243dd3164991f3f03687bea8763}
+
+\begin{DoxyCompactList}\small\item\em +=运算符重载，在当前字符串末尾附加字符串 \end{DoxyCompactList}\item 
+\hypertarget{class_util_1_1_string_t_ae7c4ebe35e01d31dc597f10ceab4d2e6}{\hyperlink{class_util_1_1_string_t}{String\-T} \& \hyperlink{class_util_1_1_string_t_ae7c4ebe35e01d31dc597f10ceab4d2e6}{operator+=} (const T c)}\label{class_util_1_1_string_t_ae7c4ebe35e01d31dc597f10ceab4d2e6}
+
+\begin{DoxyCompactList}\small\item\em +=运算符重载，在当前字符串末尾附加字符 \end{DoxyCompactList}\item 
+\hypertarget{class_util_1_1_string_t_a070230002e6ac34196bc428f29b124ce}{\hyperlink{class_util_1_1_string_t}{String\-T} \& \hyperlink{class_util_1_1_string_t_a070230002e6ac34196bc428f29b124ce}{operator=} (const \hyperlink{class_util_1_1_string_t}{String\-T} \&rhs)}\label{class_util_1_1_string_t_a070230002e6ac34196bc428f29b124ce}
+
+\begin{DoxyCompactList}\small\item\em 重载赋值运算符 \end{DoxyCompactList}\item 
+\hypertarget{class_util_1_1_string_t_a5df6d9b5a666b594be55d69487859bc4}{\hyperlink{class_util_1_1_string_t}{String\-T} \& \hyperlink{class_util_1_1_string_t_a5df6d9b5a666b594be55d69487859bc4}{operator=} (const T $\ast$rhs)}\label{class_util_1_1_string_t_a5df6d9b5a666b594be55d69487859bc4}
+
+\begin{DoxyCompactList}\small\item\em 重载赋值运算符 \end{DoxyCompactList}\item 
+\hypertarget{class_util_1_1_string_t_ad4ab5e162578246bdcb450b6348a2566}{\hyperlink{class_util_1_1_string_t}{String\-T} \hyperlink{class_util_1_1_string_t_ad4ab5e162578246bdcb450b6348a2566}{operator+} (const \hyperlink{class_util_1_1_string_t}{String\-T} \&rhs) const }\label{class_util_1_1_string_t_ad4ab5e162578246bdcb450b6348a2566}
+
+\begin{DoxyCompactList}\small\item\em 加法运算符重载 \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{详细描述}
+\subsubsection*{template$<$typename T$>$class Util\-::\-String\-T$<$ T $>$}
+
+
+
+在文件 String.\-h 第 85 行定义.
+
+
+
+\subsection{成员函数说明}
+\hypertarget{class_util_1_1_string_t_aca66fa07a2bc4707b622d3af0def910b}{\index{Util\-::\-String\-T@{Util\-::\-String\-T}!Append@{Append}}
+\index{Append@{Append}!Util::StringT@{Util\-::\-String\-T}}
+\subsubsection[{Append}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T $>$ {\bf String\-T}\& {\bf Util\-::\-String\-T}$<$ T $>$\-::Append (
+\begin{DoxyParamCaption}
+\item[{const {\bf String\-T}$<$ T $>$ \&}]{str}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{class_util_1_1_string_t_aca66fa07a2bc4707b622d3af0def910b}
+
+
+在字符串尾部附加字符串 
+
+
+\begin{DoxyParams}{参数}
+{\em str} & 要附加在当前字符串末尾的字符串 \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{返回}
+String\& 附加后的字符串引用 
+\end{DoxyReturn}
+
+
+在文件 String.\-h 第 573 行定义.
+
+\hypertarget{class_util_1_1_string_t_ae08a46946ebab1db4478d55055ed3ca8}{\index{Util\-::\-String\-T@{Util\-::\-String\-T}!Append@{Append}}
+\index{Append@{Append}!Util::StringT@{Util\-::\-String\-T}}
+\subsubsection[{Append}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T $>$ {\bf String\-T}\& {\bf Util\-::\-String\-T}$<$ T $>$\-::Append (
+\begin{DoxyParamCaption}
+\item[{const T}]{c}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{class_util_1_1_string_t_ae08a46946ebab1db4478d55055ed3ca8}
+
+
+在字符串尾部附加字符 
+
+
+\begin{DoxyParams}{参数}
+{\em c} & 要附加在当前字符串末尾的字符 \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{返回}
+String\& 附加后的字符串引用 
+\end{DoxyReturn}
+
+
+在文件 String.\-h 第 596 行定义.
+
+\hypertarget{class_util_1_1_string_t_a5775703e044ee57083e8dbed36837ec2}{\index{Util\-::\-String\-T@{Util\-::\-String\-T}!Assign@{Assign}}
+\index{Assign@{Assign}!Util::StringT@{Util\-::\-String\-T}}
+\subsubsection[{Assign}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T $>$ void {\bf Util\-::\-String\-T}$<$ T $>$\-::Assign (
+\begin{DoxyParamCaption}
+\item[{const int}]{len}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{class_util_1_1_string_t_a5775703e044ee57083e8dbed36837ec2}
+
+
+根据所需字符串长度调整缓冲区大小 
+
+
+\begin{DoxyParams}{参数}
+{\em len} & 要申请的字符串空间大小，此函数会根据申请大小再多加上一部分空间以避免频繁的申请 \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{返回}
+void 
+\end{DoxyReturn}
+
+
+在文件 String.\-h 第 135 行定义.
+
+\hypertarget{class_util_1_1_string_t_a89a211d1470fce86db51e798137488b9}{\index{Util\-::\-String\-T@{Util\-::\-String\-T}!At@{At}}
+\index{At@{At}!Util::StringT@{Util\-::\-String\-T}}
+\subsubsection[{At}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T $>$ T\& {\bf Util\-::\-String\-T}$<$ T $>$\-::At (
+\begin{DoxyParamCaption}
+\item[{const int}]{i}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{class_util_1_1_string_t_a89a211d1470fce86db51e798137488b9}
+
+
+返回索引处的字符 
+
+
+\begin{DoxyParams}{参数}
+{\em i} & 索引值( 必须在 0 到 \hyperlink{class_util_1_1_string_t_ab8dd0984514e44046b30f66e1f63b2c1}{Length()} 之间 ) \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{返回}
+T\& 
+\end{DoxyReturn}
+
+
+在文件 String.\-h 第 185 行定义.
+
+\hypertarget{class_util_1_1_string_t_a9dbec7dd16a3f3b30ec1c893fce410b2}{\index{Util\-::\-String\-T@{Util\-::\-String\-T}!At@{At}}
+\index{At@{At}!Util::StringT@{Util\-::\-String\-T}}
+\subsubsection[{At}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T $>$ const T\& {\bf Util\-::\-String\-T}$<$ T $>$\-::At (
+\begin{DoxyParamCaption}
+\item[{const int}]{i}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}}\label{class_util_1_1_string_t_a9dbec7dd16a3f3b30ec1c893fce410b2}
+
+
+返回索引处的字符 
+
+
+\begin{DoxyParams}{参数}
+{\em i} & 索引值( 必须在 0 到 \hyperlink{class_util_1_1_string_t_ab8dd0984514e44046b30f66e1f63b2c1}{Length()} 之间 ) \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{返回}
+const T\& 
+\end{DoxyReturn}
+
+
+在文件 String.\-h 第 196 行定义.
+
+\hypertarget{class_util_1_1_string_t_a72e976002115574ec303af27375ed65f}{\index{Util\-::\-String\-T@{Util\-::\-String\-T}!Capacity@{Capacity}}
+\index{Capacity@{Capacity}!Util::StringT@{Util\-::\-String\-T}}
+\subsubsection[{Capacity}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T $>$ int {\bf Util\-::\-String\-T}$<$ T $>$\-::Capacity (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}}\label{class_util_1_1_string_t_a72e976002115574ec303af27375ed65f}
+
+
+返回字符串缓冲区所能容纳的字符数 
+
+\begin{DoxyReturn}{返回}
+返回字符串缓冲区所能容纳的字符数 
+\end{DoxyReturn}
+
+
+在文件 String.\-h 第 170 行定义.
+
+\hypertarget{class_util_1_1_string_t_a38e0dcc53f8ac3fac063df7ff9f6143d}{\index{Util\-::\-String\-T@{Util\-::\-String\-T}!Clear\-All\-White\-Chars@{Clear\-All\-White\-Chars}}
+\index{Clear\-All\-White\-Chars@{Clear\-All\-White\-Chars}!Util::StringT@{Util\-::\-String\-T}}
+\subsubsection[{Clear\-All\-White\-Chars}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T $>$ {\bf String\-T}\& {\bf Util\-::\-String\-T}$<$ T $>$\-::Clear\-All\-White\-Chars (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{class_util_1_1_string_t_a38e0dcc53f8ac3fac063df7ff9f6143d}
+
+
+清除字符串中的所有空白字符 
+
+\begin{DoxyReturn}{返回}
+String\& 清除后的当前字符串 
+\end{DoxyReturn}
+
+
+在文件 String.\-h 第 689 行定义.
+
+\hypertarget{class_util_1_1_string_t_ac5aba7f0da8bd71c812c3a609ccf4840}{\index{Util\-::\-String\-T@{Util\-::\-String\-T}!Compare@{Compare}}
+\index{Compare@{Compare}!Util::StringT@{Util\-::\-String\-T}}
+\subsubsection[{Compare}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T $>$ int {\bf Util\-::\-String\-T}$<$ T $>$\-::Compare (
+\begin{DoxyParamCaption}
+\item[{const {\bf String\-T}$<$ T $>$ \&}]{str, }
+\item[{const bool}]{lowercast = {\ttfamily false}}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}}\label{class_util_1_1_string_t_ac5aba7f0da8bd71c812c3a609ccf4840}
+
+
+传入字符串与当前字符串比较 
+
+
+\begin{DoxyParams}{参数}
+{\em str} & 传入字符串 \\
+\hline
+{\em lowercast} & 是否转换至小写比较(当此至为true时为大小写不敏感默认为false) \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{返回}
+比较结果 
+\end{DoxyReturn}
+
+\begin{DoxyRetVals}{返回值}
+{\em -\/1} & 当前字符串小于传入字符串 \\
+\hline
+{\em 0} & 当前字符串等于传入字符串 \\
+\hline
+{\em 1} & 当前字符串大于传入字符串 \\
+\hline
+\end{DoxyRetVals}
+
+
+在文件 String.\-h 第 275 行定义.
+
+\hypertarget{class_util_1_1_string_t_ae53d9ce6fd8b1935c01d8dd59ee7e31d}{\index{Util\-::\-String\-T@{Util\-::\-String\-T}!Convert\-To\-Lowercast@{Convert\-To\-Lowercast}}
+\index{Convert\-To\-Lowercast@{Convert\-To\-Lowercast}!Util::StringT@{Util\-::\-String\-T}}
+\subsubsection[{Convert\-To\-Lowercast}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T $>$ void {\bf Util\-::\-String\-T}$<$ T $>$\-::Convert\-To\-Lowercast (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{class_util_1_1_string_t_ae53d9ce6fd8b1935c01d8dd59ee7e31d}
+
+
+将字符串从大写转换为小写 
+
+\begin{DoxyReturn}{返回}
+void 
+\end{DoxyReturn}
+
+
+在文件 String.\-h 第 550 行定义.
+
+\hypertarget{class_util_1_1_string_t_ae3904115e9111e8254fea22fbd522fbb}{\index{Util\-::\-String\-T@{Util\-::\-String\-T}!Delete@{Delete}}
+\index{Delete@{Delete}!Util::StringT@{Util\-::\-String\-T}}
+\subsubsection[{Delete}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T $>$ int {\bf Util\-::\-String\-T}$<$ T $>$\-::Delete (
+\begin{DoxyParamCaption}
+\item[{const int}]{i, }
+\item[{const int}]{len}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{class_util_1_1_string_t_ae3904115e9111e8254fea22fbd522fbb}
+
+
+删除字符串中指定范围内的子字符串 
+
+
+\begin{DoxyParams}{参数}
+{\em i} & 索引值指定从什么地方开始删除 ( 必须在 0 $<$= i $<$ \hyperlink{class_util_1_1_string_t_ab8dd0984514e44046b30f66e1f63b2c1}{Length()} 之间 ) \\
+\hline
+{\em len} & 从 i 处往后包括第i个字节删除多长的字符串 \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{返回}
+int 返回删除后的新串的字符数 
+\end{DoxyReturn}
+
+
+在文件 String.\-h 第 209 行定义.
+
+\hypertarget{class_util_1_1_string_t_aac8b361806b6c5995cc251bf1365f786}{\index{Util\-::\-String\-T@{Util\-::\-String\-T}!Empty@{Empty}}
+\index{Empty@{Empty}!Util::StringT@{Util\-::\-String\-T}}
+\subsubsection[{Empty}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T $>$ void {\bf Util\-::\-String\-T}$<$ T $>$\-::Empty (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{class_util_1_1_string_t_aac8b361806b6c5995cc251bf1365f786}
+
+
+清空字符串 
+
+\begin{DoxyReturn}{返回}
+void 
+\end{DoxyReturn}
+
+
+在文件 String.\-h 第 537 行定义.
+
+\hypertarget{class_util_1_1_string_t_a5ddc1b3c72bdfead4faaef7f21e149d5}{\index{Util\-::\-String\-T@{Util\-::\-String\-T}!Find@{Find}}
+\index{Find@{Find}!Util::StringT@{Util\-::\-String\-T}}
+\subsubsection[{Find}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T $>$ int {\bf Util\-::\-String\-T}$<$ T $>$\-::Find (
+\begin{DoxyParamCaption}
+\item[{const T}]{c, }
+\item[{const int}]{start\-\_\-pos}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}}\label{class_util_1_1_string_t_a5ddc1b3c72bdfead4faaef7f21e149d5}
+
+
+找到本字符串中 start\-\_\-pos位置处开始第一次出现c字符的位置 
+
+
+\begin{DoxyParams}{参数}
+{\em c} & 要查找的字符 \\
+\hline
+{\em start\-\_\-pos} & 开始查找的位置（以0开始的索引值） \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{返回}
+int 
+\end{DoxyReturn}
+
+\begin{DoxyRetVals}{返回值}
+{\em -\/1} & 未找到所指定字符串 \\
+\hline
+{\em 0} & $\sim$ \hyperlink{class_util_1_1_string_t_ab8dd0984514e44046b30f66e1f63b2c1}{Length()}-\/1 本字符串中含有c并返回第一个字符的位置 \\
+\hline
+\end{DoxyRetVals}
+
+
+在文件 String.\-h 第 349 行定义.
+
+\hypertarget{class_util_1_1_string_t_a4b4ab085c3036bfb30f787f39972cd00}{\index{Util\-::\-String\-T@{Util\-::\-String\-T}!Find@{Find}}
+\index{Find@{Find}!Util::StringT@{Util\-::\-String\-T}}
+\subsubsection[{Find}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T $>$ int {\bf Util\-::\-String\-T}$<$ T $>$\-::Find (
+\begin{DoxyParamCaption}
+\item[{const {\bf String\-T}$<$ T $>$ \&}]{str, }
+\item[{const int}]{start\-\_\-pos}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}}\label{class_util_1_1_string_t_a4b4ab085c3036bfb30f787f39972cd00}
+
+
+找到本字符串中 start\-\_\-pos位置处开始第一次出现str的位置 
+
+
+\begin{DoxyParams}{参数}
+{\em str} & 要查找的字符串 \\
+\hline
+{\em start\-\_\-pos} & 开始查找的位置（以0开始的索引值） \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{返回}
+int 
+\end{DoxyReturn}
+
+\begin{DoxyRetVals}{返回值}
+{\em -\/1} & 未找到所指定字符串 \\
+\hline
+{\em 0} & $\sim$ \hyperlink{class_util_1_1_string_t_ab8dd0984514e44046b30f66e1f63b2c1}{Length()}-\/1 本字符串中含有str并返回第一个字符的位置 \\
+\hline
+\end{DoxyRetVals}
+
+
+在文件 String.\-h 第 379 行定义.
+
+\hypertarget{class_util_1_1_string_t_a085171caf883c6be96a8f34133db3167}{\index{Util\-::\-String\-T@{Util\-::\-String\-T}!Find@{Find}}
+\index{Find@{Find}!Util::StringT@{Util\-::\-String\-T}}
+\subsubsection[{Find}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T $>$ int {\bf Util\-::\-String\-T}$<$ T $>$\-::Find (
+\begin{DoxyParamCaption}
+\item[{const T $\ast$}]{str, }
+\item[{const int}]{start\-\_\-pos}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}}\label{class_util_1_1_string_t_a085171caf883c6be96a8f34133db3167}
+
+
+找到本字符串中 start\-\_\-pos位置处开始第一次出现str的位置 
+
+
+\begin{DoxyParams}{参数}
+{\em str} & 要查找的字符串 \\
+\hline
+{\em start\-\_\-pos} & 开始查找的位置（以0开始的索引值） \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{返回}
+int 
+\end{DoxyReturn}
+
+\begin{DoxyRetVals}{返回值}
+{\em -\/1} & 未找到所指定字符串 \\
+\hline
+{\em 0} & $\sim$ \hyperlink{class_util_1_1_string_t_ab8dd0984514e44046b30f66e1f63b2c1}{Length()}-\/1 找到了指定的字符串并返回待查字符串第一个字符在当前字符串的位置 \\
+\hline
+\end{DoxyRetVals}
+
+
+在文件 String.\-h 第 431 行定义.
+
+\hypertarget{class_util_1_1_string_t_acdb6336dc0e2538fdd2b4d35806aaffe}{\index{Util\-::\-String\-T@{Util\-::\-String\-T}!Find\-Last\-Of@{Find\-Last\-Of}}
+\index{Find\-Last\-Of@{Find\-Last\-Of}!Util::StringT@{Util\-::\-String\-T}}
+\subsubsection[{Find\-Last\-Of}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T $>$ int {\bf Util\-::\-String\-T}$<$ T $>$\-::Find\-Last\-Of (
+\begin{DoxyParamCaption}
+\item[{const T}]{c}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}}\label{class_util_1_1_string_t_acdb6336dc0e2538fdd2b4d35806aaffe}
+
+
+找到本字符串中最后一次字符c出现的位置 
+
+
+\begin{DoxyParams}{参数}
+{\em c} & 要查找的字符 \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{返回}
+返回的找到的位置 
+\end{DoxyReturn}
+
+\begin{DoxyRetVals}{返回值}
+{\em -\/1} & 未找到所指定字符串 \\
+\hline
+{\em 0} & $\sim$ \hyperlink{class_util_1_1_string_t_ab8dd0984514e44046b30f66e1f63b2c1}{Length()}-\/1 找到了指定的字符串并返回待查字符串第一个字符在当前字符串的位置 \\
+\hline
+\end{DoxyRetVals}
+
+
+在文件 String.\-h 第 443 行定义.
+
+\hypertarget{class_util_1_1_string_t_add578f65b0bd9cc1b31a3ac84ce266f2}{\index{Util\-::\-String\-T@{Util\-::\-String\-T}!Find\-Last\-Of@{Find\-Last\-Of}}
+\index{Find\-Last\-Of@{Find\-Last\-Of}!Util::StringT@{Util\-::\-String\-T}}
+\subsubsection[{Find\-Last\-Of}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T $>$ int {\bf Util\-::\-String\-T}$<$ T $>$\-::Find\-Last\-Of (
+\begin{DoxyParamCaption}
+\item[{const {\bf String\-T}$<$ T $>$ \&}]{str}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}}\label{class_util_1_1_string_t_add578f65b0bd9cc1b31a3ac84ce266f2}
+
+
+找到本字符串中最后一次str出现的位置 
+
+
+\begin{DoxyParams}{参数}
+{\em str} & 要查找的字符串 \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{返回}
+返回的找到的位置 
+\end{DoxyReturn}
+
+\begin{DoxyRetVals}{返回值}
+{\em -\/1} & 未找到所指定字符串 \\
+\hline
+{\em 0} & $\sim$ \hyperlink{class_util_1_1_string_t_ab8dd0984514e44046b30f66e1f63b2c1}{Length()}-\/1 找到了指定的字符串并返回待查字符串第一个字符在当前字符串的位置 \\
+\hline
+\end{DoxyRetVals}
+
+
+在文件 String.\-h 第 463 行定义.
+
+\hypertarget{class_util_1_1_string_t_a0f8cc8e5867626a77cb749f6d31ffd35}{\index{Util\-::\-String\-T@{Util\-::\-String\-T}!I\-Cmp@{I\-Cmp}}
+\index{I\-Cmp@{I\-Cmp}!Util::StringT@{Util\-::\-String\-T}}
+\subsubsection[{I\-Cmp}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T $>$ int {\bf Util\-::\-String\-T}$<$ T $>$\-::I\-Cmp (
+\begin{DoxyParamCaption}
+\item[{const {\bf String\-T}$<$ T $>$ \&}]{str}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}}\label{class_util_1_1_string_t_a0f8cc8e5867626a77cb749f6d31ffd35}
+
+
+传入字符串与当前字符串比较（忽略大小写） 
+
+
+\begin{DoxyParams}{参数}
+{\em str} & 传入字符串 \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{返回}
+比较结果 
+\end{DoxyReturn}
+
+\begin{DoxyRetVals}{返回值}
+{\em -\/1} & 当前字符串小于传入字符串 \\
+\hline
+{\em 0} & 当前字符串等于传入字符串 \\
+\hline
+{\em 1} & 当前字符串大于传入字符串 \\
+\hline
+\end{DoxyRetVals}
+
+
+在文件 String.\-h 第 336 行定义.
+
+\hypertarget{class_util_1_1_string_t_a643a72c0f360c781ad27f0c1aaa9ce84}{\index{Util\-::\-String\-T@{Util\-::\-String\-T}!Insert@{Insert}}
+\index{Insert@{Insert}!Util::StringT@{Util\-::\-String\-T}}
+\subsubsection[{Insert}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T $>$ {\bf String\-T}\& {\bf Util\-::\-String\-T}$<$ T $>$\-::Insert (
+\begin{DoxyParamCaption}
+\item[{const {\bf String\-T}$<$ T $>$ \&}]{str, }
+\item[{const int}]{i}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{class_util_1_1_string_t_a643a72c0f360c781ad27f0c1aaa9ce84}
+
+
+在 i 处之前插入 str 字符串 
+
+
+\begin{DoxyParams}{参数}
+{\em str} & 要插入的字符串 \\
+\hline
+{\em i} & 索引值( 必须在 0 $<$= i $<$= \hyperlink{class_util_1_1_string_t_ab8dd0984514e44046b30f66e1f63b2c1}{Length()} 之间 ) \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{返回}
+\hyperlink{class_util_1_1_string_t}{String\-T}\& 返回插入后的字符串 
+\end{DoxyReturn}
+
+
+在文件 String.\-h 第 237 行定义.
+
+\hypertarget{class_util_1_1_string_t_a216aedf3b116d9f2b402edfd2d4f41c5}{\index{Util\-::\-String\-T@{Util\-::\-String\-T}!Is\-Empty@{Is\-Empty}}
+\index{Is\-Empty@{Is\-Empty}!Util::StringT@{Util\-::\-String\-T}}
+\subsubsection[{Is\-Empty}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T $>$ bool {\bf Util\-::\-String\-T}$<$ T $>$\-::Is\-Empty (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}}\label{class_util_1_1_string_t_a216aedf3b116d9f2b402edfd2d4f41c5}
+
+
+返回当前字符串是否为空 
+
+\begin{DoxyReturn}{返回}
+bool 
+\end{DoxyReturn}
+
+\begin{DoxyRetVals}{返回值}
+{\em false} & 当字符串不为空时 \\
+\hline
+{\em true} & 当字符串为空时 \\
+\hline
+\end{DoxyRetVals}
+
+
+在文件 String.\-h 第 178 行定义.
+
+\hypertarget{class_util_1_1_string_t_ab8dd0984514e44046b30f66e1f63b2c1}{\index{Util\-::\-String\-T@{Util\-::\-String\-T}!Length@{Length}}
+\index{Length@{Length}!Util::StringT@{Util\-::\-String\-T}}
+\subsubsection[{Length}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T $>$ int {\bf Util\-::\-String\-T}$<$ T $>$\-::Length (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}}\label{class_util_1_1_string_t_ab8dd0984514e44046b30f66e1f63b2c1}
+
+
+返回字符串长度 
+
+\begin{DoxyReturn}{返回}
+返回字符串长度 
+\end{DoxyReturn}
+
+
+在文件 String.\-h 第 165 行定义.
+
+\hypertarget{class_util_1_1_string_t_a7f6eac1dcecad979da09b67da2c33d3c}{\index{Util\-::\-String\-T@{Util\-::\-String\-T}!Replace@{Replace}}
+\index{Replace@{Replace}!Util::StringT@{Util\-::\-String\-T}}
+\subsubsection[{Replace}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T $>$ {\bf String\-T}\& {\bf Util\-::\-String\-T}$<$ T $>$\-::Replace (
+\begin{DoxyParamCaption}
+\item[{const {\bf String\-T}$<$ T $>$ \&}]{str, }
+\item[{const {\bf String\-T}$<$ T $>$ \&}]{replace\-\_\-str, }
+\item[{const int}]{start\-\_\-pos}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{class_util_1_1_string_t_a7f6eac1dcecad979da09b67da2c33d3c}
+
+
+替换字符串中的以start\-\_\-pos 起始处往后所有的str字符串，将其替换为replace\-\_\-str 
+
+
+\begin{DoxyParams}{参数}
+{\em str} & 要查找替换的字符串 \\
+\hline
+{\em replace\-\_\-str} & 替换的字符串 \\
+\hline
+{\em start\-\_\-pos} & 搜索点 \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{返回}
+String\& 最终替换完成的字符串 
+\end{DoxyReturn}
+
+
+在文件 String.\-h 第 717 行定义.
+
+\hypertarget{class_util_1_1_string_t_a40cddcbb6456c342921277582c1bb4e7}{\index{Util\-::\-String\-T@{Util\-::\-String\-T}!Sub\-String@{Sub\-String}}
+\index{Sub\-String@{Sub\-String}!Util::StringT@{Util\-::\-String\-T}}
+\subsubsection[{Sub\-String}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T $>$ {\bf String\-T} {\bf Util\-::\-String\-T}$<$ T $>$\-::Sub\-String (
+\begin{DoxyParamCaption}
+\item[{const int}]{i, }
+\item[{const int}]{len}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}}\label{class_util_1_1_string_t_a40cddcbb6456c342921277582c1bb4e7}
+
+
+返回本字符串 从第i个字符开始的长达len的子字符串 
+
+
+\begin{DoxyParams}{参数}
+{\em i} & 子串在当前字符串的起始位置( 以0开始的索引 ) \\
+\hline
+{\em len} & 要提取的子串长度 \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{返回}
+\hyperlink{class_util_1_1_string_t}{String\-T} 子字符串 
+\end{DoxyReturn}
+
+\begin{DoxyRetVals}{返回值}
+{\em 空串} & 当截取子串失败时返回 \\
+\hline
+{\em 正常的字符串} & 截取子串成功时返回 \\
+\hline
+\end{DoxyRetVals}
+
+
+在文件 String.\-h 第 489 行定义.
+
+\hypertarget{class_util_1_1_string_t_a5e61c607c9c1077e159bf37f070eacfe}{\index{Util\-::\-String\-T@{Util\-::\-String\-T}!Trim@{Trim}}
+\index{Trim@{Trim}!Util::StringT@{Util\-::\-String\-T}}
+\subsubsection[{Trim}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T $>$ {\bf String\-T}\& {\bf Util\-::\-String\-T}$<$ T $>$\-::Trim (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{class_util_1_1_string_t_a5e61c607c9c1077e159bf37f070eacfe}
+
+
+清除左侧与右侧的所有空白字符 
+
+\begin{DoxyReturn}{返回}
+String\& 清除后的当前字符串 
+\end{DoxyReturn}
+
+
+在文件 String.\-h 第 624 行定义.
+
+\hypertarget{class_util_1_1_string_t_a56417db03430eaf3c89469788e63dc00}{\index{Util\-::\-String\-T@{Util\-::\-String\-T}!Trim\-Left@{Trim\-Left}}
+\index{Trim\-Left@{Trim\-Left}!Util::StringT@{Util\-::\-String\-T}}
+\subsubsection[{Trim\-Left}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T $>$ {\bf String\-T}\& {\bf Util\-::\-String\-T}$<$ T $>$\-::Trim\-Left (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{class_util_1_1_string_t_a56417db03430eaf3c89469788e63dc00}
+
+
+清除左侧所有空格 
+
+\begin{DoxyReturn}{返回}
+String\& 清除后的当前字符串 
+\end{DoxyReturn}
+
+
+在文件 String.\-h 第 633 行定义.
+
+\hypertarget{class_util_1_1_string_t_a72eade948c17f6d14589bb7b83f0733f}{\index{Util\-::\-String\-T@{Util\-::\-String\-T}!Trim\-Right@{Trim\-Right}}
+\index{Trim\-Right@{Trim\-Right}!Util::StringT@{Util\-::\-String\-T}}
+\subsubsection[{Trim\-Right}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T $>$ {\bf String\-T}\& {\bf Util\-::\-String\-T}$<$ T $>$\-::Trim\-Right (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{class_util_1_1_string_t_a72eade948c17f6d14589bb7b83f0733f}
+
+
+清除右侧所有空格 
+
+\begin{DoxyReturn}{返回}
+String\& 清除后的所有字符串 
+\end{DoxyReturn}
+
+
+在文件 String.\-h 第 660 行定义.
+
+
+
+该类的文档由以下文件生成\-:\begin{DoxyCompactItemize}
+\item 
+Virtual\-Disk\-Console/String.\-h\end{DoxyCompactItemize}

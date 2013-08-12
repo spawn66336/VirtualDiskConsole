@@ -1,0 +1,439 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.4"/>
+<title>VirtualDiskConsole: LexerSys::Token类 参考</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td style="padding-left: 0.5em;">
+   <div id="projectname">VirtualDiskConsole
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 制作者 Doxygen 1.8.4 -->
+  <div id="navrow1" class="tabs">
+    <ul class="tablist">
+      <li><a href="index.html"><span>首页</span></a></li>
+      <li><a href="namespaces.html"><span>命名空间</span></a></li>
+      <li class="current"><a href="annotated.html"><span>类</span></a></li>
+      <li><a href="files.html"><span>文件</span></a></li>
+    </ul>
+  </div>
+  <div id="navrow2" class="tabs2">
+    <ul class="tablist">
+      <li><a href="annotated.html"><span>类列表</span></a></li>
+      <li><a href="classes.html"><span>类索引</span></a></li>
+      <li><a href="hierarchy.html"><span>类继承关系</span></a></li>
+      <li><a href="functions.html"><span>类成员</span></a></li>
+    </ul>
+  </div>
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="namespace_lexer_sys.html">LexerSys</a></li><li class="navelem"><a class="el" href="class_lexer_sys_1_1_token.html">Token</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div class="header">
+  <div class="summary">
+<a href="#pub-types">Public 类型</a> &#124;
+<a href="#pub-methods">Public 成员函数</a> &#124;
+<a href="class_lexer_sys_1_1_token-members.html">所有成员列表</a>  </div>
+  <div class="headertitle">
+<div class="title">LexerSys::Token类 参考</div>  </div>
+</div><!--header-->
+<div class="contents">
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-types"></a>
+Public 类型</h2></td></tr>
+<tr class="memitem:a8735f250c0e25e25c062e6f49d983e9d"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><b>TokenType</b> { <b>UNKNOWN_TOKEN</b> = 0, 
+<b>CMD_TOKEN</b>, 
+<b>OPTION_TOKEN</b>, 
+<b>PATH_NODE_TOKEN</b>
+ }</td></tr>
+<tr class="separator:a8735f250c0e25e25c062e6f49d983e9d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6fe19dd63b6d4d4c1efda7d01a2c59dc"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><b>TokenSubType</b> { <br/>
+&#160;&#160;<b>NULL_TOKEN</b>, 
+<b>FOLDER_NODE_TOKEN</b>, 
+<b>FILE_NODE_TOKEN</b>, 
+<b>WILDCARD_TOKEN</b>, 
+<br/>
+&#160;&#160;<b>DRIVE_TOKEN</b>
+<br/>
+ }</td></tr>
+<tr class="separator:a6fe19dd63b6d4d4c1efda7d01a2c59dc"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
+Public 成员函数</h2></td></tr>
+<tr class="memitem:a819890dc4f25c556fe181407ae63d8db"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a819890dc4f25c556fe181407ae63d8db"></a>
+&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_lexer_sys_1_1_token.html#a819890dc4f25c556fe181407ae63d8db">Token</a> ()</td></tr>
+<tr class="memdesc:a819890dc4f25c556fe181407ae63d8db"><td class="mdescLeft">&#160;</td><td class="mdescRight">默认构造函数 <br/></td></tr>
+<tr class="separator:a819890dc4f25c556fe181407ae63d8db"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4d838ceee443d20a38654c4295b29810"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a4d838ceee443d20a38654c4295b29810"></a>
+&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_lexer_sys_1_1_token.html#a4d838ceee443d20a38654c4295b29810">Token</a> (const <a class="el" href="class_lexer_sys_1_1_token.html">Token</a> &amp;token)</td></tr>
+<tr class="memdesc:a4d838ceee443d20a38654c4295b29810"><td class="mdescLeft">&#160;</td><td class="mdescRight">拷贝构造函数 <br/></td></tr>
+<tr class="separator:a4d838ceee443d20a38654c4295b29810"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a55d6dd054883e68770f770437d5d06fd"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a55d6dd054883e68770f770437d5d06fd"></a>
+virtual&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_lexer_sys_1_1_token.html#a55d6dd054883e68770f770437d5d06fd">~Token</a> ()</td></tr>
+<tr class="memdesc:a55d6dd054883e68770f770437d5d06fd"><td class="mdescLeft">&#160;</td><td class="mdescRight">析构函数 <br/></td></tr>
+<tr class="separator:a55d6dd054883e68770f770437d5d06fd"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a05424f46049d2701d04936f456bd0896"><td class="memItemLeft" align="right" valign="top">Util::String&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_lexer_sys_1_1_token.html#a05424f46049d2701d04936f456bd0896">Name</a> (void) const </td></tr>
+<tr class="memdesc:a05424f46049d2701d04936f456bd0896"><td class="mdescLeft">&#160;</td><td class="mdescRight">获取符号内容  <a href="#a05424f46049d2701d04936f456bd0896">更多...</a><br/></td></tr>
+<tr class="separator:a05424f46049d2701d04936f456bd0896"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab540eab21dae6ab3f000976d301bb4e9"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_lexer_sys_1_1_token.html#ab540eab21dae6ab3f000976d301bb4e9">Name</a> (const Util::String &amp;name)</td></tr>
+<tr class="memdesc:ab540eab21dae6ab3f000976d301bb4e9"><td class="mdescLeft">&#160;</td><td class="mdescRight">设置符号内容  <a href="#ab540eab21dae6ab3f000976d301bb4e9">更多...</a><br/></td></tr>
+<tr class="separator:ab540eab21dae6ab3f000976d301bb4e9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8eeeb79c00169b894718ccb6c4691c24"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a8eeeb79c00169b894718ccb6c4691c24"></a>
+TokenType&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_lexer_sys_1_1_token.html#a8eeeb79c00169b894718ccb6c4691c24">Type</a> (void) const </td></tr>
+<tr class="memdesc:a8eeeb79c00169b894718ccb6c4691c24"><td class="mdescLeft">&#160;</td><td class="mdescRight">返回符号类型 <br/></td></tr>
+<tr class="separator:a8eeeb79c00169b894718ccb6c4691c24"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9248a2dacaa37bc8f40e36074c89a1f9"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a9248a2dacaa37bc8f40e36074c89a1f9"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_lexer_sys_1_1_token.html#a9248a2dacaa37bc8f40e36074c89a1f9">Type</a> (const TokenType type)</td></tr>
+<tr class="memdesc:a9248a2dacaa37bc8f40e36074c89a1f9"><td class="mdescLeft">&#160;</td><td class="mdescRight">设置标记类型 <br/></td></tr>
+<tr class="separator:a9248a2dacaa37bc8f40e36074c89a1f9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a164d618718b0c60462fab5bb1a5c7aec"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a164d618718b0c60462fab5bb1a5c7aec"></a>
+TokenSubType&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_lexer_sys_1_1_token.html#a164d618718b0c60462fab5bb1a5c7aec">SubType</a> (void) const </td></tr>
+<tr class="memdesc:a164d618718b0c60462fab5bb1a5c7aec"><td class="mdescLeft">&#160;</td><td class="mdescRight">获取标记子类型 <br/></td></tr>
+<tr class="separator:a164d618718b0c60462fab5bb1a5c7aec"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a195ebf5be49fa07821f4a377fee400d8"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a195ebf5be49fa07821f4a377fee400d8"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_lexer_sys_1_1_token.html#a195ebf5be49fa07821f4a377fee400d8">SubType</a> (const TokenSubType subtype)</td></tr>
+<tr class="memdesc:a195ebf5be49fa07821f4a377fee400d8"><td class="mdescLeft">&#160;</td><td class="mdescRight">设置标记类型 <br/></td></tr>
+<tr class="separator:a195ebf5be49fa07821f4a377fee400d8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a994ef672b9f5fc0ca1bf78db1d16a0b3"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_lexer_sys_1_1_token.html#a994ef672b9f5fc0ca1bf78db1d16a0b3">IsLegal</a> (void) const </td></tr>
+<tr class="memdesc:a994ef672b9f5fc0ca1bf78db1d16a0b3"><td class="mdescLeft">&#160;</td><td class="mdescRight">返回当前符号是否为合法  <a href="#a994ef672b9f5fc0ca1bf78db1d16a0b3">更多...</a><br/></td></tr>
+<tr class="separator:a994ef672b9f5fc0ca1bf78db1d16a0b3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5e58cc18e4b8ee49fecd2464d4664c03"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_lexer_sys_1_1_token.html#a5e58cc18e4b8ee49fecd2464d4664c03">IsEmpty</a> (void) const </td></tr>
+<tr class="memdesc:a5e58cc18e4b8ee49fecd2464d4664c03"><td class="mdescLeft">&#160;</td><td class="mdescRight">返回当前符号是否为空  <a href="#a5e58cc18e4b8ee49fecd2464d4664c03">更多...</a><br/></td></tr>
+<tr class="separator:a5e58cc18e4b8ee49fecd2464d4664c03"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6cede8c1a9179b7de9c98c1bf5e0a42d"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_lexer_sys_1_1_token.html#a6cede8c1a9179b7de9c98c1bf5e0a42d">SetLegal</a> (const bool legal)</td></tr>
+<tr class="memdesc:a6cede8c1a9179b7de9c98c1bf5e0a42d"><td class="mdescLeft">&#160;</td><td class="mdescRight">设置符号对象是否合法  <a href="#a6cede8c1a9179b7de9c98c1bf5e0a42d">更多...</a><br/></td></tr>
+<tr class="separator:a6cede8c1a9179b7de9c98c1bf5e0a42d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab3755426459c46136881da2ba317f281"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_lexer_sys_1_1_token.html#ab3755426459c46136881da2ba317f281">Append</a> (const Util::String::XCHAR c)</td></tr>
+<tr class="memdesc:ab3755426459c46136881da2ba317f281"><td class="mdescLeft">&#160;</td><td class="mdescRight">在标记结尾处附加一个字符  <a href="#ab3755426459c46136881da2ba317f281">更多...</a><br/></td></tr>
+<tr class="separator:ab3755426459c46136881da2ba317f281"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6f43c50ec623e5c9af0e7ba482d1c688"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_lexer_sys_1_1_token.html#a6f43c50ec623e5c9af0e7ba482d1c688">Append</a> (const Util::String &amp;str)</td></tr>
+<tr class="memdesc:a6f43c50ec623e5c9af0e7ba482d1c688"><td class="mdescLeft">&#160;</td><td class="mdescRight">在标记结尾处添加一个字符串  <a href="#a6f43c50ec623e5c9af0e7ba482d1c688">更多...</a><br/></td></tr>
+<tr class="separator:a6f43c50ec623e5c9af0e7ba482d1c688"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0e4316e6fe6a9367212b78e8c970281c"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a0e4316e6fe6a9367212b78e8c970281c"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_lexer_sys_1_1_token.html#a0e4316e6fe6a9367212b78e8c970281c">Clear</a> (void)</td></tr>
+<tr class="memdesc:a0e4316e6fe6a9367212b78e8c970281c"><td class="mdescLeft">&#160;</td><td class="mdescRight">将该符号清空 <br/></td></tr>
+<tr class="separator:a0e4316e6fe6a9367212b78e8c970281c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aae845e7c82830849bc099d4f95bddf97"><td class="memItemLeft" align="right" valign="top">Util::String&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_lexer_sys_1_1_token.html#aae845e7c82830849bc099d4f95bddf97">ExtractFileName</a> (void) const </td></tr>
+<tr class="memdesc:aae845e7c82830849bc099d4f95bddf97"><td class="mdescLeft">&#160;</td><td class="mdescRight">从当前符号中提取文件名  <a href="#aae845e7c82830849bc099d4f95bddf97">更多...</a><br/></td></tr>
+<tr class="separator:aae845e7c82830849bc099d4f95bddf97"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:adadfd9980660ecac2eed6799200d94cc"><td class="memItemLeft" align="right" valign="top">Util::String&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_lexer_sys_1_1_token.html#adadfd9980660ecac2eed6799200d94cc">ExtractFileExtName</a> (void) const </td></tr>
+<tr class="memdesc:adadfd9980660ecac2eed6799200d94cc"><td class="mdescLeft">&#160;</td><td class="mdescRight">从当前符号中提取扩展名  <a href="#adadfd9980660ecac2eed6799200d94cc">更多...</a><br/></td></tr>
+<tr class="separator:adadfd9980660ecac2eed6799200d94cc"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2e07100b2852e1d4575eeb5f04452865"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_lexer_sys_1_1_token.html#a2e07100b2852e1d4575eeb5f04452865">Analysis</a> (void)</td></tr>
+<tr class="separator:a2e07100b2852e1d4575eeb5f04452865"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0b71b8d04943cb99b4be70a3747c42fb"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a0b71b8d04943cb99b4be70a3747c42fb"></a>
+<a class="el" href="class_lexer_sys_1_1_token.html">Token</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_lexer_sys_1_1_token.html#a0b71b8d04943cb99b4be70a3747c42fb">operator=</a> (const <a class="el" href="class_lexer_sys_1_1_token.html">Token</a> &amp;rhs)</td></tr>
+<tr class="memdesc:a0b71b8d04943cb99b4be70a3747c42fb"><td class="mdescLeft">&#160;</td><td class="mdescRight">赋值运算符重载 <br/></td></tr>
+<tr class="separator:a0b71b8d04943cb99b4be70a3747c42fb"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<a name="details" id="details"></a><h2 class="groupheader">详细描述</h2>
+<div class="textblock">
+<p>在文件 <a class="el" href="_token_8h_source.html">Token.h</a> 第 <a class="el" href="_token_8h_source.html#l00013">13</a> 行定义.</p>
+</div><h2 class="groupheader">成员函数说明</h2>
+<a class="anchor" id="a2e07100b2852e1d4575eeb5f04452865"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void LexerSys::Token::Analysis </td>
+          <td>(</td>
+          <td class="paramtype">void&#160;</td>
+          <td class="paramname">)</td><td></td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>分析当前符号是何种类型 </p>
+
+<p>在文件 <a class="el" href="_token_8cpp_source.html">Token.cpp</a> 第 <a class="el" href="_token_8cpp_source.html#l00036">36</a> 行定义.</p>
+
+</div>
+</div>
+<a class="anchor" id="ab3755426459c46136881da2ba317f281"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void LexerSys::Token::Append </td>
+          <td>(</td>
+          <td class="paramtype">const Util::String::XCHAR&#160;</td>
+          <td class="paramname"><em>c</em>)</td><td></td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>在标记结尾处附加一个字符 </p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">c</td><td>要附加的字符 </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p>在文件 <a class="el" href="_token_8cpp_source.html">Token.cpp</a> 第 <a class="el" href="_token_8cpp_source.html#l00022">22</a> 行定义.</p>
+
+</div>
+</div>
+<a class="anchor" id="a6f43c50ec623e5c9af0e7ba482d1c688"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void LexerSys::Token::Append </td>
+          <td>(</td>
+          <td class="paramtype">const Util::String &amp;&#160;</td>
+          <td class="paramname"><em>str</em>)</td><td></td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>在标记结尾处添加一个字符串 </p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">str</td><td>要附加的字符串 </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p>在文件 <a class="el" href="_token_8cpp_source.html">Token.cpp</a> 第 <a class="el" href="_token_8cpp_source.html#l00029">29</a> 行定义.</p>
+
+</div>
+</div>
+<a class="anchor" id="adadfd9980660ecac2eed6799200d94cc"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">Util::String LexerSys::Token::ExtractFileExtName </td>
+          <td>(</td>
+          <td class="paramtype">void&#160;</td>
+          <td class="paramname">)</td><td></td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>从当前符号中提取扩展名 </p>
+<dl class="section remark"><dt>备注</dt><dd>此函数只对于“通配符”于"文件名"类型符号有意义 </dd></dl>
+
+<p>在文件 <a class="el" href="_token_8cpp_source.html">Token.cpp</a> 第 <a class="el" href="_token_8cpp_source.html#l00065">65</a> 行定义.</p>
+
+</div>
+</div>
+<a class="anchor" id="aae845e7c82830849bc099d4f95bddf97"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">Util::String LexerSys::Token::ExtractFileName </td>
+          <td>(</td>
+          <td class="paramtype">void&#160;</td>
+          <td class="paramname">)</td><td></td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>从当前符号中提取文件名 </p>
+<dl class="section remark"><dt>备注</dt><dd>此函数只对于“通配符”于"文件名"类型符号有意义 </dd></dl>
+
+<p>在文件 <a class="el" href="_token_8cpp_source.html">Token.cpp</a> 第 <a class="el" href="_token_8cpp_source.html#l00055">55</a> 行定义.</p>
+
+</div>
+</div>
+<a class="anchor" id="a5e58cc18e4b8ee49fecd2464d4664c03"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool LexerSys::Token::IsEmpty </td>
+          <td>(</td>
+          <td class="paramtype">void&#160;</td>
+          <td class="paramname">)</td><td></td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>返回当前符号是否为空 </p>
+<dl class="section return"><dt>返回</dt><dd>当前符号是否为空 </dd></dl>
+<dl class="retval"><dt>返回值</dt><dd>
+  <table class="retval">
+    <tr><td class="paramname">true</td><td>为空 </td></tr>
+    <tr><td class="paramname">false</td><td>不为空 </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p>在文件 <a class="el" href="_token_8h_source.html">Token.h</a> 第 <a class="el" href="_token_8h_source.html#l00095">95</a> 行定义.</p>
+
+</div>
+</div>
+<a class="anchor" id="a994ef672b9f5fc0ca1bf78db1d16a0b3"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool LexerSys::Token::IsLegal </td>
+          <td>(</td>
+          <td class="paramtype">void&#160;</td>
+          <td class="paramname">)</td><td></td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>返回当前符号是否为合法 </p>
+<dl class="section return"><dt>返回</dt><dd>返回是否合法 </dd></dl>
+
+<p>在文件 <a class="el" href="_token_8h_source.html">Token.h</a> 第 <a class="el" href="_token_8h_source.html#l00087">87</a> 行定义.</p>
+
+</div>
+</div>
+<a class="anchor" id="a05424f46049d2701d04936f456bd0896"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">Util::String LexerSys::Token::Name </td>
+          <td>(</td>
+          <td class="paramtype">void&#160;</td>
+          <td class="paramname">)</td><td></td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>获取符号内容 </p>
+<dl class="section return"><dt>返回</dt><dd>返回内容字符串 </dd></dl>
+
+<p>在文件 <a class="el" href="_token_8h_source.html">Token.h</a> 第 <a class="el" href="_token_8h_source.html#l00053">53</a> 行定义.</p>
+
+</div>
+</div>
+<a class="anchor" id="ab540eab21dae6ab3f000976d301bb4e9"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void LexerSys::Token::Name </td>
+          <td>(</td>
+          <td class="paramtype">const Util::String &amp;&#160;</td>
+          <td class="paramname"><em>name</em>)</td><td></td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>设置符号内容 </p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">要设置的符号内容</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>返回</dt><dd>void </dd></dl>
+
+<p>在文件 <a class="el" href="_token_8h_source.html">Token.h</a> 第 <a class="el" href="_token_8h_source.html#l00060">60</a> 行定义.</p>
+
+</div>
+</div>
+<a class="anchor" id="a6cede8c1a9179b7de9c98c1bf5e0a42d"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void LexerSys::Token::SetLegal </td>
+          <td>(</td>
+          <td class="paramtype">const bool&#160;</td>
+          <td class="paramname"><em>legal</em>)</td><td></td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>设置符号对象是否合法 </p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">合法与否</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p>在文件 <a class="el" href="_token_8h_source.html">Token.h</a> 第 <a class="el" href="_token_8h_source.html#l00101">101</a> 行定义.</p>
+
+</div>
+</div>
+<hr/>该类的文档由以下文件生成:<ul>
+<li>VirtualDiskConsole/<a class="el" href="_token_8h_source.html">Token.h</a></li>
+<li>VirtualDiskConsole/<a class="el" href="_token_8cpp_source.html">Token.cpp</a></li>
+</ul>
+</div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+生成于 2013年 八月 12日 星期一 15:24:04 , 为 VirtualDiskConsole使用  &#160;<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="doxygen.png" alt="doxygen"/>
+</a> 1.8.4
+</small></address>
+</body>
+</html>

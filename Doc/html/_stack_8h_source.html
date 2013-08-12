@@ -1,0 +1,96 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.4"/>
+<title>VirtualDiskConsole: VirtualDiskConsole/Stack.h 源文件</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td style="padding-left: 0.5em;">
+   <div id="projectname">VirtualDiskConsole
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 制作者 Doxygen 1.8.4 -->
+  <div id="navrow1" class="tabs">
+    <ul class="tablist">
+      <li><a href="index.html"><span>首页</span></a></li>
+      <li><a href="namespaces.html"><span>命名空间</span></a></li>
+      <li><a href="annotated.html"><span>类</span></a></li>
+      <li class="current"><a href="files.html"><span>文件</span></a></li>
+    </ul>
+  </div>
+  <div id="navrow2" class="tabs2">
+    <ul class="tablist">
+      <li><a href="files.html"><span>文件列表</span></a></li>
+    </ul>
+  </div>
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="dir_4c9c2bc18b733b8b55e8fff397d929d3.html">VirtualDiskConsole</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div class="header">
+  <div class="headertitle">
+<div class="title">Stack.h</div>  </div>
+</div><!--header-->
+<div class="contents">
+<div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="preprocessor">#ifndef ZP_STACK</span></div>
+<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="preprocessor"></span><span class="preprocessor">#define ZP_STACK</span></div>
+<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="preprocessor"></span></div>
+<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="preprocessor">#include &quot;LinkList.h&quot;</span></div>
+<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;</div>
+<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="keyword">namespace </span>Util</div>
+<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;{ </div>
+<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;    <span class="keyword">template</span>&lt;<span class="keyword">typename</span> T&gt;</div>
+<div class="line"><a name="l00009"></a><span class="lineno"><a class="code" href="class_util_1_1_stack_t.html">    9</a></span>&#160;    <span class="keyword">class </span><a class="code" href="class_util_1_1_stack_t.html">StackT</a></div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;    {</div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;    <span class="keyword">public</span>:</div>
+<div class="line"><a name="l00015"></a><span class="lineno"><a class="code" href="class_util_1_1_stack_t.html#adbbf65f8d1cf6764a5578de90e3ad551">   15</a></span>&#160;        <a class="code" href="class_util_1_1_stack_t.html#adbbf65f8d1cf6764a5578de90e3ad551" title="默认构造函数 ">StackT</a>(<span class="keywordtype">void</span>){}</div>
+<div class="line"><a name="l00019"></a><span class="lineno"><a class="code" href="class_util_1_1_stack_t.html#a5731dcd6ca4aa9b0b6ef57c61633cf7e">   19</a></span>&#160;        <a class="code" href="class_util_1_1_stack_t.html#a5731dcd6ca4aa9b0b6ef57c61633cf7e" title="拷贝构造函数 ">StackT</a>( <span class="keyword">const</span> <a class="code" href="class_util_1_1_stack_t.html">StackT</a>&amp; stack ):m_stack(stack.m_stack){}</div>
+<div class="line"><a name="l00023"></a><span class="lineno"><a class="code" href="class_util_1_1_stack_t.html#a1e3f88666426b8ddfbc6e76615f00dd4">   23</a></span>&#160;        <a class="code" href="class_util_1_1_stack_t.html#a1e3f88666426b8ddfbc6e76615f00dd4" title="析构函数 ">~StackT</a>(){}</div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;         </div>
+<div class="line"><a name="l00029"></a><span class="lineno"><a class="code" href="class_util_1_1_stack_t.html#af12278ddc72374d7d134828c6590ea7f">   29</a></span>&#160;        <span class="keyword">inline</span> <span class="keywordtype">void</span> <a class="code" href="class_util_1_1_stack_t.html#af12278ddc72374d7d134828c6590ea7f" title="将元素data入栈 ">Push</a>( <span class="keyword">const</span> T&amp; data ){ m_stack.PushFront( data ); }</div>
+<div class="line"><a name="l00033"></a><span class="lineno"><a class="code" href="class_util_1_1_stack_t.html#af3ee55adee3de52f9e88f8d0edd8dd71">   33</a></span>&#160;        <span class="keyword">inline</span> <span class="keywordtype">void</span> <a class="code" href="class_util_1_1_stack_t.html#af3ee55adee3de52f9e88f8d0edd8dd71" title="将栈顶元素出栈 ">Pop</a>(<span class="keywordtype">void</span>){ m_stack.PopFront();  }</div>
+<div class="line"><a name="l00038"></a><span class="lineno"><a class="code" href="class_util_1_1_stack_t.html#a6f4a2b4e2664e9a771e989a31dbfa27d">   38</a></span>&#160;        <span class="keyword">inline</span> <span class="keywordtype">int</span>    <a class="code" href="class_util_1_1_stack_t.html#a6f4a2b4e2664e9a771e989a31dbfa27d" title="返回栈元素数 ">Size</a>(<span class="keywordtype">void</span>)<span class="keyword"> const </span>{ <span class="keywordflow">return</span> m_stack.Count(); }</div>
+<div class="line"><a name="l00044"></a><span class="lineno"><a class="code" href="class_util_1_1_stack_t.html#a1a6fa3d62c05f1bf24b21924a6f692f0">   44</a></span>&#160;        <span class="keyword">inline</span> <span class="keywordtype">bool</span>  <a class="code" href="class_util_1_1_stack_t.html#a1a6fa3d62c05f1bf24b21924a6f692f0" title="栈是否为空 ">IsEmpty</a>(<span class="keywordtype">void</span>)<span class="keyword"> const </span>{ <span class="keywordflow">return</span> m_stack.IsEmpty(); }</div>
+<div class="line"><a name="l00049"></a><span class="lineno"><a class="code" href="class_util_1_1_stack_t.html#aab6508f39b4c9e364c492955b26273be">   49</a></span>&#160;        <span class="keyword">inline</span> T&amp; <a class="code" href="class_util_1_1_stack_t.html#aab6508f39b4c9e364c492955b26273be" title="返回栈顶元素 ">Front</a>(<span class="keywordtype">void</span>){ <span class="keywordflow">return</span> m_stack.Front(); }</div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;</div>
+<div class="line"><a name="l00055"></a><span class="lineno"><a class="code" href="class_util_1_1_stack_t.html#ac298ea33edc7cd88fc9f640e39c8d9c7">   55</a></span>&#160;        <span class="keyword">inline</span> <span class="keyword">const</span> T&amp; <a class="code" href="class_util_1_1_stack_t.html#ac298ea33edc7cd88fc9f640e39c8d9c7" title="返回栈顶元素 ">Front</a>(<span class="keywordtype">void</span>)<span class="keyword"> const </span>{ <span class="keywordflow">return</span> m_stack.Front(); }</div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;</div>
+<div class="line"><a name="l00060"></a><span class="lineno"><a class="code" href="class_util_1_1_stack_t.html#af093ce3aaa86e1807ed34e118c785cf9">   60</a></span>&#160;        <span class="keyword">inline</span> <a class="code" href="class_util_1_1_stack_t.html">StackT</a>&amp; <a class="code" href="class_util_1_1_stack_t.html#af093ce3aaa86e1807ed34e118c785cf9" title="赋值运算符重载 ">operator=</a>( <span class="keyword">const</span> <a class="code" href="class_util_1_1_stack_t.html">StackT</a>&amp; stack )</div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;        {</div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;            m_stack = stack.m_stack;</div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;            <span class="keywordflow">return</span> *<span class="keyword">this</span>;</div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;        }</div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;</div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;    <span class="keyword">private</span>:</div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;        <a class="code" href="class_util_1_1_link_list_t.html">LinkListT&lt;T&gt;</a> m_stack;   </div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;    };</div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;</div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;}<span class="comment">//namespace ZPUTIL</span></div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;</div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;<span class="preprocessor">#endif //ZP_STACK</span></div>
+</div><!-- fragment --></div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+生成于 2013年 八月 12日 星期一 15:24:03 , 为 VirtualDiskConsole使用  &#160;<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="doxygen.png" alt="doxygen"/>
+</a> 1.8.4
+</small></address>
+</body>
+</html>

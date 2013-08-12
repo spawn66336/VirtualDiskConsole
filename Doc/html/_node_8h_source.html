@@ -1,0 +1,146 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.4"/>
+<title>VirtualDiskConsole: VirtualDiskConsole/Node.h 源文件</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td style="padding-left: 0.5em;">
+   <div id="projectname">VirtualDiskConsole
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 制作者 Doxygen 1.8.4 -->
+  <div id="navrow1" class="tabs">
+    <ul class="tablist">
+      <li><a href="index.html"><span>首页</span></a></li>
+      <li><a href="namespaces.html"><span>命名空间</span></a></li>
+      <li><a href="annotated.html"><span>类</span></a></li>
+      <li class="current"><a href="files.html"><span>文件</span></a></li>
+    </ul>
+  </div>
+  <div id="navrow2" class="tabs2">
+    <ul class="tablist">
+      <li><a href="files.html"><span>文件列表</span></a></li>
+    </ul>
+  </div>
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="dir_4c9c2bc18b733b8b55e8fff397d929d3.html">VirtualDiskConsole</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div class="header">
+  <div class="headertitle">
+<div class="title">Node.h</div>  </div>
+</div><!--header-->
+<div class="contents">
+<div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="preprocessor">#ifndef ZP_NODE</span></div>
+<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="preprocessor"></span><span class="preprocessor">#define ZP_NODE</span></div>
+<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="preprocessor"></span></div>
+<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="preprocessor">#include &quot;ZPDependency.h&quot;</span></div>
+<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;</div>
+<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;</div>
+<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="keyword">namespace </span>FileSys</div>
+<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;{</div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;    <span class="keyword">class </span>NodeVisitor;</div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;</div>
+<div class="line"><a name="l00011"></a><span class="lineno"><a class="code" href="class_file_sys_1_1_node.html">   11</a></span>&#160;    <span class="keyword">class </span><a class="code" href="class_file_sys_1_1_node.html">Node</a></div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;    {</div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;    <span class="keyword">public</span>: </div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;</div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;        <span class="keyword">enum</span> NodeType{</div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;            FILE_NODE = 1, </div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;            FOLDER_NODE</div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;        };</div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;</div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;        <a class="code" href="class_file_sys_1_1_node.html">Node</a>();</div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;        <span class="keyword">virtual</span> ~<a class="code" href="class_file_sys_1_1_node.html">Node</a>();</div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;</div>
+<div class="line"><a name="l00027"></a><span class="lineno"><a class="code" href="class_file_sys_1_1_node.html#ac63b1d29e592028c77c70cbad8882834">   27</a></span>&#160;        Util::String <a class="code" href="class_file_sys_1_1_node.html#ac63b1d29e592028c77c70cbad8882834" title="返回节点名称 ">Name</a>()<span class="keyword"> const </span>{ <span class="keywordflow">return</span> m_name; }</div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;</div>
+<div class="line"><a name="l00033"></a><span class="lineno"><a class="code" href="class_file_sys_1_1_node.html#a1d8a20f46e5036807ab404d04fc5da00">   33</a></span>&#160;        <span class="keywordtype">void</span> <a class="code" href="class_file_sys_1_1_node.html#a1d8a20f46e5036807ab404d04fc5da00" title="设置节点名称 ">Name</a>( <span class="keyword">const</span> Util::String&amp; name ){ m_name = name; } </div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;</div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;        Util::String <a class="code" href="class_file_sys_1_1_node.html#af1c666766a41b8acfeb7ddb447d22183" title="获得当前节点的路径全名 ">PathName</a>(<span class="keywordtype">void</span>) <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;         </div>
+<div class="line"><a name="l00044"></a><span class="lineno"><a class="code" href="class_file_sys_1_1_node.html#a2de4a78fc6b8885d559f6d131f24cb8b">   44</a></span>&#160;        <a class="code" href="class_file_sys_1_1_node.html">Node</a>* <a class="code" href="class_file_sys_1_1_node.html#a2de4a78fc6b8885d559f6d131f24cb8b" title="返回父节点 ">Parent</a>(<span class="keywordtype">void</span>)<span class="keyword"> const </span>{ <span class="keywordflow">return</span> <a class="code" href="class_file_sys_1_1_node.html#afef8b39b75789040417847af5efedbda" title="&gt;节点名称 ">m_lp_parent</a>; }</div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;</div>
+<div class="line"><a name="l00050"></a><span class="lineno"><a class="code" href="class_file_sys_1_1_node.html#ae2519cd1f81789bb3e6ebb08a0da0916">   50</a></span>&#160;        <span class="keywordtype">void</span> <a class="code" href="class_file_sys_1_1_node.html#ae2519cd1f81789bb3e6ebb08a0da0916" title="设置父节点指针 ">Parent</a>( <a class="code" href="class_file_sys_1_1_node.html">Node</a>* node ){ <a class="code" href="class_file_sys_1_1_node.html#afef8b39b75789040417847af5efedbda" title="&gt;节点名称 ">m_lp_parent</a> = node; }</div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;</div>
+<div class="line"><a name="l00056"></a><span class="lineno"><a class="code" href="class_file_sys_1_1_node.html#a3a69d3f3c6021bb72057a490a799c4c6">   56</a></span>&#160;        <span class="keywordtype">bool</span> <a class="code" href="class_file_sys_1_1_node.html#a3a69d3f3c6021bb72057a490a799c4c6" title="是否为叶节点 ">IsLeaf</a>( <span class="keywordtype">void</span> )<span class="keyword"> const </span>{ <span class="keywordflow">return</span> ( <a class="code" href="class_file_sys_1_1_node.html#a94704313dc4313ddde51129c73ec16c4" title="&gt;父节点指针 ">m_child_nodes</a>.Count() == 0 ); }</div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;</div>
+<div class="line"><a name="l00062"></a><span class="lineno"><a class="code" href="class_file_sys_1_1_node.html#afa19c01f76b54849fd4a95bc7e0ea7e2">   62</a></span>&#160;        <span class="keywordtype">bool</span> <a class="code" href="class_file_sys_1_1_node.html#afa19c01f76b54849fd4a95bc7e0ea7e2" title="是否为根节点 ">IsRoot</a>( <span class="keywordtype">void</span> )<span class="keyword"> const </span>{ <span class="keywordflow">return</span> <a class="code" href="class_file_sys_1_1_node.html#afef8b39b75789040417847af5efedbda" title="&gt;节点名称 ">m_lp_parent</a> == NULL; }</div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;</div>
+<div class="line"><a name="l00068"></a><span class="lineno"><a class="code" href="class_file_sys_1_1_node.html#abced0abf2d6f54f6b9887189c51c9bd1">   68</a></span>&#160;        <span class="keyword">virtual</span> <span class="keywordtype">bool</span> <a class="code" href="class_file_sys_1_1_node.html#abced0abf2d6f54f6b9887189c51c9bd1" title="是否为文件 ">IsFile</a>( <span class="keywordtype">void</span> )<span class="keyword"> const </span>{ <span class="keywordflow">return</span> <span class="keyword">false</span>; }</div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;</div>
+<div class="line"><a name="l00074"></a><span class="lineno"><a class="code" href="class_file_sys_1_1_node.html#ad93cc76a230827623b8fd1dbc255a9b2">   74</a></span>&#160;        <span class="keyword">virtual</span> <span class="keywordtype">bool</span> <a class="code" href="class_file_sys_1_1_node.html#ad93cc76a230827623b8fd1dbc255a9b2" title="是否为文件夹 ">IsFolder</a>( <span class="keywordtype">void</span> )<span class="keyword"> const </span>{ <span class="keywordflow">return</span> <span class="keyword">false</span>; }</div>
+<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;</div>
+<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;        <span class="keyword">virtual</span> <span class="keywordtype">bool</span> <a class="code" href="class_file_sys_1_1_node.html#a1c498398bb44692a5fe147e7466696bb" title="传入的节点是否为当前节点祖先 ">IsAncestor</a>( <a class="code" href="class_file_sys_1_1_node.html">Node</a>* node );</div>
+<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;</div>
+<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;        <a class="code" href="class_file_sys_1_1_node.html">Node</a>* <a class="code" href="class_file_sys_1_1_node.html#ab14d6ddc49b811ca57403992312a939a" title="查找节点 ">FindNode</a>( <span class="keyword">const</span> Util::String&amp; name  );</div>
+<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;</div>
+<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;        <a class="code" href="class_file_sys_1_1_node.html">Node</a>* <a class="code" href="class_file_sys_1_1_node.html#ac55bdfd5962f88ac3c1848ad59dae30a" title="查找该节点子节点是否有spec指定的文件后缀的节点 ">FindFileNodeBySpec</a>( <span class="keyword">const</span> Util::String&amp; spec );</div>
+<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;</div>
+<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;        <a class="code" href="class_file_sys_1_1_node.html">Node</a>* <a class="code" href="class_file_sys_1_1_node.html#a442bb04445155587d095d628dbec6bf6" title="创建节点 ">CreateNode</a>( <span class="keyword">const</span> Util::String&amp; name , <span class="keyword">const</span> NodeType type );</div>
+<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;</div>
+<div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;        <span class="keywordtype">bool</span> DeleteNode( <span class="keyword">const</span> Util::String&amp; name  );</div>
+<div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;</div>
+<div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160;        <span class="keywordtype">void</span> <a class="code" href="class_file_sys_1_1_node.html#a3366c9b2f3d63d629326eb65ef8ab6b2" title="删除该节点下属所指定类型的节点 ">DeleteNodeByType</a>( <span class="keyword">const</span> NodeType type );</div>
+<div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160;</div>
+<div class="line"><a name="l00123"></a><span class="lineno">  123</span>&#160;        <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="class_file_sys_1_1_node.html#ae6d82979ab6cc2fb80c04341cff5f88c" title="销毁结点自身信息 ">Destroy</a>( <span class="keywordtype">void</span> ); </div>
+<div class="line"><a name="l00124"></a><span class="lineno">  124</span>&#160;        </div>
+<div class="line"><a name="l00128"></a><span class="lineno"><a class="code" href="class_file_sys_1_1_node.html#a1d20bc6ebbfe1642e061d39d1ed11142">  128</a></span>&#160;        <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="class_file_sys_1_1_node.html#a1d20bc6ebbfe1642e061d39d1ed11142" title="删除自身 ">DeleteThis</a>(<span class="keywordtype">void</span>){ <span class="keyword">delete</span> <span class="keyword">this</span>; }</div>
+<div class="line"><a name="l00129"></a><span class="lineno">  129</span>&#160;</div>
+<div class="line"><a name="l00130"></a><span class="lineno">  130</span>&#160;</div>
+<div class="line"><a name="l00135"></a><span class="lineno">  135</span>&#160;        <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="class_file_sys_1_1_node.html#a6d56c256556bb453dbbce8885f7c7f6d" title="接手访问者访问 ">Accept</a>( <a class="code" href="class_file_sys_1_1_node_visitor.html">NodeVisitor</a>* visitor );</div>
+<div class="line"><a name="l00136"></a><span class="lineno">  136</span>&#160;</div>
+<div class="line"><a name="l00143"></a><span class="lineno"><a class="code" href="class_file_sys_1_1_node.html#a3997a5d698f49b90ff3ecfdf53c55d21">  143</a></span>&#160;        <span class="keyword">virtual</span> <span class="keywordtype">int</span> <a class="code" href="class_file_sys_1_1_node.html#a3997a5d698f49b90ff3ecfdf53c55d21" title="将传入的数据拷贝给该文件 ">Copy</a>( <span class="keyword">const</span> <span class="keywordtype">void</span>* data  , <span class="keyword">const</span> DWORD size  ){ <span class="keywordflow">return</span> 0; }</div>
+<div class="line"><a name="l00144"></a><span class="lineno">  144</span>&#160;</div>
+<div class="line"><a name="l00152"></a><span class="lineno"><a class="code" href="class_file_sys_1_1_node.html#a230d3b6653f4365cce62746c2dd8aec8">  152</a></span>&#160;        <span class="keyword">virtual</span> <span class="keywordtype">int</span> <a class="code" href="class_file_sys_1_1_node.html#a230d3b6653f4365cce62746c2dd8aec8" title="读取虚拟磁盘中文件数据 ">Read</a>( <span class="keyword">const</span> DWORD offset ,  <span class="keyword">const</span> DWORD size , <span class="keywordtype">void</span>* data ){ <span class="keywordflow">return</span> 0; } </div>
+<div class="line"><a name="l00153"></a><span class="lineno">  153</span>&#160;</div>
+<div class="line"><a name="l00157"></a><span class="lineno"><a class="code" href="class_file_sys_1_1_node.html#a29ba406d8ea68f1b7276ae6bbcc0b01a">  157</a></span>&#160;        <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="class_file_sys_1_1_node.html#a29ba406d8ea68f1b7276ae6bbcc0b01a" title="清空节点中附带的数据 ">ClearData</a>( <span class="keywordtype">void</span> ){ }</div>
+<div class="line"><a name="l00158"></a><span class="lineno">  158</span>&#160;</div>
+<div class="line"><a name="l00165"></a><span class="lineno"><a class="code" href="class_file_sys_1_1_node.html#acad64b2ca2b78a0b634a49e6214c1aba">  165</a></span>&#160;        <span class="keyword">virtual</span> <span class="keywordtype">bool</span> <a class="code" href="class_file_sys_1_1_node.html#acad64b2ca2b78a0b634a49e6214c1aba" title="返回文件是否为二进制文件 ">IsBinaryFile</a>( <span class="keywordtype">void</span> )<span class="keyword"> const </span>{ <span class="keywordflow">return</span> <span class="keyword">false</span>; }</div>
+<div class="line"><a name="l00166"></a><span class="lineno">  166</span>&#160;</div>
+<div class="line"><a name="l00171"></a><span class="lineno"><a class="code" href="class_file_sys_1_1_node.html#a4d981a125be5d9e4810bf95f86dbd6bd">  171</a></span>&#160;        <span class="keyword">virtual</span> DWORD <a class="code" href="class_file_sys_1_1_node.html#a4d981a125be5d9e4810bf95f86dbd6bd" title="返回节点所含数据大小 ">Size</a>(<span class="keywordtype">void</span>)<span class="keyword"> const </span>{ <span class="keywordflow">return</span> 0; }</div>
+<div class="line"><a name="l00172"></a><span class="lineno">  172</span>&#160;</div>
+<div class="line"><a name="l00177"></a><span class="lineno"><a class="code" href="class_file_sys_1_1_node.html#a6f73b0fcebfed60297a7472a954be9eb">  177</a></span>&#160;        <span class="keyword">virtual</span> DWORD <a class="code" href="class_file_sys_1_1_node.html#a6f73b0fcebfed60297a7472a954be9eb" title="递归计算该节点子树附带数据的总大小 ">CalcTotalSize</a>(<span class="keywordtype">void</span>){ <span class="keywordflow">return</span> 0; }</div>
+<div class="line"><a name="l00178"></a><span class="lineno">  178</span>&#160;</div>
+<div class="line"><a name="l00190"></a><span class="lineno"><a class="code" href="class_file_sys_1_1_node.html#ada9acb89cd979b2e37d169d67e9ba816">  190</a></span>&#160;        <span class="keyword">virtual</span> <span class="keywordtype">bool</span>  <a class="code" href="class_file_sys_1_1_node.html#ada9acb89cd979b2e37d169d67e9ba816" title="比较指定缓冲区与当前文件的异同 ">Compare</a>( <span class="keyword">const</span> <span class="keywordtype">void</span>* data , <span class="keyword">const</span> DWORD size , <a class="code" href="class_util_1_1_vector_t.html">Util::VectorT&lt;char&gt;</a>&amp; diff1 , <a class="code" href="class_util_1_1_vector_t.html">Util::VectorT&lt;char&gt;</a>&amp;diff2  )<span class="keyword"> const</span>{ <span class="keywordflow">return</span> <span class="keyword">false</span>;}</div>
+<div class="line"><a name="l00191"></a><span class="lineno">  191</span>&#160;    </div>
+<div class="line"><a name="l00202"></a><span class="lineno"><a class="code" href="class_file_sys_1_1_node.html#a61fe784ffa56a134715baa35a5a7e239">  202</a></span>&#160;        <span class="keyword">virtual</span> <span class="keywordtype">bool</span>  <a class="code" href="class_file_sys_1_1_node.html#a61fe784ffa56a134715baa35a5a7e239" title="比较指定缓冲区与当前文件的异同 ">Compare</a>( <span class="keyword">const</span> HANDLE file , <a class="code" href="class_util_1_1_vector_t.html">Util::VectorT&lt;char&gt;</a>&amp; diff1 , <a class="code" href="class_util_1_1_vector_t.html">Util::VectorT&lt;char&gt;</a>&amp;diff2  )<span class="keyword"> const</span>{ <span class="keywordflow">return</span> <span class="keyword">false</span>;}</div>
+<div class="line"><a name="l00203"></a><span class="lineno">  203</span>&#160;</div>
+<div class="line"><a name="l00209"></a><span class="lineno">  209</span>&#160;        <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="class_file_sys_1_1_node.html#aea400658729cd06ba5c404ed67dd5abb" title="获取文件列表打印字符串 ">GetFileListOutputString</a>(  Util::String&amp; output , <span class="keyword">const</span> <span class="keywordtype">bool</span> recursive = <span class="keyword">false</span> , <span class="keyword">const</span> <span class="keywordtype">bool</span> folder_only = <span class="keyword">false</span>  ) <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00210"></a><span class="lineno">  210</span>&#160;          </div>
+<div class="line"><a name="l00211"></a><span class="lineno">  211</span>&#160;    <span class="keyword">protected</span>:</div>
+<div class="line"><a name="l00212"></a><span class="lineno">  212</span>&#160;        Util::String m_name;                                </div>
+<div class="line"><a name="l00213"></a><span class="lineno"><a class="code" href="class_file_sys_1_1_node.html#afef8b39b75789040417847af5efedbda">  213</a></span>&#160;        <a class="code" href="class_file_sys_1_1_node.html">Node</a>* <a class="code" href="class_file_sys_1_1_node.html#afef8b39b75789040417847af5efedbda" title="&gt;节点名称 ">m_lp_parent</a>;                              </div>
+<div class="line"><a name="l00214"></a><span class="lineno"><a class="code" href="class_file_sys_1_1_node.html#a94704313dc4313ddde51129c73ec16c4">  214</a></span>&#160;        <a class="code" href="class_util_1_1_link_list_t.html">Util::LinkListT&lt;Node*&gt;</a> <a class="code" href="class_file_sys_1_1_node.html#a94704313dc4313ddde51129c73ec16c4" title="&gt;父节点指针 ">m_child_nodes</a>;   </div>
+<div class="line"><a name="l00215"></a><span class="lineno">  215</span>&#160;    };</div>
+<div class="line"><a name="l00216"></a><span class="lineno">  216</span>&#160;</div>
+<div class="line"><a name="l00217"></a><span class="lineno">  217</span>&#160;}<span class="comment">//namespace FileSys</span></div>
+<div class="line"><a name="l00218"></a><span class="lineno">  218</span>&#160;</div>
+<div class="line"><a name="l00219"></a><span class="lineno">  219</span>&#160;<span class="preprocessor">#endif//ZP_NODE</span></div>
+</div><!-- fragment --></div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+生成于 2013年 八月 12日 星期一 15:24:03 , 为 VirtualDiskConsole使用  &#160;<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="doxygen.png" alt="doxygen"/>
+</a> 1.8.4
+</small></address>
+</body>
+</html>

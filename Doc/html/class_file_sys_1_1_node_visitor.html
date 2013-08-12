@@ -1,0 +1,235 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.4"/>
+<title>VirtualDiskConsole: FileSys::NodeVisitor类 参考</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td style="padding-left: 0.5em;">
+   <div id="projectname">VirtualDiskConsole
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 制作者 Doxygen 1.8.4 -->
+  <div id="navrow1" class="tabs">
+    <ul class="tablist">
+      <li><a href="index.html"><span>首页</span></a></li>
+      <li><a href="namespaces.html"><span>命名空间</span></a></li>
+      <li class="current"><a href="annotated.html"><span>类</span></a></li>
+      <li><a href="files.html"><span>文件</span></a></li>
+    </ul>
+  </div>
+  <div id="navrow2" class="tabs2">
+    <ul class="tablist">
+      <li><a href="annotated.html"><span>类列表</span></a></li>
+      <li><a href="classes.html"><span>类索引</span></a></li>
+      <li><a href="hierarchy.html"><span>类继承关系</span></a></li>
+      <li><a href="functions.html"><span>类成员</span></a></li>
+    </ul>
+  </div>
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><b>FileSys</b></li><li class="navelem"><a class="el" href="class_file_sys_1_1_node_visitor.html">NodeVisitor</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div class="header">
+  <div class="summary">
+<a href="#pub-methods">Public 成员函数</a> &#124;
+<a href="#pro-types">Protected 类型</a> &#124;
+<a href="#pro-attribs">Protected 属性</a> &#124;
+<a href="class_file_sys_1_1_node_visitor-members.html">所有成员列表</a>  </div>
+  <div class="headertitle">
+<div class="title">FileSys::NodeVisitor类 参考</div>  </div>
+</div><!--header-->
+<div class="contents">
+<div class="dynheader">
+类 FileSys::NodeVisitor 继承关系图:</div>
+<div class="dyncontent">
+ <div class="center">
+  <img src="class_file_sys_1_1_node_visitor.png" usemap="#FileSys::NodeVisitor_map" alt=""/>
+  <map id="FileSys::NodeVisitor_map" name="FileSys::NodeVisitor_map">
+<area href="class_file_sys_1_1_create_dir_visitor.html" alt="FileSys::CreateDirVisitor" shape="rect" coords="0,56,162,80"/>
+<area href="class_file_sys_1_1_path_search_visitor.html" alt="FileSys::PathSearchVisitor" shape="rect" coords="172,56,334,80"/>
+</map>
+ </div></div>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
+Public 成员函数</h2></td></tr>
+<tr class="memitem:ac493ab442e116be15f0af8559d63e0e0"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_file_sys_1_1_node_visitor.html#ac493ab442e116be15f0af8559d63e0e0">SetPath</a> (const <a class="el" href="class_lexer_sys_1_1_search_path.html">LexerSys::SearchPath</a> &amp;path)</td></tr>
+<tr class="memdesc:ac493ab442e116be15f0af8559d63e0e0"><td class="mdescLeft">&#160;</td><td class="mdescRight">设置搜索路径  <a href="#ac493ab442e116be15f0af8559d63e0e0">更多...</a><br/></td></tr>
+<tr class="separator:ac493ab442e116be15f0af8559d63e0e0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2cfda47a2803438cb97b0e8b83dbdb79"><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="class_lexer_sys_1_1_token.html">LexerSys::Token</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_file_sys_1_1_node_visitor.html#a2cfda47a2803438cb97b0e8b83dbdb79">GetCurrPathToken</a> (void) const </td></tr>
+<tr class="memdesc:a2cfda47a2803438cb97b0e8b83dbdb79"><td class="mdescLeft">&#160;</td><td class="mdescRight">获得搜索路径的当前符号  <a href="#a2cfda47a2803438cb97b0e8b83dbdb79">更多...</a><br/></td></tr>
+<tr class="separator:a2cfda47a2803438cb97b0e8b83dbdb79"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:add992fdbc0bad4e4bdc25025ce8e8a58"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="add992fdbc0bad4e4bdc25025ce8e8a58"></a>
+virtual bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_file_sys_1_1_node_visitor.html#add992fdbc0bad4e4bdc25025ce8e8a58">HasNextToken</a> (void) const </td></tr>
+<tr class="memdesc:add992fdbc0bad4e4bdc25025ce8e8a58"><td class="mdescLeft">&#160;</td><td class="mdescRight">是否还有下一个符号 <br/></td></tr>
+<tr class="separator:add992fdbc0bad4e4bdc25025ce8e8a58"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2438bc4ed66436f340f02357461c2836"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a2438bc4ed66436f340f02357461c2836"></a>
+virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_file_sys_1_1_node_visitor.html#a2438bc4ed66436f340f02357461c2836">MoveToNextToken</a> (void)</td></tr>
+<tr class="memdesc:a2438bc4ed66436f340f02357461c2836"><td class="mdescLeft">&#160;</td><td class="mdescRight">移动到搜索路径的下一个符号 <br/></td></tr>
+<tr class="separator:a2438bc4ed66436f340f02357461c2836"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:acb8de479df2e49b6b68ebe2aa1727d71"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="acb8de479df2e49b6b68ebe2aa1727d71"></a>
+virtual <a class="el" href="class_file_sys_1_1_node.html">Node</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_file_sys_1_1_node_visitor.html#acb8de479df2e49b6b68ebe2aa1727d71">GetSearchNode</a> (void)</td></tr>
+<tr class="memdesc:acb8de479df2e49b6b68ebe2aa1727d71"><td class="mdescLeft">&#160;</td><td class="mdescRight">获得搜索到的节点 <br/></td></tr>
+<tr class="separator:acb8de479df2e49b6b68ebe2aa1727d71"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a75c0566ce6177629732cc0fc8d500c59"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a75c0566ce6177629732cc0fc8d500c59"></a>
+virtual Util::String&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_file_sys_1_1_node_visitor.html#a75c0566ce6177629732cc0fc8d500c59">GetResultOutputString</a> (void) const </td></tr>
+<tr class="memdesc:a75c0566ce6177629732cc0fc8d500c59"><td class="mdescLeft">&#160;</td><td class="mdescRight">获得搜索结果的输出字符串 <br/></td></tr>
+<tr class="separator:a75c0566ce6177629732cc0fc8d500c59"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3398560bc10e71a0b8fcaac57e5b58e2"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_file_sys_1_1_node_visitor.html#a3398560bc10e71a0b8fcaac57e5b58e2">Visit</a> (<a class="el" href="class_file_sys_1_1_node.html">Node</a> *node)</td></tr>
+<tr class="memdesc:a3398560bc10e71a0b8fcaac57e5b58e2"><td class="mdescLeft">&#160;</td><td class="mdescRight">访问节点  <a href="#a3398560bc10e71a0b8fcaac57e5b58e2">更多...</a><br/></td></tr>
+<tr class="separator:a3398560bc10e71a0b8fcaac57e5b58e2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pro-types"></a>
+Protected 类型</h2></td></tr>
+<tr class="memitem:aa0480a8d4c26e612bb11e8f1c7da929e"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="aa0480a8d4c26e612bb11e8f1c7da929e"></a>
+typedef <a class="el" href="class_util_1_1_link_list_t.html">Util::LinkListT</a><br class="typebreak"/>
+&lt; <a class="el" href="class_lexer_sys_1_1_token.html">LexerSys::Token</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>PathToks</b></td></tr>
+<tr class="separator:aa0480a8d4c26e612bb11e8f1c7da929e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pro-attribs"></a>
+Protected 属性</h2></td></tr>
+<tr class="memitem:a9985967f38e74d6e291330e7d609d21d"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a9985967f38e74d6e291330e7d609d21d"></a>
+<a class="el" href="class_lexer_sys_1_1_search_path.html">LexerSys::SearchPath</a>&#160;</td><td class="memItemRight" valign="bottom"><b>m_path</b></td></tr>
+<tr class="separator:a9985967f38e74d6e291330e7d609d21d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:adec163e2daf9387ddef7166162820881"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="adec163e2daf9387ddef7166162820881"></a>
+<a class="el" href="class_file_sys_1_1_node.html">Node</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_file_sys_1_1_node_visitor.html#adec163e2daf9387ddef7166162820881">m_lp_final_search_node</a></td></tr>
+<tr class="memdesc:adec163e2daf9387ddef7166162820881"><td class="mdescLeft">&#160;</td><td class="mdescRight">&gt;搜索路径 <br/></td></tr>
+<tr class="separator:adec163e2daf9387ddef7166162820881"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad2f5269bc83504009525d7fde95e99bf"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ad2f5269bc83504009525d7fde95e99bf"></a>
+Util::String&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_file_sys_1_1_node_visitor.html#ad2f5269bc83504009525d7fde95e99bf">m_result_output_str</a></td></tr>
+<tr class="memdesc:ad2f5269bc83504009525d7fde95e99bf"><td class="mdescLeft">&#160;</td><td class="mdescRight">&gt;当前节点 <br/></td></tr>
+<tr class="separator:ad2f5269bc83504009525d7fde95e99bf"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<a name="details" id="details"></a><h2 class="groupheader">详细描述</h2>
+<div class="textblock">
+<p>在文件 <a class="el" href="_node_visitor_8h_source.html">NodeVisitor.h</a> 第 <a class="el" href="_node_visitor_8h_source.html#l00012">12</a> 行定义.</p>
+</div><h2 class="groupheader">成员函数说明</h2>
+<a class="anchor" id="a2cfda47a2803438cb97b0e8b83dbdb79"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="class_lexer_sys_1_1_token.html">LexerSys::Token</a> FileSys::NodeVisitor::GetCurrPathToken </td>
+          <td>(</td>
+          <td class="paramtype">void&#160;</td>
+          <td class="paramname">)</td><td></td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>获得搜索路径的当前符号 </p>
+<dl class="section return"><dt>返回</dt><dd>搜索路径的当前符号 </dd></dl>
+
+<p>在文件 <a class="el" href="_node_visitor_8cpp_source.html">NodeVisitor.cpp</a> 第 <a class="el" href="_node_visitor_8cpp_source.html#l00022">22</a> 行定义.</p>
+
+</div>
+</div>
+<a class="anchor" id="ac493ab442e116be15f0af8559d63e0e0"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void FileSys::NodeVisitor::SetPath </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="class_lexer_sys_1_1_search_path.html">LexerSys::SearchPath</a> &amp;&#160;</td>
+          <td class="paramname"><em>path</em>)</td><td></td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>设置搜索路径 </p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">path</td><td>搜索路径 </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p>在文件 <a class="el" href="_node_visitor_8cpp_source.html">NodeVisitor.cpp</a> 第 <a class="el" href="_node_visitor_8cpp_source.html#l00017">17</a> 行定义.</p>
+
+</div>
+</div>
+<a class="anchor" id="a3398560bc10e71a0b8fcaac57e5b58e2"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual void FileSys::NodeVisitor::Visit </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="class_file_sys_1_1_node.html">Node</a> *&#160;</td>
+          <td class="paramname"><em>node</em>)</td><td></td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>访问节点 </p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">node</td><td>待访问节点 </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p>被 <a class="el" href="class_file_sys_1_1_path_search_visitor.html#ac9e8ab4c8389b118ba6a57b053ac8005">FileSys::PathSearchVisitor</a> , 以及 <a class="el" href="class_file_sys_1_1_create_dir_visitor.html#a02c79d46c769edbbcff38a59a97811ab">FileSys::CreateDirVisitor</a> 重载.</p>
+
+<p>在文件 <a class="el" href="_node_visitor_8h_source.html">NodeVisitor.h</a> 第 <a class="el" href="_node_visitor_8h_source.html#l00055">55</a> 行定义.</p>
+
+</div>
+</div>
+<hr/>该类的文档由以下文件生成:<ul>
+<li>VirtualDiskConsole/<a class="el" href="_node_visitor_8h_source.html">NodeVisitor.h</a></li>
+<li>VirtualDiskConsole/<a class="el" href="_node_visitor_8cpp_source.html">NodeVisitor.cpp</a></li>
+</ul>
+</div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+生成于 2013年 八月 12日 星期一 15:24:04 , 为 VirtualDiskConsole使用  &#160;<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="doxygen.png" alt="doxygen"/>
+</a> 1.8.4
+</small></address>
+</body>
+</html>

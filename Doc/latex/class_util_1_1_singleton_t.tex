@@ -1,0 +1,89 @@
+\hypertarget{class_util_1_1_singleton_t}{\section{Util\-:\-:Singleton\-T$<$ T $>$ 模板类 参考}
+\label{class_util_1_1_singleton_t}\index{Util\-::\-Singleton\-T$<$ T $>$@{Util\-::\-Singleton\-T$<$ T $>$}}
+}
+
+
+{\ttfamily \#include $<$Singleton.\-h$>$}
+
+\subsection*{静态 Public 成员函数}
+\begin{DoxyCompactItemize}
+\item 
+static void \hyperlink{class_util_1_1_singleton_t_adc93fbaad3654ccfcbc568af60f79b83}{Create\-Instance} (void)
+\begin{DoxyCompactList}\small\item\em 创建单例中的实例，全局只可在系统初始化时调用一次 \end{DoxyCompactList}\item 
+static void \hyperlink{class_util_1_1_singleton_t_a57e01e60edc894293383bb1b6375e2a2}{Destroy\-Instance} (void)
+\begin{DoxyCompactList}\small\item\em 销毁单例中的实例，全局在销毁单例时调用一次 \end{DoxyCompactList}\item 
+static T $\ast$ \hyperlink{class_util_1_1_singleton_t_a977b19d9052e8d16cd5ed79d7d49d597}{Get\-Instance} (void)
+\begin{DoxyCompactList}\small\item\em 获得实例指针 \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{详细描述}
+\subsubsection*{template$<$typename T$>$class Util\-::\-Singleton\-T$<$ T $>$}
+
+此类为单例模板类 
+
+在文件 Singleton.\-h 第 12 行定义.
+
+
+
+\subsection{成员函数说明}
+\hypertarget{class_util_1_1_singleton_t_adc93fbaad3654ccfcbc568af60f79b83}{\index{Util\-::\-Singleton\-T@{Util\-::\-Singleton\-T}!Create\-Instance@{Create\-Instance}}
+\index{Create\-Instance@{Create\-Instance}!Util::SingletonT@{Util\-::\-Singleton\-T}}
+\subsubsection[{Create\-Instance}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T$>$ static void {\bf Util\-::\-Singleton\-T}$<$ T $>$\-::Create\-Instance (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}}\label{class_util_1_1_singleton_t_adc93fbaad3654ccfcbc568af60f79b83}
+
+
+创建单例中的实例，全局只可在系统初始化时调用一次 
+
+\begin{DoxyWarning}{警告}
+此函数全局只可调用一次，否则会触发断言 
+\end{DoxyWarning}
+
+
+在文件 Singleton.\-h 第 22 行定义.
+
+\hypertarget{class_util_1_1_singleton_t_a57e01e60edc894293383bb1b6375e2a2}{\index{Util\-::\-Singleton\-T@{Util\-::\-Singleton\-T}!Destroy\-Instance@{Destroy\-Instance}}
+\index{Destroy\-Instance@{Destroy\-Instance}!Util::SingletonT@{Util\-::\-Singleton\-T}}
+\subsubsection[{Destroy\-Instance}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T$>$ static void {\bf Util\-::\-Singleton\-T}$<$ T $>$\-::Destroy\-Instance (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}}\label{class_util_1_1_singleton_t_a57e01e60edc894293383bb1b6375e2a2}
+
+
+销毁单例中的实例，全局在销毁单例时调用一次 
+
+\begin{DoxyWarning}{警告}
+此函数必须在\-Create\-Instance调用后调用，否则会触发断言 
+\end{DoxyWarning}
+
+
+在文件 Singleton.\-h 第 33 行定义.
+
+\hypertarget{class_util_1_1_singleton_t_a977b19d9052e8d16cd5ed79d7d49d597}{\index{Util\-::\-Singleton\-T@{Util\-::\-Singleton\-T}!Get\-Instance@{Get\-Instance}}
+\index{Get\-Instance@{Get\-Instance}!Util::SingletonT@{Util\-::\-Singleton\-T}}
+\subsubsection[{Get\-Instance}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T$>$ static T$\ast$ {\bf Util\-::\-Singleton\-T}$<$ T $>$\-::Get\-Instance (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}}\label{class_util_1_1_singleton_t_a977b19d9052e8d16cd5ed79d7d49d597}
+
+
+获得实例指针 
+
+\begin{DoxyReturn}{返回}
+该单例的全局唯一实例指针 
+
+返回全局该对象的唯一实例，此函数必须在\-Create\-Instance调用后调用 否则会触发断言 
+\end{DoxyReturn}
+
+
+在文件 Singleton.\-h 第 46 行定义.
+
+
+
+该类的文档由以下文件生成\-:\begin{DoxyCompactItemize}
+\item 
+Virtual\-Disk\-Console/Singleton.\-h\end{DoxyCompactItemize}
